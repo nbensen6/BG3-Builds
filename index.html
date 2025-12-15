@@ -313,6 +313,19 @@
         #lightning-ek .stats-box { background: linear-gradient(135deg, #e3f2fd 0%, #e8eaf6 100%); border: 1px solid #64b5f6; }
         #lightning-ek .footer { color: #1565c0; border-top: 1px solid #64b5f6; }
 
+        /* POISON SPOREKEEPER - Toxic Green/Purple */
+        #poison-sporekeeper { background: linear-gradient(180deg, #e8f5e9 0%, #f3e5f5 50%, #ffffff 100%); color: #1a2e1a; }
+        #poison-sporekeeper h1 { color: #4a148c; text-shadow: 2px 2px 4px rgba(74,20,140,0.3); }
+        #poison-sporekeeper .subtitle { color: #6a1b9a; }
+        #poison-sporekeeper h2 { color: #4a148c; border-bottom: 2px solid #7b1fa2; }
+        #poison-sporekeeper h3 { color: #6a1b9a; }
+        #poison-sporekeeper th { background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%); }
+        #poison-sporekeeper td { border-bottom: 1px solid #ce93d8; }
+        #poison-sporekeeper tr:nth-child(even) { background: #f3e5f5; }
+        #poison-sporekeeper .callout { background: linear-gradient(135deg, #e8f5e9 0%, #f3e5f5 100%); border-left: 4px solid #4a148c; }
+        #poison-sporekeeper .stats-box { background: linear-gradient(135deg, #f3e5f5 0%, #e8f5e9 100%); border: 1px solid #7b1fa2; }
+        #poison-sporekeeper .footer { color: #4a148c; border-top: 1px solid #7b1fa2; }
+
         @media (max-width: 768px) {
             header { padding: 10px 12px; }
             .logo { font-size: 13px; }
@@ -347,6 +360,7 @@
                 <button class="dropdown-btn">🌿 Druid</button>
                 <div class="dropdown-content">
                     <button class="dropdown-item" data-tab="land-warden">🌍 Land Warden</button>
+                    <button class="dropdown-item" data-tab="poison-sporekeeper">☠️ Poison Sporekeeper</button>
                 </div>
             </div>
 
@@ -954,6 +968,155 @@ Every hit: +16 (STR) + weapon + Sneak Attack 🩸
         </table>
 
         <div class="footer"><em>🌍 "The land itself rises to your call. Nature's wrath knows no mercy." 🌿</em></div>
+    </div>
+</div>
+
+<!-- POISON SPOREKEEPER -->
+<div class="build" id="poison-sporekeeper">
+    <div class="build-content">
+        <h1>☠️ THE POISON SPOREKEEPER ☠️</h1>
+        <div class="subtitle">🍄 Circle of Spores Druid / Fighter - Baldur's Gate 3 🧪</div>
+
+        <h2>🍄 Build Overview</h2>
+        <p>A toxic nightmare that weaponizes decay and poison. This Circle of Spores Druid uses Symbiotic Entity to supercharge your spore abilities while stacking poison damage from multiple sources. Enemies wither under clouds of toxic spores while you heal from their suffering.</p>
+        <p><strong>Class Split:</strong> 10 Circle of Spores Druid / 2 Fighter</p>
+
+        <div class="callout">
+            <span class="emoji">☠️</span> <strong>POISON SYNERGY:</strong> Stack Poisoner's Ring (vulnerability) + Poisoner's Robe (+1d4) + Broodmother's Revenge (+1d6) + Halo of Spores = massive poison damage that heals YOU when enemies die!
+        </div>
+
+        <h2>📊 Race & Stats</h2>
+        <div class="stats-box">
+<strong>Recommended Race:</strong> Wood Elf 🧝
+- +10.5m movement speed (spread those spores!)
+- Darkvision 12m
+- Fey Ancestry (charm/sleep resistance)
+- Longsword proficiency
+
+<strong>Stat Spread:</strong>
+STR: 8 | DEX: 14 | CON: 14 | WIS: 17 | INT: 10 | CHA: 10
+
+<strong>Background:</strong> Outlander or Hermit
+        </div>
+
+        <h2>📈 Level Progression</h2>
+        <div class="stats-box">
+<strong>Druid 1:</strong> Poison Spray, Shillelagh, Thorn Whip 🍄
+Spells: Healing Word, Entangle, Thunderwave
+
+<strong>Druid 2:</strong> Circle of Spores! 🧪
+- Halo of Spores (reaction 1d4 necrotic)
+- Symbiotic Entity (4 temp HP/level, +1d6 necrotic)
+- Chill Touch cantrip (free!)
+
+<strong>Druid 3:</strong> Blindness, Hold Person
+- Halo of Spores upgrades to 1d6
+
+<strong>Druid 4:</strong> Feat: +2 WIS (to 19) 📈
+
+<strong>Druid 5:</strong> Animate Dead, Stinking Cloud! ☠️
+- Halo of Spores upgrades to 1d8
+
+<strong>Druid 6:</strong> Fungal Infestation - raise zombie on kill! 🧟
+- More temp HP from Symbiotic Entity
+
+<strong>Fighter 1:</strong> Constitution save proficiency! 🛡️
+- Fighting Style: Defense (+1 AC)
+
+<strong>Fighter 2:</strong> ACTION SURGE! ⚡
+
+<strong>Druid 7-10:</strong>
+- Cloudkill (5th level - MASSIVE poison AOE!)
+- Halo upgrades to 1d10
+- Guardian of Nature (self-buff)
+- Feat: War Caster (L8 Druid)
+        </div>
+
+        <h2>🧪 Core Poison Mechanics</h2>
+        <table>
+            <tr><th>Feature</th><th>Effect</th><th>Why It's Toxic</th></tr>
+            <tr><td>🍄 Symbiotic Entity</td><td>+1d6 necrotic per melee</td><td>Stacks with weapon poison!</td></tr>
+            <tr><td>☁️ Halo of Spores</td><td>1d10 necrotic (reaction)</td><td>FREE damage every enemy turn!</td></tr>
+            <tr><td>🧟 Fungal Infestation</td><td>Raise zombie on kill</td><td>Free minions = action economy!</td></tr>
+            <tr><td>☠️ Cloudkill</td><td>5d8 poison/turn</td><td>HUGE AOE, moves toward enemies!</td></tr>
+            <tr><td>💀 Spreading Spores</td><td>AOE Halo zone</td><td>Damage multiple enemies per turn!</td></tr>
+        </table>
+
+        <h2>🎒 Best-in-Slot Gear</h2>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location</th></tr>
+            <tr><td>🛡️ Armor</td><td>Armour of the Sporekeeper</td><td>Act 3 - Buy from Mystic Carrion (Philgrave's Mansion). +1 Spell DC, +1 necrotic, unlocks Bibberbang/Timmask/Haste Spores!</td></tr>
+            <tr><td>👘 Alt Armor</td><td>Poisoner's Robe</td><td>Act 1 - Phase Spider Matriarch (Whispering Depths). +1d4 poison to all poison spells!</td></tr>
+            <tr><td>🧤 Gloves</td><td>Poisoner's Gloves</td><td>Act 2 - Chest in House of Healing. All poison attacks inflict Poisoned condition!</td></tr>
+            <tr><td>💍 Ring</td><td>Poisoner's Ring</td><td>Act 2 - Roah Moonglow at Moonrise Towers. Makes targets VULNERABLE to poison!</td></tr>
+            <tr><td>📿 Amulet</td><td>Broodmother's Revenge</td><td>Act 1 - Reward from spider eggs quest. +1d6 poison to weapon when you heal!</td></tr>
+            <tr><td>🪄 Weapon</td><td>Staff of Crones</td><td>Act 1 - Auntie Ethel's lair. Casts Ray of Sickness 1/short rest!</td></tr>
+            <tr><td>🪄 Alt Weapon</td><td>Pale Oak</td><td>Act 3 - Cazador's Dungeon. Slow + Entangle enemies to keep them in your clouds!</td></tr>
+            <tr><td>👢 Boots</td><td>Boots of Striding</td><td>Act 1 - Druid Grove merchant. Momentum on concentration + immune to shove!</td></tr>
+        </table>
+
+        <h2>☁️ Poison Spell Priority</h2>
+        <div class="callout">
+            <span class="emoji">🧪</span> <strong>KEY SPELLS:</strong>
+            <ul>
+                <li><strong>Cloudkill</strong> - 5d8 poison/turn, 6m radius, moves toward enemies! 💀</li>
+                <li><strong>Stinking Cloud</strong> - Nauseates enemies (lose actions!)</li>
+                <li><strong>Ray of Sickness</strong> - Single target + Poisoned condition</li>
+                <li><strong>Poison Spray</strong> - Cantrip, CON save, 1d12 scaling!</li>
+                <li><strong>Contagion</strong> - Long-term debuffs including Slimy Doom!</li>
+            </ul>
+        </div>
+
+        <h2>⚔️ Combat Rotation</h2>
+        <div class="stats-box">
+<strong>Pre-Combat Setup:</strong>
+1. Activate Symbiotic Entity (bonus action) 🍄
+2. Get +40 temp HP + enhanced melee + spore abilities
+
+<strong>Opening Turn:</strong>
+1. Cast Cloudkill on enemy cluster ☠️
+2. Action Surge > Cast Stinking Cloud for double coverage
+3. Halo of Spores triggers on enemy reactions!
+
+<strong>Sustained Damage:</strong>
+1. Move Cloudkill toward enemies (free action)
+2. Spreading Spores to create Halo zone
+3. Animate Dead / Fungal Infestation for zombie army 🧟
+4. Halo triggers 1d10 on EVERY enemy that ends turn near you!
+
+<strong>Melee Hybrid:</strong>
+1. Shillelagh (bonus action) = WIS to attack/damage
+2. Symbiotic Entity adds +1d6 necrotic per hit
+3. Broodmother's Revenge adds +1d6 poison after any heal
+4. Staff of Crones for free Ray of Sickness!
+        </div>
+
+        <h2>🍄 Sporekeeper Armor Abilities</h2>
+        <div class="callout">
+            <span class="emoji">🍄</span> <strong>UNLOCKED SPORE TYPES:</strong>
+            <ul>
+                <li><strong>Bibberbang Spores</strong> - Explode for poison damage + Poisoned condition!</li>
+                <li><strong>Timmask Spores</strong> - Poison damage + Confusion effect!</li>
+                <li><strong>Haste Spores</strong> - Give ally one turn of Haste WITHOUT exhaustion!</li>
+            </ul>
+        </div>
+
+        <h2>⚖️ Pros & Cons</h2>
+        <table>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
+            <tr><td>Massive AOE poison with Cloudkill</td><td>Many enemies resist/immune to poison</td></tr>
+            <tr><td>Free zombie army from kills</td><td>Gear scattered across all 3 Acts</td></tr>
+            <tr><td>Halo = free reaction damage</td><td>Symbiotic Entity uses Wild Shape charges</td></tr>
+            <tr><td>Self-sustaining with temp HP</td><td>Can damage allies with Cloudkill</td></tr>
+            <tr><td>Poisoner's Ring = vulnerability</td><td>Best armor locked to Act 3</td></tr>
+        </table>
+
+        <h2>⚠️ Poison Resistance Warning</h2>
+        <div class="callout">
+            <span class="emoji">⚠️</span> <strong>IMPORTANT:</strong> Many undead, constructs, and fiends are IMMUNE or RESISTANT to poison! In Act 2's Shadow-Cursed Lands, switch to necrotic focus with Halo of Spores and Chill Touch. Save your Cloudkill for goblins, humanoids, and beasts!
+        </div>
+
+        <div class="footer"><em>☠️ "From death comes life. From decay comes power. Embrace the spores." 🍄</em></div>
     </div>
 </div>
 
