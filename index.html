@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG3 Build Guides</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #4a4a6a;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #a0a0c0;
+            font-style: italic;
+        }
+
+        .tab-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+            padding: 15px;
+            background: #0f0f1a;
+            border-bottom: 1px solid #3a3a5a;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .tab-btn {
+            padding: 10px 15px;
+            border: none;
+            background: #2a2a4a;
+            color: #c0c0c0;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover {
+            background: #3a3a6a;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #4a4a8a 0%, #6a6aaa 100%);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(100,100,200,0.3);
+        }
+
+        /* Individual tab colors */
+        .tab-btn[data-tab="ice-sorcerer"].active { background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%); }
+        .tab-btn[data-tab="stealth-archer"].active { background: linear-gradient(135deg, #4a0080 0%, #7b2cbf 100%); }
+        .tab-btn[data-tab="battle-master"].active { background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%); }
+        .tab-btn[data-tab="tavern-brawler"].active { background: linear-gradient(135deg, #d35400 0%, #e67e22 100%); }
+        .tab-btn[data-tab="savage-striker"].active { background: linear-gradient(135deg, #8b0000 0%, #b22222 100%); }
+        .tab-btn[data-tab="gloom-weaver"].active { background: linear-gradient(135deg, #2d1b4e 0%, #4a3668 100%); }
+        .tab-btn[data-tab="land-warden"].active { background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%); }
+        .tab-btn[data-tab="death-reaper"].active { background: linear-gradient(135deg, #1b5e20 0%, #388e3c 100%); }
+        .tab-btn[data-tab="god-blade"].active { background: linear-gradient(135deg, #b8860b 0%, #daa520 100%); }
+        .tab-btn[data-tab="hexwing-phantom"].active { background: linear-gradient(135deg, #7b1fa2 0%, #9c27b0 100%); }
+        .tab-btn[data-tab="lightning-ek"].active { background: linear-gradient(135deg, #1565c0 0%, #1976d2 100%); }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .build-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            color: #333;
+        }
+
+        .build-card h1 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .build-card .subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 25px;
+            font-size: 1.1em;
+        }
+
+        .build-card h2 {
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid;
+        }
+
+        .build-card h3 {
+            font-size: 1.1em;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        .build-card p {
+            margin-bottom: 10px;
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .build-card table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0 20px 0;
+            font-size: 0.95em;
+        }
+
+        .build-card th {
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .build-card td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        .build-card tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .build-card .callout {
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            font-size: 0.95em;
+        }
+
+        .build-card .stats-box {
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Consolas', monospace;
+            font-size: 0.95em;
+            border-radius: 6px;
+            line-height: 1.8;
+        }
+
+        .build-card ul {
+            margin: 10px 0 10px 25px;
+        }
+
+        .build-card li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .build-card .footer {
+            text-align: center;
+            font-style: italic;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .emoji {
+            font-size: 1.1em;
+        }
+
+        /* Theme-specific styles will be applied via classes */
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8em; }
+            .tab-btn { padding: 8px 10px; font-size: 0.8em; }
+            .build-card { padding: 20px; }
+            .build-card h1 { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BG3 Build Guides</h1>
+        <p>Comprehensive build guides for Baldur's Gate 3</p>
+    </header>
+
+    <div class="tab-container">
+        <button class="tab-btn active" data-tab="ice-sorcerer">Ice Sorcerer</button>
+        <button class="tab-btn" data-tab="stealth-archer">Stealth Archer</button>
+        <button class="tab-btn" data-tab="battle-master">Battle Master</button>
+        <button class="tab-btn" data-tab="tavern-brawler">Tavern Brawler</button>
+        <button class="tab-btn" data-tab="savage-striker">Savage Striker</button>
+        <button class="tab-btn" data-tab="gloom-weaver">Gloom Weaver</button>
+        <button class="tab-btn" data-tab="land-warden">Land Warden</button>
+        <button class="tab-btn" data-tab="death-reaper">Death Reaper</button>
+        <button class="tab-btn" data-tab="god-blade">God Blade</button>
+        <button class="tab-btn" data-tab="hexwing-phantom">Hexwing Phantom</button>
+        <button class="tab-btn" data-tab="lightning-ek">Lightning EK</button>
+    </div>
+
+    <!-- Ice Sorcerer -->
+    <div class="tab-content active" id="ice-sorcerer">
+        <div class="build-card" style="background: linear-gradient(180deg, #e8f4fc 0%, #ffffff 100%);">
+            <h1 style="color: #0077b6;">&#10052;&#65039; THE ICE SORCERER &#10052;&#65039;</h1>
+            <div class="subtitle" style="color: #4a90a4;">&#129482; Draconic Bloodline Sorcerer (White Dragon) &#129482;</div>
+
+            <h2 style="color: #0077b6; border-color: #90e0ef;">&#127784;&#65039; Build Overview</h2>
+            <p>A phenomenal AOE damage dealer with incredible crowd control. Freeze enemies solid, make them slip and miss their turns, or delete them with doubled cold damage. The Ray of Frost machine gun turns you into an economical ice cannon, while Cone of Cold acts as a devastating shotgun blast.</p>
+            <p><strong>Class Split:</strong> 12 Draconic Sorcerer (Pure) — White Dragon Ancestry</p>
+
+            <div class="callout" style="background: linear-gradient(135deg, #90e0ef 0%, #caf0f8 100%); border-left: 4px solid #0077b6;">
+                <span class="emoji">&#128161;</span> <strong>CORE MECHANIC:</strong> Wet + Cold = Frozen! Frozen enemies skip their entire turn. Cold damage is DOUBLED against wet targets!
+            </div>
+
+            <h2 style="color: #0077b6; border-color: #90e0ef;">&#10052;&#65039; Level Progression</h2>
+            <div class="stats-box" style="background: linear-gradient(135deg, #e8f4fc 0%, #f0f9ff 100%); border: 1px solid #90e0ef;">
+                <strong>Level 1:</strong> Draconic Bloodline (White) — Ray of Frost<br>
+                <strong>Level 2:</strong> Metamagic — Twin Spell, Quicken Spell<br>
+                <strong>Level 3:</strong> Level 2 spells — Hold Person, Mirror Image<br>
+                <strong>Level 4:</strong> Feat: +2 CHA (to 18)<br>
+                <strong>Level 5:</strong> Level 3 spells — Haste, Counterspell<br>
+                <strong>Level 6:</strong> Elemental Affinity — Add CHA to cold damage!<br>
+                <strong>Level 7:</strong> Level 4 spells — Ice Storm<br>
+                <strong>Level 8:</strong> Feat: +2 CHA (to 20)<br>
+                <strong>Level 9:</strong> Level 5 spells — Cone of Cold, Hold Monster<br>
+                <strong>Level 10:</strong> Metamagic — Heightened Spell<br>
+                <strong>Level 11:</strong> Level 6 spells — Chain Lightning (scroll)<br>
+                <strong>Level 12:</strong> Feat: Alert OR War Caster
+            </div>
+
+            <h2 style="color: #0077b6; border-color: #90e0ef;">&#129482; Signature Spells</h2>
+            <table>
+                <tr><th style="background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);">Spell</th><th style="background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);">Damage</th><th style="background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);">Notes</th></tr>
+                <tr><td>&#10052;&#65039; Ray of Frost</td><td>1d8 → 3d8 + CHA</td><td>CANTRIP! Twin for 1 sorc point. Ice machine gun!</td></tr>
+                <tr><td>&#127784;&#65039; Ice Storm</td><td>4d6 cold + 2d8 bludgeon</td><td>HUGE 6m radius. Doubles vs wet!</td></tr>
+                <tr><td>&#10052;&#65039; Cone of Cold</td><td>8d8 cold</td><td>The ICE SHOTGUN. Massive damage.</td></tr>
+                <tr><td>&#9208;&#65039; Hold Person/Monster</td><td>—</td><td>Paralyzed = auto-crit!</td></tr>
+            </table>
+
+            <h2 style="color: #0077b6; border-color: #90e0ef;">&#128737;&#65039; Recommended Gear</h2>
+            <table>
+                <tr><th style="background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);">Slot</th><th style="background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);">Item</th><th style="background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);">Effect</th></tr>
+                <tr><td>Staff</td><td>Mourning Frost</td><td>+1 cold damage per ray, applies Chilled</td></tr>
+                <tr><td>Robe</td><td>Potent Robe</td><td>Add CHA to cantrip damage AGAIN</td></tr>
+                <tr><td>Helm</td><td>Birthright</td><td>+2 CHA = more damage, higher DC</td></tr>
+                <tr><td>Gloves</td><td>Quickspell Gloves</td><td>Cantrip as bonus action 1/turn</td></tr>
+                <tr><td>Amulet</td><td>Amulet of Greater Health</td><td>CON 23 — you're squishy, this helps!</td></tr>
+            </table>
+
+            <h2 style="color: #0077b6; border-color: #90e0ef;">&#9878;&#65039; Pros & Cons</h2>
+            <table>
+                <tr><th style="background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);">&#9989; Pros</th><th style="background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);">&#10060; Cons</th></tr>
+                <tr><td>Ray of Frost machine gun is super economical</td><td>Slow early game (comes online around L6)</td></tr>
+                <tr><td>Incredible AOE and battlefield control</td><td>Very gear-dependent for max effectiveness</td></tr>
+                <tr><td>Frozen enemies skip their entire turn</td><td>Relies on Wet status for double damage</td></tr>
+                <tr><td>High Spell DC + Heightened = consistent Hold spells</td><td>Squishy with low AC</td></tr>
+            </table>
+
+            <h2 style="color: #0077b6; border-color: #90e0ef;">&#128202; Quick Reference</h2>
+            <div class="stats-box" style="background: linear-gradient(135deg, #e8f4fc 0%, #f0f9ff 100%); border: 1px solid #90e0ef;">
+                <strong>Class:</strong> 12 Draconic Sorcerer (White Dragon)<br>
+                <strong>Primary Stat:</strong> CHA 20+ (with gear: 22-24)<br>
+                <strong>Role:</strong> AOE Damage, Crowd Control, Support (Twin Haste)<br>
+                <strong>Key Combo:</strong> Wet → Cold spell = Double Damage + Frozen
+            </div>
+
+            <p class="footer" style="color: #4a90a4;"><em>&#10052;&#65039; "Watch enemies explode on ice." &#10052;&#65039;</em></p>
+        </div>
+    </div>
+
+    <!-- Stealth Archer -->
+    <div class="tab-content" id="stealth-archer">
+        <div class="build-card" style="background: linear-gradient(180deg, #e8e8f0 0%, #ffffff 100%);">
+            <h1 style="color: #4a0080;">&#127993; THE STEALTH ARCHER &#127993;</h1>
+            <div class="subtitle" style="color: #2d5016;">&#127761; Gloom Stalker / Assassin / Fighter / War Cleric &#127919;</div>
+
+            <h2 style="color: #4a0080; border-color: #7b2cbf;">&#127919; Build Overview</h2>
+            <p>The STRONGEST build for solo Honor Mode. This build has the most powerful early game, dealing 50-100 damage average in Act 1, over 100 in Act 2, and four-digit Nova in Act 3. Assassinate guarantees critical hits on surprised enemies.</p>
+            <p><strong>Class Split:</strong> 5 Gloom Stalker Ranger / 4 Assassin Rogue / 2 Fighter / 1 War Cleric</p>
+
+            <div class="callout" style="background: linear-gradient(135deg, #f3e5f5 0%, #faf5fc 100%); border-left: 4px solid #9c27b0;">
+                <span class="emoji">&#128081;</span> <strong>#1 SOLO BUILD:</strong> There is no stronger class for a solo Honor Mode run. Two attacks at level 3. Heavy armor at level 1. You leave the Nautiloid with 17 AC!
+            </div>
+
+            <h2 style="color: #4a0080; border-color: #7b2cbf;">&#127769; Level Progression</h2>
+            <div class="stats-box" style="background: linear-gradient(135deg, #ede7f6 0%, #f5f2fa 100%); border: 1px solid #9c27b0;">
+                <strong>Ranger 1:</strong> Heavy Armor proficiency! Leave Nautiloid with 17 AC<br>
+                <strong>Ranger 2:</strong> Archery fighting style (+2 to ranged attacks)<br>
+                <strong>Ranger 3:</strong> Gloom Stalker — +3 initiative, Dread Ambusher<br>
+                <strong>Ranger 4:</strong> Feat: Sharpshooter (+10 damage, -5 to hit)<br>
+                <strong>Ranger 5:</strong> Extra Attack, Pass Without Trace<br>
+                <strong>Rogue 1:</strong> Sneak Attack (1d6), Expertise<br>
+                <strong>Rogue 2:</strong> Cunning Action<br>
+                <strong>Rogue 3:</strong> Assassin — Assassinate (auto-crit on surprised!)<br>
+                <strong>Rogue 4:</strong> Feat: Alert (+5 initiative)<br>
+                <strong>Fighter 1:</strong> Defense (+1 AC)<br>
+                <strong>Fighter 2:</strong> Action Surge!<br>
+                <strong>War Cleric 1:</strong> Bonus action attack
+            </div>
+
+            <h2 style="color: #4a0080; border-color: #7b2cbf;">&#128128; Assassinate Explained</h2>
+            <div class="callout" style="background: linear-gradient(135deg, #f3e5f5 0%, #faf5fc 100%); border-left: 4px solid #9c27b0;">
+                <strong>ASSASSINATE: AMBUSH</strong><br>
+                Attack rolls against a <strong>SURPRISED</strong> creature are <strong>GUARANTEED CRITICAL HITS</strong>.<br><br>
+                <strong>How to proc Surprise:</strong> Go invisible → Attack enemy in their sight radius → That attack CRITS automatically → With proper gear: 200-300+ damage per arrow!
+            </div>
+
+            <h2 style="color: #4a0080; border-color: #7b2cbf;">&#128293; Nova Round Breakdown</h2>
+            <div class="stats-box" style="background: linear-gradient(135deg, #ede7f6 0%, #f5f2fa 100%); border: 1px solid #9c27b0;">
+                <strong>&#127919; Maximum Nova (Level 12):</strong><br><br>
+                1. Out of combat attack (1 attack)<br>
+                2. Enter combat → Alacrity restores action/bonus<br>
+                3. Action: 2 attacks + Dread Ambusher = 3 attacks<br>
+                4. Bloodlust proc on kill = 1 attack<br>
+                5. Haste action = 1 attack<br>
+                6. Action Surge = 2 more attacks<br>
+                7. War Cleric bonus action attack = 1 attack<br><br>
+                <strong>TOTAL: 8-10 ATTACKS ROUND ONE!</strong>
+            </div>
+
+            <h2 style="color: #4a0080; border-color: #7b2cbf;">&#128737;&#65039; Recommended Gear</h2>
+            <table>
+                <tr><th style="background: linear-gradient(135deg, #4a0080 0%, #7b2cbf 100%);">Slot</th><th style="background: linear-gradient(135deg, #4a0080 0%, #7b2cbf 100%);">Item</th><th style="background: linear-gradient(135deg, #4a0080 0%, #7b2cbf 100%);">Effect</th></tr>
+                <tr><td>Bow</td><td>Titanstring / Gontr Mael</td><td>Add STR to damage / Celestial Haste</td></tr>
+                <tr><td>Armor</td><td>Bhaalist Armour</td><td>Enemies in 2m vulnerable to piercing</td></tr>
+                <tr><td>Helmet</td><td>Mask of Soul Perception</td><td>+2 attack rolls, +2 initiative</td></tr>
+                <tr><td>Ring 1</td><td>Risky Ring</td><td>Advantage on attacks</td></tr>
+                <tr><td>Ring 2</td><td>Killer's Sweetheart</td><td>Auto-crit once per long rest</td></tr>
+                <tr><td>Consumable</td><td>Elixir of Bloodlust</td><td>Extra action on kill — MANDATORY!</td></tr>
+            </table>
+
+            <h2 style="color: #4a0080; border-color: #7b2cbf;">&#128202; Quick Reference</h2>
+            <div class="stats-box" style="background: linear-gradient(135deg, #ede7f6 0%, #f5f2fa 100%); border: 1px solid #9c27b0;">
+                <strong>Class Split:</strong> 5 Gloom Stalker / 4 Assassin / 2 Fighter / 1 War Cleric<br>
+                <strong>Primary Stat:</strong> DEX 18+ (with gloves), STR for Titanstring<br>
+                <strong>Key Features:</strong> Dread Ambusher, Assassinate, Sharpshooter, Action Surge<br>
+                <strong>Core Combo:</strong> Greater Invis → Surprise → Auto-Crit → Delete<br>
+                <strong>Nova Potential:</strong> 8-10 attacks round one, 4-digit damage in Act 3
+            </div>
+
+            <p class="footer" style="color: #4a0080;"><em>&#127993; "This build is my baby darling play style." &#127919;</em></p>
+        </div>
+    </div>
+
+    <!-- Battle Master -->
+    <div class="tab-content" id="battle-master">
+        <div class="build-card" style="background: linear-gradient(180deg, #f5f0e8 0%, #ffffff 100%);">
+            <h1 style="color: #8b0000;">&#9876;&#65039; THE BATTLE MASTER &#9876;&#65039;</h1>
+            <div class="subtitle" style="color: #666;">&#128737;&#65039; Pure Fighter — Steel and Discipline &#128737;&#65039;</div>
+
+            <h2 style="color: #8b0000; border-color: #c9a959;">&#128170; Build Overview</h2>
+            <p>The quintessential martial powerhouse. Simple, devastating, and effective from level one. Hand your fighter heavy armor and a big stick, and start hitting things — it's really that simple. Three attacks at level 11 plus Action Surge makes this build capable of one-turning even Raphael.</p>
+            <p><strong>Class Split:</strong> 12 Battle Master Fighter (Pure)</p>
+
+            <div class="callout" style="background: linear-gradient(135deg, #ffe4e4 0%, #fff0f0 100%); border-left: 4px solid #8b0000;">
+                <span class="emoji">&#9876;&#65039;</span> <strong>SIMPLE POWER:</strong> Fighter is strong from level 1 with huge power spikes early. Almost no gear competition. Perfect for any player, especially beginners!
+            </div>
+
+            <h2 style="color: #8b0000; border-color: #c9a959;">&#128481;&#65039; Level Progression</h2>
+            <div class="stats-box" style="background: linear-gradient(135deg, #f5f0e8 0%, #faf8f3 100%); border: 1px solid #c9a959;">
+                <strong>Level 1:</strong> Fighting Style — Great Weapon Fighting<br>
+                <strong>Level 2:</strong> Action Surge — Extra action once per short rest!<br>
+                <strong>Level 3:</strong> Battle Master — 4 Superiority Dice, Maneuvers<br>
+                <strong>Level 4:</strong> Feat: Alert (+5 initiative)<br>
+                <strong>Level 5:</strong> Extra Attack — 2 attacks per action<br>
+                <strong>Level 6:</strong> Feat: Great Weapon Master (+10 damage)<br>
+                <strong>Level 7:</strong> Additional Maneuver + Superiority Die<br>
+                <strong>Level 8:</strong> Feat: Savage Attacker<br>
+                <strong>Level 9:</strong> Indomitable<br>
+                <strong>Level 11:</strong> Extra Attack (2) — THREE attacks per action!<br>
+                <strong>Level 12:</strong> Feat: Athlete OR Tough
+            </div>
+
+            <h2 style="color: #8b0000; border-color: #c9a959;">&#127919; Maneuvers</h2>
+            <table>
+                <tr><th style="background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);">Maneuver</th><th style="background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);">Effect</th><th style="background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);">Why It's Great</th></tr>
+                <tr><td>&#9876;&#65039; Trip Attack</td><td>Knock prone + damage</td><td>Advantage on melee, blocks legendary actions!</td></tr>
+                <tr><td>&#127919; Precision Attack</td><td>Add die to attack roll</td><td>Turn a miss into a hit</td></tr>
+                <tr><td>&#128481;&#65039; Riposte</td><td>Attack when enemy misses</td><td>Free attack with high AC</td></tr>
+                <tr><td>&#128737;&#65039; Disarming Attack</td><td>Force enemy to drop weapon</td><td>Disarm Merlax's scythe!</td></tr>
+                <tr><td>&#128168; Pushing Attack</td><td>Push enemy 4.5m</td><td>Yeet Steel Watchers off cliffs!</td></tr>
+            </table>
+
+            <h2 style="color: #8b0000; border-color: #c9a959;">&#128737;&#65039; Recommended Gear</h2>
+            <table>
+                <tr><th style="background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);">Slot</th><th style="background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);">Item</th><th style="background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);">Effect</th></tr>
+                <tr><td>Weapon</td><td>Balduran's Giantslayer</td><td>Double STR mod damage, advantage vs Large+</td></tr>
+                <tr><td>Armor</td><td>Helldusk Armor</td><td>21 AC, fire immunity</td></tr>
+                <tr><td>Helmet</td><td>Helm of Balduran</td><td>Regen HP, can't be crit, +1 AC/saves</td></tr>
+                <tr><td>Gloves</td><td>Gauntlets of Hill Giant Strength</td><td>STR 23</td></tr>
+                <tr><td>Ring 1</td><td>Killer's Sweetheart</td><td>Auto-crit once per long rest</td></tr>
+            </table>
+
+            <h2 style="color: #8b0000; border-color: #c9a959;">&#128202; Quick Reference</h2>
+            <div class="stats-box" style="background: linear-gradient(135deg, #f5f0e8 0%, #faf8f3 100%); border: 1px solid #c9a959;">
+                <strong>Class:</strong> 12 Battle Master Fighter (Pure)<br>
+                <strong>Primary Stat:</strong> STR 20+ (with gear: 23)<br>
+                <strong>Fighting Style:</strong> Great Weapon Fighting<br>
+                <strong>Best Maneuvers:</strong> Trip Attack, Precision Attack, Riposte<br>
+                <strong>Core Feats:</strong> Alert, Great Weapon Master, Savage Attacker
+            </div>
+
+            <p class="footer" style="color: #666;"><em>&#9876;&#65039; "Hand your fighter heavy armor and a big stick. Start hitting things." &#9876;&#65039;</em></p>
+        </div>
+    </div>
+
+    <!-- Tavern Brawler -->
+    <div class="tab-content" id="tavern-brawler">
+        <div class="build-card" style="background: linear-gradient(180deg, #fff5e6 0%, #ffffff 100%);">
+            <h1 style="color: #d35400;">&#129308; THE TAVERN BRAWLER &#129308;</h1>
+            <div class="subtitle" style="color: #a04000;">&#128293; Open Hand Monk / Thief Rogue / Fighter &#128293;</div>
+
+            <h2 style="color: #d35400; border-color: #f39c12;">&#128165; Build Overview</h2>
+            <p>Massive single-target damage with insane action economy and unbelievable battlefield control. Zero gear requirements — you don't need any equipment to be effective! Ki points refresh on short rest, making this perfect for pushing without long rests.</p>
+            <p><strong>Class Split:</strong> 8 Open Hand Monk / 3 Thief Rogue / 1 Fighter</p>
+
+            <div class="callout" style="background: linear-gradient(135deg, #fadbd8 0%, #fdedec 100%); border-left: 4px solid #e74c3c;">
+                <span class="emoji">&#128293;</span> <strong>KARLACH PICK:</strong> Soul Coins add 1d4 fire damage to punches, but they're BUGGED and actually do 2d4! Works from Act 1!
+            </div>
+
+            <h2 style="color: #d35400; border-color: #f39c12;">&#9994; Level Progression</h2>
+            <div class="stats-box" style="background: linear-gradient(135deg, #fff5e6 0%, #fffaf2 100%); border: 1px solid #f39c12;">
+                <strong>Monk 1:</strong> Martial Arts, Unarmored Defense<br>
+                <strong>Monk 2:</strong> Ki Points, Flurry of Blows<br>
+                <strong>Monk 3:</strong> Open Hand — Flurry adds prone/push!<br>
+                <strong>Monk 4:</strong> Feat: Tavern Brawler (STR mod x2!)<br>
+                <strong>Monk 5:</strong> Stunning Strike, Extra Attack<br>
+                <strong>Monk 6:</strong> Ki-Empowered Strikes, Manifestations<br>
+                <strong>Rogue 1:</strong> Sneak Attack, Expertise<br>
+                <strong>Rogue 2:</strong> Cunning Action<br>
+                <strong>Rogue 3:</strong> Thief — EXTRA BONUS ACTION!<br>
+                <strong>Monk 7-8:</strong> Evasion, +2 DEX or WIS<br>
+                <strong>Fighter 1:</strong> Action Surge
+            </div>
+
+            <h2 style="color: #d35400; border-color: #f39c12;">&#129351; Core Mechanics</h2>
+            <table>
+                <tr><th style="background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);">Feature</th><th style="background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);">Effect</th><th style="background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);">Why It's Broken</th></tr>
+                <tr><td>&#129308; Tavern Brawler</td><td>STR mod x2 to unarmed</td><td>Hill Giant Elixir = +10 to hit AND damage!</td></tr>
+                <tr><td>&#128165; Flurry of Blows</td><td>2 bonus action attacks</td><td>Open Hand adds: prone, push, OR no reactions</td></tr>
+                <tr><td>&#9208;&#65039; Stunning Strike</td><td>Target loses turn</td><td>DELETE enemy turns. Auto-crit on stunned!</td></tr>
+                <tr><td>&#127917; Thief Extra BA</td><td>Second bonus action</td><td>Flurry + Flurry = 4 bonus action attacks!</td></tr>
+            </table>
+
+            <h2 style="color: #d35400; border-color: #f39c12;">&#128202; Quick Reference</h2>
+            <div class="stats-box" style="background: linear-gradient(135deg, #fff5e6 0%, #fffaf2 100%); border: 1px solid #f39c12;">
+                <strong>Class Split:</strong> 8 Open Hand Monk / 3 Thief / 1 Fighter<br>
+                <strong>Best Origin:</strong> Karlach (Soul Coins = 2d4 fire!)<br>
+                <strong>Must-Have:</strong> Hill Giant Elixir, Resonance Stone<br>
+                <strong>Primary Stats:</strong> STR 21+ (elixir), DEX 16, WIS 14<br>
+                <strong>Action Economy:</strong> 2 attacks + 4 Flurry + Action Surge = 8 attacks/turn!
+            </div>
+
+            <p class="footer" style="color: #a04000;"><em>&#129308; "You really have to roll with the punches." &#129308;</em></p>
+        </div>
+    </div>
+
+    <!-- Savage Striker -->
+    <div class="tab-content" id="savage-striker">
+        <div class="build-card" style="background: linear-gradient(180deg, #f5e6e6 0%, #ffffff 100%);">
+            <h1 style="color: #8b0000;">&#128293; THE SAVAGE STRIKER &#128293;</h1>
+            <div class="subtitle" style="color: #a52a2a;">&#9876;&#65039; Berserker Barbarian / Thief Rogue &#128128;</div>
+
+            <h2 style="color: #8b0000; border-color: #cd5c5c;">&#128546; Build Overview</h2>
+            <p>A deadly melee powerhouse combining Barbarian's raw fury with Rogue's precision strikes. The Thief's extra bonus action synergizes perfectly with Berserker's Frenzy Strike, allowing four devastating attacks per turn with advantage.</p>
+            <p><strong>Class Split:</strong> 9 Berserker Barbarian / 3 Thief Rogue</p>
+
+            <div class="callout" style="background: linear-gradient(135deg, #f8d7da 0%, #fce4ec 100%); border-left: 4px solid #8b0000;">
+                <span class="emoji">&#129656;</span> <strong>BLOOD RAGE:</strong> With Reckless Attack granting advantage on every swing, you guarantee Sneak Attack damage while fishing for crits. Four attacks per turn, all with advantage!
+            </div>
+
+            <h2 style="color: #8b0000; border-color: #cd5c5c;">&#128298; Core Mechanics</h2>
+            <table>
+                <tr><th style="background: linear-gradient(135deg, #8b0000 0%, #b22222 100%);">Feature</th><th style="background: linear-gradient(135deg, #8b0000 0%, #b22222 100%);">Effect</th><th style="background: linear-gradient(135deg, #8b0000 0%, #b22222 100%);">Why It's Brutal</th></tr>
+                <tr><td>&#128546; Reckless Attack</td><td>Advantage on all melee</td><td>Guarantees Sneak Attack EVERY turn!</td></tr>
+                <tr><td>&#128293; Frenzy Strike</td><td>Bonus action attack</td><td>Thief = TWO Frenzy Strikes!</td></tr>
+                <tr><td>&#128128; Brutal Critical</td><td>+1 damage die on crits</td><td>Sneak Attack dice ALSO crit!</td></tr>
+                <tr><td>&#127917; Fast Hands</td><td>Extra bonus action</td><td>4 attacks/turn with advantage!</td></tr>
+            </table>
+
+            <h2 style="color: #8b0000; border-color: #cd5c5c;">&#128202; Quick Reference</h2>
+            <div class="stats-box" style="background: linear-gradient(135deg, #f5e6e6 0%, #faf5f5 100%); border: 1px solid #cd5c5c;">
+                <strong>Class Split:</strong> 9 Berserker Barbarian / 3 Thief Rogue<br>
+                <strong>Primary Stat:</strong> DEX 20 (or STR 27 with elixir + Tavern Brawler)<br>
+                <strong>Key Features:</strong> Reckless Attack, Frenzy Strike, Fast Hands, Brutal Critical<br>
+                <strong>Core Combo:</strong> Reckless → 4 attacks with advantage → crit fishing
+            </div>
+
+            <p class="footer" style="color: #8b0000;"><em>&#128293; "They'll never see the blade coming through the blood-red rage." &#128128;</em></p>
+        </div>
+    </div>
+
+    <!-- Gloom Weaver -->
+    <div class="tab-content" id="gloom-weaver">
+        <div class="build-card" style="background: linear-gradient(180deg, #e8e0f0 0%, #ffffff 100%);">
+            <h1 style="color: #2d1b4e;">&#127761; THE GLOOM WEAVER &#127761;</h1>
+            <div class="subtitle" style="color: #5c4a72;">&#129413; Hexblade Warlock / Gloom Stalker Ranger &#128481;&#65039;</div>
+
+            <h2 style="color: #2d1b4e; border-color: #6b5b95;">&#127769; Build Overview</h2>
+            <p>A Shadow Kai warrior devoted to the Raven Queen. This build excels at ambush tactics, dealing devastating opening-round damage while hiding in magical darkness. With Devil's Sight, you fight unseen while enemies stumble blind.</p>
+            <p><strong>Class Split:</strong> 7 Hexblade Warlock / 5 Gloom Stalker Ranger</p>
+
+            <div class="callout" style="background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); border-left: 4px solid #6b5b95; color: #e0d8f0;">
+                <span class="emoji">&#129413;</span> <strong>ROLEPLAY HOOK:</strong> The Raven Queen foresaw the rise of the Absolute. She dispatched you, a Shadow Kai gloom weaver, to collect memories and souls from this cataclysm.
+            </div>
+
+            <h2 style="color: #2d1b4e; border-color: #6b5b95;">&#128481;&#65039; Core Mechanics</h2>
+            <table>
+                <tr><th style="background: linear-gradient(135deg, #2d1b4e 0%, #4a3668 100%);">Feature</th><th style="background: linear-gradient(135deg, #2d1b4e 0%, #4a3668 100%);">Effect</th><th style="background: linear-gradient(135deg, #2d1b4e 0%, #4a3668 100%);">Why It's Deadly</th></tr>
+                <tr><td>&#128065; Devil's Sight</td><td>See in magical darkness</td><td>Perma-advantage, enemies blinded!</td></tr>
+                <tr><td>&#128128; Hexblade's Curse</td><td>+prof damage, crit on 19</td><td>Stacks to crit on 17!</td></tr>
+                <tr><td>&#127761; Dread Ambusher</td><td>+3 init, extra attack</td><td>3 attacks turn 1!</td></tr>
+                <tr><td>&#128123; Cursed Spectre</td><td>Raise spectre on kill</td><td>Free ally until long rest!</td></tr>
+            </table>
+
+            <h2 style="color: #2d1b4e; border-color: #6b5b95;">&#128202; Quick Reference</h2>
+            <div class="stats-box" style="background: linear-gradient(135deg, #e8e0f0 0%, #f5f2fa 100%); border: 1px solid #6b5b95;">
+                <strong>Class Split:</strong> 7 Hexblade Warlock / 5 Gloom Stalker Ranger<br>
+                <strong>Primary Stats:</strong> CHA 20, DEX 16, CON 14<br>
+                <strong>Signature Combo:</strong> Darkness + Devil's Sight + Crit Stacking<br>
+                <strong>Crit Range:</strong> 17+ with full gear (20% base chance!)
+            </div>
+
+            <p class="footer" style="color: #2d1b4e;"><em>&#129413; "We are the ravens of omen. The Raven Queen watches through our eyes." &#127761;</em></p>
+        </div>
+    </div>
+
+    <!-- Land Warden -->
+    <div class="tab-content" id="land-warden">
+        <div class="build-card" style="background: linear-gradient(180deg, #e8f5e9 0%, #ffffff 100%);">
+            <h1 style="color: #2e7d32;">&#127807; THE LAND WARDEN &#127807;</h1>
+            <div class="subtitle" style="color: #558b2f;">&#127811; Pure Circle of the Land Druid &#127795;</div>
+
+            <h2 style="color: #2e7d32; border-color: #81c784;">&#127794; Build Overview</h2>
+            <p>An underrated full caster combining powerful spellcasting with Wild Shape as an emergency HP buffer. This build stacks Radiating Orbs to blind enemies while nuking with Create Water + Lightning/Cold combos for DOUBLE damage.</p>
+            <p><strong>Class Split:</strong> 12 Circle of the Land Druid (Pure)</p>
+
+            <div class="callout" style="background: linear-gradient(135deg, #c8e6c9 0%, #e8f5e9 100%); border-left: 4px solid #4caf50;">
+                <span class="emoji">&#128167;</span> <strong>CORE COMBO:</strong> Create Water makes enemies WET. Wet targets take DOUBLE damage from Lightning and Cold spells!
+            </div>
+
+            <h2 style="color: #2e7d32; border-color: #81c784;">&#127956;&#65039; Circle Choices</h2>
+            <table>
+                <tr><th style="background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);">Level</th><th style="background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);">Circle</th><th style="background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);">Spells</th></tr>
+                <tr><td>3</td><td>&#127754; Coast</td><td>Mirror Image, Misty Step</td></tr>
+                <tr><td>5</td><td>&#127956;&#65039; Mountain</td><td>Lightning Bolt, Fly</td></tr>
+                <tr><td>7</td><td>&#128371;&#65039; Underdark</td><td>Greater Invisibility</td></tr>
+                <tr><td>9</td><td>&#10052;&#65039; Arctic</td><td>Cone of Cold</td></tr>
+            </table>
+
+            <h2 style="color: #2e7d32; border-color: #81c784;">&#128202; Quick Reference</h2>
+            <div class="stats-box" style="background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%); border: 1px solid #81c784;">
+                <strong>Class:</strong> 12 Circle of the Land Druid (Pure)<br>
+                <strong>Primary Stats:</strong> WIS 18+, DEX 16, CON 14<br>
+                <strong>Key Combo:</strong> Create Water → Lightning/Cold = DOUBLE DAMAGE<br>
+                <strong>Final AC:</strong> 24 (Armor of Agility + DEX + Shield + Cloak)
+            </div>
+
+            <p class="footer" style="color: #2e7d32;"><em>&#127807; "The land itself rises to your call. Nature's wrath knows no mercy." &#127795;</em></p>
+        </div>
+    </div>
+
+    <!-- Death Reaper -->
+    <div class="tab-content" id="death-reaper">
+        <div class="build-card" style="background: linear-gradient(180deg, #e8f0e8 0%, #ffffff 100%);">
+            <h1 style="color: #1b5e20;">&#128128; THE DEATH REAPER &#128128;</h1>
+            <div class="subtitle" style="color: #2e7d32;">&#9760;&#65039; Death Cleric / Necromancy Wizard / Spores Druid &#9760;&#65039;</div>
+
+            <h2 style="color: #1b5e20; border-color: #4caf50;">&#129503; Build Overview</h2>
+            <p>A necrotic damage powerhouse combining the Death Cleric's unique abilities with Wizard spell scribing and Druid's Halo of Spores. By late game, you'll cast multiple free Level 6 spells per combat while healing yourself passively.</p>
+            <p><strong>Class Split:</strong> 8 Death Cleric / 2 Necromancy Wizard / 2 Spores Druid</p>
+
+            <div class="callout" style="background: linear-gradient(135deg, #c8e6c9 0%, #e8f5e9 100%); border-left: 4px solid #1b5e20;">
+                <span class="emoji">&#128128;</span> <strong>REAPER COMBO:</strong> Death Cleric's Reaper lets you cast necrotic cantrips on TWO targets! Kill enemy → free Level 6 spell from Staff of Cherished Necromancy!
+            </div>
+
+            <h2 style="color: #1b5e20; border-color: #4caf50;">&#128202; Quick Reference</h2>
+            <div class="stats-box" style="background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%); border: 1px solid #4caf50;">
+                <strong>Class Split:</strong> 8 Death Cleric / 2 Necro Wizard / 2 Spores Druid<br>
+                <strong>Primary Stat:</strong> WIS 16+<br>
+                <strong>Key Spells:</strong> Spirit Guardians, Inflict Wounds, Dethrone, Circle of Death<br>
+                <strong>Signature Combo:</strong> Reaper dual cantrips → kill → free L6 spell chain
+            </div>
+
+            <p class="footer" style="color: #1b5e20;"><em>&#128128; "Death is not the end. It is merely a door." &#9760;&#65039;</em></p>
+        </div>
+    </div>
+
+    <!-- God Blade -->
+    <div class="tab-content" id="god-blade">
+        <div class="build-card" style="background: linear-gradient(180deg, #fff8e1 0%, #ffffff 100%);">
+            <h1 style="color: #b8860b;">&#10024; THE GOD BLADE &#10024;</h1>
+            <div class="subtitle" style="color: #1565c0;">&#9876;&#65039; Bladesinger Wizard / Crown Paladin &#128737;&#65039;</div>
+
+            <h2 style="color: #b8860b; border-color: #ffd54f;">&#128481;&#65039; Build Overview</h2>
+            <p>An exceptionally powerful Bladesinger Wizard multiclassed with Paladin, combining devastating spellcasting with divine smites for massive nova damage. This build can deal 500+ damage in a single turn and achieve 36+ AC.</p>
+            <p><strong>Class Split:</strong> 10 Bladesinger Wizard / 2 Crown Paladin</p>
+
+            <div class="callout" style="background: linear-gradient(135deg, #fff8e1 0%, #fffde7 100%); border-left: 4px solid #b8860b;">
+                <span class="emoji">&#9876;&#65039;</span> <strong>SHADOW BLADE:</strong> Your main weapon! 2d8 psychic damage that scales with spell slots. Combined with Resonance Stone = DOUBLE psychic damage on every hit!
+            </div>
+
+            <h2 style="color: #b8860b; border-color: #ffd54f;">&#128202; Quick Reference</h2>
+            <div class="stats-box" style="background: linear-gradient(135deg, #fff8e1 0%, #fffde7 100%); border: 1px solid #ffd54f;">
+                <strong>Class Split:</strong> 10 Bladesinger Wizard / 2 Crown Paladin<br>
+                <strong>Primary Stats:</strong> DEX 20, INT 18+<br>
+                <strong>Baseline AC:</strong> 36+<br>
+                <strong>Attacks per Turn:</strong> 4 (with Haste) + Divine Smites<br>
+                <strong>Key Combo:</strong> Shadow Blade + Resonance Stone + Divine Smite
+            </div>
+
+            <p class="footer" style="color: #b8860b;"><em>&#10024; "The blade sings, and the divine answers." &#9876;&#65039;</em></p>
+        </div>
+    </div>
+
+    <!-- Hexwing Phantom -->
+    <div class="tab-content" id="hexwing-phantom">
+        <div class="build-card" style="background: linear-gradient(180deg, #f3e5f5 0%, #ffffff 100%);">
+            <h1 style="color: #7b1fa2;">&#129419; HEXWING PHANTOM &#129419;</h1>
+            <div class="subtitle" style="color: #9c27b0;">&#127769; Swashbuckler / Hexblade / Swarmkeeper (Moths) &#10024;</div>
+
+            <h2 style="color: #7b1fa2; border-color: #ce93d8;">&#129419; Build Overview</h2>
+            <p>An S+ tier multiclass utilizing the new Patch 8 subclasses. This elusive supernatural master duelist combines the swashbuckler's dirty tricks, hexblade's cursed power, and swarmkeeper's eerie moth swarm into a devastating combat machine.</p>
+            <p><strong>Class Split:</strong> Swashbuckler 4 / Hexblade 5 / Swarmkeeper 3</p>
+
+            <div class="callout" style="background: linear-gradient(135deg, #f3e5f5 0%, #fce4ec 100%); border-left: 4px solid #7b1fa2;">
+                <span class="emoji">&#129419;</span> <strong>MOTH SWARM:</strong> The Swarmkeeper's Gathered Swarm deals extra psychic damage, can blind enemies, or grant free teleports!
+            </div>
+
+            <h2 style="color: #7b1fa2; border-color: #ce93d8;">&#128202; Quick Reference</h2>
+            <div class="stats-box" style="background: linear-gradient(135deg, #f3e5f5 0%, #fce4ec 100%); border: 1px solid #ce93d8;">
+                <strong>Class Split:</strong> 4 Swashbuckler / 5 Hexblade / 3 Swarmkeeper<br>
+                <strong>Primary Stats:</strong> CHA 20, DEX 16<br>
+                <strong>Key Features:</strong> Fancy Footwork, Hexblade's Curse, Gathered Swarm<br>
+                <strong>Signature Move:</strong> Attack + Disarm + Moth proc + Free disengage
+            </div>
+
+            <p class="footer" style="color: #7b1fa2;"><em>&#129419; "Like moths to a flame, your enemies are drawn to their doom." &#127769;</em></p>
+        </div>
+    </div>
+
+    <!-- Lightning Eldritch Knight -->
+    <div class="tab-content" id="lightning-ek">
+        <div class="build-card" style="background: linear-gradient(180deg, #e3f2fd 0%, #ffffff 100%);">
+            <h1 style="color: #1565c0;">&#9889; LIGHTNING ELDRITCH KNIGHT &#9889;</h1>
+            <div class="subtitle" style="color: #1976d2;">&#128481;&#65039; Fighter Build - Patch 8 &#128153;</div>
+
+            <h2 style="color: #1565c0; border-color: #64b5f6;">&#9889; Build Overview</h2>
+            <p>A Lightning-focused Eldritch Knight Fighter combining martial prowess with arcane spellcasting. Patch 8's reworked War Magic allows Booming Blade to trigger a bonus action attack for up to <strong>four attacks per turn</strong>.</p>
+            <p><strong>Class:</strong> 12 Eldritch Knight Fighter (Pure)</p>
+
+            <div class="callout" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-left: 4px solid #1565c0;">
+                <span class="emoji">&#9889;</span> <strong>WAR MAGIC (PATCH 8):</strong> After casting a cantrip, make a bonus action weapon attack! Booming Blade counts = 3 attacks + 1 bonus = 4 attacks per turn!
+            </div>
+
+            <h2 style="color: #1565c0; border-color: #64b5f6;">&#128202; Quick Reference</h2>
+            <div class="stats-box" style="background: linear-gradient(135deg, #e3f2fd 0%, #e8eaf6 100%); border: 1px solid #64b5f6;">
+                <strong>Class:</strong> 12 Eldritch Knight Fighter (Pure)<br>
+                <strong>Primary Stats:</strong> STR 16+, DEX 14, CON 14<br>
+                <strong>Key Features:</strong> War Magic, Eldritch Strike, Extra Attack (2)<br>
+                <strong>Attacks per Turn:</strong> 4 (War Magic), 7 (Action Surge)<br>
+                <strong>Core Combo:</strong> Booming Blade → War Magic → Extra Attacks x2
+            </div>
+
+            <p class="footer" style="color: #1565c0;"><em>&#9889; "Thunder roars, lightning strikes, and your enemies fall." &#128481;&#65039;</em></p>
+        </div>
+    </div>
+
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active from all buttons and content
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+                // Add active to clicked button and corresponding content
+                button.classList.add('active');
+                document.getElementById(button.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
