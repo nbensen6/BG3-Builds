@@ -17,9 +17,8 @@
             padding: 12px 20px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            gap: 24px;
             flex-wrap: wrap;
-            gap: 12px;
         }
         .logo {
             font-size: 15px;
@@ -33,8 +32,13 @@
             flex-wrap: wrap;
             gap: 4px;
         }
-        .tab-btn {
-            padding: 6px 12px;
+
+        /* Dropdown Styling */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-btn {
+            padding: 6px 14px;
             border: none;
             background: transparent;
             color: #999;
@@ -43,9 +47,52 @@
             font-size: 12px;
             font-weight: 500;
             transition: all 0.15s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
-        .tab-btn:hover { color: #fff; background: rgba(255,255,255,0.1); }
-        .tab-btn.active { color: #fff; background: rgba(255,255,255,0.15); }
+        .dropdown-btn:hover { color: #fff; background: rgba(255,255,255,0.1); }
+        .dropdown-btn.has-active { color: #fff; background: rgba(255,255,255,0.15); }
+        .dropdown-btn::after {
+            content: '▾';
+            font-size: 10px;
+            margin-left: 2px;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #2a2a2a;
+            border-radius: 4px;
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 100;
+            overflow: hidden;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-item {
+            display: block;
+            width: 100%;
+            padding: 10px 14px;
+            border: none;
+            background: transparent;
+            color: #ccc;
+            font-size: 12px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .dropdown-item:hover {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+        .dropdown-item.active {
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+        }
 
         /* Build Sections */
         .build { display: none; }
@@ -121,6 +168,7 @@
             margin-top: 30px;
             padding-top: 20px;
         }
+        .emoji { font-size: 14pt; }
 
         /* ICE SORCERER - Icy Blue */
         #ice-sorcerer { background: linear-gradient(180deg, #e0f7fa 0%, #ffffff 100%); color: #0d47a1; }
@@ -268,7 +316,7 @@
         @media (max-width: 768px) {
             header { padding: 10px 12px; }
             .logo { font-size: 13px; }
-            .tab-btn { padding: 5px 8px; font-size: 11px; }
+            .dropdown-btn { padding: 5px 8px; font-size: 11px; }
             .build-content { padding: 20px; }
             .build-content h1 { font-size: 22pt; }
         }
@@ -276,44 +324,113 @@
 </head>
 <body>
     <header>
-        <div class="logo">BG3 <span>Build Guides</span></div>
+        <div class="logo">⚔️ BG3 <span>Build Guides</span></div>
         <nav>
-            <button class="tab-btn active" data-tab="ice-sorcerer">Ice Sorcerer</button>
-            <button class="tab-btn" data-tab="stealth-archer">Stealth Archer</button>
-            <button class="tab-btn" data-tab="battle-master">Battle Master</button>
-            <button class="tab-btn" data-tab="tavern-brawler">Tavern Brawler</button>
-            <button class="tab-btn" data-tab="savage-striker">Savage Striker</button>
-            <button class="tab-btn" data-tab="gloom-weaver">Gloom Weaver</button>
-            <button class="tab-btn" data-tab="land-warden">Land Warden</button>
-            <button class="tab-btn" data-tab="death-reaper">Death Reaper</button>
-            <button class="tab-btn" data-tab="god-blade">God Blade</button>
-            <button class="tab-btn" data-tab="hexwing-phantom">Hexwing Phantom</button>
-            <button class="tab-btn" data-tab="lightning-ek">Lightning EK</button>
+            <!-- Barbarian -->
+            <div class="dropdown">
+                <button class="dropdown-btn">🪓 Barbarian</button>
+                <div class="dropdown-content">
+                    <button class="dropdown-item" data-tab="savage-striker">🩸 Savage Striker</button>
+                </div>
+            </div>
+
+            <!-- Cleric -->
+            <div class="dropdown">
+                <button class="dropdown-btn">✝️ Cleric</button>
+                <div class="dropdown-content">
+                    <button class="dropdown-item" data-tab="death-reaper">💀 Death Reaper</button>
+                </div>
+            </div>
+
+            <!-- Druid -->
+            <div class="dropdown">
+                <button class="dropdown-btn">🌿 Druid</button>
+                <div class="dropdown-content">
+                    <button class="dropdown-item" data-tab="land-warden">🌍 Land Warden</button>
+                </div>
+            </div>
+
+            <!-- Fighter -->
+            <div class="dropdown">
+                <button class="dropdown-btn">🛡️ Fighter</button>
+                <div class="dropdown-content">
+                    <button class="dropdown-item" data-tab="battle-master">⚔️ Battle Master</button>
+                    <button class="dropdown-item" data-tab="lightning-ek">⚡ Lightning EK</button>
+                </div>
+            </div>
+
+            <!-- Monk -->
+            <div class="dropdown">
+                <button class="dropdown-btn">👊 Monk</button>
+                <div class="dropdown-content">
+                    <button class="dropdown-item" data-tab="tavern-brawler">🔥 Tavern Brawler</button>
+                </div>
+            </div>
+
+            <!-- Ranger -->
+            <div class="dropdown">
+                <button class="dropdown-btn">🏹 Ranger</button>
+                <div class="dropdown-content">
+                    <button class="dropdown-item" data-tab="stealth-archer">🎯 Stealth Archer</button>
+                </div>
+            </div>
+
+            <!-- Rogue -->
+            <div class="dropdown">
+                <button class="dropdown-btn">🗡️ Rogue</button>
+                <div class="dropdown-content">
+                    <button class="dropdown-item" data-tab="hexwing-phantom">🦋 Hexwing Phantom</button>
+                </div>
+            </div>
+
+            <!-- Sorcerer -->
+            <div class="dropdown">
+                <button class="dropdown-btn has-active">✨ Sorcerer</button>
+                <div class="dropdown-content">
+                    <button class="dropdown-item active" data-tab="ice-sorcerer">❄️ Ice Sorcerer</button>
+                </div>
+            </div>
+
+            <!-- Warlock -->
+            <div class="dropdown">
+                <button class="dropdown-btn">👁️ Warlock</button>
+                <div class="dropdown-content">
+                    <button class="dropdown-item" data-tab="gloom-weaver">🌑 Gloom Weaver</button>
+                </div>
+            </div>
+
+            <!-- Wizard -->
+            <div class="dropdown">
+                <button class="dropdown-btn">📖 Wizard</button>
+                <div class="dropdown-content">
+                    <button class="dropdown-item" data-tab="god-blade">✨ God Blade</button>
+                </div>
+            </div>
         </nav>
     </header>
 
 <!-- ICE SORCERER -->
 <div class="build active" id="ice-sorcerer">
     <div class="build-content">
-        <h1>THE ICE SORCERER</h1>
-        <div class="subtitle">Draconic Bloodline Sorcerer (White Dragon) - Baldur's Gate 3</div>
+        <h1>❄️ THE ICE SORCERER ❄️</h1>
+        <div class="subtitle">🐉 Draconic Bloodline Sorcerer (White Dragon) - Baldur's Gate 3 💎</div>
 
-        <h2>Build Overview</h2>
+        <h2>❄️ Build Overview</h2>
         <p>A phenomenal AOE damage dealer with incredible crowd control. Freeze enemies solid, make them slip and miss their turns, or delete them with doubled cold damage. The Ray of Frost machine gun turns you into an economical ice cannon, while Cone of Cold acts as a devastating shotgun blast.</p>
         <p><strong>Class:</strong> 12 Draconic Sorcerer (Pure) - White Dragon Ancestry</p>
 
         <div class="callout">
-            <strong>CORE MECHANIC:</strong> Wet + Cold = Frozen! Frozen enemies skip their entire turn. Apply Wet with Create Water or water bottles, then blast with cold spells. Cold damage is DOUBLED against wet targets!
+            <span class="emoji">🧊</span> <strong>CORE MECHANIC:</strong> Wet + Cold = Frozen! Frozen enemies skip their entire turn. Apply Wet with Create Water or water bottles, then blast with cold spells. Cold damage is DOUBLED against wet targets!
         </div>
 
-        <h2>Level Progression</h2>
+        <h2>📈 Level Progression</h2>
         <div class="stats-box">
 <strong>Level 1:</strong> Draconic Bloodline (White) - Ray of Frost, one other cantrip
 <strong>Level 2:</strong> Metamagic - Twin Spell, Quicken Spell
 <strong>Level 3:</strong> Level 2 spells - Hold Person, Mirror Image
 <strong>Level 4:</strong> Feat: +2 CHA (to 18)
 <strong>Level 5:</strong> Level 3 spells - Haste, Counterspell
-<strong>Level 6:</strong> Elemental Affinity - Add CHA to cold damage!
+<strong>Level 6:</strong> Elemental Affinity - Add CHA to cold damage! ❄️
 <strong>Level 7:</strong> Level 4 spells - Ice Storm
 <strong>Level 8:</strong> Feat: +2 CHA (to 20)
 <strong>Level 9:</strong> Level 5 spells - Cone of Cold, Hold Monster
@@ -322,106 +439,106 @@
 <strong>Level 12:</strong> Feat: Alert OR War Caster
         </div>
 
-        <h2>Signature Spells</h2>
+        <h2>✨ Signature Spells</h2>
         <table>
             <tr><th>Spell</th><th>Damage</th><th>Notes</th></tr>
-            <tr><td>Ray of Frost</td><td>1d8 to 3d8 + CHA</td><td>CANTRIP! Twin for 1 sorc point. Ice machine gun!</td></tr>
-            <tr><td>Ice Storm</td><td>4d6 cold + 2d8 bludgeon</td><td>HUGE 6m radius. Doubles vs wet!</td></tr>
-            <tr><td>Cone of Cold</td><td>8d8 cold</td><td>The ICE SHOTGUN. Massive damage.</td></tr>
-            <tr><td>Otiluke's Freezing Sphere</td><td>10d6 cold</td><td>Learn from scrolls. 6m AOE.</td></tr>
-            <tr><td>Hold Person/Monster</td><td>-</td><td>Paralyzed = auto-crit!</td></tr>
+            <tr><td>❄️ Ray of Frost</td><td>1d8 to 3d8 + CHA</td><td>CANTRIP! Twin for 1 sorc point. Ice machine gun!</td></tr>
+            <tr><td>🌨️ Ice Storm</td><td>4d6 cold + 2d8 bludgeon</td><td>HUGE 6m radius. Doubles vs wet!</td></tr>
+            <tr><td>💨 Cone of Cold</td><td>8d8 cold</td><td>The ICE SHOTGUN. Massive damage.</td></tr>
+            <tr><td>🔮 Otiluke's Freezing Sphere</td><td>10d6 cold</td><td>Learn from scrolls. 6m AOE.</td></tr>
+            <tr><td>⛓️ Hold Person/Monster</td><td>-</td><td>Paralyzed = auto-crit!</td></tr>
         </table>
 
-        <h2>Metamagic Priority</h2>
+        <h2>🔮 Metamagic Priority</h2>
         <ul>
             <li><strong>Twin Spell</strong> - Twin Ray of Frost for 1 point. Twin Haste on 2 allies. Twin Hold Person!</li>
             <li><strong>Quicken Spell</strong> - Bonus action cantrips (FREE after using action spell)</li>
             <li><strong>Heightened Spell</strong> - Disadvantage on saves. +10 Spell DC gear = bye bye legendary resistance</li>
         </ul>
 
-        <h2>Recommended Gear</h2>
+        <h2>🎒 Recommended Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Effect</th></tr>
-            <tr><td>Staff</td><td>Mourning Frost</td><td>+1 cold damage per ray, applies Chilled</td></tr>
-            <tr><td>Robe</td><td>Potent Robe</td><td>Add CHA to cantrip damage AGAIN</td></tr>
-            <tr><td>Helm</td><td>Birthright</td><td>+2 CHA = more damage, higher DC</td></tr>
-            <tr><td>Gloves</td><td>Quickspell Gloves</td><td>Cantrip as bonus action 1/turn</td></tr>
-            <tr><td>Boots</td><td>Boots of Stormy Clamour</td><td>Apply Reverberation on condition inflict</td></tr>
-            <tr><td>Amulet</td><td>Amulet of Greater Health</td><td>CON 23 - you're squishy, this helps!</td></tr>
-            <tr><td>Cloak</td><td>Cloak of the Weave</td><td>+1 Spell DC, +1 spell attack</td></tr>
-            <tr><td>Ring 1</td><td>Callous Glow Ring</td><td>+2 radiant vs illuminated</td></tr>
-            <tr><td>Ring 2</td><td>Killer's Sweetheart</td><td>Auto-crit once per long rest</td></tr>
+            <tr><td>🪄 Staff</td><td>Mourning Frost</td><td>+1 cold damage per ray, applies Chilled</td></tr>
+            <tr><td>👘 Robe</td><td>Potent Robe</td><td>Add CHA to cantrip damage AGAIN</td></tr>
+            <tr><td>👑 Helm</td><td>Birthright</td><td>+2 CHA = more damage, higher DC</td></tr>
+            <tr><td>🧤 Gloves</td><td>Quickspell Gloves</td><td>Cantrip as bonus action 1/turn</td></tr>
+            <tr><td>👢 Boots</td><td>Boots of Stormy Clamour</td><td>Apply Reverberation on condition inflict</td></tr>
+            <tr><td>📿 Amulet</td><td>Amulet of Greater Health</td><td>CON 23 - you're squishy, this helps!</td></tr>
+            <tr><td>🧥 Cloak</td><td>Cloak of the Weave</td><td>+1 Spell DC, +1 spell attack</td></tr>
+            <tr><td>💍 Ring 1</td><td>Callous Glow Ring</td><td>+2 radiant vs illuminated</td></tr>
+            <tr><td>💍 Ring 2</td><td>Killer's Sweetheart</td><td>Auto-crit once per long rest</td></tr>
         </table>
 
-        <h2>Combat Rotation</h2>
+        <h2>⚔️ Combat Rotation</h2>
         <div class="stats-box">
-<strong>Setup:</strong> Throw water bottle OR cast Create Water on enemies
+<strong>Setup:</strong> Throw water bottle OR cast Create Water on enemies 💧
 
 <strong>Nova Round:</strong>
-1. Cone of Cold / Ice Storm through WET enemies = DOUBLE DAMAGE
+1. Cone of Cold / Ice Storm through WET enemies = DOUBLE DAMAGE 💥
 2. Quicken Ray of Frost (free) on survivors
 
 <strong>Sustained:</strong>
 1. Twin Ray of Frost (1 sorc point) = 2 targets
 2. Quicken another Ray of Frost (free)
-3. That's 3 rays per turn = 9d8 + 15 damage for 1 point!
+3. That's 3 rays per turn = 9d8 + 15 damage for 1 point! ❄️
 
 <strong>Boss Delete:</strong>
 1. Heightened Hold Monster (disadvantage on save)
-2. Paralyzed = AUTO-CRIT from all party attacks!
+2. Paralyzed = AUTO-CRIT from all party attacks! 💀
         </div>
 
-        <h2>Pros & Cons</h2>
+        <h2>⚖️ Pros & Cons</h2>
         <table>
-            <tr><th>Pros</th><th>Cons</th></tr>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
             <tr><td>Ray of Frost machine gun is super economical</td><td>Slow early game (comes online around L6)</td></tr>
             <tr><td>Incredible AOE and battlefield control</td><td>Very gear-dependent for max effectiveness</td></tr>
             <tr><td>Frozen enemies skip their entire turn</td><td>Relies on Wet status for double damage</td></tr>
             <tr><td>High Spell DC + Heightened = consistent Hold spells</td><td>Squishy with low AC</td></tr>
         </table>
 
-        <div class="footer">"Watch enemies explode on ice."</div>
+        <div class="footer"><em>❄️ "Watch enemies explode on ice." ❄️</em></div>
     </div>
 </div>
 
 <!-- STEALTH ARCHER -->
 <div class="build" id="stealth-archer">
     <div class="build-content">
-        <h1>THE STEALTH ARCHER</h1>
-        <div class="subtitle">Gloom Stalker / Assassin / Fighter / War Cleric - Baldur's Gate 3</div>
+        <h1>🎯 THE STEALTH ARCHER 🎯</h1>
+        <div class="subtitle">🏹 Gloom Stalker / Assassin / Fighter / War Cleric - Baldur's Gate 3 🌑</div>
 
-        <h2>Build Overview</h2>
+        <h2>🏹 Build Overview</h2>
         <p>The STRONGEST build for solo Honor Mode. This build has the most powerful early game, dealing 50-100 damage average in Act 1, over 100 in Act 2, and four-digit Nova in Act 3. Assassinate guarantees critical hits on surprised enemies.</p>
         <p><strong>Class Split:</strong> 5 Gloom Stalker / 4 Assassin / 2 Fighter / 1 War Cleric</p>
 
         <div class="callout">
-            <strong>#1 SOLO BUILD:</strong> There is no stronger class for a solo Honor Mode run. Two attacks at level 3. Heavy armor at level 1. You leave the Nautiloid with 17 AC!
+            <span class="emoji">🏆</span> <strong>#1 SOLO BUILD:</strong> There is no stronger class for a solo Honor Mode run. Two attacks at level 3. Heavy armor at level 1. You leave the Nautiloid with 17 AC!
         </div>
 
-        <h2>Level Progression</h2>
+        <h2>📈 Level Progression</h2>
         <div class="stats-box">
-<strong>Ranger 1:</strong> Heavy Armor proficiency! Leave Nautiloid with 17 AC
+<strong>Ranger 1:</strong> Heavy Armor proficiency! Leave Nautiloid with 17 AC 🛡️
 <strong>Ranger 2:</strong> Archery fighting style (+2 to ranged attacks)
-<strong>Ranger 3:</strong> Gloom Stalker - +3 initiative, Dread Ambusher (extra attack + 1d8)
+<strong>Ranger 3:</strong> Gloom Stalker - +3 initiative, Dread Ambusher (extra attack + 1d8) 🌑
 <strong>Ranger 4:</strong> Feat: Sharpshooter (+10 damage, -5 to hit)
 <strong>Ranger 5:</strong> Extra Attack, Pass Without Trace (+10 stealth!)
 <strong>Rogue 1:</strong> Sneak Attack (1d6), Expertise
 <strong>Rogue 2:</strong> Cunning Action
-<strong>Rogue 3:</strong> Assassin - Assassinate (auto-crit on surprised!)
+<strong>Rogue 3:</strong> Assassin - Assassinate (auto-crit on surprised!) 🗡️
 <strong>Rogue 4:</strong> Feat: Alert (+5 initiative)
 <strong>Fighter 1:</strong> Defense (+1 AC)
-<strong>Fighter 2:</strong> Action Surge!
+<strong>Fighter 2:</strong> Action Surge! ⚡
 <strong>War Cleric 1:</strong> Bonus action attack
         </div>
 
-        <h2>Assassinate Explained</h2>
+        <h2>🗡️ Assassinate Explained</h2>
         <div class="callout">
-            <strong>ASSASSINATE: AMBUSH</strong><br>
+            <span class="emoji">💀</span> <strong>ASSASSINATE: AMBUSH</strong><br>
             Attack rolls against a SURPRISED creature are GUARANTEED CRITICAL HITS.<br><br>
-            <strong>How to proc:</strong> Go invisible > Attack enemy in sight radius > That attack CRITS automatically > With gear: 200-300+ damage per arrow!
+            <strong>How to proc:</strong> Go invisible > Attack enemy in sight radius > That attack CRITS automatically > With gear: 200-300+ damage per arrow! 🎯
         </div>
 
-        <h2>Nova Round Breakdown</h2>
+        <h2>💥 Nova Round Breakdown</h2>
         <div class="stats-box">
 <strong>Maximum Nova (Level 12):</strong>
 
@@ -433,448 +550,448 @@
 6. Action Surge = 2 more attacks
 7. War Cleric bonus action = 1 attack
 
-<strong>TOTAL: 8-10 ATTACKS ROUND ONE!</strong>
+<strong>TOTAL: 8-10 ATTACKS ROUND ONE! 🔥</strong>
         </div>
 
-        <h2>Recommended Gear</h2>
+        <h2>🎒 Recommended Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Effect</th></tr>
-            <tr><td>Bow</td><td>Titanstring / Gontr Mael</td><td>Add STR to damage / Celestial Haste</td></tr>
-            <tr><td>Armor</td><td>Bhaalist Armour</td><td>Enemies in 2m vulnerable to piercing</td></tr>
-            <tr><td>Helmet</td><td>Mask of Soul Perception</td><td>+2 attack rolls, +2 initiative</td></tr>
-            <tr><td>Gloves</td><td>Gloves of Dexterity</td><td>DEX 18</td></tr>
-            <tr><td>Ring 1</td><td>Risky Ring</td><td>Advantage on attacks</td></tr>
-            <tr><td>Ring 2</td><td>Killer's Sweetheart</td><td>Auto-crit once per long rest</td></tr>
-            <tr><td>Consumable</td><td>Elixir of Bloodlust</td><td>Extra action on kill - MANDATORY!</td></tr>
+            <tr><td>🏹 Bow</td><td>Titanstring / Gontr Mael</td><td>Add STR to damage / Celestial Haste</td></tr>
+            <tr><td>🛡️ Armor</td><td>Bhaalist Armour</td><td>Enemies in 2m vulnerable to piercing</td></tr>
+            <tr><td>👑 Helmet</td><td>Mask of Soul Perception</td><td>+2 attack rolls, +2 initiative</td></tr>
+            <tr><td>🧤 Gloves</td><td>Gloves of Dexterity</td><td>DEX 18</td></tr>
+            <tr><td>💍 Ring 1</td><td>Risky Ring</td><td>Advantage on attacks</td></tr>
+            <tr><td>💍 Ring 2</td><td>Killer's Sweetheart</td><td>Auto-crit once per long rest</td></tr>
+            <tr><td>🧪 Consumable</td><td>Elixir of Bloodlust</td><td>Extra action on kill - MANDATORY!</td></tr>
         </table>
 
-        <h2>Pros & Cons</h2>
+        <h2>⚖️ Pros & Cons</h2>
         <table>
-            <tr><th>Pros</th><th>Cons</th></tr>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
             <tr><td>Strongest early game in the entire game</td><td>Piercing resisted by some Act 2 enemies</td></tr>
             <tr><td>High initiative, high AC, high move speed</td><td>Mechanically complex with hotkeys</td></tr>
-            <tr><td>Two attacks at level 3!</td><td>-</td></tr>
-            <tr><td>Guaranteed crits = 200+ damage</td><td>-</td></tr>
-            <tr><td>Heavy armor = 30+ AC in Act 3</td><td>-</td></tr>
+            <tr><td>Two attacks at level 3!</td><td>—</td></tr>
+            <tr><td>Guaranteed crits = 200+ damage</td><td>—</td></tr>
+            <tr><td>Heavy armor = 30+ AC in Act 3</td><td>—</td></tr>
         </table>
 
-        <div class="footer">"This build is my baby darling play style."</div>
+        <div class="footer"><em>🎯 "This build is my baby darling play style." 🏹</em></div>
     </div>
 </div>
 
 <!-- BATTLE MASTER -->
 <div class="build" id="battle-master">
     <div class="build-content">
-        <h1>THE BATTLE MASTER</h1>
-        <div class="subtitle">Pure Fighter - Steel and Discipline - Baldur's Gate 3</div>
+        <h1>⚔️ THE BATTLE MASTER ⚔️</h1>
+        <div class="subtitle">🛡️ Pure Fighter - Steel and Discipline - Baldur's Gate 3 ⚔️</div>
 
-        <h2>Build Overview</h2>
+        <h2>⚔️ Build Overview</h2>
         <p>The quintessential martial powerhouse. Simple, devastating, and effective from level one. Hand your fighter heavy armor and a big stick, and start hitting things. Three attacks at level 11 plus Action Surge makes this build capable of one-turning even Raphael.</p>
         <p><strong>Class:</strong> 12 Battle Master Fighter (Pure)</p>
 
         <div class="callout">
-            <strong>SIMPLE POWER:</strong> Fighter is strong from level 1. Almost no gear competition. Perfect for any player, especially beginners!
+            <span class="emoji">💪</span> <strong>SIMPLE POWER:</strong> Fighter is strong from level 1. Almost no gear competition. Perfect for any player, especially beginners!
         </div>
 
-        <h2>Level Progression</h2>
+        <h2>📈 Level Progression</h2>
         <div class="stats-box">
 <strong>Level 1:</strong> Fighting Style - Great Weapon Fighting
-<strong>Level 2:</strong> Action Surge - Extra action once per short rest!
+<strong>Level 2:</strong> Action Surge - Extra action once per short rest! ⚡
 <strong>Level 3:</strong> Battle Master - 4 Superiority Dice, Maneuvers
 <strong>Level 4:</strong> Feat: Alert (+5 initiative)
-<strong>Level 5:</strong> Extra Attack - 2 attacks per action
+<strong>Level 5:</strong> Extra Attack - 2 attacks per action ⚔️
 <strong>Level 6:</strong> Feat: Great Weapon Master (+10 damage)
 <strong>Level 7:</strong> Additional Maneuver + Superiority Die
 <strong>Level 8:</strong> Feat: Savage Attacker
 <strong>Level 9:</strong> Indomitable - Reroll failed saves
 <strong>Level 10:</strong> Additional Maneuver
-<strong>Level 11:</strong> Extra Attack (2) - THREE attacks per action!
+<strong>Level 11:</strong> Extra Attack (2) - THREE attacks per action! 💥
 <strong>Level 12:</strong> Feat: Tough OR Athlete
         </div>
 
-        <h2>Maneuvers</h2>
+        <h2>🎯 Maneuvers</h2>
         <table>
             <tr><th>Maneuver</th><th>Effect</th><th>Why It's Great</th></tr>
-            <tr><td>Trip Attack</td><td>Knock prone + damage</td><td>Advantage on melee, blocks legendary actions!</td></tr>
-            <tr><td>Precision Attack</td><td>Add die to attack roll</td><td>Turn a miss into a hit</td></tr>
-            <tr><td>Riposte</td><td>Attack when enemy misses</td><td>Free attack with high AC</td></tr>
-            <tr><td>Disarming Attack</td><td>Drop weapon</td><td>Disarm Merlax's scythe!</td></tr>
-            <tr><td>Pushing Attack</td><td>Push 4.5m</td><td>Yeet Steel Watchers off cliffs!</td></tr>
+            <tr><td>🦶 Trip Attack</td><td>Knock prone + damage</td><td>Advantage on melee, blocks legendary actions!</td></tr>
+            <tr><td>🎯 Precision Attack</td><td>Add die to attack roll</td><td>Turn a miss into a hit</td></tr>
+            <tr><td>⚔️ Riposte</td><td>Attack when enemy misses</td><td>Free attack with high AC</td></tr>
+            <tr><td>🗡️ Disarming Attack</td><td>Drop weapon</td><td>Disarm Merlax's scythe!</td></tr>
+            <tr><td>💨 Pushing Attack</td><td>Push 4.5m</td><td>Yeet Steel Watchers off cliffs!</td></tr>
         </table>
 
-        <h2>Recommended Gear</h2>
+        <h2>🎒 Recommended Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Effect</th></tr>
-            <tr><td>Weapon</td><td>Balduran's Giantslayer</td><td>Double STR mod, advantage vs Large+</td></tr>
-            <tr><td>Armor</td><td>Helldusk Armor</td><td>21 AC, fire immunity</td></tr>
-            <tr><td>Helmet</td><td>Helm of Balduran</td><td>Regen HP, can't be crit</td></tr>
-            <tr><td>Gloves</td><td>Gauntlets of Hill Giant Strength</td><td>STR 23</td></tr>
-            <tr><td>Ring 1</td><td>Killer's Sweetheart</td><td>Auto-crit once per long rest</td></tr>
+            <tr><td>⚔️ Weapon</td><td>Balduran's Giantslayer</td><td>Double STR mod, advantage vs Large+</td></tr>
+            <tr><td>🛡️ Armor</td><td>Helldusk Armor</td><td>21 AC, fire immunity</td></tr>
+            <tr><td>👑 Helmet</td><td>Helm of Balduran</td><td>Regen HP, can't be crit</td></tr>
+            <tr><td>🧤 Gloves</td><td>Gauntlets of Hill Giant Strength</td><td>STR 23</td></tr>
+            <tr><td>💍 Ring 1</td><td>Killer's Sweetheart</td><td>Auto-crit once per long rest</td></tr>
         </table>
 
-        <h2>Combat Role</h2>
+        <h2>💥 Combat Role</h2>
         <div class="stats-box">
 <strong>Nova Round:</strong>
 1. Action: Attack x3 (level 11)
-2. Action Surge: Attack x3 more
+2. Action Surge: Attack x3 more ⚡
 3. Bonus: GWM attack (if crit or kill)
 = Up to 7 attacks in one turn!
 
-<strong>With Haste + Bloodlust:</strong> 9+ attacks possible!
+<strong>With Haste + Bloodlust:</strong> 9+ attacks possible! 🔥
         </div>
 
-        <h2>Pros & Cons</h2>
+        <h2>⚖️ Pros & Cons</h2>
         <table>
-            <tr><th>Pros</th><th>Cons</th></tr>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
             <tr><td>Strong from level 1</td><td>Lacks AOE damage</td></tr>
             <tr><td>Simple and straightforward</td><td>Can feel repetitive</td></tr>
             <tr><td>Almost no gear competition</td><td>No magical utility</td></tr>
-            <tr><td>Insane action economy at high levels</td><td>-</td></tr>
+            <tr><td>Insane action economy at high levels</td><td>—</td></tr>
         </table>
 
-        <div class="footer">"Hand your fighter heavy armor and a big stick. Start hitting things."</div>
+        <div class="footer"><em>⚔️ "Hand your fighter heavy armor and a big stick. Start hitting things." 🛡️</em></div>
     </div>
 </div>
 
 <!-- TAVERN BRAWLER -->
 <div class="build" id="tavern-brawler">
     <div class="build-content">
-        <h1>THE TAVERN BRAWLER</h1>
-        <div class="subtitle">Open Hand Monk / Thief Rogue / Fighter - Baldur's Gate 3</div>
+        <h1>🔥 THE TAVERN BRAWLER 🔥</h1>
+        <div class="subtitle">👊 Open Hand Monk / Thief Rogue / Fighter - Baldur's Gate 3 💥</div>
 
-        <h2>Build Overview</h2>
+        <h2>👊 Build Overview</h2>
         <p>Massive single-target damage with insane action economy. Zero gear requirements - you don't need any equipment to be effective! Ki points refresh on short rest. Stunning Strike deletes enemy turns, Flurry of Blows knocks them prone.</p>
         <p><strong>Class Split:</strong> 8 Open Hand Monk / 3 Thief / 1 Fighter</p>
 
         <div class="callout">
-            <strong>KARLACH PICK:</strong> Soul Coins add 1d4 fire damage to punches, but they're BUGGED and actually do 2d4! Works from Act 1!
+            <span class="emoji">🔥</span> <strong>KARLACH PICK:</strong> Soul Coins add 1d4 fire damage to punches, but they're BUGGED and actually do 2d4! Works from Act 1!
         </div>
 
-        <h2>Level Progression</h2>
+        <h2>📈 Level Progression</h2>
         <div class="stats-box">
-<strong>Monk 1:</strong> Martial Arts, Unarmored Defense
+<strong>Monk 1:</strong> Martial Arts, Unarmored Defense 👊
 <strong>Monk 2:</strong> Ki Points, Flurry of Blows
 <strong>Monk 3:</strong> Open Hand - Flurry adds prone/push!
-<strong>Monk 4:</strong> Feat: Tavern Brawler (STR mod x2!)
-<strong>Monk 5:</strong> Stunning Strike, Extra Attack
+<strong>Monk 4:</strong> Feat: Tavern Brawler (STR mod x2!) 💪
+<strong>Monk 5:</strong> Stunning Strike, Extra Attack ⚡
 <strong>Monk 6:</strong> Ki-Empowered Strikes, Manifestations
 <strong>Rogue 1:</strong> Sneak Attack, Expertise
 <strong>Rogue 2:</strong> Cunning Action
-<strong>Rogue 3:</strong> Thief - EXTRA BONUS ACTION!
+<strong>Rogue 3:</strong> Thief - EXTRA BONUS ACTION! 🎯
 <strong>Monk 7-8:</strong> Evasion, +2 DEX or WIS
 <strong>Fighter 1:</strong> Action Surge
         </div>
 
-        <h2>Core Mechanics</h2>
+        <h2>💪 Core Mechanics</h2>
         <table>
             <tr><th>Feature</th><th>Effect</th><th>Why It's Broken</th></tr>
-            <tr><td>Tavern Brawler</td><td>STR mod x2 to unarmed</td><td>Hill Giant Elixir = +10 to hit AND damage!</td></tr>
-            <tr><td>Flurry of Blows</td><td>2 bonus action attacks</td><td>Open Hand: prone, push, OR no reactions</td></tr>
-            <tr><td>Stunning Strike</td><td>Target loses turn</td><td>Auto-crit on stunned!</td></tr>
-            <tr><td>Thief Extra BA</td><td>Second bonus action</td><td>Flurry + Flurry = 4 bonus attacks!</td></tr>
+            <tr><td>🍺 Tavern Brawler</td><td>STR mod x2 to unarmed</td><td>Hill Giant Elixir = +10 to hit AND damage!</td></tr>
+            <tr><td>👊 Flurry of Blows</td><td>2 bonus action attacks</td><td>Open Hand: prone, push, OR no reactions</td></tr>
+            <tr><td>⚡ Stunning Strike</td><td>Target loses turn</td><td>Auto-crit on stunned!</td></tr>
+            <tr><td>🗡️ Thief Extra BA</td><td>Second bonus action</td><td>Flurry + Flurry = 4 bonus attacks!</td></tr>
         </table>
 
-        <h2>Damage Breakdown</h2>
+        <h2>💥 Damage Breakdown</h2>
         <div class="callout">
-            <strong>With Hill Giant Elixir (21 STR):</strong><br>
+            <span class="emoji">💪</span> <strong>With Hill Giant Elixir (21 STR):</strong><br>
             Tavern Brawler: +5 x2 = +10 to hit, +10 damage per punch<br>
             Flurry x2 (Thief): +20 damage from STR alone<br>
-            <strong>This is accessible in ACT ONE!</strong>
+            <strong>This is accessible in ACT ONE! 🔥</strong>
         </div>
 
-        <h2>Recommended Gear</h2>
+        <h2>🎒 Recommended Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Effect</th></tr>
-            <tr><td>Gloves</td><td>Gloves of Soul Catching</td><td>+1d10 force, heal or +2 AC per hit</td></tr>
-            <tr><td>Helmet</td><td>Bonespike Helmet</td><td>Psychic damage when Concentrating</td></tr>
-            <tr><td>Boots</td><td>Boots of Uninhibited Kushigo</td><td>Add WIS to unarmed damage</td></tr>
-            <tr><td>Special</td><td>Resonance Stone</td><td>Enemies vulnerable to psychic!</td></tr>
-            <tr><td>Consumable</td><td>Hill Giant Elixir</td><td>STR 21 - MANDATORY!</td></tr>
+            <tr><td>🧤 Gloves</td><td>Gloves of Soul Catching</td><td>+1d10 force, heal or +2 AC per hit</td></tr>
+            <tr><td>👑 Helmet</td><td>Bonespike Helmet</td><td>Psychic damage when Concentrating</td></tr>
+            <tr><td>👢 Boots</td><td>Boots of Uninhibited Kushigo</td><td>Add WIS to unarmed damage</td></tr>
+            <tr><td>🔮 Special</td><td>Resonance Stone</td><td>Enemies vulnerable to psychic!</td></tr>
+            <tr><td>🧪 Consumable</td><td>Hill Giant Elixir</td><td>STR 21 - MANDATORY!</td></tr>
         </table>
 
-        <h2>Combat Rotation</h2>
+        <h2>⚔️ Combat Rotation</h2>
         <div class="stats-box">
 <strong>Standard Turn:</strong>
 1. Attack x2 (Extra Attack)
-2. Flurry of Blows (knock prone)
+2. Flurry of Blows (knock prone) 👊
 3. Flurry again (Thief bonus action)
-= 6 attacks, enemy is prone!
+= 6 attacks, enemy is prone! 💥
 
 <strong>Boss Delete:</strong>
-1. Stunning Strike on first hit
+1. Stunning Strike on first hit ⚡
 2. Stunned = auto-crit, can't act!
 3. Unload remaining attacks
 4. Action Surge for 2 more if needed
         </div>
 
-        <h2>Pros & Cons</h2>
+        <h2>⚖️ Pros & Cons</h2>
         <table>
-            <tr><th>Pros</th><th>Cons</th></tr>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
             <tr><td>Bonus action attack from level 1</td><td>Single target only</td></tr>
             <tr><td>One of the strongest builds</td><td>Reliant on Elixirs</td></tr>
             <tr><td>ZERO gear requirement</td><td>Squishy without armor</td></tr>
-            <tr><td>Ki refreshes on short rest</td><td>-</td></tr>
+            <tr><td>Ki refreshes on short rest</td><td>—</td></tr>
         </table>
 
-        <div class="footer">"You really have to roll with the punches."</div>
+        <div class="footer"><em>👊 "You really have to roll with the punches." 🔥</em></div>
     </div>
 </div>
 
 <!-- SAVAGE STRIKER -->
 <div class="build" id="savage-striker">
     <div class="build-content">
-        <h1>THE SAVAGE STRIKER</h1>
-        <div class="subtitle">Berserker Barbarian / Thief Rogue - Baldur's Gate 3</div>
+        <h1>🩸 THE SAVAGE STRIKER 🩸</h1>
+        <div class="subtitle">🪓 Berserker Barbarian / Thief Rogue - Baldur's Gate 3 💀</div>
 
-        <h2>Build Overview</h2>
+        <h2>🪓 Build Overview</h2>
         <p>A deadly melee powerhouse combining Barbarian's raw fury with Rogue's precision strikes. Thief's extra bonus action synergizes perfectly with Frenzy Strike. Reckless Attack guarantees Sneak Attack every turn while fishing for crits.</p>
         <p><strong>Class Split:</strong> 9 Berserker Barbarian / 3 Thief Rogue</p>
 
         <div class="callout">
-            <strong>BLOOD RAGE:</strong> Reckless Attack grants advantage = guaranteed Sneak Attack EVERY turn. Four attacks with advantage = constant crits. Brutal Critical makes each one devastating!
+            <span class="emoji">🩸</span> <strong>BLOOD RAGE:</strong> Reckless Attack grants advantage = guaranteed Sneak Attack EVERY turn. Four attacks with advantage = constant crits. Brutal Critical makes each one devastating!
         </div>
 
-        <h2>Level Progression</h2>
+        <h2>📈 Level Progression</h2>
         <div class="stats-box">
-<strong>Rogue 1:</strong> Sneak Attack, Expertise in Athletics + Stealth
+<strong>Rogue 1:</strong> Sneak Attack, Expertise in Athletics + Stealth 🗡️
 <strong>Rogue 2:</strong> Cunning Action
 <strong>Rogue 3:</strong> Thief - EXTRA BONUS ACTION!
-<strong>Barbarian 1:</strong> Rage, Unarmored Defense
+<strong>Barbarian 1:</strong> Rage, Unarmored Defense 🪓
 <strong>Barbarian 2:</strong> Reckless Attack (advantage = guaranteed Sneak)
-<strong>Barbarian 3:</strong> Berserker - Frenzy bonus action attack
+<strong>Barbarian 3:</strong> Berserker - Frenzy bonus action attack 💥
 <strong>Barbarian 4:</strong> Feat: +2 DEX (to 20)
 <strong>Barbarian 5:</strong> Extra Attack, Fast Movement
 <strong>Barbarian 6:</strong> Mindless Rage (immune to charm/frighten)
 <strong>Barbarian 7:</strong> Feral Instinct (+3 init, can't be surprised)
 <strong>Barbarian 8:</strong> Feat: Tavern Brawler
-<strong>Barbarian 9:</strong> Brutal Critical (+1 crit die)
+<strong>Barbarian 9:</strong> Brutal Critical (+1 crit die) 💀
         </div>
 
-        <h2>Core Mechanics</h2>
+        <h2>💪 Core Mechanics</h2>
         <table>
             <tr><th>Feature</th><th>Effect</th><th>Why It's Brutal</th></tr>
-            <tr><td>Reckless Attack</td><td>Advantage on all melee</td><td>Guarantees Sneak Attack!</td></tr>
-            <tr><td>Frenzy Strike</td><td>Bonus action attack</td><td>Thief = TWO Frenzy Strikes!</td></tr>
-            <tr><td>Brutal Critical</td><td>+1 damage die on crits</td><td>Sneak Attack dice ALSO crit!</td></tr>
-            <tr><td>Fast Hands</td><td>Extra bonus action</td><td>4 attacks/turn with advantage!</td></tr>
+            <tr><td>⚡ Reckless Attack</td><td>Advantage on all melee</td><td>Guarantees Sneak Attack!</td></tr>
+            <tr><td>🪓 Frenzy Strike</td><td>Bonus action attack</td><td>Thief = TWO Frenzy Strikes!</td></tr>
+            <tr><td>💀 Brutal Critical</td><td>+1 damage die on crits</td><td>Sneak Attack dice ALSO crit!</td></tr>
+            <tr><td>🗡️ Fast Hands</td><td>Extra bonus action</td><td>4 attacks/turn with advantage!</td></tr>
         </table>
 
-        <h2>Act 3 Gear</h2>
+        <h2>🎒 Act 3 Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Effect</th></tr>
-            <tr><td>Main Hand</td><td>Bloodthirst</td><td>Auto-crit vs surprised</td></tr>
-            <tr><td>Off Hand</td><td>Rhapsody</td><td>+1 to +3 per kill</td></tr>
-            <tr><td>Armor</td><td>Bhaalist Armor</td><td>Enemies vulnerable to piercing!</td></tr>
-            <tr><td>Gloves</td><td>Gloves of Soul Catching</td><td>+1d10 force per hit</td></tr>
-            <tr><td>Consumable</td><td>Cloud Giant Elixir</td><td>STR 27 + Tavern Brawler = +16!</td></tr>
+            <tr><td>🗡️ Main Hand</td><td>Bloodthirst</td><td>Auto-crit vs surprised</td></tr>
+            <tr><td>🗡️ Off Hand</td><td>Rhapsody</td><td>+1 to +3 per kill</td></tr>
+            <tr><td>🛡️ Armor</td><td>Bhaalist Armor</td><td>Enemies vulnerable to piercing!</td></tr>
+            <tr><td>🧤 Gloves</td><td>Gloves of Soul Catching</td><td>+1d10 force per hit</td></tr>
+            <tr><td>🧪 Consumable</td><td>Cloud Giant Elixir</td><td>STR 27 + Tavern Brawler = +16!</td></tr>
         </table>
 
-        <h2>Combat Rotation</h2>
+        <h2>⚔️ Combat Rotation</h2>
         <div class="stats-box">
 <strong>Turn 1:</strong>
-1. Rage (Frenzy) - First bonus action
+1. Rage (Frenzy) - First bonus action 🪓
 2. Reckless Attack ON
 3. Attack x2 (Extra Attack)
 4. Frenzy Strike x2 (Thief's extra BA)
-= 4 attacks with advantage!
+= 4 attacks with advantage! 💥
 
 <strong>With Cloud Giant Elixir:</strong>
-Every hit: +16 (STR) + weapon + Sneak Attack
+Every hit: +16 (STR) + weapon + Sneak Attack 🩸
         </div>
 
-        <h2>Pros & Cons</h2>
+        <h2>⚖️ Pros & Cons</h2>
         <table>
-            <tr><th>Pros</th><th>Cons</th></tr>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
             <tr><td>Guaranteed Sneak Attack every turn</td><td>Reckless gives enemies advantage too</td></tr>
             <tr><td>4 attacks with advantage</td><td>Relies on elixir for max damage</td></tr>
             <tr><td>Brutal Critical + Sneak = huge crits</td><td>No ranged while raging</td></tr>
-            <tr><td>Feral Instinct = always strike first</td><td>-</td></tr>
+            <tr><td>Feral Instinct = always strike first</td><td>—</td></tr>
         </table>
 
-        <div class="footer">"They'll never see the blade coming through the blood-red rage."</div>
+        <div class="footer"><em>🩸 "They'll never see the blade coming through the blood-red rage." 💀</em></div>
     </div>
 </div>
 
 <!-- GLOOM WEAVER -->
 <div class="build" id="gloom-weaver">
     <div class="build-content">
-        <h1>THE GLOOM WEAVER</h1>
-        <div class="subtitle">Hexblade Warlock / Gloom Stalker Ranger - Baldur's Gate 3</div>
+        <h1>🌑 THE GLOOM WEAVER 🌑</h1>
+        <div class="subtitle">👁️ Hexblade Warlock / Gloom Stalker Ranger - Baldur's Gate 3 🦅</div>
 
-        <h2>Build Overview</h2>
+        <h2>👁️ Build Overview</h2>
         <p>A Shadow Kai warrior devoted to the Raven Queen. This build excels at ambush tactics, dealing devastating opening-round damage while hiding in magical darkness. With Devil's Sight, you fight unseen while enemies stumble blind.</p>
         <p><strong>Class Split:</strong> 7 Hexblade Warlock / 5 Gloom Stalker Ranger</p>
 
         <div class="callout">
-            <strong>DARKNESS COMBO:</strong> Cast Darkness on yourself. With Devil's Sight, you see perfectly while enemies are blinded. Advantage on ALL your attacks, disadvantage on ALL attacks against you!
+            <span class="emoji">🌑</span> <strong>DARKNESS COMBO:</strong> Cast Darkness on yourself. With Devil's Sight, you see perfectly while enemies are blinded. Advantage on ALL your attacks, disadvantage on ALL attacks against you!
         </div>
 
-        <h2>Level Progression</h2>
+        <h2>📈 Level Progression</h2>
         <div class="stats-box">
-<strong>Warlock 1:</strong> Hexblade - CHA to attack/damage, Hexblade's Curse (crit on 19!)
-<strong>Warlock 2:</strong> Invocations - Devil's Sight, Agonizing Blast
-<strong>Warlock 3:</strong> Pact of the Chain (Raven familiar!), Darkness spell
+<strong>Warlock 1:</strong> Hexblade - CHA to attack/damage, Hexblade's Curse (crit on 19!) 👁️
+<strong>Warlock 2:</strong> Invocations - Devil's Sight, Agonizing Blast 👀
+<strong>Warlock 3:</strong> Pact of the Chain (Raven familiar!), Darkness spell 🦅
 <strong>Warlock 4:</strong> Feat: +2 CHA (to 18)
 <strong>Warlock 5:</strong> Deepened Pact, Level 3 spells
 <strong>Ranger 1:</strong> Favored Enemy, Natural Explorer
 <strong>Ranger 2:</strong> Fighting Style (Dueling or Defense)
-<strong>Ranger 3:</strong> Gloom Stalker - Dread Ambusher (+3 init, bonus attack!)
+<strong>Ranger 3:</strong> Gloom Stalker - Dread Ambusher (+3 init, bonus attack!) 🌑
 <strong>Ranger 4:</strong> Feat: +2 CHA (to 20)
 <strong>Ranger 5:</strong> Extra Attack
-<strong>Warlock 6:</strong> Spectre on Kill
+<strong>Warlock 6:</strong> Spectre on Kill 👻
 <strong>Warlock 7:</strong> Level 4 spells (Greater Invisibility)
         </div>
 
-        <h2>Core Mechanics</h2>
+        <h2>💪 Core Mechanics</h2>
         <table>
             <tr><th>Feature</th><th>Effect</th><th>Why It's Deadly</th></tr>
-            <tr><td>Devil's Sight</td><td>See in magical darkness</td><td>Perma-advantage, enemies blinded!</td></tr>
-            <tr><td>Hexblade's Curse</td><td>+prof damage, crit on 19</td><td>Stacks to crit on 17!</td></tr>
-            <tr><td>Dread Ambusher</td><td>+3 init, extra attack</td><td>3 attacks turn 1!</td></tr>
-            <tr><td>Cursed Spectre</td><td>Raise spectre on kill</td><td>Free ally until long rest!</td></tr>
+            <tr><td>👀 Devil's Sight</td><td>See in magical darkness</td><td>Perma-advantage, enemies blinded!</td></tr>
+            <tr><td>👁️ Hexblade's Curse</td><td>+prof damage, crit on 19</td><td>Stacks to crit on 17!</td></tr>
+            <tr><td>🌑 Dread Ambusher</td><td>+3 init, extra attack</td><td>3 attacks turn 1!</td></tr>
+            <tr><td>👻 Cursed Spectre</td><td>Raise spectre on kill</td><td>Free ally until long rest!</td></tr>
         </table>
 
-        <h2>Crit Stacking Gear</h2>
+        <h2>🎯 Crit Stacking Gear</h2>
         <div class="callout">
-            <strong>CRIT ON 17+:</strong><br>
+            <span class="emoji">💀</span> <strong>CRIT ON 17+:</strong><br>
             Covert Cowl (obscured) + Shade-Slayer Cloak (hiding) + Hexblade's Curse = 20% crit chance before advantage!
         </div>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Effect</th></tr>
-            <tr><td>Weapon</td><td>Sorrow (Glaive)</td><td>Sorrowful Lash bonus action</td></tr>
-            <tr><td>Helm</td><td>Covert Cowl</td><td>Crit on 19 while obscured</td></tr>
-            <tr><td>Cloak</td><td>Shade-Slayer Cloak</td><td>Crit on 19 while hiding (stacks!)</td></tr>
-            <tr><td>Amulet</td><td>Corvid Token</td><td>Polymorph: Dire Raven!</td></tr>
+            <tr><td>⚔️ Weapon</td><td>Sorrow (Glaive)</td><td>Sorrowful Lash bonus action</td></tr>
+            <tr><td>👑 Helm</td><td>Covert Cowl</td><td>Crit on 19 while obscured</td></tr>
+            <tr><td>🧥 Cloak</td><td>Shade-Slayer Cloak</td><td>Crit on 19 while hiding (stacks!)</td></tr>
+            <tr><td>📿 Amulet</td><td>Corvid Token</td><td>Polymorph: Dire Raven!</td></tr>
         </table>
 
-        <h2>Pros & Cons</h2>
+        <h2>⚖️ Pros & Cons</h2>
         <table>
-            <tr><th>Pros</th><th>Cons</th></tr>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
             <tr><td>Darkness + Devil's Sight = perma-advantage</td><td>Darkness can blind allies</td></tr>
             <tr><td>Crit on 17+ with full gear</td><td>Needs positioning</td></tr>
             <tr><td>Free Spectre ally on kills</td><td>Limited spell slots</td></tr>
-            <tr><td>Works melee OR ranged</td><td>-</td></tr>
+            <tr><td>Works melee OR ranged</td><td>—</td></tr>
         </table>
 
-        <div class="footer">"We are the ravens of omen. The Raven Queen watches through our eyes."</div>
+        <div class="footer"><em>🦅 "We are the ravens of omen. The Raven Queen watches through our eyes." 🌑</em></div>
     </div>
 </div>
 
 <!-- LAND WARDEN -->
 <div class="build" id="land-warden">
     <div class="build-content">
-        <h1>THE LAND WARDEN</h1>
-        <div class="subtitle">Pure Circle of the Land Druid - Baldur's Gate 3</div>
+        <h1>🌍 THE LAND WARDEN 🌍</h1>
+        <div class="subtitle">🌿 Pure Circle of the Land Druid - Baldur's Gate 3 🍃</div>
 
-        <h2>Build Overview</h2>
+        <h2>🌿 Build Overview</h2>
         <p>An underrated full caster combining powerful spellcasting with Wild Shape as an emergency health pool. This build stacks Radiating Orbs to blind enemies while nuking with Create Water + Lightning/Cold combos for DOUBLE damage.</p>
         <p><strong>Class:</strong> 12 Circle of the Land Druid (Pure)</p>
 
         <div class="callout">
-            <strong>CORE COMBO:</strong> Create Water makes enemies WET. Wet targets take DOUBLE damage from Lightning and Cold spells!
+            <span class="emoji">💧</span> <strong>CORE COMBO:</strong> Create Water makes enemies WET. Wet targets take DOUBLE damage from Lightning and Cold spells! ⚡❄️
         </div>
 
-        <h2>Level Progression</h2>
+        <h2>📈 Level Progression</h2>
         <div class="stats-box">
-<strong>Level 1:</strong> Shillelagh, Thorn Whip
+<strong>Level 1:</strong> Shillelagh, Thorn Whip 🌿
 <strong>Level 2:</strong> Circle of the Land, Natural Recovery, Wild Shape
-<strong>Level 3:</strong> Coast - Mirror Image, Misty Step
+<strong>Level 3:</strong> Coast - Mirror Image, Misty Step 🌊
 <strong>Level 4:</strong> Feat: Alert OR +2 WIS
-<strong>Level 5:</strong> Mountain - Lightning Bolt, Fly!
-<strong>Level 6:</strong> Difficult terrain immunity, Owlbear form
+<strong>Level 5:</strong> Mountain - Lightning Bolt, Fly! ⚡
+<strong>Level 6:</strong> Difficult terrain immunity, Owlbear form 🐻
 <strong>Level 7:</strong> Underdark - Greater Invisibility!
 <strong>Level 8:</strong> Feat: +2 WIS
-<strong>Level 9:</strong> Arctic - Cone of Cold!
-<strong>Level 10:</strong> Improved Wild Strike, Dilophosaurus
-<strong>Level 11:</strong> Heroes' Feast, Sunbeam
+<strong>Level 9:</strong> Arctic - Cone of Cold! ❄️
+<strong>Level 10:</strong> Improved Wild Strike, Dilophosaurus 🦎
+<strong>Level 11:</strong> Heroes' Feast, Sunbeam ☀️
 <strong>Level 12:</strong> Feat: War Caster
         </div>
 
-        <h2>Circle Choices</h2>
+        <h2>🔮 Circle Choices</h2>
         <table>
             <tr><th>Level</th><th>Circle</th><th>Spells</th><th>Why</th></tr>
-            <tr><td>3</td><td>Coast</td><td>Mirror Image, Misty Step</td><td>Not normally Druid spells!</td></tr>
-            <tr><td>5</td><td>Mountain</td><td>Lightning Bolt, Fly</td><td>Lightning doubles vs wet!</td></tr>
-            <tr><td>7</td><td>Underdark</td><td>Greater Invisibility</td><td>Amazing stealth combo</td></tr>
-            <tr><td>9</td><td>Arctic</td><td>Cone of Cold</td><td>Cold doubles vs wet!</td></tr>
+            <tr><td>3</td><td>🌊 Coast</td><td>Mirror Image, Misty Step</td><td>Not normally Druid spells!</td></tr>
+            <tr><td>5</td><td>⛰️ Mountain</td><td>Lightning Bolt, Fly</td><td>Lightning doubles vs wet!</td></tr>
+            <tr><td>7</td><td>🕳️ Underdark</td><td>Greater Invisibility</td><td>Amazing stealth combo</td></tr>
+            <tr><td>9</td><td>❄️ Arctic</td><td>Cone of Cold</td><td>Cold doubles vs wet!</td></tr>
         </table>
 
-        <h2>Radiating Orbs Combo</h2>
+        <h2>☀️ Radiating Orbs Combo</h2>
         <div class="callout">
-            Produce Flame illuminates you > Callous Glow adds +2 radiant > Coruscation Ring applies Radiating Orbs > Holy Lance Helm punishes misses > enemies get -4 to attacks and eventually blind!
+            <span class="emoji">✨</span> Produce Flame illuminates you > Callous Glow adds +2 radiant > Coruscation Ring applies Radiating Orbs > Holy Lance Helm punishes misses > enemies get -4 to attacks and eventually blind!
         </div>
 
-        <h2>Recommended Gear</h2>
+        <h2>🎒 Recommended Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Effect</th></tr>
-            <tr><td>Staff</td><td>Markoheshkir</td><td>Grants Chain Lightning to Druid!</td></tr>
-            <tr><td>Shield</td><td>Viconia's Walking Fortress</td><td>Great defensive shield</td></tr>
-            <tr><td>Armor</td><td>Armor of Agility</td><td>17 AC + full DEX = 24 AC!</td></tr>
-            <tr><td>Ring 1</td><td>Coruscation Ring</td><td>Radiating Orbs on radiant</td></tr>
-            <tr><td>Ring 2</td><td>Callous Glow Ring</td><td>+2 radiant vs illuminated</td></tr>
+            <tr><td>🪄 Staff</td><td>Markoheshkir</td><td>Grants Chain Lightning to Druid!</td></tr>
+            <tr><td>🛡️ Shield</td><td>Viconia's Walking Fortress</td><td>Great defensive shield</td></tr>
+            <tr><td>👘 Armor</td><td>Armor of Agility</td><td>17 AC + full DEX = 24 AC!</td></tr>
+            <tr><td>💍 Ring 1</td><td>Coruscation Ring</td><td>Radiating Orbs on radiant</td></tr>
+            <tr><td>💍 Ring 2</td><td>Callous Glow Ring</td><td>+2 radiant vs illuminated</td></tr>
         </table>
 
-        <h2>Combat Rotation</h2>
+        <h2>⚔️ Combat Rotation</h2>
         <div class="stats-box">
 <strong>Nova Round:</strong>
-1. Create Water on clustered enemies
-2. Lightning Bolt / Cone of Cold = DOUBLE DAMAGE!
+1. Create Water on clustered enemies 💧
+2. Lightning Bolt / Cone of Cold = DOUBLE DAMAGE! ⚡❄️
 3. Healing Word as bonus if needed
 
 <strong>Sustained:</strong>
-1. Sunbeam for radiant + blind + orb stacking
+1. Sunbeam for radiant + blind + orb stacking ☀️
 2. Recast Sunbeam each turn (free!)
-3. Wild Shape into Owlbear if HP low (112 HP buffer!)
+3. Wild Shape into Owlbear if HP low (112 HP buffer!) 🐻
         </div>
 
-        <h2>Pros & Cons</h2>
+        <h2>⚖️ Pros & Cons</h2>
         <table>
-            <tr><th>Pros</th><th>Cons</th></tr>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
             <tr><td>Create Water + Lightning = double damage</td><td>Slower early game</td></tr>
             <tr><td>Natural Recovery = slots on short rest</td><td>Circle spells can't be swapped</td></tr>
             <tr><td>Wild Shape = 112 HP buffer</td><td>Lower spell DC than Wizard</td></tr>
-            <tr><td>Markoheshkir grants Chain Lightning!</td><td>-</td></tr>
+            <tr><td>Markoheshkir grants Chain Lightning!</td><td>—</td></tr>
         </table>
 
-        <div class="footer">"The land itself rises to your call. Nature's wrath knows no mercy."</div>
+        <div class="footer"><em>🌍 "The land itself rises to your call. Nature's wrath knows no mercy." 🌿</em></div>
     </div>
 </div>
 
 <!-- DEATH REAPER -->
 <div class="build" id="death-reaper">
     <div class="build-content">
-        <h1>THE DEATH REAPER</h1>
-        <div class="subtitle">Death Cleric / Necromancy Wizard / Spores Druid - Baldur's Gate 3</div>
+        <h1>💀 THE DEATH REAPER 💀</h1>
+        <div class="subtitle">☠️ Death Cleric / Necromancy Wizard / Spores Druid - Baldur's Gate 3 🦴</div>
 
-        <h2>Build Overview</h2>
+        <h2>☠️ Build Overview</h2>
         <p>A necrotic damage powerhouse combining Death Cleric's unique abilities with Wizard spell scribing and Druid's Halo of Spores. By late game, you'll cast multiple free Level 6 spells per combat while healing yourself passively.</p>
         <p><strong>Class Split:</strong> 8 Death Cleric / 2 Necromancy Wizard / 2 Spores Druid</p>
 
         <div class="callout">
-            <strong>REAPER COMBO:</strong> Death Cleric's Reaper lets you cast necrotic cantrips on TWO targets! Kill enemy > free Level 6 spell from Staff of Cherished Necromancy!
+            <span class="emoji">💀</span> <strong>REAPER COMBO:</strong> Death Cleric's Reaper lets you cast necrotic cantrips on TWO targets! Kill enemy > free Level 6 spell from Staff of Cherished Necromancy!
         </div>
 
-        <h2>Level Progression</h2>
+        <h2>📈 Level Progression</h2>
         <div class="stats-box">
-<strong>Cleric 1-8 (Death Domain):</strong>
+<strong>Cleric 1-8 (Death Domain):</strong> ☠️
 - Reaper (dual cantrips), Touch of Death, Spirit Guardians
 - Inescapable Destruction (ignore necrotic resistance)
 - Divine Strike (+1d8 necrotic)
 
-<strong>Wizard 9-10 (Necromancy):</strong>
+<strong>Wizard 9-10 (Necromancy):</strong> 📖
 - Grim Harvest (heal when killing with spells)
 - Spell scribing for essential scrolls
 
-<strong>Druid 11-12 (Spores):</strong>
+<strong>Druid 11-12 (Spores):</strong> 🍄
 - Halo of Spores (reaction damage)
 - Symbiotic Entity (extra necrotic)
 
 <strong>Feats:</strong> War Caster (L4), Dual Wielder (L8)
         </div>
 
-        <h2>Must-Scribe Wizard Spells</h2>
+        <h2>📜 Must-Scribe Wizard Spells</h2>
         <div class="callout">
-            Visit Sorcerous Sundries in Act 3:
+            <span class="emoji">📖</span> Visit Sorcerous Sundries in Act 3:
             <ul>
                 <li><strong>Dethrone (EXCLUSIVE)</strong> - Only learnable by scribing!</li>
                 <li><strong>Circle of Death</strong> - The only real AoE necro spell</li>
@@ -882,97 +999,97 @@ Every hit: +16 (STR) + weapon + Sneak Attack
             </ul>
         </div>
 
-        <h2>Key Gear</h2>
+        <h2>🎒 Key Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Effect</th></tr>
-            <tr><td>Main Hand</td><td>Staff of Cherished Necromancy</td><td>FREE L6 SPELL ON KILL!</td></tr>
-            <tr><td>Off Hand</td><td>Markoheshkir</td><td>Additional spellcasting power</td></tr>
-            <tr><td>Amulet</td><td>Amulet of the Devout</td><td>+2 Spell DC</td></tr>
-            <tr><td>Armor</td><td>Luminous Armor (Act 2)</td><td>Radiant shockwave for orb stacking</td></tr>
+            <tr><td>🪄 Main Hand</td><td>Staff of Cherished Necromancy</td><td>FREE L6 SPELL ON KILL! 💀</td></tr>
+            <tr><td>🪄 Off Hand</td><td>Markoheshkir</td><td>Additional spellcasting power</td></tr>
+            <tr><td>📿 Amulet</td><td>Amulet of the Devout</td><td>+2 Spell DC</td></tr>
+            <tr><td>👘 Armor</td><td>Luminous Armor (Act 2)</td><td>Radiant shockwave for orb stacking</td></tr>
         </table>
 
         <div class="callout">
-            <strong>ACT 2 TIP:</strong> Many Act 2 enemies are IMMUNE to necrotic! Switch Spirit Guardians to Radiant damage type.
+            <span class="emoji">⚠️</span> <strong>ACT 2 TIP:</strong> Many Act 2 enemies are IMMUNE to necrotic! Switch Spirit Guardians to Radiant damage type.
         </div>
 
-        <h2>Combat Rotation</h2>
+        <h2>⚔️ Combat Rotation</h2>
         <div class="stats-box">
 <strong>Signature Combo:</strong>
-1. Cast Spirit Guardians (radiant in Act 2, necrotic elsewhere)
+1. Cast Spirit Guardians (radiant in Act 2, necrotic elsewhere) ☠️
 2. Reaper dual cantrips on two targets
-3. Kill enemy > free Level 6 spell from Staff
+3. Kill enemy > free Level 6 spell from Staff 💀
 4. Chain kills for multiple free spells!
 
 <strong>With Full Gear:</strong>
 - Inescapable Destruction ignores necrotic resistance
-- Grim Harvest heals you on spell kills
+- Grim Harvest heals you on spell kills 💚
 - Multiple free L6 spells per fight!
         </div>
 
-        <h2>Pros & Cons</h2>
+        <h2>⚖️ Pros & Cons</h2>
         <table>
-            <tr><th>Pros</th><th>Cons</th></tr>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
             <tr><td>Free Level 6 spells on kills</td><td>Act 2 enemies resist necrotic</td></tr>
             <tr><td>Incredible AoE (Spirit Guardians)</td><td>Needs specific gear</td></tr>
             <tr><td>Dual-target cantrips</td><td>Complex multiclass</td></tr>
-            <tr><td>Ignores necrotic resistance</td><td>-</td></tr>
+            <tr><td>Ignores necrotic resistance</td><td>—</td></tr>
         </table>
 
-        <div class="footer">"Death is not the end. It is merely a door."</div>
+        <div class="footer"><em>💀 "Death is not the end. It is merely a door." ☠️</em></div>
     </div>
 </div>
 
 <!-- GOD BLADE -->
 <div class="build" id="god-blade">
     <div class="build-content">
-        <h1>THE GOD BLADE</h1>
-        <div class="subtitle">Bladesinger Wizard / Crown Paladin - Baldur's Gate 3</div>
+        <h1>✨ THE GOD BLADE ✨</h1>
+        <div class="subtitle">📖 Bladesinger Wizard / Crown Paladin - Baldur's Gate 3 ⚔️</div>
 
-        <h2>Build Overview</h2>
+        <h2>📖 Build Overview</h2>
         <p>An exceptionally powerful Bladesinger Wizard multiclassed with Paladin. This build can deal 500+ damage in a single turn, achieve 36+ AC, and has answers for virtually every combat situation. Shadow Blade is your main weapon, scaling with spell slots.</p>
         <p><strong>Class Split:</strong> 10 Bladesinger Wizard / 2 Crown Paladin</p>
 
         <div class="callout">
-            <strong>SHADOW BLADE:</strong> Your main weapon! 2d8 psychic damage that scales with spell slot level. Combined with Resonance Stone (enemies vulnerable to psychic), you deal DOUBLE damage on every hit!
+            <span class="emoji">🗡️</span> <strong>SHADOW BLADE:</strong> Your main weapon! 2d8 psychic damage that scales with spell slot level. Combined with Resonance Stone (enemies vulnerable to psychic), you deal DOUBLE damage on every hit!
         </div>
 
-        <h2>Level Progression</h2>
+        <h2>📈 Level Progression</h2>
         <div class="stats-box">
-<strong>Wizard 1:</strong> Cantrips (Blade Ward, Fire Bolt, Ray of Frost)
+<strong>Wizard 1:</strong> Cantrips (Blade Ward, Fire Bolt, Ray of Frost) 📖
 Spells: Shield, Mage Armor, Magic Missile, Find Familiar
 
-<strong>Wizard 2:</strong> Bladesinger subclass!
+<strong>Wizard 2:</strong> Bladesinger subclass! ⚔️
 - Bladesong: +Prof to AC, +10ft movement, advantage Acrobatics
 
-<strong>Wizard 3:</strong> SHADOW BLADE - Your main weapon! 2d8 psychic
+<strong>Wizard 3:</strong> SHADOW BLADE - Your main weapon! 2d8 psychic 🗡️
 
 <strong>Wizard 4:</strong> Feat: +2 DEX (17 > 19)
 
-<strong>Wizard 5:</strong> Fireball, Haste, Counterspell
+<strong>Wizard 5:</strong> Fireball, Haste, Counterspell 🔥
 
-<strong>Wizard 6:</strong> Extra Attack - Both can proc Divine Smite!
+<strong>Wizard 6:</strong> Extra Attack - Both can proc Divine Smite! ⚡
 
 <strong>Wizard 7-10:</strong> Greater Invisibility, +2 DEX, Hold Monster, Song of Defense
 
-<strong>Paladin 11-12 (Crown):</strong>
+<strong>Paladin 11-12 (Crown):</strong> ✝️
 - Lay on Hands, Champion Challenge
-- DIVINE SMITE - Massive radiant per hit!
+- DIVINE SMITE - Massive radiant per hit! ✨
         </div>
 
-        <h2>Best-in-Slot Gear</h2>
+        <h2>🎒 Best-in-Slot Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Effect</th></tr>
-            <tr><td>Main Hand</td><td>Shadow Blade (spell)</td><td>2d8>4d8 psychic. Resonance = DOUBLE!</td></tr>
-            <tr><td>Off Hand</td><td>Rhapsody</td><td>+1 to +3 per kill</td></tr>
-            <tr><td>Head</td><td>Diadem of Arcane Synergy</td><td>Extra damage on conditions</td></tr>
-            <tr><td>Chest</td><td>Robe of the Weave</td><td>+2 AC, +1 Spell DC</td></tr>
-            <tr><td>Boots</td><td>Disintegrating Night Walkers</td><td>Free Misty Step!</td></tr>
-            <tr><td>Accessory</td><td>Resonance Stone</td><td>DOUBLES all psychic damage!</td></tr>
+            <tr><td>🗡️ Main Hand</td><td>Shadow Blade (spell)</td><td>2d8>4d8 psychic. Resonance = DOUBLE!</td></tr>
+            <tr><td>🗡️ Off Hand</td><td>Rhapsody</td><td>+1 to +3 per kill</td></tr>
+            <tr><td>👑 Head</td><td>Diadem of Arcane Synergy</td><td>Extra damage on conditions</td></tr>
+            <tr><td>👘 Chest</td><td>Robe of the Weave</td><td>+2 AC, +1 Spell DC</td></tr>
+            <tr><td>👢 Boots</td><td>Disintegrating Night Walkers</td><td>Free Misty Step!</td></tr>
+            <tr><td>🔮 Accessory</td><td>Resonance Stone</td><td>DOUBLES all psychic damage!</td></tr>
         </table>
 
-        <h2>Must-Scribe Spells</h2>
+        <h2>📜 Must-Scribe Spells</h2>
         <div class="callout">
-            From Sorcerous Sundries vault:
+            <span class="emoji">📖</span> From Sorcerous Sundries vault:
             <ul>
                 <li><strong>Artistry of War (EXCLUSIVE)</strong> - Super-buffed Magic Missiles</li>
                 <li><strong>Disintegrate</strong> - L6 nuke</li>
@@ -980,140 +1097,140 @@ Spells: Shield, Mage Armor, Magic Missile, Find Familiar
             </ul>
         </div>
 
-        <h2>Combat Strategy</h2>
+        <h2>⚔️ Combat Strategy</h2>
         <div class="stats-box">
 <strong>Daily Prep:</strong>
 1. Mage Armor (if not wearing armor)
-2. Shadow Blade (L5 slot for 4d8)
+2. Shadow Blade (L5 slot for 4d8) 🗡️
 3. Equip Resonance Stone
 
 <strong>Turn Sequence:</strong>
-1. Activate Bladesong (free action)
+1. Activate Bladesong (free action) 🎵
 2. Cast Haste on yourself
 3. Attack! 2 + 1 (Haste) + 1 (off-hand) = 4 attacks minimum
-4. Divine Smite on each hit!
+4. Divine Smite on each hit! ✨
 
 <strong>Nova Damage:</strong>
 Shadow Blade: 4d8 x 2 (Resonance) = 8d8 per hit
 Divine Smite: 2d8-5d8 radiant per hit
-4 attacks = potentially 500+ damage!
+4 attacks = potentially 500+ damage! 💥
         </div>
 
-        <h2>Pros & Cons</h2>
+        <h2>⚖️ Pros & Cons</h2>
         <table>
-            <tr><th>Pros</th><th>Cons</th></tr>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
             <tr><td>500+ damage nova potential</td><td>Complex rotation</td></tr>
             <tr><td>36+ AC achievable</td><td>Spell slot hungry</td></tr>
             <tr><td>Full wizard spell list</td><td>Needs Resonance Stone</td></tr>
             <tr><td>Divine Smite on crits = massive</td><td>Late bloomer (Paladin at 11-12)</td></tr>
         </table>
 
-        <div class="footer">"The blade sings, and the divine answers."</div>
+        <div class="footer"><em>✨ "The blade sings, and the divine answers." ⚔️</em></div>
     </div>
 </div>
 
 <!-- HEXWING PHANTOM -->
 <div class="build" id="hexwing-phantom">
     <div class="build-content">
-        <h1>HEXWING PHANTOM</h1>
-        <div class="subtitle">Swashbuckler / Hexblade / Swarmkeeper (Moths) - Baldur's Gate 3</div>
+        <h1>🦋 HEXWING PHANTOM 🦋</h1>
+        <div class="subtitle">🗡️ Swashbuckler / Hexblade / Swarmkeeper (Moths) - Baldur's Gate 3 🌙</div>
 
-        <h2>Build Overview</h2>
+        <h2>🦋 Build Overview</h2>
         <p>An S+ tier multiclass utilizing Patch 8 subclasses. This elusive supernatural master duelist combines swashbuckler's dirty tricks, hexblade's cursed power, and swarmkeeper's eerie moth swarm into a devastating combat machine.</p>
         <p><strong>Class Split:</strong> 4 Swashbuckler / 5 Hexblade / 3 Swarmkeeper (Moths)</p>
 
         <div class="callout">
-            <strong>MOTH SWARM:</strong> Gathered Swarm deals extra psychic damage, can blind enemies, or grant free teleports! Combined with Hexblade's Curse and Sneak Attack, you become an untouchable phantom.
+            <span class="emoji">🦋</span> <strong>MOTH SWARM:</strong> Gathered Swarm deals extra psychic damage, can blind enemies, or grant free teleports! Combined with Hexblade's Curse and Sneak Attack, you become an untouchable phantom.
         </div>
 
-        <h2>Levels 1-4: Rogue (Swashbuckler)</h2>
+        <h2>📈 Levels 1-4: Rogue (Swashbuckler)</h2>
         <div class="stats-box">
-<strong>L1-2:</strong> Rogue basics, Cunning Action
+<strong>L1-2:</strong> Rogue basics, Cunning Action 🗡️
 <strong>L3:</strong> Swashbuckler:
-- Fancy Footwork: Free disengage after hitting!
+- Fancy Footwork: Free disengage after hitting! 💃
 - Rakish Sneak Attack: Sneak Attack without advantage if 1v1!
 <strong>L4:</strong> Dirty Tricks unlocked, +2 CHA feat
         </div>
 
-        <h3>Key Dirty Tricks</h3>
+        <h3>🎭 Key Dirty Tricks</h3>
         <ul>
-            <li><strong>Flick of the Wrist</strong> - Disarms enemies + bonus action damage (BEST!)</li>
-            <li><strong>Sand Toss</strong> - Blinds enemies</li>
-            <li><strong>Vicious Mockery</strong> - Ranged crowd control</li>
+            <li><strong>🗡️ Flick of the Wrist</strong> - Disarms enemies + bonus action damage (BEST!)</li>
+            <li><strong>🏖️ Sand Toss</strong> - Blinds enemies</li>
+            <li><strong>🎭 Vicious Mockery</strong> - Ranged crowd control</li>
         </ul>
 
-        <h2>Levels 5-9: Warlock (Hexblade)</h2>
+        <h2>📈 Levels 5-9: Warlock (Hexblade)</h2>
         <div class="stats-box">
-<strong>L5:</strong> Hexblade - CHA to attack/damage, Hexblade's Curse
+<strong>L5:</strong> Hexblade - CHA to attack/damage, Hexblade's Curse 👁️
 Cantrips: Booming Blade + Eldritch Blast
 <strong>L6:</strong> Invocations: Agonizing Blast + Repelling Blast
 <strong>L7:</strong> Pact of the Blade, Misty Step
 <strong>L8:</strong> Feat: Great Weapon Master
-<strong>L9:</strong> Extra Attack! Devil's Sight
+<strong>L9:</strong> Extra Attack! Devil's Sight 👀
         </div>
 
-        <h2>Levels 10-12: Ranger (Swarmkeeper - Moths)</h2>
+        <h2>📈 Levels 10-12: Ranger (Swarmkeeper - Moths)</h2>
         <div class="stats-box">
-<strong>L10:</strong> Ranger Knight (Heavy Armor!)
+<strong>L10:</strong> Ranger Knight (Heavy Armor!) 🛡️
 <strong>L11:</strong> Fighting Style: Defense
-<strong>L12:</strong> Swarmkeeper (Moths) - Gathered Swarm!
+<strong>L12:</strong> Swarmkeeper (Moths) - Gathered Swarm! 🦋
 - Extra psychic damage on hits
 - Blind enemies
 - Grant free teleports!
         </div>
 
-        <h2>Best-in-Slot Gear</h2>
+        <h2>🎒 Best-in-Slot Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Effect</th></tr>
-            <tr><td>Weapon</td><td>The Dancing Breeze</td><td>Whirlwind Attack for AoE</td></tr>
-            <tr><td>Helm</td><td>Birthright</td><td>+2 CHA!</td></tr>
-            <tr><td>Cloak</td><td>Cloak of Displacement</td><td>Disadvantage to hit you</td></tr>
-            <tr><td>Armor</td><td>Armour of Persistence</td><td>Resistance + Blade Ward</td></tr>
-            <tr><td>Gloves</td><td>Helldusk Gloves</td><td>+1d6 fire, can't be disarmed</td></tr>
+            <tr><td>⚔️ Weapon</td><td>The Dancing Breeze</td><td>Whirlwind Attack for AoE</td></tr>
+            <tr><td>👑 Helm</td><td>Birthright</td><td>+2 CHA!</td></tr>
+            <tr><td>🧥 Cloak</td><td>Cloak of Displacement</td><td>Disadvantage to hit you</td></tr>
+            <tr><td>🛡️ Armor</td><td>Armour of Persistence</td><td>Resistance + Blade Ward</td></tr>
+            <tr><td>🧤 Gloves</td><td>Helldusk Gloves</td><td>+1d6 fire, can't be disarmed</td></tr>
         </table>
 
-        <h2>Combat Strategy</h2>
+        <h2>⚔️ Combat Strategy</h2>
         <div class="stats-box">
 <strong>Early Game:</strong>
-1. Melee attack > Fancy Footwork (free disengage)
-2. Flick of the Wrist to disarm + bonus damage
+1. Melee attack > Fancy Footwork (free disengage) 💃
+2. Flick of the Wrist to disarm + bonus damage 🗡️
 3. Pick up dropped weapon to cripple enemy
 
 <strong>Late Game:</strong>
-1. Full combo: Attack + Extra Attack + Bonus (Flick) + Sneak + Moths
+1. Full combo: Attack + Extra Attack + Bonus (Flick) + Sneak + Moths 🦋
 2. Moths can blind, deal psychic, or grant teleports
 3. Whirlwind Attack for grouped enemies
-4. Eldritch Blast can also proc moth abilities
+4. Eldritch Blast can also proc moth abilities ⚡
         </div>
 
-        <h2>Pros & Cons</h2>
+        <h2>⚖️ Pros & Cons</h2>
         <table>
-            <tr><th>Pros</th><th>Cons</th></tr>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
             <tr><td>Incredible mobility</td><td>Complex multiclass</td></tr>
             <tr><td>Excellent crowd control</td><td>MAD: needs CHA, DEX, CON</td></tr>
             <tr><td>High burst damage</td><td>Limited spell slots</td></tr>
             <tr><td>Great survivability</td><td>Full power at level 12</td></tr>
         </table>
 
-        <div class="footer">"Like moths to a flame, your enemies are drawn to their doom."</div>
+        <div class="footer"><em>🦋 "Like moths to a flame, your enemies are drawn to their doom." 🌙</em></div>
     </div>
 </div>
 
 <!-- LIGHTNING EK -->
 <div class="build" id="lightning-ek">
     <div class="build-content">
-        <h1>LIGHTNING ELDRITCH KNIGHT</h1>
-        <div class="subtitle">Fighter Build (Patch 8) - Baldur's Gate 3</div>
+        <h1>⚡ LIGHTNING ELDRITCH KNIGHT ⚡</h1>
+        <div class="subtitle">🗡️ Fighter Build (Patch 8) - Baldur's Gate 3 💙</div>
 
-        <h2>Build Overview</h2>
+        <h2>⚡ Build Overview</h2>
         <p>A Lightning-focused Eldritch Knight Fighter combining martial prowess with arcane spellcasting. Patch 8's reworked War Magic allows Booming Blade to trigger a bonus action attack for up to four attacks per turn.</p>
         <p><strong>Class:</strong> 12 Eldritch Knight Fighter (Pure)</p>
 
         <div class="callout">
-            <strong>WAR MAGIC (PATCH 8):</strong> After casting a cantrip, you can make a bonus action weapon attack! Booming Blade counts, so you get: 3 attacks (action) + 1 bonus = 4 attacks per turn!
+            <span class="emoji">⚡</span> <strong>WAR MAGIC (PATCH 8):</strong> After casting a cantrip, you can make a bonus action weapon attack! Booming Blade counts, so you get: 3 attacks (action) + 1 bonus = 4 attacks per turn!
         </div>
 
-        <h2>Race & Stats</h2>
+        <h2>📊 Race & Stats</h2>
         <div class="stats-box">
 <strong>Recommended Race:</strong> Githyanki or races with mobility
 
@@ -1124,98 +1241,107 @@ STR: 16 | DEX: 14 | CON: 14 | INT: 10 | WIS: 10 | CHA: 8
 STR: 8 (use potion) | DEX: 16 | CON: 14 | INT: 10 | WIS: 10 | CHA: 8
 Maximizes initiative and thrown damage with Tavern Brawler.
 
-<strong>Fighting Style:</strong> Defense (+1 AC)
+<strong>Fighting Style:</strong> Defense (+1 AC) 🛡️
         </div>
 
-        <h2>Level Progression</h2>
+        <h2>📈 Level Progression</h2>
         <div class="stats-box">
-<strong>L1-2:</strong> Fighter base. Action Surge!
+<strong>L1-2:</strong> Fighter base. Action Surge! ⚡
 
 <strong>L3 (Eldritch Knight):</strong>
-- Cantrips: Booming Blade, Shocking Grasp
+- Cantrips: Booming Blade, Shocking Grasp 💥
 - Spells: Magic Missile (triggers Lightning Charges!), Shield
 
 <strong>L4:</strong> Thunder Wave; Feat: Dual Wielder OR Alert
 
-<strong>L5:</strong> Extra Attack - Major power spike!
+<strong>L5:</strong> Extra Attack - Major power spike! ⚔️
 
 <strong>L6:</strong> Feat: Alert OR Tavern Brawler
 
-<strong>L7 (War Magic!):</strong> Booming Blade triggers bonus attack!
+<strong>L7 (War Magic!):</strong> Booming Blade triggers bonus attack! 🎯
 Spells: Scorching Ray (triggers charges per ray!)
 
 <strong>L8:</strong> Hold Person, Misty Step; Feat: Savage Attacker
 
 <strong>L9:</strong> Indomitable
 
-<strong>L10 (Eldritch Strike!):</strong> Weapons impose disadvantage on saves!
+<strong>L10 (Eldritch Strike!):</strong> Weapons impose disadvantage on saves! 💪
 
-<strong>L11:</strong> THREE attacks per action! With War Magic: 4 total!
+<strong>L11:</strong> THREE attacks per action! With War Magic: 4 total! 💥
 
 <strong>L12:</strong> Final feat: Sentinel, Lucky, or ASI
         </div>
 
-        <h2>Core Weapons</h2>
+        <h2>🗡️ Core Weapons</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location</th></tr>
-            <tr><td>Main Hand</td><td>Charge-Bound Warhammer</td><td>Last Light Inn - Dammon. +1d6 Lightning!</td></tr>
-            <tr><td>Off Hand</td><td>Markoheshkir</td><td>Ramazith's Tower</td></tr>
-            <tr><td>Ranged</td><td>The Joltshooter</td><td>Waukeen's Rest - rescue Florrick</td></tr>
+            <tr><td>⚔️ Main Hand</td><td>Charge-Bound Warhammer</td><td>Last Light Inn - Dammon. +1d6 Lightning!</td></tr>
+            <tr><td>🪄 Off Hand</td><td>Markoheshkir</td><td>Ramazith's Tower</td></tr>
+            <tr><td>🏹 Ranged</td><td>The Joltshooter</td><td>Waukeen's Rest - rescue Florrick</td></tr>
         </table>
 
-        <h2>Best-in-Slot Gear</h2>
+        <h2>🎒 Best-in-Slot Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Effect</th></tr>
-            <tr><td>Helmet</td><td>Helmet of Arcane Acuity</td><td>+1 Spell DC per hit (stacks to +7!)</td></tr>
-            <tr><td>Cloak</td><td>Thunderskin Cloak</td><td>Reverberation = Daze!</td></tr>
-            <tr><td>Armor</td><td>Armour of Persistence</td><td>Resistance + Blade Ward</td></tr>
-            <tr><td>Gloves</td><td>Gloves of Belligerent Skies</td><td>Thunder/Lightning = Reverberation!</td></tr>
-            <tr><td>Boots</td><td>Boots of Stormy Clamour</td><td>More Reverberation stacking</td></tr>
-            <tr><td>Ring 1</td><td>Ring of Elemental Infusion</td><td>Booming Blade adds +1d4!</td></tr>
+            <tr><td>👑 Helmet</td><td>Helmet of Arcane Acuity</td><td>+1 Spell DC per hit (stacks to +7!)</td></tr>
+            <tr><td>🧥 Cloak</td><td>Thunderskin Cloak</td><td>Reverberation = Daze!</td></tr>
+            <tr><td>🛡️ Armor</td><td>Armour of Persistence</td><td>Resistance + Blade Ward</td></tr>
+            <tr><td>🧤 Gloves</td><td>Gloves of Belligerent Skies</td><td>Thunder/Lightning = Reverberation!</td></tr>
+            <tr><td>👢 Boots</td><td>Boots of Stormy Clamour</td><td>More Reverberation stacking</td></tr>
+            <tr><td>💍 Ring 1</td><td>Ring of Elemental Infusion</td><td>Booming Blade adds +1d4!</td></tr>
         </table>
 
-        <h2>Combat Strategy</h2>
+        <h2>⚔️ Combat Strategy</h2>
         <div class="stats-box">
 <strong>Opening Turn:</strong>
-1. Arrow of Many Targets for Radiating Orbs + Arcane Acuity
+1. Arrow of Many Targets for Radiating Orbs + Arcane Acuity 🏹
 2. Stack Acuity to +7 before control spells
 3. Eldritch Strike > Hold Person = disadvantage on save!
 
 <strong>Standard Turn (Level 11+):</strong>
-1. Booming Blade (cantrip with thunder)
+1. Booming Blade (cantrip with thunder) ⚡
 2. War Magic > Bonus action attack
 3. Extra Attack x2
-= 4 attacks per turn!
+= 4 attacks per turn! 💥
 
-<strong>With Action Surge:</strong> Add 3 more = 7 attacks!
+<strong>With Action Surge:</strong> Add 3 more = 7 attacks! 🔥
 
 <strong>Lightning Synergy:</strong>
-- Charge-Bound Warhammer: +1d6 lightning/hit
+- Charge-Bound Warhammer: +1d6 lightning/hit ⚡
 - Gloves of Belligerent Skies: Reverberation on thunder/lightning
 - Thunderskin Cloak: Daze enemies with Reverberation
-- At 5 Reverberation stacks > enemies knocked PRONE!
+- At 5 Reverberation stacks > enemies knocked PRONE! 💀
         </div>
 
-        <h2>Pros & Cons</h2>
+        <h2>⚖️ Pros & Cons</h2>
         <table>
-            <tr><th>Pros</th><th>Cons</th></tr>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
             <tr><td>4 attacks per turn at level 11</td><td>Limited spell slots (1/3 caster)</td></tr>
             <tr><td>Excellent control (Eldritch Strike + Hold Person)</td><td>Needs specific gear</td></tr>
             <tr><td>Great survivability (heavy armor + Shield)</td><td>Save Tieflings for best gear</td></tr>
-            <tr><td>Action Surge = 7 attacks</td><td>-</td></tr>
+            <tr><td>Action Surge = 7 attacks</td><td>—</td></tr>
         </table>
 
-        <div class="footer">"Thunder roars, lightning strikes, and your enemies fall."</div>
+        <div class="footer"><em>⚡ "Thunder roars, lightning strikes, and your enemies fall." 🗡️</em></div>
     </div>
 </div>
 
     <script>
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', () => {
+                // Remove active from all items and dropdowns
+                document.querySelectorAll('.dropdown-item').forEach(i => i.classList.remove('active'));
+                document.querySelectorAll('.dropdown-btn').forEach(b => b.classList.remove('has-active'));
                 document.querySelectorAll('.build').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                document.getElementById(btn.dataset.tab).classList.add('active');
+
+                // Add active to clicked item
+                item.classList.add('active');
+
+                // Add has-active to parent dropdown button
+                item.closest('.dropdown').querySelector('.dropdown-btn').classList.add('has-active');
+
+                // Show the build
+                document.getElementById(item.dataset.tab).classList.add('active');
             });
         });
     </script>
