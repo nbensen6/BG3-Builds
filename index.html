@@ -344,6 +344,19 @@
         #magic-missile .stats-box { background: linear-gradient(135deg, #ede7f6 0%, #e8eaf6 100%); border: 1px solid #9575cd; }
         #magic-missile .footer { color: #5e35b1; border-top: 1px solid #9575cd; }
 
+        /* TEMPEST CLERIC - Storm Blue/Purple */
+        #tempest-cleric { background: linear-gradient(180deg, #e8eaf6 0%, #c5cae9 50%, #ffffff 100%); color: #1a237e; }
+        #tempest-cleric h1 { color: #303f9f; text-shadow: 2px 2px 4px rgba(48,63,159,0.3); }
+        #tempest-cleric .subtitle { color: #3949ab; }
+        #tempest-cleric h2 { color: #303f9f; border-bottom: 2px solid #7986cb; }
+        #tempest-cleric h3 { color: #3949ab; }
+        #tempest-cleric th { background: linear-gradient(135deg, #303f9f 0%, #3f51b5 100%); }
+        #tempest-cleric td { border-bottom: 1px solid #c5cae9; }
+        #tempest-cleric tr:nth-child(even) { background: #e8eaf6; }
+        #tempest-cleric .callout { background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%); border-left: 4px solid #303f9f; }
+        #tempest-cleric .stats-box { background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%); border: 1px solid #7986cb; }
+        #tempest-cleric .footer { color: #303f9f; border-top: 1px solid #7986cb; }
+
         /* LIGHT CLERIC - Radiant Gold/White */
         #light-cleric { background: linear-gradient(180deg, #fffde7 0%, #fff8e1 50%, #ffffff 100%); color: #3e2723; }
         #light-cleric h1 { color: #f9a825; text-shadow: 2px 2px 4px rgba(249,168,37,0.3); }
@@ -438,6 +451,7 @@
                 <div class="dropdown-content">
                     <button class="dropdown-item" data-tab="death-reaper">💀 Death Reaper</button>
                     <button class="dropdown-item" data-tab="light-cleric">☀️ Light Cleric</button>
+                    <button class="dropdown-item" data-tab="tempest-cleric">⛈️ Tempest Cleric</button>
                 </div>
             </div>
 
@@ -528,6 +542,7 @@
                     <optgroup label="Cleric">
                         <option value="death-reaper">💀 Death Reaper</option>
                         <option value="light-cleric">☀️ Light Cleric</option>
+                        <option value="tempest-cleric">⛈️ Tempest Cleric</option>
                     </optgroup>
                     <optgroup label="Druid">
                         <option value="land-warden">🌍 Land Warden</option>
@@ -572,6 +587,7 @@
                     <optgroup label="Cleric">
                         <option value="death-reaper">💀 Death Reaper</option>
                         <option value="light-cleric">☀️ Light Cleric</option>
+                        <option value="tempest-cleric">⛈️ Tempest Cleric</option>
                     </optgroup>
                     <optgroup label="Druid">
                         <option value="land-warden">🌍 Land Warden</option>
@@ -616,6 +632,7 @@
                     <optgroup label="Cleric">
                         <option value="death-reaper">💀 Death Reaper</option>
                         <option value="light-cleric">☀️ Light Cleric</option>
+                        <option value="tempest-cleric">⛈️ Tempest Cleric</option>
                     </optgroup>
                     <optgroup label="Druid">
                         <option value="land-warden">🌍 Land Warden</option>
@@ -660,6 +677,7 @@
                     <optgroup label="Cleric">
                         <option value="death-reaper">💀 Death Reaper</option>
                         <option value="light-cleric">☀️ Light Cleric</option>
+                        <option value="tempest-cleric">⛈️ Tempest Cleric</option>
                     </optgroup>
                     <optgroup label="Druid">
                         <option value="land-warden">🌍 Land Warden</option>
@@ -703,7 +721,7 @@
 
         <div class="examples-section">
             <h2 class="examples-title">⚔️ Example Party Compositions</h2>
-            <p style="text-align:center; color:#888; margin-bottom:25px; font-size:13px;">Click any party to load it - all verified to have no gear conflicts!</p>
+            <p style="text-align:center; color:#888; margin-bottom:25px; font-size:13px;">Click any party to load it. Some parties have gear conflicts — alternatives are suggested below each!</p>
             <div class="examples-grid">
                 <div class="example-party" onclick="loadParty(['stealth-archer', 'tavern-brawler', 'ice-sorcerer', 'death-reaper'])">
                     <div class="example-name">🏆 The Balanced Squad</div>
@@ -715,6 +733,7 @@
                         <span class="example-build">💀 Death Reaper</span>
                     </div>
                     <div class="example-synergy">✨ Synergy: Death Reaper's Spirit Guardians protects Tavern Brawler in melee. Ice Sorcerer freezes enemies for Stealth Archer crits!</div>
+                    <div style="margin-top:10px; padding-top:10px; border-top:1px solid #444; font-size:11px; color:#ff9800;">⚠️ Conflict: Killer's Sweetheart — Alt: Give Ice Sorcerer the Band of the Mystic Scoundrel instead</div>
                 </div>
 
                 <div class="example-party" onclick="loadParty(['battle-master', 'lightning-ek', 'land-warden', 'gloom-weaver'])">
@@ -727,6 +746,7 @@
                         <span class="example-build">🌑 Gloom Weaver</span>
                     </div>
                     <div class="example-synergy">✨ Synergy: Land Warden casts Create Water, Lightning EK deals double damage! Gloom Weaver's Darkness protects casters.</div>
+                    <div style="margin-top:10px; padding-top:10px; border-top:1px solid #444; font-size:11px; color:#ff9800;">⚠️ Conflict: Markoheshkir — Alt: Give Land Warden Staff of Spellpower or Staff of Cherished Necromancy instead</div>
                 </div>
 
                 <div class="example-party" onclick="loadParty(['savage-striker', 'hexwing-phantom', 'poison-sporekeeper', 'magic-missile'])">
@@ -739,6 +759,7 @@
                         <span class="example-build">🎯 Magic Missile</span>
                     </div>
                     <div class="example-synergy">✨ Synergy: Sporekeeper's Cloudkill + Phantom's debuffs stack. Magic Missile never misses for guaranteed cleanup!</div>
+                    <div style="margin-top:10px; padding-top:10px; border-top:1px solid #444; font-size:11px; color:#ff9800;">⚠️ Conflict: Birthright — Alt: Give Hexwing Phantom the Hat of Fire Acuity or Circlet of Hunting instead</div>
                 </div>
 
                 <div class="example-party" onclick="loadParty(['god-blade', 'stealth-archer', 'ice-sorcerer', 'land-warden'])">
@@ -751,6 +772,7 @@
                         <span class="example-build">🌍 Land Warden</span>
                     </div>
                     <div class="example-synergy">✨ Synergy: God Blade uses Resonance Stone for psychic vulnerability. Land Warden + Ice Sorcerer = double cold damage!</div>
+                    <div style="margin-top:10px; padding-top:10px; border-top:1px solid #444; font-size:11px; color:#ff9800;">⚠️ Conflicts: Killer's Sweetheart (Archer/Sorcerer), Callous Glow Ring (Sorcerer/Warden) — Alt: Sorcerer uses Band of Mystic Scoundrel + Coruscation Ring</div>
                 </div>
 
                 <div class="example-party" onclick="loadParty(['tavern-brawler', 'battle-master', 'death-reaper', 'gloom-weaver'])">
@@ -763,6 +785,7 @@
                         <span class="example-build">🌑 Gloom Weaver</span>
                     </div>
                     <div class="example-synergy">✨ Synergy: Death Reaper's Spirit Guardians + 3 melee attackers = enemies melt. Gloom Weaver provides Darkness cover!</div>
+                    <div style="margin-top:10px; padding-top:10px; border-top:1px solid #444; font-size:11px; color:#51cf66;">✅ No gear conflicts! This party is fully optimized.</div>
                 </div>
 
                 <div class="example-party" onclick="loadParty(['magic-missile', 'lightning-ek', 'poison-sporekeeper', 'hexwing-phantom'])">
@@ -775,6 +798,7 @@
                         <span class="example-build">🦋 Hexwing Phantom</span>
                     </div>
                     <div class="example-synergy">✨ Synergy: Magic Missile stacks 8+ Radiating Orbs instantly. Lightning EK adds Reverberation for prone lockdown!</div>
+                    <div style="margin-top:10px; padding-top:10px; border-top:1px solid #444; font-size:11px; color:#ff9800;">⚠️ Conflicts: Markoheshkir, Boots of Stormy Clamour, Birthright, Armour of Persistence — Alt: EK uses Staff of Spellpower + Disintegrating Night Walkers; Phantom uses Hat of Fire Acuity + Bhaalist Armour</div>
                 </div>
             </div>
         </div>
@@ -2148,6 +2172,266 @@ With Disadvantage: 0.25% hit chance!
     </div>
 </div>
 
+<!-- TEMPEST CLERIC -->
+<div class="build" id="tempest-cleric">
+    <div class="build-content">
+        <h1>⛈️ THE STORM BRINGER ⛈️</h1>
+        <div class="subtitle">✝️ Tempest Domain Cleric Build Guide - Baldur's Gate 3 (Patch 8) ⚡</div>
+
+        <h2>⛈️ Build Overview</h2>
+        <p>The Tempest Cleric is a devastating damage dealer disguised as a support class. With Destructive Wrath, you can force ANY lightning or thunder spell to deal MAXIMUM damage. Combined with wet status doubling lightning damage, Call Lightning becomes a nuclear weapon. Thunderbolt Strike pushes enemies 3 meters on every hit, giving you incredible battlefield control!</p>
+
+        <p><strong>Class:</strong> 12 Tempest Domain Cleric (Pure)</p>
+
+        <div class="callout">
+            <span class="emoji">⚡</span> <strong>DESTRUCTIVE WRATH:</strong> Use Channel Divinity to deal MAXIMUM damage on any thunder or lightning roll! Combined with wet targets (double lightning damage), your Call Lightning deals 10d10 = 100 damage per strike!
+        </div>
+
+        <h2>📊 Race & Starting Stats</h2>
+        <div class="stats-box">
+<strong>Recommended Race:</strong> Gold Dwarf (extra HP) or Wood Elf (extra movement for positioning)
+
+<strong>Standard Point Buy:</strong>
+STR: 14  |  DEX: 10  |  CON: 17 (+1 from Resilience)  |  INT: 8  |  WIS: 17 (+1 Hag Hair = 18)  |  CHA: 8
+
+<strong>Why High Constitution:</strong>
+Resilience (Constitution) gives proficiency in CON saves for concentration.
+With 18 CON + proficiency, you almost never lose Spirit Guardians or Call Lightning!
+
+<strong>Key Skills:</strong> Religion, Insight, Perception, Medicine
+        </div>
+
+        <h2>📈 Level Progression</h2>
+        <div class="stats-box">
+<strong>Cleric 1:</strong> ⛈️ Tempest Domain
+- Domain Spells: Thunderwave, Fog Cloud (free!)
+- Wrath of the Storm: Reaction deals 2d8 lightning/thunder when hit!
+- Cantrips: Sacred Flame, Guidance, Blade Ward
+
+<strong>Cleric 2:</strong> ⚡ DESTRUCTIVE WRATH + Turn Undead
+- Channel Divinity: Force MAX damage on thunder/lightning!
+- Spells: Healing Word, Bless, Sanctuary
+
+<strong>Cleric 3:</strong> Level 2 domain spells
+- Domain: Shatter, Gust of Wind (free!)
+- Prepare: Spiritual Weapon, Hold Person
+
+<strong>Cleric 4:</strong> 🎓 FEAT: Resilience (Constitution)
+- CON becomes 18, gain proficiency in CON saves!
+- New Cantrip: Produce Flame (light source)
+
+<strong>Cleric 5:</strong> ⚡ CALL LIGHTNING unlocked!
+- Domain: Call Lightning, Sleet Storm (free!)
+- Prepare: Spirit Guardians (radiant AOE)
+- Call Lightning: 3d10 per hit, reusable each turn!
+
+<strong>Cleric 6:</strong> 🌊 THUNDERBOLT STRIKE!
+- Push creatures 3m when you deal lightning/thunder damage!
+- Spells: Mass Healing Word, Glyph of Warding (lightning)
+
+<strong>Cleric 7:</strong> Level 4 domain spells
+- Domain: Ice Storm, Freedom of Movement (free!)
+- Prepare: Banishment, Guardian of Faith
+
+<strong>Cleric 8:</strong> 🎓 FEAT: +2 Wisdom (to 20)
+- Divine Strike: +1d8 thunder damage on melee attacks!
+- Maximum spell save DC and spell attack bonus
+
+<strong>Cleric 9:</strong> Level 5 spells
+- Prepare: Flame Strike, Greater Restoration
+
+<strong>Cleric 10:</strong> Divine Intervention (once ever!)
+- Prepare: Mass Cure Wounds, Hold Monster
+
+<strong>Cleric 11:</strong> Level 6 spells
+- Prepare: Heroes' Feast, Blade Barrier, Heal
+
+<strong>Cleric 12:</strong> 🎓 FEAT: War Caster OR +2 WIS
+- War Caster: Advantage on concentration saves
+- Or push WIS to 22 with items for +6 modifier
+        </div>
+
+        <h2>⚡ The Wet + Lightning Combo</h2>
+        <div class="callout">
+            <span class="emoji">🌊</span> <strong>DOUBLE DAMAGE SETUP:</strong> Lightning damage is DOUBLED against wet targets! Use Ice Storm, Sleet Storm, or Create Water (from allies) to make enemies wet, then blast with Call Lightning + Destructive Wrath for 100 damage per strike!
+        </div>
+
+        <h2>🌀 Thunderbolt Strike (Push Mechanic)</h2>
+        <div class="stats-box">
+<strong>At Level 6:</strong>
+Every time you deal lightning or thunder damage, push the target 3 meters!
+
+<strong>Sources of Pushback:</strong>
+• Call Lightning (each strike)
+• Thunderwave (AOE knockback + push)
+• Wrath of the Storm (reaction)
+• Divine Strike (melee thunder)
+• Glyph of Warding (lightning)
+• Shatter (thunder damage)
+
+<strong>Tactical Uses:</strong>
+• Push enemies off cliffs for instant kills
+• Push enemies into hazards (fire, acid, chasms)
+• Push enemies out of melee range to protect casters
+• Push enemies into Spirit Guardians range
+        </div>
+
+        <h2>🎒 Essential Gear</h2>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
+            <tr>
+                <td>👑 Helmet</td>
+                <td>Lifebringer</td>
+                <td>Circus of Last Days (Act 3). When you gain Lightning Charges, also gain 3 temp HP!</td>
+            </tr>
+            <tr>
+                <td>👘 Armor</td>
+                <td>Adamantine Splint Armor</td>
+                <td>Grymforge — craft at Adamantine Forge. Immune to crits, -2 damage from all attacks!</td>
+            </tr>
+            <tr>
+                <td>🧤 Gloves</td>
+                <td>Gloves of Belligerent Skies</td>
+                <td>Crèche Y'llek Inquisitor's Chamber. Thunder/Lightning applies 2 turns Reverberation!</td>
+            </tr>
+            <tr>
+                <td>👢 Boots</td>
+                <td>Watersparkers</td>
+                <td>Grymforge — hidden chest. Standing in water = electrified! Standing in electric = 3 Lightning Charges!</td>
+            </tr>
+            <tr>
+                <td>🧥 Cloak</td>
+                <td>Vivacious Cloak</td>
+                <td>Crèche Y'llek. Gain 8 temp HP when casting a spell while in melee!</td>
+            </tr>
+            <tr>
+                <td>📿 Amulet</td>
+                <td>Blast Pendant</td>
+                <td>Moonrise Towers (Act 2). Lightning Charges strengthen your next Lightning spell!</td>
+            </tr>
+            <tr>
+                <td>💍 Ring 1</td>
+                <td>Killer's Sweetheart</td>
+                <td>Self-Same Trial (Gauntlet of Shar). Auto-crit once per long rest — use with Destructive Wrath!</td>
+            </tr>
+            <tr>
+                <td>💍 Ring 2</td>
+                <td>Ring of Elemental Infusion</td>
+                <td>Crèche Y'llek Infirmary. Your attacks deal extra elemental damage!</td>
+            </tr>
+            <tr>
+                <td>🗡️ Weapon</td>
+                <td>Devotee's Mace</td>
+                <td>Stormshore Tabernacle (Act 3). +1d8 radiant + healing on crit! Good for Divine Strike.</td>
+            </tr>
+            <tr>
+                <td>🛡️ Shield</td>
+                <td>Sentinel Shield</td>
+                <td>Various vendors. +3 Initiative, advantage on Perception!</td>
+            </tr>
+        </table>
+
+        <h2>⚔️ Combat Strategy</h2>
+        <h3>💥 Opening Turn (The Nuclear Option)</h3>
+        <div class="stats-box">
+<strong>Setup for Maximum Damage:</strong>
+1. Have ally cast Create Water or use Ice Storm (your spell!)
+2. All enemies are now WET
+
+<strong>Turn 1 — Call Lightning + Destructive Wrath:</strong>
+1. Cast Call Lightning (concentration)
+2. Strike a wet enemy
+3. Use Destructive Wrath — MAXIMUM damage!
+4. Base: 3d10 = 30 max → Wet doubles it = 60 damage!
+5. Upcast to 5th level: 5d10 = 50 max → Wet = 100 damage!
+
+<strong>Subsequent Turns:</strong>
+Call Lightning again each turn (1 action) = 60-100 damage per turn!
+        </div>
+
+        <h3>🌀 Spirit Guardians + Melee</h3>
+        <div class="stats-box">
+<strong>Alternative Strategy:</strong>
+1. Cast Spirit Guardians (3d8 radiant AOE)
+2. Wade into melee
+3. Enemies take damage entering AND on their turn
+4. Your melee attacks deal +1d8 thunder (Divine Strike)
+5. Vivacious Cloak gives 8 temp HP when casting in melee
+6. Every thunder hit pushes enemies 3m!
+
+<strong>Result:</strong>
+Enemies can't escape Spirit Guardians — you push them back in!
+        </div>
+
+        <h3>⚡ Lightning Charges Synergy</h3>
+        <div class="stats-box">
+<strong>Lightning Charge Build-Up:</strong>
+• Watersparkers: Gain 3 charges when standing in electricity
+• At 5+ charges: Next attack deals +1d8 lightning damage
+
+<strong>The Loop:</strong>
+1. Cast Call Lightning on wet enemies (including yourself if in water)
+2. Standing in electrified water = 3 Lightning Charges
+3. Lifebringer helmet = +3 temp HP
+4. Blast Pendant strengthens next lightning spell
+5. Attack with boosted lightning = more charges!
+
+<strong>Synergy Items:</strong>
+All your lightning damage triggers:
+• Gloves of Belligerent Skies (Reverberation)
+• Thunderbolt Strike (3m push)
+• Lightning Charges (bonus damage)
+        </div>
+
+        <h2>📊 Damage Calculation</h2>
+        <table>
+            <tr><th>Scenario</th><th>Damage</th><th>Notes</th></tr>
+            <tr><td>Call Lightning (base)</td><td>3d10 (3-30)</td><td>Average 16.5</td></tr>
+            <tr><td>+ Destructive Wrath</td><td>30</td><td>Max damage!</td></tr>
+            <tr><td>+ Wet target</td><td>60</td><td>Doubled!</td></tr>
+            <tr><td>Upcast (5th level)</td><td>50 → 100</td><td>5d10 maxed + doubled</td></tr>
+            <tr><td>+ Killer's Sweetheart crit</td><td>200</td><td>Crit doubles dice!</td></tr>
+        </table>
+        <p><em>*With Killer's Sweetheart crit + Destructive Wrath + Wet = 200 damage in one strike!</em></p>
+
+        <h2>⚖️ Pros & Cons</h2>
+        <table>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
+            <tr><td>Destructive Wrath = guaranteed max damage</td><td>Requires wet setup for best damage</td></tr>
+            <tr><td>Call Lightning is reusable every turn</td><td>Channel Divinity limited (2/short rest)</td></tr>
+            <tr><td>Thunderbolt Strike = constant pushback</td><td>Heavy armor limits mobility</td></tr>
+            <tr><td>Heavy armor proficiency</td><td>Less healing than other Cleric domains</td></tr>
+            <tr><td>Great crowd control with pushes</td><td>Concentration on Call Lightning is critical</td></tr>
+            <tr><td>Free domain spells (Ice Storm, Sleet Storm)</td><td>—</td></tr>
+        </table>
+
+        <h2>💡 Tips & Tricks</h2>
+        <div class="callout">
+            <span class="emoji">💡</span> <strong>ADVANCED TACTICS:</strong>
+            <ul>
+                <li><strong>Ice Storm → Call Lightning:</strong> Cast Ice Storm first (free domain spell!) to wet enemies, then Call Lightning for double damage</li>
+                <li><strong>Watersparkers Loop:</strong> Stand in water, Call Lightning on yourself — become electrified, gain Lightning Charges and temp HP!</li>
+                <li><strong>Cliff Kills:</strong> Thunderbolt Strike pushes enemies 3m — position near cliffs for instant kills with any lightning spell</li>
+                <li><strong>Glyph of Warding:</strong> Set up lightning glyphs before combat for massive ambush damage</li>
+                <li><strong>Resilience Constitution:</strong> Essential for maintaining Call Lightning concentration under fire</li>
+                <li><strong>Killer's Sweetheart Timing:</strong> Save your auto-crit for when Destructive Wrath is ready — 200 damage on wet targets!</li>
+            </ul>
+        </div>
+
+        <h2>📊 Quick Reference</h2>
+        <div class="stats-box">
+<strong>Class:</strong> 12 Tempest Domain Cleric (Pure)
+<strong>Primary Stats:</strong> WIS 20+, CON 18+, STR 14
+<strong>Key Features:</strong> Destructive Wrath, Call Lightning, Thunderbolt Strike, Divine Strike
+<strong>Core Items:</strong> Watersparkers, Lifebringer, Gloves of Belligerent Skies, Blast Pendant
+<strong>Combat Style:</strong> Lightning DPS + Push control + Spirit Guardians backup
+<strong>Best For:</strong> Players who want to deal massive damage while still having Cleric utility!
+        </div>
+
+        <div class="footer"><em>⛈️ "The storm answers to no one — except me." ⚡</em></div>
+    </div>
+</div>
+
 <!-- GOD BLADE -->
 <div class="build" id="god-blade">
     <div class="build-content">
@@ -2703,6 +2987,10 @@ INT reaches 18 at L4, then 20 at L8 with ASI
             'light-cleric': {
                 name: 'Light Cleric', icon: '☀️', role: 'Defensive Support',
                 items: ["Duelist's Prerogative", 'Helmet of Arcane Acuity', 'Bhaalist Armour', 'Luminous Gloves', 'Boots of Stormy Clamour', 'Thunderskin Cloak', 'Coruscation Ring', 'Whispering Promise', 'Amulet of Greater Health']
+            },
+            'tempest-cleric': {
+                name: 'Tempest Cleric', icon: '⛈️', role: 'Lightning DPS',
+                items: ['Lifebringer', 'Adamantine Splint Armor', 'Gloves of Belligerent Skies', 'Watersparkers', 'Vivacious Cloak', 'Blast Pendant', "Killer's Sweetheart", 'Ring of Elemental Infusion', "Devotee's Mace", 'Sentinel Shield']
             },
             'god-blade': {
                 name: 'God Blade', icon: '✨', role: 'Nova Striker',
