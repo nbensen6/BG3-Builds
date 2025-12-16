@@ -409,6 +409,19 @@
         #open-hand-monk .stats-box { background: linear-gradient(135deg, rgba(26,26,26,0.9) 0%, rgba(45,31,15,0.9) 100%); border: 1px solid #ff8c00; }
         #open-hand-monk .footer { color: #ffa500; border-top: 1px solid #ff8c00; }
 
+        /* BEAST MASTER - Shadow Purple/Raven Black */
+        #beast-master { background: linear-gradient(180deg, #1a1a1a 0%, #2d1f3d 50%, #1a1a2e 100%); color: #d4c5e8; }
+        #beast-master h1 { color: #9370db; text-shadow: 2px 2px 4px rgba(147,112,219,0.5), 0 0 20px rgba(147,112,219,0.3); }
+        #beast-master .subtitle { color: #b39ddb; }
+        #beast-master h2 { color: #9370db; border-bottom: 2px solid #7b68ee; }
+        #beast-master h3 { color: #b39ddb; }
+        #beast-master th { background: linear-gradient(135deg, #4a3060 0%, #6a4c93 100%); }
+        #beast-master td { border-bottom: 1px solid #3d2a50; }
+        #beast-master tr:nth-child(even) { background: rgba(147,112,219,0.1); }
+        #beast-master .callout { background: linear-gradient(135deg, rgba(147,112,219,0.15) 0%, rgba(75,0,130,0.2) 100%); border-left: 4px solid #9370db; }
+        #beast-master .stats-box { background: linear-gradient(135deg, rgba(26,26,26,0.9) 0%, rgba(45,31,61,0.9) 100%); border: 1px solid #7b68ee; }
+        #beast-master .footer { color: #9370db; border-top: 1px solid #7b68ee; }
+
         /* TEMPEST CLERIC - Storm Blue/Purple */
         #tempest-cleric { background: linear-gradient(180deg, #e8eaf6 0%, #c5cae9 50%, #ffffff 100%); color: #1a237e; }
         #tempest-cleric h1 { color: #303f9f; text-shadow: 2px 2px 4px rgba(48,63,159,0.3); }
@@ -554,6 +567,7 @@
             <div class="dropdown">
                 <button class="dropdown-btn">🏹 Ranger</button>
                 <div class="dropdown-content">
+                    <button class="dropdown-item" data-tab="beast-master">🐻 Beast Master</button>
                     <button class="dropdown-item" data-tab="stealth-archer">🎯 Stealth Archer</button>
                     <button class="dropdown-item" data-tab="starswarm">🐝 Starswarm</button>
                 </div>
@@ -630,6 +644,7 @@
                         <option value="tavern-brawler">🔥 Tavern Brawler</option>
                     </optgroup>
                     <optgroup label="Ranger">
+                        <option value="beast-master">🐻 Beast Master</option>
                         <option value="stealth-archer">🎯 Stealth Archer</option>
                         <option value="starswarm">🐝 Starswarm</option>
                     </optgroup>
@@ -680,6 +695,7 @@
                         <option value="tavern-brawler">🔥 Tavern Brawler</option>
                     </optgroup>
                     <optgroup label="Ranger">
+                        <option value="beast-master">🐻 Beast Master</option>
                         <option value="stealth-archer">🎯 Stealth Archer</option>
                         <option value="starswarm">🐝 Starswarm</option>
                     </optgroup>
@@ -730,6 +746,7 @@
                         <option value="tavern-brawler">🔥 Tavern Brawler</option>
                     </optgroup>
                     <optgroup label="Ranger">
+                        <option value="beast-master">🐻 Beast Master</option>
                         <option value="stealth-archer">🎯 Stealth Archer</option>
                         <option value="starswarm">🐝 Starswarm</option>
                     </optgroup>
@@ -780,6 +797,7 @@
                         <option value="tavern-brawler">🔥 Tavern Brawler</option>
                     </optgroup>
                     <optgroup label="Ranger">
+                        <option value="beast-master">🐻 Beast Master</option>
                         <option value="stealth-archer">🎯 Stealth Archer</option>
                         <option value="starswarm">🐝 Starswarm</option>
                     </optgroup>
@@ -2310,6 +2328,170 @@ STR: 8 | DEX: 16 | CON: 14 | WIS: 16 | INT: 10 | CHA: 8
         </div>
 
         <div class="footer"><em>🐝 "The swarm follows the stars, and together, we are legion." ⭐</em></div>
+    </div>
+</div>
+
+<!-- BEAST MASTER RANGER -->
+<div class="build" id="beast-master">
+    <div class="build-content">
+        <h1>🐻 THE BEAST MASTER 🐻</h1>
+        <div class="subtitle">🦅 Beast Master Ranger / War Cleric - Baldur's Gate 3 🌑</div>
+
+        <h2>🦅 Build Overview</h2>
+        <p>A melee-focused Beast Master Ranger that uses Raven companions to blanket the battlefield in darkness, enabling devastating stealth attacks with advantage. The Ravens create darkness pockets by flying, while you remain hidden and pick off enemies one by one with massive stealth damage bonuses from Shadow Blade and the Shadowcloaked Ring!</p>
+        <p><strong>Class Split:</strong> 11 Beast Master Ranger / 1 War Domain Cleric</p>
+
+        <div class="callout">
+            <span class="emoji">🦅</span> <strong>RAVEN DARKNESS:</strong> Ravens create darkness pockets every time they land from flying! Spam this to cover the entire battlefield in darkness - you get advantage on attacks, enemies can't target you, and your stealth checks roll 30-40+ while you one-shot enemies from the shadows!
+        </div>
+
+        <h2>📊 Race & Stats</h2>
+        <div class="stats-box">
+<strong>Recommended Race:</strong> High Elf (Booming Blade cantrip for extra damage)
+- Half-Elf for skills and darkvision
+- Wood Elf for movement speed
+
+<strong>Stat Spread (DEX Focus):</strong>
+STR: 8 | DEX: 17 | CON: 16 | INT: 8 | WIS: 10 | CHA: 8
+
+<strong>Why Dump STR?</strong>
+- Use Strength Elixirs (Cloud Giant/Hill Giant) for maximum damage
+- Keep DEX high for initiative, AC, and finesse weapons
+- Phalar Aluve and other finesse weapons scale with DEX
+
+<strong>Background:</strong> Ranger Knight (heavy armor) or Bounty Hunter (ensnare saves)
+<strong>Favored Enemy:</strong> Beast Tamer (extra Raven!) or Wasteland Wanderer Fire
+        </div>
+
+        <h2>🐾 Beast Companion Options</h2>
+        <table>
+            <tr><th>Companion</th><th>Ability</th><th>When to Use</th></tr>
+            <tr><td>🦅 Ravens</td><td>Create darkness when landing, Blind enemies</td><td>BEST LATE GAME - Darkness spam for stealth</td></tr>
+            <tr><td>🐻 Bear</td><td>High HP tank, Goading Roar</td><td>Best early/mid game for soaking damage</td></tr>
+            <tr><td>🐗 Boar</td><td>Charge attack, knockdown</td><td>Good for disruption and CC</td></tr>
+            <tr><td>🐺 Wolf</td><td>Pack tactics, trip attack</td><td>Solid if running multiple melee</td></tr>
+            <tr><td>🕷️ Spider</td><td>Web, poison</td><td>Control option, situational</td></tr>
+        </table>
+
+        <div class="callout">
+            <span class="emoji">🦅</span> <strong>ON BLACK WINGS:</strong> At level 11, summon TWO additional ravens that act independently! They'll fly around blinding enemies automatically. With Aid and Heroes' Feast from a support, your ravens can have 50-80+ HP!
+        </div>
+
+        <h2>📈 Class Progression</h2>
+        <table>
+            <tr><th>Level</th><th>Class</th><th>Features & Choices</th></tr>
+            <tr><td>1</td><td>Ranger</td><td>Ranger Knight (heavy armor) or Bounty Hunter. Wasteland Wanderer Fire for resistance</td></tr>
+            <tr><td>2</td><td>Ranger</td><td>Hunter's Mark, Ensnaring Strike, Longstrider. Fighting Style: Defense (+1 AC)</td></tr>
+            <tr><td>3</td><td>Ranger</td><td>BEAST MASTER! Pick Ravens or Bear. Longstrider or Fog Cloud</td></tr>
+            <tr><td>4</td><td>Ranger</td><td>Feat: DEX +2 (to 19) or Alert (+5 initiative)</td></tr>
+            <tr><td>5</td><td>Ranger</td><td>EXTRA ATTACK + Companion's Bond (+3-4 AC to summons!). Pass Without Trace!</td></tr>
+            <tr><td>6</td><td>Ranger</td><td>Bounty Hunter. Wasteland Wanderer Poison/Cold</td></tr>
+            <tr><td>7</td><td>Ranger</td><td>Exceptional Training (summons dash/help as bonus). Spike Growth!</td></tr>
+            <tr><td>8</td><td>Ranger</td><td>Land's Stride (ignore difficult terrain). Feat: DEX +2 (max 20) or Alert</td></tr>
+            <tr><td>9</td><td>Ranger</td><td>Conjure Barrage (INSANE with Shadow Blade!) or Lightning Arrow</td></tr>
+            <tr><td>10</td><td>Ranger</td><td>Hide in Plain Sight (+10 stealth). Mage Breaker. Natural Explorer: Fire/Cold resist</td></tr>
+            <tr><td>11</td><td>Ranger</td><td>Beast's Companion gets EXTRA ATTACK! Ravens blind twice! Lightning Arrow</td></tr>
+            <tr><td>12</td><td>War Cleric</td><td>3 bonus action attacks/long rest! Command, Healing Word, Shield of Faith, Sanctuary</td></tr>
+        </table>
+
+        <h3>Alternative Multiclass Options</h3>
+        <div class="stats-box">
+<strong>Fighter 1:</strong> Second Wind (+1d10 HP), Great Weapon Fighting style
+<strong>Barbarian 1:</strong> Rage (+damage, half physical damage), can't cast spells while raging
+<strong>Ranger 12:</strong> Extra feat (Savage Attacker or Alert), stay pure
+        </div>
+
+        <h2>🗡️ Core Weapons</h2>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location & Notes</th></tr>
+            <tr><td>Main Hand</td><td>Shadow Blade (Ring)</td><td>Ring of Shadow Blade — 2d8 psychic, advantage vs obscured targets! DOUBLES with Resonance Stone!</td></tr>
+            <tr><td>Main Hand (Alt)</td><td>Phalar Aluve</td><td>Underdark — Act 1 finesse longsword. Sing ability buffs allies!</td></tr>
+            <tr><td>Off Hand</td><td>Cold Snap</td><td>Act 1 — Applies Chilled, +1 AC. Great synergy</td></tr>
+            <tr><td>Off Hand (Alt)</td><td>Knife of the Undermountain King</td><td>Grymforge — Advantage vs obscured targets! Stacks with darkness</td></tr>
+            <tr><td>Ranged</td><td>Bow with Faerie Fire/Guiding Bolt</td><td>Act 3 — Sets up Circle of Hunting bonus (+1d4 attacks)</td></tr>
+        </table>
+
+        <h2>🛡️ Best-in-Slot Gear</h2>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location & Notes</th></tr>
+            <tr><td>Helmet</td><td>Circle of Hunting</td><td>Act 3 — +1d4 attack vs Hunter's Mark/Faerie Fire/Guiding Bolt targets!</td></tr>
+            <tr><td>Helmet (Alt)</td><td>Steel Watcher Helmet</td><td>Act 3 — Immunity to Blindness. Keep one ring slot free</td></tr>
+            <tr><td>Armor</td><td>Armor of Agility</td><td>Act 3 vendor — +2 saves, no stealth disadvantage, DEX to AC. IDEAL!</td></tr>
+            <tr><td>Armor (Alt)</td><td>Adamantine Scale Mail</td><td>Grymforge — Great early game, immune to crits</td></tr>
+            <tr><td>Gloves</td><td>Craterflesh Gloves</td><td>Act 3 — +1d6 force damage on attacks!</td></tr>
+            <tr><td>Gloves (Alt)</td><td>Helldusk Gloves</td><td>Act 3 — +1d6 fire damage, can't be disarmed</td></tr>
+            <tr><td>Cloak</td><td>Cloak of Protection</td><td>Various — +1 AC, +1 saves. Always solid</td></tr>
+            <tr><td>Cloak (Alt)</td><td>Deathstalker Mantle</td><td>Dark Urge only — Invisibility on kill!</td></tr>
+            <tr><td>Boots</td><td>Evasive Shoes</td><td>Act 3 — +1 AC, Acrobatics bonus</td></tr>
+            <tr><td>Boots (Alt)</td><td>Boots of Stormy Clamour</td><td>Myconid Colony — Apply Reverberation for thunder damage</td></tr>
+            <tr><td>Ring 1</td><td>Shadowcloaked Ring</td><td>Act 2 — +1d4 damage vs obscured targets! Perfect with darkness</td></tr>
+            <tr><td>Ring 2</td><td>Strange Conduit Ring</td><td>Act 2 — +1d4 psychic while concentrating (Spike Growth)</td></tr>
+            <tr><td>Ring (Alt)</td><td>Ring of Shadow Blade</td><td>Circus — FREE Shadow Blade! Swap ring after casting to keep it</td></tr>
+            <tr><td>Ring (Alt)</td><td>Killer's Sweetheart</td><td>Self-Same Trial — Free critical hit once per long rest</td></tr>
+            <tr><td>Amulet</td><td>Amulet of Greater Health</td><td>House of Hope — 23 CON, massive HP boost</td></tr>
+            <tr><td>Special</td><td>Resonance Stone</td><td>Grymforge — DOUBLES psychic damage! Insane with Shadow Blade</td></tr>
+        </table>
+
+        <h2>⚔️ Combat Strategy</h2>
+        <h3>Pre-Combat Setup</h3>
+        <div class="stats-box">
+1. Have an ally cast <strong>Greater Invisibility</strong> on you (or use scroll)
+2. Cast <strong>Pass Without Trace</strong> (+10 to stealth checks)
+3. Optional: Use <strong>Cat's Grace</strong> potion or Enhanced Ability for advantage on stealth
+4. Summon Ravens if not already out
+5. Apply <strong>Aid</strong> and <strong>Heroes' Feast</strong> to Ravens for 50-80 HP!
+        </div>
+
+        <h3>Combat Flow</h3>
+        <div class="stats-box">
+<strong>Turn 1 - Setup Darkness:</strong>
+• Ravens FLY and land = darkness pocket each time
+• Spam fly on each raven to cover the battlefield
+• Use "On Black Wings" to summon 2 more ravens
+
+<strong>Turn 2+ - Hunt from Shadows:</strong>
+• You're in darkness = ADVANTAGE on all attacks
+• Attack, succeed DC 15-21 stealth check, remain hidden
+• With 30-40+ stealth rolls, you stay hidden for many turns
+• One-shot enemies with Shadow Blade + Shadowcloaked Ring damage
+
+<strong>Burst Damage - Conjure Barrage:</strong>
+• With Shadow Blade equipped: 2d8 + 2d8 + 8 psychic + 1d6 fire + 1d4 psychic
+• Resonance Stone DOUBLES the psychic damage
+• Can one-shot entire groups of enemies!
+        </div>
+
+        <h3>Raven Tactics</h3>
+        <div class="stats-box">
+• <strong>Fly → Land:</strong> Creates darkness pocket. Repeat to cover battlefield
+• <strong>Rend Vision:</strong> Blind enemies for 2 turns with each attack
+• At level 11: Ravens get Extra Attack = blind 2 targets per raven!
+• Darkness breaks enemy line of sight - they use throwing attacks instead
+• Ravens soak up enemy spells and opportunity attacks
+        </div>
+
+        <h2>⚖️ Pros & Cons</h2>
+        <table>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
+            <tr><td>Ravens create infinite darkness for free</td><td>Setup-heavy playstyle</td></tr>
+            <tr><td>Stay hidden while attacking (30+ stealth)</td><td>Best gear is Act 3</td></tr>
+            <tr><td>Shadow Blade + Resonance Stone = huge damage</td><td>Requires party support (Greater Invisibility, Aid)</td></tr>
+            <tr><td>Conjure Barrage can one-shot groups</td><td>Concentration limits (Pass Without Trace or Spike Growth)</td></tr>
+            <tr><td>War Cleric gives 3 bonus action attacks</td><td>Ravens can be killed if not buffed with Aid</td></tr>
+            <tr><td>Summons tank and provide utility</td><td>—</td></tr>
+        </table>
+
+        <h2>📊 Quick Reference</h2>
+        <div class="stats-box">
+<strong>Class Split:</strong> 11 Beast Master Ranger / 1 War Domain Cleric
+<strong>Primary Stats:</strong> DEX 20, CON 16, WIS 10
+<strong>Key Features:</strong> Extra Attack, Companion's Bond, On Black Wings, War Priest
+<strong>Best Companion:</strong> Ravens (darkness + blind) or Bear (early game tank)
+<strong>Core Combo:</strong> Greater Invisibility → Pass Without Trace → Ravens spam darkness → Stealth attack with advantage
+<strong>Nova Damage:</strong> Shadow Blade + Resonance Stone + Conjure Barrage
+        </div>
+
+        <div class="footer"><em>🦅 "From the shadows we strike, with ravens as our eyes." 🌑</em></div>
     </div>
 </div>
 
@@ -4339,6 +4521,10 @@ INT reaches 18 at L4, then 20 at L8 with ASI
             'open-hand-monk': {
                 name: 'Open Hand Monk', icon: '👊', role: 'Unarmed Striker',
                 items: ['Gloves of Soul Catching', 'Vest of Soul Rejuvenation', 'Haste Helm', 'Scabby Pilus Circlet', 'Boots of Uninhibited Kushigo', 'Evasive Shoes', 'Cloak of Protection', "Killer's Sweetheart", 'Ring of Protection', 'Amulet of Greater Health', 'Hill Giant Elixir']
+            },
+            'beast-master': {
+                name: 'Beast Master', icon: '🐻', role: 'Stealth Striker',
+                items: ['Ring of Shadow Blade', 'Phalar Aluve', 'Cold Snap', 'Knife of the Undermountain King', 'Circle of Hunting', 'Armor of Agility', 'Craterflesh Gloves', 'Helldusk Gloves', 'Cloak of Protection', 'Evasive Shoes', 'Boots of Stormy Clamour', 'Shadowcloaked Ring', 'Strange Conduit Ring', "Killer's Sweetheart", 'Amulet of Greater Health', 'Resonance Stone']
             }
         };
 
