@@ -422,6 +422,19 @@
         #beast-master .stats-box { background: linear-gradient(135deg, rgba(26,26,26,0.9) 0%, rgba(45,31,61,0.9) 100%); border: 1px solid #7b68ee; }
         #beast-master .footer { color: #9370db; border-top: 1px solid #7b68ee; }
 
+        /* GLOOMSTALKER - Shadow Green/Dark */
+        #gloomstalker { background: linear-gradient(180deg, #0d1a0d 0%, #1a2e1a 50%, #0d1a0d 100%); color: #b8d4b8; }
+        #gloomstalker h1 { color: #4caf50; text-shadow: 2px 2px 4px rgba(76,175,80,0.5), 0 0 20px rgba(76,175,80,0.3); }
+        #gloomstalker .subtitle { color: #81c784; }
+        #gloomstalker h2 { color: #4caf50; border-bottom: 2px solid #388e3c; }
+        #gloomstalker h3 { color: #81c784; }
+        #gloomstalker th { background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%); }
+        #gloomstalker td { border-bottom: 1px solid #2e4a2e; }
+        #gloomstalker tr:nth-child(even) { background: rgba(76,175,80,0.1); }
+        #gloomstalker .callout { background: linear-gradient(135deg, rgba(76,175,80,0.15) 0%, rgba(27,94,32,0.2) 100%); border-left: 4px solid #4caf50; }
+        #gloomstalker .stats-box { background: linear-gradient(135deg, rgba(13,26,13,0.9) 0%, rgba(26,46,26,0.9) 100%); border: 1px solid #388e3c; }
+        #gloomstalker .footer { color: #4caf50; border-top: 1px solid #388e3c; }
+
         /* TEMPEST CLERIC - Storm Blue/Purple */
         #tempest-cleric { background: linear-gradient(180deg, #e8eaf6 0%, #c5cae9 50%, #ffffff 100%); color: #1a237e; }
         #tempest-cleric h1 { color: #303f9f; text-shadow: 2px 2px 4px rgba(48,63,159,0.3); }
@@ -568,6 +581,7 @@
                 <button class="dropdown-btn">🏹 Ranger</button>
                 <div class="dropdown-content">
                     <button class="dropdown-item" data-tab="beast-master">🐻 Beast Master</button>
+                    <button class="dropdown-item" data-tab="gloomstalker">🌑 Gloomstalker</button>
                     <button class="dropdown-item" data-tab="stealth-archer">🎯 Stealth Archer</button>
                     <button class="dropdown-item" data-tab="starswarm">🐝 Starswarm</button>
                 </div>
@@ -645,6 +659,7 @@
                     </optgroup>
                     <optgroup label="Ranger">
                         <option value="beast-master">🐻 Beast Master</option>
+                        <option value="gloomstalker">🌑 Gloomstalker</option>
                         <option value="stealth-archer">🎯 Stealth Archer</option>
                         <option value="starswarm">🐝 Starswarm</option>
                     </optgroup>
@@ -696,6 +711,7 @@
                     </optgroup>
                     <optgroup label="Ranger">
                         <option value="beast-master">🐻 Beast Master</option>
+                        <option value="gloomstalker">🌑 Gloomstalker</option>
                         <option value="stealth-archer">🎯 Stealth Archer</option>
                         <option value="starswarm">🐝 Starswarm</option>
                     </optgroup>
@@ -747,6 +763,7 @@
                     </optgroup>
                     <optgroup label="Ranger">
                         <option value="beast-master">🐻 Beast Master</option>
+                        <option value="gloomstalker">🌑 Gloomstalker</option>
                         <option value="stealth-archer">🎯 Stealth Archer</option>
                         <option value="starswarm">🐝 Starswarm</option>
                     </optgroup>
@@ -798,6 +815,7 @@
                     </optgroup>
                     <optgroup label="Ranger">
                         <option value="beast-master">🐻 Beast Master</option>
+                        <option value="gloomstalker">🌑 Gloomstalker</option>
                         <option value="stealth-archer">🎯 Stealth Archer</option>
                         <option value="starswarm">🐝 Starswarm</option>
                     </optgroup>
@@ -2492,6 +2510,184 @@ STR: 8 | DEX: 17 | CON: 16 | INT: 8 | WIS: 10 | CHA: 8
         </div>
 
         <div class="footer"><em>🦅 "From the shadows we strike, with ravens as our eyes." 🌑</em></div>
+    </div>
+</div>
+
+<!-- GLOOMSTALKER RANGER -->
+<div class="build" id="gloomstalker">
+    <div class="build-content">
+        <h1>🌑 THE GLOOMSTALKER 🌑</h1>
+        <div class="subtitle">🏹 Pure Gloomstalker Ranger - Baldur's Gate 3 🌲</div>
+
+        <h2>🌲 Build Overview</h2>
+        <p>A pure level 12 Gloomstalker Ranger that excels at ambush tactics and ranged combat. The Gloomstalker's unique level 11 ability, Stalker's Flurry, turns every missed attack into a free extra attack - making Sharpshooter's -5 penalty much less punishing! Combined with Dread Ambusher's first-turn burst and darkness arrow synergy, this build dominates from the shadows.</p>
+        <p><strong>Class:</strong> 12 Gloomstalker Ranger (Pure)</p>
+
+        <div class="callout">
+            <span class="emoji">🌑</span> <strong>STALKER'S FLURRY (Level 11):</strong> Whenever you MISS with a weapon attack, you get a FREE extra attack! No action cost, no bonus action - just a free swing. This is incredible with Sharpshooter because the -5 to hit means more misses... which become hits!
+        </div>
+
+        <h2>📊 Race & Stats</h2>
+        <div class="stats-box">
+<strong>Recommended Race:</strong> Any race works well
+- Wood Elf for movement and weapon proficiency
+- Half-Orc for Savage Attacks on crits
+- Human for extra feat versatility
+
+<strong>Stat Spread:</strong>
+STR: 10 | DEX: 16 | CON: 14 | INT: 10 | WIS: 16 | CHA: 10
+
+<strong>With Hag's Hair (+1 DEX):</strong>
+STR: 10 | DEX: 17→18 | CON: 14 | INT: 8 | WIS: 16 | CHA: 10
+
+<strong>Alternative (More Survivability):</strong>
+STR: 10 | DEX: 16 | CON: 16 | INT: 8 | WIS: 14 | CHA: 10
+
+<strong>Note:</strong> Use Strength Elixirs or Gloves of Strength for Titanstring Bow damage scaling.
+        </div>
+
+        <h2>🌲 Gloomstalker Features</h2>
+        <table>
+            <tr><th>Feature</th><th>Level</th><th>Effect</th></tr>
+            <tr><td>🌑 Dread Ambusher</td><td>3</td><td>+3 initiative, +3m movement on turn 1, FREE attack with +1d8 damage!</td></tr>
+            <tr><td>👁️ Superior Darkvision</td><td>3</td><td>See in darkness up to 24 meters</td></tr>
+            <tr><td>🌫️ Umbral Shroud</td><td>3</td><td>Turn invisible using stealth check</td></tr>
+            <tr><td>🧠 Iron Mind</td><td>7</td><td>Proficiency in WIS and INT saves (+4 to resist Hold Person, etc.)</td></tr>
+            <tr><td>👻 Hide in Plain Sight</td><td>10</td><td>+10 to stealth checks while standing still, turn invisible</td></tr>
+            <tr><td>⚔️ Stalker's Flurry</td><td>11</td><td>Missed attacks become FREE extra attacks!</td></tr>
+        </table>
+
+        <h2>📈 Class Progression</h2>
+        <table>
+            <tr><th>Level</th><th>Features & Choices</th></tr>
+            <tr><td>1</td><td>Bounty Hunter (disadvantage on Ensnaring Strike saves) OR Ranger Knight (heavy armor). Beast Tamer for Raven familiar!</td></tr>
+            <tr><td>2</td><td>Fighting Style: Archery (+2 ranged attacks). Spells: Hunter's Mark, Ensnaring Strike</td></tr>
+            <tr><td>3</td><td>GLOOMSTALKER! Dread Ambusher, Darkvision, Umbral Shroud. Spell: Fog Cloud or Longstrider</td></tr>
+            <tr><td>4</td><td>Feat: DEX +2 (to 18/20) OR Sharpshooter (-5 hit, +10 damage)</td></tr>
+            <tr><td>5</td><td>EXTRA ATTACK + Misty Step! Spell: Pass Without Trace (+10 stealth)</td></tr>
+            <tr><td>6</td><td>Ranger Knight. Natural Explorer: Fire Resistance</td></tr>
+            <tr><td>7</td><td>IRON MIND (+4 WIS/INT saves). Spell: Spike Growth or Silence</td></tr>
+            <tr><td>8</td><td>Land's Stride (ignore difficult terrain). Feat: Sharpshooter OR DEX +2</td></tr>
+            <tr><td>9</td><td>Spell: Lightning Arrow or Conjure Barrage. Also get Fear (Tasha's Hideous Laughter)</td></tr>
+            <tr><td>10</td><td>Hide in Plain Sight (+10 stealth). Natural Explorer: Cold Resistance</td></tr>
+            <tr><td>11</td><td>STALKER'S FLURRY! Misses become free attacks. Spell: Plant Growth (no concentration!)</td></tr>
+            <tr><td>12</td><td>Feat: Alert (+5 initiative = +8 total!) OR Crossbow Expert OR DEX +2</td></tr>
+        </table>
+
+        <h3>Feat Priority</h3>
+        <div class="stats-box">
+<strong>Option A (Sharpshooter Focus):</strong>
+Level 4: Sharpshooter → Level 8: DEX +2 → Level 12: Alert
+
+<strong>Option B (Balanced):</strong>
+Level 4: DEX +2 → Level 8: Sharpshooter → Level 12: Alert
+
+<strong>Option C (Hand Crossbow):</strong>
+Level 4: DEX +2 → Level 8: Crossbow Expert → Level 12: Sharpshooter
+(Enables close-range shooting + Bhaalist Armour piercing damage doubling)
+        </div>
+
+        <h2>🗡️ Core Weapons</h2>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location & Notes</th></tr>
+            <tr><td>Ranged (Best)</td><td>Titanstring Bow</td><td>Lorroakan's Projection — Best bow, adds STR to damage. Use Elixirs!</td></tr>
+            <tr><td>Ranged (Alt)</td><td>Gontr Mael</td><td>Steel Watch Foundry — Guiding Bolt on hit, FREE Celestial Haste (no lethargy)!</td></tr>
+            <tr><td>Ranged (Alt)</td><td>Hand Crossbow</td><td>Various — For Crossbow Expert build with Bhaalist Armour</td></tr>
+            <tr><td>Melee</td><td>Phalar Aluve</td><td>Underdark — Shrieking Song: thunder damage + enemy save debuff</td></tr>
+            <tr><td>Off-Hand</td><td>Viconia's Walking Fortress</td><td>House of Grief — Best shield, reflects on spell save</td></tr>
+            <tr><td>Off-Hand (Alt)</td><td>Spear of Evening</td><td>Shar's Trials — See in magical darkness, blind immunity</td></tr>
+        </table>
+
+        <h2>🛡️ Best-in-Slot Gear</h2>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location & Notes</th></tr>
+            <tr><td>Helmet</td><td>Steel Watcher Helmet</td><td>Steel Watch Foundry — Blind immunity, see in magical darkness!</td></tr>
+            <tr><td>Helmet (Alt)</td><td>Haste Helm</td><td>Grymforge — +1.5m movement at start of combat</td></tr>
+            <tr><td>Helmet (Alt)</td><td>Mask of Soul Perception</td><td>Devil's Fee — +2 attack, offsets Sharpshooter penalty</td></tr>
+            <tr><td>Armor</td><td>Armor of Agility</td><td>Act 3 vendor — Full DEX to AC, +2 saves, no stealth disadvantage. 27 AC!</td></tr>
+            <tr><td>Gloves</td><td>Gloves of Belligerent Skies</td><td>Creche Y'llek — Thunder/Lightning/Radiant applies 2 turns Reverberation</td></tr>
+            <tr><td>Gloves (Alt)</td><td>Helldusk Gloves</td><td>House of Hope — +1d6 fire damage on attacks</td></tr>
+            <tr><td>Cloak</td><td>Cloak of Protection</td><td>Various — +1 AC, +1 saves</td></tr>
+            <tr><td>Boots</td><td>Evasive Shoes</td><td>Act 3 — +1 AC</td></tr>
+            <tr><td>Boots (Alt)</td><td>Disintegrating Night Walkers</td><td>Grymforge — Free Misty Step!</td></tr>
+            <tr><td>Boots (Alt)</td><td>Boots of Stormy Clamour</td><td>Myconid Colony — Reverberation on conditions</td></tr>
+            <tr><td>Ring 1</td><td>Band of the Mystic Scoundrel</td><td>Circus jackpot — Cast Fear as bonus action after weapon attack!</td></tr>
+            <tr><td>Ring 2</td><td>Caustic Band</td><td>Grymforge — +2 acid damage per attack (works with Arrow of Many Targets!)</td></tr>
+            <tr><td>Ring (Alt)</td><td>Eversight Ring</td><td>Act 2 — Blind immunity (if not using Steel Watcher Helmet)</td></tr>
+            <tr><td>Ring (Alt)</td><td>Shadowcloaked Ring</td><td>Act 2 — +1d4 vs obscured targets</td></tr>
+            <tr><td>Amulet</td><td>Amulet of Greater Health</td><td>House of Hope — 23 CON, massive HP boost</td></tr>
+        </table>
+
+        <h3>Darkness Synergy Setup</h3>
+        <div class="stats-box">
+To see in magical darkness while enemies can't, use ONE of:
+• <strong>Steel Watcher Helmet</strong> (frees ring slots)
+• <strong>Eversight Ring</strong> (frees helmet slot)
+• <strong>Spear of Evening</strong> in off-hand (frees both)
+
+Then use <strong>Arrows of Darkness</strong> to create darkness zones. You see perfectly, enemies are blinded!
+        </div>
+
+        <h2>⚔️ Combat Strategy</h2>
+        <h3>Pre-Combat Setup</h3>
+        <div class="stats-box">
+1. Summon Raven familiar (can blind enemies for advantage)
+2. Set up Arrows of Darkness before combat (last 3 turns)
+3. Activate Phalar Aluve's Shrieking Song (thunder damage + save debuff)
+4. Use Drake Throat Glaive to add lightning/cold to your bow
+        </div>
+
+        <h3>Turn 1 - Dread Ambusher Burst</h3>
+        <div class="stats-box">
+<strong>Initiative:</strong> +8 with Alert (+3 Gloomstalker, +5 Alert) = GO FIRST!
+
+<strong>Dread Ambusher Bonus:</strong>
+• +3 meters movement
+• FREE extra attack with +1d8 damage
+
+<strong>Optimal Turn 1:</strong>
+1. Hunter's Mark the biggest threat (bonus action)
+2. Attack priority target with Dread Ambusher bonus (+1d8)
+3. Arrow of Many Targets for multi-hit + spreading Reverberation
+4. Lightning Arrow or Conjure Barrage if enemies grouped
+
+With Haste (from Gontr Mael): Add 3 more attacks!
+        </div>
+
+        <h3>Subsequent Turns</h3>
+        <div class="stats-box">
+<strong>Key Abilities:</strong>
+• <strong>Arrow of Many Targets:</strong> Hits 3+ enemies, spreads conditions, Sharpshooter applies to ALL!
+• <strong>Conjure Barrage:</strong> AOE damage, great for grouped enemies
+• <strong>Lightning Arrow:</strong> Chain lightning effect, double damage on wet targets
+• <strong>Stalker's Flurry:</strong> Every miss = free attack. Sharpshooter misses recover!
+
+<strong>Band of Mystic Scoundrel Combo:</strong>
+After any weapon attack → Cast Fear (bonus action) → Enemy drops weapon → Pick it up!
+        </div>
+
+        <h2>⚖️ Pros & Cons</h2>
+        <table>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
+            <tr><td>Stalker's Flurry turns misses into hits</td><td>Pure class = no multiclass synergies</td></tr>
+            <tr><td>+8 initiative with Alert (always go first)</td><td>Requires setup for darkness strategy</td></tr>
+            <tr><td>Dread Ambusher = huge first turn burst</td><td>Less burst than Gloomstalker/Assassin multiclass</td></tr>
+            <tr><td>Iron Mind = +4 to WIS/INT saves</td><td>Sharpshooter penalty can miss important attacks</td></tr>
+            <tr><td>Sharpshooter + Stalker's Flurry synergy</td><td>—</td></tr>
+            <tr><td>Darkness arrows = advantage + enemies can't see</td><td>—</td></tr>
+        </table>
+
+        <h2>📊 Quick Reference</h2>
+        <div class="stats-box">
+<strong>Class:</strong> 12 Gloomstalker Ranger (Pure)
+<strong>Primary Stats:</strong> DEX 20, WIS 16, CON 14
+<strong>Key Features:</strong> Dread Ambusher, Iron Mind, Stalker's Flurry, Hide in Plain Sight
+<strong>Initiative Bonus:</strong> +8 (Gloomstalker +3, Alert +5)
+<strong>Fighting Style:</strong> Archery (+2 ranged attacks)
+<strong>Core Combo:</strong> Arrows of Darkness → Dread Ambusher burst → Arrow of Many Targets spam → Stalker's Flurry on misses
+        </div>
+
+        <div class="footer"><em>🌑 "In the darkness, the hunter becomes invisible. The prey never sees death coming." 🏹</em></div>
     </div>
 </div>
 
@@ -4525,6 +4721,10 @@ INT reaches 18 at L4, then 20 at L8 with ASI
             'beast-master': {
                 name: 'Beast Master', icon: '🐻', role: 'Stealth Striker',
                 items: ['Ring of Shadow Blade', 'Phalar Aluve', 'Cold Snap', 'Knife of the Undermountain King', 'Circle of Hunting', 'Armor of Agility', 'Craterflesh Gloves', 'Helldusk Gloves', 'Cloak of Protection', 'Evasive Shoes', 'Boots of Stormy Clamour', 'Shadowcloaked Ring', 'Strange Conduit Ring', "Killer's Sweetheart", 'Amulet of Greater Health', 'Resonance Stone']
+            },
+            'gloomstalker': {
+                name: 'Gloomstalker', icon: '🌑', role: 'Ranged DPS',
+                items: ['Titanstring Bow', 'Gontr Mael', 'Phalar Aluve', "Viconia's Walking Fortress", 'Steel Watcher Helmet', 'Mask of Soul Perception', 'Armor of Agility', 'Gloves of Belligerent Skies', 'Helldusk Gloves', 'Cloak of Protection', 'Evasive Shoes', 'Disintegrating Night Walkers', 'Band of the Mystic Scoundrel', 'Caustic Band', 'Eversight Ring', 'Amulet of Greater Health']
             }
         };
 
