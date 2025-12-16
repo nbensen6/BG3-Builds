@@ -541,7 +541,12 @@
         .pm-title { text-align: center; font-size: 28pt; color: #ffd700; margin-bottom: 10px; text-shadow: 2px 2px 8px rgba(255,215,0,0.3); }
         .pm-subtitle { text-align: center; color: #888; margin-bottom: 40px; font-size: 14px; }
 
-        .party-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 40px; }
+        .party-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 20px; }
+        .party-actions { text-align: center; margin-bottom: 30px; }
+        .open-builds-btn { background: linear-gradient(135deg, #4a9eff 0%, #2d7dd2 100%); border: none; color: #fff; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 12px rgba(74,158,255,0.3); }
+        .open-builds-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(74,158,255,0.4); }
+        .open-builds-btn:active { transform: translateY(0); }
+        .open-builds-btn:disabled { background: #444; cursor: not-allowed; box-shadow: none; transform: none; }
         .party-slot { background: rgba(255,255,255,0.05); border: 2px solid #333; border-radius: 12px; padding: 20px; text-align: center; transition: all 0.2s; }
         .party-slot:hover { border-color: #555; }
         .party-slot.has-build { border-color: #4a9eff; background: rgba(74,158,255,0.1); }
@@ -931,6 +936,10 @@
                 <div class="slot-icon" id="icon-4">👤</div>
                 <div class="slot-role" id="role-4">Empty Slot</div>
             </div>
+        </div>
+
+        <div class="party-actions">
+            <button class="open-builds-btn" id="open-builds-btn" onclick="openSelectedBuilds()" disabled>📖 Open All Builds in New Tabs</button>
         </div>
 
         <div class="conflicts-section">
@@ -5495,6 +5504,29 @@ Cantrips: Booming Blade + Eldritch Blast
             });
 
             checkConflicts(selectedBuilds);
+
+            // Update "Open All Builds" button state
+            const openBtn = document.getElementById('open-builds-btn');
+            const buildCount = selectedBuilds.length;
+            if (buildCount > 0) {
+                openBtn.disabled = false;
+                openBtn.textContent = `📖 Open ${buildCount} Build${buildCount > 1 ? 's' : ''} in New Tabs`;
+            } else {
+                openBtn.disabled = true;
+                openBtn.textContent = '📖 Open All Builds in New Tabs';
+            }
+        }
+
+        // Open all selected builds in new tabs
+        function openSelectedBuilds() {
+            const slots = document.querySelectorAll('.slot-select');
+            const baseUrl = window.location.origin + window.location.pathname;
+
+            slots.forEach(select => {
+                if (select.value) {
+                    window.open(`${baseUrl}#${select.value}`, '_blank');
+                }
+            });
         }
 
         // Check for item conflicts between builds
