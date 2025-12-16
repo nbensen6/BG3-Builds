@@ -344,6 +344,19 @@
         #magic-missile .stats-box { background: linear-gradient(135deg, #ede7f6 0%, #e8eaf6 100%); border: 1px solid #9575cd; }
         #magic-missile .footer { color: #5e35b1; border-top: 1px solid #9575cd; }
 
+        /* LIFE CLERIC - Healing Green/White */
+        #life-cleric { background: linear-gradient(180deg, #e8f5e9 0%, #c8e6c9 50%, #ffffff 100%); color: #1b5e20; }
+        #life-cleric h1 { color: #2e7d32; text-shadow: 2px 2px 4px rgba(46,125,50,0.3); }
+        #life-cleric .subtitle { color: #388e3c; }
+        #life-cleric h2 { color: #2e7d32; border-bottom: 2px solid #81c784; }
+        #life-cleric h3 { color: #388e3c; }
+        #life-cleric th { background: linear-gradient(135deg, #2e7d32 0%, #43a047 100%); }
+        #life-cleric td { border-bottom: 1px solid #c8e6c9; }
+        #life-cleric tr:nth-child(even) { background: #e8f5e9; }
+        #life-cleric .callout { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-left: 4px solid #2e7d32; }
+        #life-cleric .stats-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border: 1px solid #81c784; }
+        #life-cleric .footer { color: #2e7d32; border-top: 1px solid #81c784; }
+
         /* TEMPEST CLERIC - Storm Blue/Purple */
         #tempest-cleric { background: linear-gradient(180deg, #e8eaf6 0%, #c5cae9 50%, #ffffff 100%); color: #1a237e; }
         #tempest-cleric h1 { color: #303f9f; text-shadow: 2px 2px 4px rgba(48,63,159,0.3); }
@@ -450,6 +463,7 @@
                 <button class="dropdown-btn">✝️ Cleric</button>
                 <div class="dropdown-content">
                     <button class="dropdown-item" data-tab="death-reaper">💀 Death Reaper</button>
+                    <button class="dropdown-item" data-tab="life-cleric">💚 Life Cleric</button>
                     <button class="dropdown-item" data-tab="light-cleric">☀️ Light Cleric</button>
                     <button class="dropdown-item" data-tab="tempest-cleric">⛈️ Tempest Cleric</button>
                 </div>
@@ -541,6 +555,7 @@
                     </optgroup>
                     <optgroup label="Cleric">
                         <option value="death-reaper">💀 Death Reaper</option>
+                        <option value="life-cleric">💚 Life Cleric</option>
                         <option value="light-cleric">☀️ Light Cleric</option>
                         <option value="tempest-cleric">⛈️ Tempest Cleric</option>
                     </optgroup>
@@ -586,6 +601,7 @@
                     </optgroup>
                     <optgroup label="Cleric">
                         <option value="death-reaper">💀 Death Reaper</option>
+                        <option value="life-cleric">💚 Life Cleric</option>
                         <option value="light-cleric">☀️ Light Cleric</option>
                         <option value="tempest-cleric">⛈️ Tempest Cleric</option>
                     </optgroup>
@@ -631,6 +647,7 @@
                     </optgroup>
                     <optgroup label="Cleric">
                         <option value="death-reaper">💀 Death Reaper</option>
+                        <option value="life-cleric">💚 Life Cleric</option>
                         <option value="light-cleric">☀️ Light Cleric</option>
                         <option value="tempest-cleric">⛈️ Tempest Cleric</option>
                     </optgroup>
@@ -676,6 +693,7 @@
                     </optgroup>
                     <optgroup label="Cleric">
                         <option value="death-reaper">💀 Death Reaper</option>
+                        <option value="life-cleric">💚 Life Cleric</option>
                         <option value="light-cleric">☀️ Light Cleric</option>
                         <option value="tempest-cleric">⛈️ Tempest Cleric</option>
                     </optgroup>
@@ -2172,6 +2190,279 @@ With Disadvantage: 0.25% hit chance!
     </div>
 </div>
 
+<!-- LIFE CLERIC -->
+<div class="build" id="life-cleric">
+    <div class="build-content">
+        <h1>💚 THE DIVINE HEALER 💚</h1>
+        <div class="subtitle">✝️ Life Domain Cleric Build Guide - Baldur's Gate 3 (Patch 8) 🩹</div>
+
+        <h2>💚 Build Overview</h2>
+        <p>The Life Domain Cleric is the quintessential healer — straightforward, powerful, and essential for any party. With Disciple of Life boosting all healing spells, Preserve Life providing massive AOE heals, and Blessed Healer keeping you alive while healing others, you become an unkillable support machine. But don't think you're just a healbot — Spirit Guardians turns you into a "Beyblade" of radiant damage!</p>
+
+        <p><strong>Class:</strong> 12 Life Domain Cleric (Pure)</p>
+
+        <div class="callout">
+            <span class="emoji">💚</span> <strong>PRESERVE LIFE:</strong> This Channel Divinity scales with CHARACTER level, not class level! At level 12, heal 36 HP split among allies within 9m. Even if you multiclass, this still heals 36 HP — one of the few abilities in the game with this scaling!
+        </div>
+
+        <h2>📊 Race & Starting Stats</h2>
+        <div class="stats-box">
+<strong>Recommended Race:</strong> Gold Dwarf (extra HP per level) or Half-Elf (Fey Ancestry for Sleep immunity with Glyph combo)
+
+<strong>Standard Point Buy:</strong>
+STR: 10  |  DEX: 14  |  CON: 16  |  INT: 10  |  WIS: 16  |  CHA: 10
+
+<strong>Why These Stats:</strong>
+• Heavy armor proficiency means DEX isn't critical for AC
+• High CON for concentration saves and survivability
+• WIS for spell save DC and healing potency
+• Can dump DEX further if desired since heavy armor ignores it
+
+<strong>Key Skills:</strong> Medicine, Religion, Insight, Perception
+        </div>
+
+        <h2>📈 Level Progression</h2>
+        <div class="stats-box">
+<strong>Cleric 1:</strong> 💚 Life Domain
+- Domain Spells: Cure Wounds, Bless (free!)
+- Disciple of Life: All healing spells heal +2 + spell level extra!
+- Cantrips: Guidance, Resistance, Sacred Flame
+
+<strong>Cleric 2:</strong> 🩹 PRESERVE LIFE (Channel Divinity)
+- Heals 3x character level (36 HP at L12!) split among allies
+- Turn Undead also available
+- Spells: Healing Word, Command, Shield of Faith, Sanctuary
+
+<strong>Cleric 3:</strong> Level 2 domain spells
+- Domain: Aid, Lesser Restoration (free!)
+- Prepare: Spiritual Weapon, Hold Person
+- Spiritual Weapon can daze enemies with Maul!
+
+<strong>Cleric 4:</strong> 🎓 FEAT: Alert OR +2 Wisdom
+- Alert: +5 Initiative to heal before enemies attack
+- Or boost WIS to 18 for better spell DCs
+- New Cantrip: Toll the Dead (WIS save, better than Sacred Flame)
+
+<strong>Cleric 5:</strong> ⚔️ SPIRIT GUARDIANS!
+- Domain: Beacon of Hope, Revivify (free!)
+- Prepare: Spirit Guardians, Mass Healing Word
+- Spirit Guardians is your main damage/control spell!
+
+<strong>Cleric 6:</strong> 💚 BLESSED HEALER!
+- When you heal others, heal yourself for 2 + spell level!
+- Second Channel Divinity charge
+- Spells: Glyph of Warding (Sleep!), Guardian of Faith
+
+<strong>Cleric 7:</strong> Level 4 domain spells
+- Domain: Death Ward, Freedom of Movement (free!)
+- Prepare: Banishment or Warding Bond
+
+<strong>Cleric 8:</strong> 🎓 FEAT: +2 Wisdom (to 20) OR Tough
+- Divine Strike: +1d8 radiant damage on melee attacks!
+- Works with offhand crossbow attacks too
+
+<strong>Cleric 9:</strong> Level 5 spells
+- Domain: Greater Restoration, Mass Cure Wounds (free!)
+- Prepare: Insect Plague (difficult terrain control)
+
+<strong>Cleric 10:</strong> Divine Intervention (once ever!)
+- Creates Devotee's Mace (healing aura for 10 turns)
+- Spells: Flame Strike for damage option
+
+<strong>Cleric 11:</strong> Level 6 spells
+- Prepare: Heroes' Feast (poison/disease immunity + HP!)
+- Prepare: Planar Ally (summon Deva for more healing!)
+
+<strong>Cleric 12:</strong> 🎓 FEAT: Tough (+24 HP) OR War Caster
+- Tough: Essential for staying alive to keep healing
+- Heal spell for emergency 70 HP recovery
+        </div>
+
+        <h2>💚 Disciple of Life Mechanics</h2>
+        <div class="callout">
+            <span class="emoji">🩹</span> <strong>BONUS HEALING:</strong> Every healing spell gains +2 + spell level extra HP. This applies to EVERY target of Mass Healing Word! At 5th level slot: Mass Healing Word heals 1d4+WIS+7 to the entire party — that's potentially 50+ HP across 6 targets!
+        </div>
+
+        <h2>⚔️ The Spirit Guardians "Beyblade"</h2>
+        <div class="stats-box">
+<strong>Spirit Guardians Strategy:</strong>
+Cast Spirit Guardians (3d8 radiant) then run through enemies!
+
+<strong>Radiating Orb Stacking:</strong>
+With Luminous Armor + Luminous Gloves + Callous Glow Ring:
+• Each enemy hit takes radiant damage
+• Each hit applies 2 Radiating Orb stacks (-2 attack per stack)
+• Run through grouped enemies = 6+ stacks instantly!
+
+<strong>Why "Beyblade"?</strong>
+You literally spin through enemies, dealing damage to everyone you pass.
+Enemies don't react to Spirit Guardians like other AOEs — they just stand there!
+        </div>
+
+        <h2>🎒 Essential Gear</h2>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
+            <tr>
+                <td>💍 Ring 1</td>
+                <td>Whispering Promise</td>
+                <td>Volo (Act 1, let him operate). When you heal, target gets BLESS! Insanely good.</td>
+            </tr>
+            <tr>
+                <td>👑 Helmet</td>
+                <td>Helm of Balduran</td>
+                <td>Ansur fight (Act 3). Heals you every turn = permanent Bless on yourself via Whispering Promise!</td>
+            </tr>
+            <tr>
+                <td>🧤 Gloves</td>
+                <td>Hellrider's Pride</td>
+                <td>Zevlor (Act 1). Healed targets get Blade Ward (half physical damage)! Revive grants Death Ward!</td>
+            </tr>
+            <tr>
+                <td>👘 Armor</td>
+                <td>Luminous Armour</td>
+                <td>Crèche Y'llek. Radiant damage causes shockwave, +3 CON saves for concentration!</td>
+            </tr>
+            <tr>
+                <td>🧤 Gloves (Alt)</td>
+                <td>Luminous Gloves</td>
+                <td>Ruined Battlefield. Radiant damage applies Radiating Orb stacks!</td>
+            </tr>
+            <tr>
+                <td>💍 Ring 2</td>
+                <td>Callous Glow Ring</td>
+                <td>Gauntlet of Shar vault. +2 radiant damage to illuminated targets!</td>
+            </tr>
+            <tr>
+                <td>🪄 Staff 1</td>
+                <td>Staff of Arcane Blessing</td>
+                <td>Crèche Y'llek. Bless grants extra 1d4 to saves/attacks AND 2d4 to spell attacks!</td>
+            </tr>
+            <tr>
+                <td>🪄 Staff 2</td>
+                <td>Markoheshkir</td>
+                <td>Ramazith's Tower. Arcane Battery = FREE upcast spell! Use for Heroes' Feast.</td>
+            </tr>
+            <tr>
+                <td>🪄 Staff 3</td>
+                <td>Staff of Spell Power</td>
+                <td>Balthazar (Act 2). Another free spell cast! Use for Planar Ally.</td>
+            </tr>
+            <tr>
+                <td>🧥 Cloak</td>
+                <td>Cloak of Protection</td>
+                <td>Various vendors. +1 AC, +1 Saves. Simple but effective for survivability.</td>
+            </tr>
+            <tr>
+                <td>📿 Amulet</td>
+                <td>Amulet of Greater Health</td>
+                <td>House of Hope. CON 23 = massive HP and concentration saves!</td>
+            </tr>
+        </table>
+
+        <h2>🧪 The Free Spell Staff Combo</h2>
+        <div class="callout">
+            <span class="emoji">🪄</span> <strong>DOUBLE FREE CASTS:</strong> Equip Staff of Spell Power → Cast Heroes' Feast FREE → Swap to Markoheshkir → Cast Planar Ally FREE → You still have all your spell slots! Summon a Deva for extra healing or Djinni for Thunderwave pushes!
+        </div>
+
+        <h2>⚔️ Combat Strategy</h2>
+        <h3>💥 Pre-Combat Setup</h3>
+        <div class="stats-box">
+<strong>Before Every Major Fight:</strong>
+1. Staff of Spell Power → FREE Heroes' Feast
+   (Poison/disease immunity, extra HP, advantage on WIS saves)
+2. Swap to Markoheshkir → FREE Planar Ally
+   (Summon Deva for healing or Djinni for pushes)
+3. Cast Freedom of Movement on your Fighter (prevents stun)
+4. Cast Aid on party (permanent HP boost until long rest)
+
+<strong>Result:</strong>
+Party enters combat with +15 HP, immunities, and a summon — all free!
+        </div>
+
+        <h3>🩹 In-Combat Healing Priority</h3>
+        <div class="stats-box">
+<strong>Healing Word (Bonus Action):</strong>
+• Use to pick up downed allies (1 HP is enough!)
+• Hellrider's Pride gives them Blade Ward on heal
+• Whispering Promise gives them Bless
+• You can still attack or cast another spell!
+
+<strong>Preserve Life (Action):</strong>
+• Emergency AOE heal — 36 HP split among allies
+• Use when multiple party members are low
+• Doesn't require spell slots!
+
+<strong>Mass Healing Word:</strong>
+• Bonus action party-wide heal
+• With Disciple of Life: 1d4 + WIS + 7 per target!
+• Triggers Whispering Promise Bless on EVERYONE
+        </div>
+
+        <h3>⚔️ Damage Rotation</h3>
+        <div class="stats-box">
+<strong>Primary Damage: Spirit Guardians</strong>
+1. Cast Spirit Guardians (concentration)
+2. Run through as many enemies as possible
+3. Each enemy takes 3d8 radiant on your turn
+4. Luminous Armor triggers radiant shockwave
+5. Enemies gain Radiating Orb stacks (-attack rolls)
+
+<strong>Secondary Damage:</strong>
+• Glyph of Warding (Lightning) — combo with Create Water for double damage
+• Glyph of Warding (Sleep) — if Half-Elf, drop at your feet to sleep enemies around you!
+• Guiding Bolt — sets up advantage for Rogues
+• Markoheshkir Chain Lightning — bonus spell for big damage
+        </div>
+
+        <h2>📊 Healing Calculation</h2>
+        <table>
+            <tr><th>Spell</th><th>Base Healing</th><th>With Disciple of Life</th></tr>
+            <tr><td>Healing Word (L1)</td><td>1d4 + WIS (5)</td><td>1d4 + 5 + 3 = 10-13</td></tr>
+            <tr><td>Cure Wounds (L1)</td><td>1d8 + WIS (5)</td><td>1d8 + 5 + 3 = 9-16</td></tr>
+            <tr><td>Mass Healing Word (L3)</td><td>1d4 + WIS (5) each</td><td>1d4 + 5 + 5 = 11-14 each</td></tr>
+            <tr><td>Heal (L6)</td><td>70 flat</td><td>70 + 8 = 78</td></tr>
+            <tr><td>Preserve Life (CD)</td><td>36 total</td><td>N/A (Channel Divinity)</td></tr>
+        </table>
+        <p><em>*Mass Healing Word on 6 targets with Disciple of Life = 66-84 total healing as a BONUS ACTION!</em></p>
+
+        <h2>⚖️ Pros & Cons</h2>
+        <table>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
+            <tr><td>Best raw healing output in the game</td><td>Domain spells are duplicates of regular spells</td></tr>
+            <tr><td>Preserve Life scales with character level</td><td>Less damage than other Cleric domains</td></tr>
+            <tr><td>Blessed Healer keeps you alive while healing</td><td>Must stay close to allies for Preserve Life</td></tr>
+            <tr><td>Whispering Promise + healing = party-wide Bless</td><td>Spirit Guardians is still best damage option</td></tr>
+            <tr><td>Heavy armor proficiency</td><td>Straightforward playstyle may feel simple</td></tr>
+            <tr><td>Staff combo = 2 free high-level spells</td><td>—</td></tr>
+        </table>
+
+        <h2>💡 Tips & Tricks</h2>
+        <div class="callout">
+            <span class="emoji">💡</span> <strong>ADVANCED TACTICS:</strong>
+            <ul>
+                <li><strong>Whispering Promise + Helm of Balduran:</strong> Helm heals you each turn, triggering Bless on yourself permanently!</li>
+                <li><strong>Glyph of Sleep (Half-Elf):</strong> Drop Sleep Glyph at your feet — you're immune, enemies around you fall asleep!</li>
+                <li><strong>Warding Bond on Gale:</strong> Cast at camp, Gale takes damage when ally takes damage. He can die, protecting your frontline!</li>
+                <li><strong>Mourning Frost Staff:</strong> Act 1 item that gives Ray of Frost scaling with WIS. Apply Chilled to double ally cold damage!</li>
+                <li><strong>Offhand Crossbow + Divine Strike:</strong> Divine Strike works on offhand attacks — free 1d8 radiant on bonus action shots!</li>
+                <li><strong>Deva Summon:</strong> The Deva from Planar Ally has healing spells and Revivify — double the healing!</li>
+            </ul>
+        </div>
+
+        <h2>📊 Quick Reference</h2>
+        <div class="stats-box">
+<strong>Class:</strong> 12 Life Domain Cleric (Pure)
+<strong>Primary Stats:</strong> WIS 20, CON 16-18, DEX 14
+<strong>Key Features:</strong> Disciple of Life, Preserve Life, Blessed Healer, Spirit Guardians
+<strong>Core Items:</strong> Whispering Promise, Hellrider's Pride, Helm of Balduran, Staff of Arcane Blessing
+<strong>Combat Style:</strong> Healing support + Spirit Guardians "Beyblade" damage
+<strong>Best For:</strong> Players who want the most reliable healer with surprising damage potential!
+        </div>
+
+        <div class="footer"><em>💚 "While I draw breath, none shall fall." 🩹</em></div>
+    </div>
+</div>
+
 <!-- TEMPEST CLERIC -->
 <div class="build" id="tempest-cleric">
     <div class="build-content">
@@ -2991,6 +3282,10 @@ INT reaches 18 at L4, then 20 at L8 with ASI
             'tempest-cleric': {
                 name: 'Tempest Cleric', icon: '⛈️', role: 'Lightning DPS',
                 items: ['Lifebringer', 'Adamantine Splint Armor', 'Gloves of Belligerent Skies', 'Watersparkers', 'Vivacious Cloak', 'Blast Pendant', "Killer's Sweetheart", 'Ring of Elemental Infusion', "Devotee's Mace", 'Sentinel Shield']
+            },
+            'life-cleric': {
+                name: 'Life Cleric', icon: '💚', role: 'Healer/Support',
+                items: ['Whispering Promise', 'Helm of Balduran', "Hellrider's Pride", 'Luminous Armour', 'Luminous Gloves', 'Callous Glow Ring', 'Staff of Arcane Blessing', 'Markoheshkir', 'Staff of Spell Power', 'Cloak of Protection', 'Amulet of Greater Health']
             },
             'god-blade': {
                 name: 'God Blade', icon: '✨', role: 'Nova Striker',
