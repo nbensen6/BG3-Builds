@@ -474,6 +474,19 @@
         #draconic-crown .stats-box { background: linear-gradient(135deg, rgba(10,22,40,0.9) 0%, rgba(26,35,126,0.9) 100%); border: 1px solid #2196f3; }
         #draconic-crown .footer { color: #ffd700; border-top: 1px solid #2196f3; }
 
+        /* SORLOCK - Fire Orange/Warlock Purple */
+        #sorlock { background: linear-gradient(180deg, #1a0a0a 0%, #2d1a0a 50%, #1a0a1a 100%); color: #f5e0d0; }
+        #sorlock h1 { color: #ff6b35; text-shadow: 2px 2px 4px rgba(255,107,53,0.5), 0 0 20px rgba(138,43,226,0.3); }
+        #sorlock .subtitle { color: #9370db; }
+        #sorlock h2 { color: #ff6b35; border-bottom: 2px solid #8b008b; }
+        #sorlock h3 { color: #9370db; }
+        #sorlock th { background: linear-gradient(135deg, #8b0000 0%, #8b008b 100%); }
+        #sorlock td { border-bottom: 1px solid #3d1a2d; }
+        #sorlock tr:nth-child(even) { background: rgba(255,107,53,0.1); }
+        #sorlock .callout { background: linear-gradient(135deg, rgba(255,107,53,0.15) 0%, rgba(138,43,226,0.15) 100%); border-left: 4px solid #ff6b35; }
+        #sorlock .stats-box { background: linear-gradient(135deg, rgba(26,10,10,0.9) 0%, rgba(26,10,26,0.9) 100%); border: 1px solid #8b008b; }
+        #sorlock .footer { color: #ff6b35; border-top: 1px solid #8b008b; }
+
         /* TEMPEST CLERIC - Storm Blue/Purple */
         #tempest-cleric { background: linear-gradient(180deg, #e8eaf6 0%, #c5cae9 50%, #ffffff 100%); color: #1a237e; }
         #tempest-cleric h1 { color: #303f9f; text-shadow: 2px 2px 4px rgba(48,63,159,0.3); }
@@ -649,6 +662,7 @@
                 <button class="dropdown-btn">✨ Sorcerer</button>
                 <div class="dropdown-content">
                     <button class="dropdown-item" data-tab="ice-sorcerer">❄️ Ice Sorcerer</button>
+                    <button class="dropdown-item" data-tab="sorlock">🔥 Sorlock</button>
                 </div>
             </div>
 
@@ -722,6 +736,7 @@
                     </optgroup>
                     <optgroup label="Sorcerer">
                         <option value="ice-sorcerer">❄️ Ice Sorcerer</option>
+                        <option value="sorlock">🔥 Sorlock</option>
                     </optgroup>
                     <optgroup label="Warlock">
                         <option value="gloom-weaver">🌑 Gloom Weaver</option>
@@ -779,6 +794,7 @@
                     </optgroup>
                     <optgroup label="Sorcerer">
                         <option value="ice-sorcerer">❄️ Ice Sorcerer</option>
+                        <option value="sorlock">🔥 Sorlock</option>
                     </optgroup>
                     <optgroup label="Warlock">
                         <option value="gloom-weaver">🌑 Gloom Weaver</option>
@@ -836,6 +852,7 @@
                     </optgroup>
                     <optgroup label="Sorcerer">
                         <option value="ice-sorcerer">❄️ Ice Sorcerer</option>
+                        <option value="sorlock">🔥 Sorlock</option>
                     </optgroup>
                     <optgroup label="Warlock">
                         <option value="gloom-weaver">🌑 Gloom Weaver</option>
@@ -893,6 +910,7 @@
                     </optgroup>
                     <optgroup label="Sorcerer">
                         <option value="ice-sorcerer">❄️ Ice Sorcerer</option>
+                        <option value="sorlock">🔥 Sorlock</option>
                     </optgroup>
                     <optgroup label="Warlock">
                         <option value="gloom-weaver">🌑 Gloom Weaver</option>
@@ -1089,6 +1107,152 @@
         </table>
 
         <div class="footer"><em>❄️ "Watch enemies explode on ice." ❄️</em></div>
+    </div>
+</div>
+
+<!-- SORLOCK -->
+<div class="build" id="sorlock">
+    <div class="build-content">
+        <h1>🔥 THE SORLOCK 🔥</h1>
+        <div class="subtitle">🐉 Draconic Sorcerer / Hexblade Warlock - Baldur's Gate 3 👁️</div>
+
+        <h2>🔥 Build Overview</h2>
+        <p>The most powerful caster multiclass in Patch 8! Combining the Fire Draconic Sorcerer's Elemental Affinity (+CHA to all fire damage) with the Hexblade Warlock's Eldritch Blast, Devil's Sight, and Cursed Spectre. Stack Arcane Acuity with Scorching Ray, then land guaranteed Hold Person for devastating critical hit combos!</p>
+        <p><strong>Class Split:</strong> 6 Draconic Sorcerer (Fire) / 5 Hexblade Warlock</p>
+
+        <div class="callout">
+            <strong>🔥 THE ARCANE ACUITY COMBO:</strong> Hat of Fire Acuity gives +1 Spell Save DC per fire hit (stacks to +10!). Use Scorching Ray (3-5 beams) to instantly stack Arcane Acuity, then cast Hold Person with 95%+ success rate. Critical hit with Eldritch Blast or Scorching Ray for massive damage!
+        </div>
+
+        <h2>📊 Starting Stats & Race</h2>
+        <div class="stats-box">
+<strong>Recommended Start:</strong> Sorcerer (CON save proficiency for concentration)
+
+<strong>Ability Scores:</strong>
+STR: 8 | DEX: 16 | CON: 14 | INT: 10 | WIS: 10 | CHA: 16
+<em>High DEX for initiative and AC. Boost CHA to 20 for fire damage and spell DCs.</em>
+
+<strong>Draconic Ancestry:</strong> Fire (adds CHA modifier to fire damage at Sorc 6)
+<strong>Race:</strong> Any — Half-Elf for stats, Tiefling for flavor
+        </div>
+
+        <h2>🔥 Class Progression</h2>
+        <table>
+            <tr><th>Level</th><th>Class</th><th>Features & Choices</th></tr>
+            <tr><td>1</td><td>Sorcerer</td><td>Draconic (Fire). Cantrips: Booming Blade, Mage Hand, Firebolt, Bone Chill. Spells: Shield, Magic Missile</td></tr>
+            <tr><td>2</td><td>Sorcerer</td><td>Metamagic: Twinned Spell, Distant Spell. Spell: Chromatic Orb or Thunderwave</td></tr>
+            <tr><td>3</td><td>Sorcerer</td><td>Metamagic: QUICKEN SPELL! Spell: Scorching Ray (key spell!)</td></tr>
+            <tr><td>4</td><td>Sorcerer</td><td>Feat: +2 CHA (18). Spell: Hold Person</td></tr>
+            <tr><td>5</td><td>Sorcerer</td><td>Fireball! Remove Shield (Warlock gets it). Take Counterspell</td></tr>
+            <tr><td>6</td><td>Sorcerer</td><td>ELEMENTAL AFFINITY! +CHA to fire damage. Spell: Haste or Lightning Bolt</td></tr>
+            <tr><td>7</td><td>Warlock</td><td>Hexblade! Eldritch Blast, Shield. Invocations: Devil's Sight, Repelling Blast</td></tr>
+            <tr><td>8</td><td>Warlock</td><td>Pact of the Blade. Spell: Hex (1d6 per attack!)</td></tr>
+            <tr><td>9</td><td>Warlock</td><td>Hold Person (Warlock). Feat: +2 CHA (20) or Alert</td></tr>
+            <tr><td>10</td><td>Warlock</td><td>Extra Attack! Spell: Misty Step or Shadow Blade</td></tr>
+            <tr><td>11</td><td>Warlock</td><td>Invocation: Agonizing Blast (+CHA to EB). CURSED SPECTRE! Spell: Hunger of Hadar</td></tr>
+            <tr><td>12</td><td>Sorcerer</td><td>Level 4 spell slot. Spell: Ice Storm or Greater Invisibility</td></tr>
+        </table>
+
+        <h3>Key Class Features</h3>
+        <table>
+            <tr><th>Feature</th><th>Source</th><th>Effect</th></tr>
+            <tr><td>🔥 Elemental Affinity</td><td>Sorc 6</td><td>Add CHA (+5-6) to ALL fire damage! Every Scorching Ray beam!</td></tr>
+            <tr><td>⚡ Quicken Spell</td><td>Sorc 3</td><td>Bonus action Fireball, Scorching Ray, or Eldritch Blast!</td></tr>
+            <tr><td>👁️ Devil's Sight</td><td>Warlock 1</td><td>See in magical darkness! Attack from darkness bubbles with advantage!</td></tr>
+            <tr><td>👁️ Agonizing Blast</td><td>Warlock 5</td><td>Add CHA (+5-6) to each Eldritch Blast beam!</td></tr>
+            <tr><td>👻 Cursed Spectre</td><td>Warlock 5</td><td>Kill a Hexblade's Curse target = summon a spectre ally!</td></tr>
+            <tr><td>⚔️ Extra Attack</td><td>Warlock 5</td><td>Two attacks per action (works with Eldritch Blast!)</td></tr>
+        </table>
+
+        <h2>🗡️ Equipment</h2>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location & Notes</th></tr>
+            <tr><td>Helmet</td><td>Hat of Fire Acuity</td><td>Mason's Guild basement. Fire damage = Arcane Acuity stacks (+1 Spell DC each, max +10!)</td></tr>
+            <tr><td>Helmet (Alt)</td><td>Birthright</td><td>Sorcerous Sundries. +2 CHA = more fire damage!</td></tr>
+            <tr><td>Armor</td><td>Potent Robe</td><td>Last Light Inn. Cantrips deal +CHA damage! (Early game best)</td></tr>
+            <tr><td>Armor (Alt)</td><td>Armor of Agility</td><td>Gloomy Fentonson. 25 AC with Hexblade medium armor proficiency!</td></tr>
+            <tr><td>Cloak</td><td>Deathstalker Mantle</td><td>Jaheira's basement. Invisible after kill = easy repositioning</td></tr>
+            <tr><td>Gloves</td><td>Helldusk Gloves</td><td>House of Hope. +1 Spell DC, +1d6 fire on melee, Rays of Fire!</td></tr>
+            <tr><td>Gloves (Alt)</td><td>Gloves of Dexterity</td><td>Creche Y'llek. Set DEX to 18 = dump DEX, put points in WIS</td></tr>
+            <tr><td>Boots</td><td>Evasive Shoes</td><td>Act 3. +1 AC and Acrobatics advantage</td></tr>
+            <tr><td>Boots (Alt)</td><td>Boots of Stormy Clamour</td><td>Underdark. Apply Reverberation on conditions (synergizes with Illithid)</td></tr>
+            <tr><td>Ring 1</td><td>Killer's Sweetheart</td><td>Gauntlet of Shar. Auto-crit once per long rest!</td></tr>
+            <tr><td>Ring 1 (Alt)</td><td>Coruscation Ring</td><td>Last Light Inn. Light on targets = Radiating Orb stacks</td></tr>
+            <tr><td>Ring 2</td><td>Ring of Arcane Synergy</td><td>Dribbles quest. Cantrip = add CHA to weapon damage!</td></tr>
+            <tr><td>Amulet</td><td>Amulet of Greater Health</td><td>House of Hope. CON 23 = HP and concentration checks</td></tr>
+            <tr><td>Weapon</td><td>Markoheshkir</td><td>Ramazith's Tower. Arcane Battery, Wrath of Flame (+fire damage)!</td></tr>
+            <tr><td>Off-hand</td><td>Dolor Amarus</td><td>Cazador fight. +7 damage on critical hits!</td></tr>
+            <tr><td>Ranged</td><td>Hellrider Longbow</td><td>Flaming Fist HQ. +3 initiative to go first!</td></tr>
+        </table>
+
+        <h2>⚔️ Combat Strategy</h2>
+        <h3>The Arcane Acuity Combo</h3>
+        <div class="stats-box">
+<strong>🔥 Step 1 - Stack Arcane Acuity:</strong>
+Cast Scorching Ray (3-5 beams) → Each hit = +1 Spell Save DC
+Result: +3 to +5 Arcane Acuity stacks instantly!
+
+<strong>🎯 Step 2 - Land Hold Person:</strong>
+With +5-10 Spell DC from Arcane Acuity + gear = 95%+ success rate
+Twin Hold Person to paralyze TWO targets!
+
+<strong>💀 Step 3 - Critical Hit Bonanza:</strong>
+Paralyzed = auto-crit at close range!
+Eldritch Blast or Scorching Ray → ALL CRITS!
+        </div>
+
+        <h3>Standard Turn Rotation</h3>
+        <div class="stats-box">
+<strong>Action:</strong> Scorching Ray or Fireball (+CHA to each beam/damage!)
+<strong>Quicken Spell:</strong> Bonus action Eldritch Blast (3 beams + CHA each)
+<strong>Reaction:</strong> Hellish Rebuke (1d10 + CHA fire damage) or Shield
+
+<strong>With Hex Active:</strong>
+Each beam/attack = +1d6 necrotic damage
+Scorching Ray (4 beams) + Hex = 4d6 extra damage!
+        </div>
+
+        <h3>Devil's Sight Combo</h3>
+        <div class="stats-box">
+<strong>👁️ Darkness Setup:</strong>
+• Have ally shoot Arrow of Darkness OR cast Darkness
+• You can see in it, enemies can't!
+• Attack with advantage, they attack with disadvantage
+• Hide in darkness between turns for safety
+        </div>
+
+        <h2>🛡️ Defensive Options</h2>
+        <div class="stats-box">
+<strong>Shield Spell:</strong> +5 AC as reaction (from Warlock)
+<strong>Mirror Image:</strong> +9 AC equivalent (three decoys)
+<strong>Armor of Agility:</strong> 25 AC total with medium armor
+<strong>Hexblade's Curse:</strong> Heal on kills + Cursed Spectre summon
+
+<strong>CON Save:</strong> +6 (CON 23 from Amulet) + Proficiency = Never drop concentration!
+        </div>
+
+        <h2>⚖️ Pros & Cons</h2>
+        <table>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
+            <tr><td>+CHA to fire AND Eldritch Blast damage</td><td>Limited sorcery points (only 6)</td></tr>
+            <tr><td>Arcane Acuity = guaranteed Hold Person</td><td>Hat of Fire Acuity is essential</td></tr>
+            <tr><td>Devil's Sight darkness combos</td><td>Concentration limited to one spell</td></tr>
+            <tr><td>Cursed Spectre summon on kills</td><td>Split progression delays Extra Attack</td></tr>
+            <tr><td>Repelling Blast for crowd control</td><td>Fire-resistant enemies hurt damage</td></tr>
+            <tr><td>Counterspell access</td><td>—</td></tr>
+        </table>
+
+        <h2>📊 Quick Reference</h2>
+        <div class="stats-box">
+<strong>Class Split:</strong> 6 Draconic Sorcerer (Fire) / 5 Hexblade Warlock (+ 1 flex)
+<strong>Primary Stats:</strong> CHA 20, DEX 16, CON 14 (23 with Amulet)
+<strong>Key Features:</strong> Elemental Affinity, Quicken Spell, Devil's Sight, Agonizing Blast, Cursed Spectre
+<strong>Must-Have Items:</strong> Hat of Fire Acuity, Markoheshkir, Potent Robe/Armor of Agility
+<strong>Core Combo:</strong> Scorching Ray (stack Acuity) → Twin Hold Person → Eldritch Blast crits
+<strong>Damage Per Scorching Ray:</strong> 2d6 + 5 per beam × 4-5 beams = 52+ damage
+        </div>
+
+        <div class="footer"><em>🔥 "Fire and shadow — the perfect combination." 👁️</em></div>
     </div>
 </div>
 
@@ -5297,6 +5461,10 @@ INT reaches 18 at L4, then 20 at L8 with ASI
             'draconic-crown': {
                 name: 'Draconic Crown', icon: '⚡', role: 'Gish Support',
                 items: ['Birthright', 'Diadem of Arcane Synergy', 'Armor of Agility', 'Cloak of Protection', 'Gloves of Belligerent Skies', 'Boots of Stormy Clamour', 'Evasive Shoes', 'Ring of Elemental Infusion', 'Ring of Arcane Synergy', 'Band of the Mystic Scoundrel', 'Amulet of Greater Health', 'Phalar Aluve', "Viconia's Walking Fortress", 'Resonance Stone']
+            },
+            'sorlock': {
+                name: 'Sorlock', icon: '🔥', role: 'Fire Blaster',
+                items: ['Hat of Fire Acuity', 'Birthright', 'Potent Robe', 'Armor of Agility', 'Deathstalker Mantle', 'Helldusk Gloves', 'Gloves of Dexterity', 'Evasive Shoes', 'Boots of Stormy Clamour', "Killer's Sweetheart", 'Coruscation Ring', 'Ring of Arcane Synergy', 'Amulet of Greater Health', 'Markoheshkir', 'Dolor Amarus', 'Hellrider Longbow']
             }
         };
 
