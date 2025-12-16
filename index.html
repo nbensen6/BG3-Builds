@@ -435,6 +435,19 @@
         #gloomstalker .stats-box { background: linear-gradient(135deg, rgba(13,26,13,0.9) 0%, rgba(26,46,26,0.9) 100%); border: 1px solid #388e3c; }
         #gloomstalker .footer { color: #4caf50; border-top: 1px solid #388e3c; }
 
+        /* DARK KNIGHT - Shadow Purple/Black */
+        #dark-knight { background: linear-gradient(180deg, #0d0d0d 0%, #1a0a1a 50%, #0d0d0d 100%); color: #d4b8e8; }
+        #dark-knight h1 { color: #9c27b0; text-shadow: 2px 2px 4px rgba(156,39,176,0.5), 0 0 20px rgba(156,39,176,0.3); }
+        #dark-knight .subtitle { color: #ce93d8; }
+        #dark-knight h2 { color: #9c27b0; border-bottom: 2px solid #7b1fa2; }
+        #dark-knight h3 { color: #ce93d8; }
+        #dark-knight th { background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%); }
+        #dark-knight td { border-bottom: 1px solid #2d1a3d; }
+        #dark-knight tr:nth-child(even) { background: rgba(156,39,176,0.1); }
+        #dark-knight .callout { background: linear-gradient(135deg, rgba(156,39,176,0.15) 0%, rgba(74,20,140,0.2) 100%); border-left: 4px solid #9c27b0; }
+        #dark-knight .stats-box { background: linear-gradient(135deg, rgba(13,13,13,0.9) 0%, rgba(26,10,26,0.9) 100%); border: 1px solid #7b1fa2; }
+        #dark-knight .footer { color: #9c27b0; border-top: 1px solid #7b1fa2; }
+
         /* TEMPEST CLERIC - Storm Blue/Purple */
         #tempest-cleric { background: linear-gradient(180deg, #e8eaf6 0%, #c5cae9 50%, #ffffff 100%); color: #1a237e; }
         #tempest-cleric h1 { color: #303f9f; text-shadow: 2px 2px 4px rgba(48,63,159,0.3); }
@@ -576,6 +589,14 @@
                 </div>
             </div>
 
+            <!-- Paladin -->
+            <div class="dropdown">
+                <button class="dropdown-btn">⚔️ Paladin</button>
+                <div class="dropdown-content">
+                    <button class="dropdown-item" data-tab="dark-knight">🌑 Dark Knight</button>
+                </div>
+            </div>
+
             <!-- Ranger -->
             <div class="dropdown">
                 <button class="dropdown-btn">🏹 Ranger</button>
@@ -657,6 +678,9 @@
                         <option value="open-hand-monk">👊 Open Hand</option>
                         <option value="tavern-brawler">🔥 Tavern Brawler</option>
                     </optgroup>
+                    <optgroup label="Paladin">
+                        <option value="dark-knight">🌑 Dark Knight</option>
+                    </optgroup>
                     <optgroup label="Ranger">
                         <option value="beast-master">🐻 Beast Master</option>
                         <option value="gloomstalker">🌑 Gloomstalker</option>
@@ -708,6 +732,9 @@
                     <optgroup label="Monk">
                         <option value="open-hand-monk">👊 Open Hand</option>
                         <option value="tavern-brawler">🔥 Tavern Brawler</option>
+                    </optgroup>
+                    <optgroup label="Paladin">
+                        <option value="dark-knight">🌑 Dark Knight</option>
                     </optgroup>
                     <optgroup label="Ranger">
                         <option value="beast-master">🐻 Beast Master</option>
@@ -761,6 +788,9 @@
                         <option value="open-hand-monk">👊 Open Hand</option>
                         <option value="tavern-brawler">🔥 Tavern Brawler</option>
                     </optgroup>
+                    <optgroup label="Paladin">
+                        <option value="dark-knight">🌑 Dark Knight</option>
+                    </optgroup>
                     <optgroup label="Ranger">
                         <option value="beast-master">🐻 Beast Master</option>
                         <option value="gloomstalker">🌑 Gloomstalker</option>
@@ -812,6 +842,9 @@
                     <optgroup label="Monk">
                         <option value="open-hand-monk">👊 Open Hand</option>
                         <option value="tavern-brawler">🔥 Tavern Brawler</option>
+                    </optgroup>
+                    <optgroup label="Paladin">
+                        <option value="dark-knight">🌑 Dark Knight</option>
                     </optgroup>
                     <optgroup label="Ranger">
                         <option value="beast-master">🐻 Beast Master</option>
@@ -2688,6 +2721,171 @@ After any weapon attack → Cast Fear (bonus action) → Enemy drops weapon → 
         </div>
 
         <div class="footer"><em>🌑 "In the darkness, the hunter becomes invisible. The prey never sees death coming." 🏹</em></div>
+    </div>
+</div>
+
+<!-- DARK KNIGHT PALADIN -->
+<div class="build" id="dark-knight">
+    <div class="build-content">
+        <h1>🌑 THE DARK KNIGHT 🌑</h1>
+        <div class="subtitle">⚔️ Shadow Magic Sorcerer / Oath of Vengeance Paladin - Baldur's Gate 3 🗡️</div>
+
+        <h2>🗡️ Build Overview</h2>
+        <p>An extremely powerful Shadow Paladin that combines the Shadow Magic Sorcerer's darkness abilities with the Paladin's devastating Divine Smite. The Shadow Blade spell becomes a monster weapon when upcasted, dealing doubled psychic damage with Resonance Stone while you fight from within your own darkness bubble where enemies are blinded but you see perfectly!</p>
+        <p><strong>Class Split:</strong> 7 Shadow Magic Sorcerer / 5 Oath of Vengeance Paladin</p>
+
+        <div class="callout">
+            <span class="emoji">🌑</span> <strong>SHADOW BLADE + DARKNESS:</strong> Use Markoheshkir's Arcane Battery for a FREE level 5 Shadow Blade (4d8 psychic)! You get advantage on attacks vs targets in darkness. Add Resonance Stone to DOUBLE psychic damage. Booming Blade + Divine Smite + Shadow Blade = 128+ damage per hit!
+        </div>
+
+        <h2>📊 Starting Class Decision</h2>
+        <div class="stats-box">
+<strong>Option A - Sorcerer Start (Recommended):</strong>
+• CON save proficiency = better concentration holds
+• Shadow Blade and Darkness need concentration!
+
+<strong>Option B - Paladin Start:</strong>
+• Heavy armor proficiency
+• Better early survivability
+
+<strong>Stat Spread (DEX Build):</strong>
+STR: 8 | DEX: 16 | CON: 14 | INT: 10 | WIS: 10 | CHA: 16
+
+<strong>Why DEX?</strong>
+• Shadow Blade is a finesse weapon = uses DEX
+• Higher AC with medium armor (Armor of Agility)
+• Better initiative
+        </div>
+
+        <h2>📈 Class Progression</h2>
+        <table>
+            <tr><th>Level</th><th>Class</th><th>Features & Choices</th></tr>
+            <tr><td>1</td><td>Sorcerer</td><td>Shadow Magic! Superior Darkvision, Strength of the Grave. Cantrips: Booming Blade, Mage Hand, Shocking Grasp, Fire Bolt. Spells: Shield, Magic Missile</td></tr>
+            <tr><td>2</td><td>Sorcerer</td><td>Metamagic: Twinned Spell, Distant Spell. Spell: Thunderwave or Mage Armor</td></tr>
+            <tr><td>3</td><td>Sorcerer</td><td>QUICKENED SPELL! Level 2 spells: Shadow Blade (2d8 psychic!), Scorching Ray, Hold Person</td></tr>
+            <tr><td>4</td><td>Sorcerer</td><td>Cantrip: Minor Illusion. Spell: Misty Step. Feat: CHA +2 (to 18)</td></tr>
+            <tr><td>5</td><td>Sorcerer</td><td>Level 3 spells: Lightning Bolt, Counterspell, Haste (twin it!)</td></tr>
+            <tr><td>6</td><td>Sorcerer</td><td>HOUND OF ILL OMEN (shadow dog, recovers sorcery points). Spell: Fireball or Counterspell</td></tr>
+            <tr><td>7</td><td>Sorcerer</td><td>Level 4 spells: Ice Storm (crowd control, no fire!)</td></tr>
+            <tr><td>8</td><td>Paladin</td><td>Oath of Vengeance! Lay on Hands, Divine Sense</td></tr>
+            <tr><td>9</td><td>Paladin</td><td>DIVINE SMITE! Fighting Style: Defense (+1 AC). Spells: Command, Bless, Divine Favor</td></tr>
+            <tr><td>10</td><td>Paladin</td><td>VOW OF ENMITY (advantage on attacks for 10 turns!). Hunter's Mark, Bane</td></tr>
+            <tr><td>11</td><td>Paladin</td><td>Spell: Shield of Faith. Feat: CHA +2 (to 20) or Alert</td></tr>
+            <tr><td>12</td><td>Paladin</td><td>EXTRA ATTACK! Hold Person, Misty Step, Branding Smite, Aid</td></tr>
+        </table>
+
+        <h3>Alternative Split: 8 Sorcerer / 4 Paladin</h3>
+        <div class="stats-box">
+<strong>Trade-offs:</strong>
+• Lose Extra Attack and Aura of Protection
+• Gain Level 5 spell slots (upcast Shadow Blade to 5d8!)
+• More offensive, less defensive
+• Still get Divine Smite and Vow of Enmity
+        </div>
+
+        <h2>✨ Key Abilities</h2>
+        <table>
+            <tr><th>Ability</th><th>Source</th><th>Effect</th></tr>
+            <tr><td>🗡️ Shadow Blade</td><td>Sorcerer L2 Spell</td><td>2d8→5d8 psychic, finesse, advantage vs obscured! DOUBLED with Resonance Stone!</td></tr>
+            <tr><td>🌑 Eyes of the Dark</td><td>Shadow Sorcerer</td><td>Cast Darkness for 2 sorcery points, YOU can see in it!</td></tr>
+            <tr><td>⚡ Quickened Spell</td><td>Metamagic</td><td>Cast spells as bonus action after attacking!</td></tr>
+            <tr><td>💥 Divine Smite</td><td>Paladin L2</td><td>Add 2d8-5d8 radiant to hits! Set as reaction for auto-smites!</td></tr>
+            <tr><td>🎯 Vow of Enmity</td><td>Vengeance L3</td><td>Advantage on all attacks vs target for 10 turns!</td></tr>
+            <tr><td>🐕 Hound of Ill Omen</td><td>Shadow Sorcerer L6</td><td>Shadow dog that recovers sorcery points on kills!</td></tr>
+            <tr><td>⚡ Booming Blade</td><td>Cantrip</td><td>Extra thunder damage, more if target moves!</td></tr>
+        </table>
+
+        <h2>🗡️ Core Weapons</h2>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location & Notes</th></tr>
+            <tr><td>Main Hand</td><td>Shadow Blade (Spell)</td><td>Upcast to level 5 = 4d8 psychic! Use Markoheshkir's Arcane Battery for FREE cast!</td></tr>
+            <tr><td>Staff</td><td>Markoheshkir</td><td>Ramazith's Tower — Arcane Battery = free level 5 spell! Use for Shadow Blade!</td></tr>
+            <tr><td>Ranged</td><td>Hellrider Longbow</td><td>Act 1 — +3 initiative bonus</td></tr>
+        </table>
+
+        <h2>🛡️ Best-in-Slot Gear</h2>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location & Notes</th></tr>
+            <tr><td>Helmet</td><td>Pyroquickness Hat</td><td>Grymforge — Extra bonus action when dealing fire damage!</td></tr>
+            <tr><td>Helmet (Alt)</td><td>Hat of Fire Acuity</td><td>Act 2 — Arcane Acuity on fire spells</td></tr>
+            <tr><td>Helmet (Alt)</td><td>Diadem of Arcane Synergy</td><td>Act 3 — +CHA to weapon damage when inflicting conditions!</td></tr>
+            <tr><td>Armor</td><td>Armor of Agility</td><td>Act 3 — Full DEX to AC, +2 saves. 23+ AC!</td></tr>
+            <tr><td>Gloves</td><td>Gloves of Battlemage's Power</td><td>Creche Y'llek — Arcane Acuity on spell weapon attacks! Works with Divine Smite + Booming Blade!</td></tr>
+            <tr><td>Gloves (Alt)</td><td>Helldusk Gloves</td><td>House of Hope — +1d6 fire damage on attacks</td></tr>
+            <tr><td>Cloak</td><td>Cloak of Protection</td><td>Various — +1 AC, +1 saves</td></tr>
+            <tr><td>Cloak (Alt)</td><td>Deathstalker Mantle</td><td>Dark Urge only — Invisibility on kill!</td></tr>
+            <tr><td>Boots</td><td>Boots of Stormy Clamour</td><td>Myconid Colony — Reverberation on conditions</td></tr>
+            <tr><td>Ring 1</td><td>Shadowcloaked Ring</td><td>Act 2 — +1d4 damage vs obscured targets (darkness!)</td></tr>
+            <tr><td>Ring 2</td><td>Strange Conduit Ring</td><td>Act 2 — +1d4 psychic while concentrating (Shadow Blade!)</td></tr>
+            <tr><td>Ring (Alt)</td><td>Ring of Elemental Infusion</td><td>Creche — Thunder from Booming Blade on next attack (non-Honor mode)</td></tr>
+            <tr><td>Amulet</td><td>Amulet of Greater Health</td><td>House of Hope — 23 CON, massive HP boost</td></tr>
+            <tr><td>Special</td><td>Resonance Stone</td><td>Grymforge — DOUBLES psychic damage! Insane with Shadow Blade!</td></tr>
+        </table>
+
+        <h3>Teammate Darkness Synergy</h3>
+        <div class="stats-box">
+Your teammates can also benefit from your Darkness! Give them:
+• <strong>Steel Watcher Helmet</strong> — Blind immunity, see in darkness
+• <strong>Eversight Ring</strong> — Blind immunity
+• <strong>Spear of Evening</strong> — See in magical darkness
+
+Now your whole party can camp in your darkness bubble with advantage on attacks!
+        </div>
+
+        <h2>⚔️ Combat Strategy</h2>
+        <h3>Pre-Combat Setup</h3>
+        <div class="stats-box">
+1. Use Markoheshkir's <strong>Arcane Battery</strong> for FREE level 5 Shadow Blade
+2. Equip <strong>Resonance Stone</strong> for doubled psychic damage
+3. Turn on <strong>Divine Smite reaction</strong> (leave at level 3 slots max)
+4. Summon <strong>Hound of Ill Omen</strong> if you have 3 sorcery points
+        </div>
+
+        <h3>Combat Flow</h3>
+        <div class="stats-box">
+<strong>Turn 1 - Setup + Burst:</strong>
+1. Cast <strong>Darkness</strong> (Eyes of the Dark - 2 sorcery points, you see in it!)
+2. <strong>Vow of Enmity</strong> on priority target (advantage for 10 turns)
+3. <strong>Booming Blade</strong> attack = Shadow Blade + Divine Smite + Thunder
+4. <strong>Quickened Spell</strong> → Bonus action spell (Scorching Ray, Hold Person, etc.)
+
+<strong>Damage Breakdown (Booming Blade + Shadow Blade):</strong>
+• Shadow Blade: 4d8 psychic (doubled = 8d8 with Resonance Stone!)
+• Divine Smite: 2d8-5d8 radiant
+• Booming Blade: 2d8 thunder (3d8 if they move)
+• Shadowcloaked Ring: +1d4 vs obscured
+• Strange Conduit Ring: +1d4 psychic (doubled!)
+• Diadem of Arcane Synergy: +4-5 (CHA mod)
+= <strong>100-130+ damage per hit!</strong>
+
+<strong>Subsequent Turns:</strong>
+• Extra Attack + Booming Blade = 3 attacks with Divine Smite
+• Quickened Spell for bonus action blasts
+• Hound of Ill Omen recovers sorcery points on kills
+        </div>
+
+        <h2>⚖️ Pros & Cons</h2>
+        <table>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
+            <tr><td>100+ damage per hit with Shadow Blade</td><td>Concentration on Shadow Blade/Darkness</td></tr>
+            <tr><td>Darkness = advantage on all attacks</td><td>Requires setup (Arcane Battery, Resonance Stone)</td></tr>
+            <tr><td>Quickened Spell for bonus action spells</td><td>Limited sorcery points (metamagic hungry)</td></tr>
+            <tr><td>Divine Smite on every hit (reaction)</td><td>Burns through spell slots fast</td></tr>
+            <tr><td>Vow of Enmity = 10 turns of advantage</td><td>Less tanky than pure Paladin</td></tr>
+            <tr><td>Counterspell access</td><td>—</td></tr>
+        </table>
+
+        <h2>📊 Quick Reference</h2>
+        <div class="stats-box">
+<strong>Class Split:</strong> 7 Shadow Magic Sorcerer / 5 Oath of Vengeance Paladin
+<strong>Primary Stats:</strong> CHA 20, DEX 16, CON 14
+<strong>Key Features:</strong> Shadow Blade, Darkness (Eyes of the Dark), Divine Smite, Quickened Spell, Vow of Enmity
+<strong>Must-Have Items:</strong> Markoheshkir (Arcane Battery), Resonance Stone, Shadowcloaked Ring
+<strong>Core Combo:</strong> Darkness → Vow of Enmity → Booming Blade (Shadow Blade) + Divine Smite → Quickened Spell
+<strong>Damage per Hit:</strong> 100-130+ with full setup
+        </div>
+
+        <div class="footer"><em>🌑 "In the shadows, I am judge, jury, and executioner." ⚔️</em></div>
     </div>
 </div>
 
@@ -4725,6 +4923,10 @@ INT reaches 18 at L4, then 20 at L8 with ASI
             'gloomstalker': {
                 name: 'Gloomstalker', icon: '🌑', role: 'Ranged DPS',
                 items: ['Titanstring Bow', 'Gontr Mael', 'Phalar Aluve', "Viconia's Walking Fortress", 'Steel Watcher Helmet', 'Mask of Soul Perception', 'Armor of Agility', 'Gloves of Belligerent Skies', 'Helldusk Gloves', 'Cloak of Protection', 'Evasive Shoes', 'Disintegrating Night Walkers', 'Band of the Mystic Scoundrel', 'Caustic Band', 'Eversight Ring', 'Amulet of Greater Health']
+            },
+            'dark-knight': {
+                name: 'Dark Knight', icon: '🌑', role: 'Nova Striker',
+                items: ['Markoheshkir', 'Pyroquickness Hat', 'Hat of Fire Acuity', 'Diadem of Arcane Synergy', 'Armor of Agility', "Gloves of the Battlemage's Power", 'Helldusk Gloves', 'Cloak of Protection', 'Boots of Stormy Clamour', 'Shadowcloaked Ring', 'Strange Conduit Ring', 'Ring of Elemental Infusion', 'Amulet of Greater Health', 'Resonance Stone']
             }
         };
 
