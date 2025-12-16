@@ -89,6 +89,7 @@
             text-align: left;
             cursor: pointer;
             transition: all 0.15s;
+            text-decoration: none;
         }
         .dropdown-item:hover {
             background: rgba(255,255,255,0.1);
@@ -96,6 +97,13 @@
         }
         .dropdown-item.active {
             background: rgba(255,255,255,0.15);
+            color: #fff;
+        }
+        .dropdown-item:visited {
+            color: #ccc;
+        }
+        .dropdown-item:visited:hover,
+        .dropdown-item:visited.active {
             color: #fff;
         }
 
@@ -583,8 +591,8 @@
             <div class="dropdown">
                 <button class="dropdown-btn">🪓 Barbarian</button>
                 <div class="dropdown-content">
-                    <button class="dropdown-item" data-tab="giant-barbarian">🏔️ Giant Barbarian</button>
-                    <button class="dropdown-item" data-tab="savage-striker">🩸 Savage Striker</button>
+                    <a href="#giant-barbarian" class="dropdown-item" data-tab="giant-barbarian">🏔️ Giant Barbarian</a>
+                    <a href="#savage-striker" class="dropdown-item" data-tab="savage-striker">🩸 Savage Striker</a>
                 </div>
             </div>
 
@@ -592,10 +600,10 @@
             <div class="dropdown">
                 <button class="dropdown-btn">✝️ Cleric</button>
                 <div class="dropdown-content">
-                    <button class="dropdown-item" data-tab="death-reaper">💀 Death Reaper</button>
-                    <button class="dropdown-item" data-tab="life-cleric">💚 Life Cleric</button>
-                    <button class="dropdown-item" data-tab="light-cleric">☀️ Light Cleric</button>
-                    <button class="dropdown-item" data-tab="tempest-cleric">⛈️ Tempest Cleric</button>
+                    <a href="#death-reaper" class="dropdown-item" data-tab="death-reaper">💀 Death Reaper</a>
+                    <a href="#life-cleric" class="dropdown-item" data-tab="life-cleric">💚 Life Cleric</a>
+                    <a href="#light-cleric" class="dropdown-item" data-tab="light-cleric">☀️ Light Cleric</a>
+                    <a href="#tempest-cleric" class="dropdown-item" data-tab="tempest-cleric">⛈️ Tempest Cleric</a>
                 </div>
             </div>
 
@@ -603,9 +611,9 @@
             <div class="dropdown">
                 <button class="dropdown-btn">🌿 Druid</button>
                 <div class="dropdown-content">
-                    <button class="dropdown-item" data-tab="land-warden">🌍 Land Warden</button>
-                    <button class="dropdown-item" data-tab="poison-sporekeeper">☠️ Poison Sporekeeper</button>
-                    <button class="dropdown-item" data-tab="stars-druid">⭐ Stars Druid</button>
+                    <a href="#land-warden" class="dropdown-item" data-tab="land-warden">🌍 Land Warden</a>
+                    <a href="#poison-sporekeeper" class="dropdown-item" data-tab="poison-sporekeeper">☠️ Poison Sporekeeper</a>
+                    <a href="#stars-druid" class="dropdown-item" data-tab="stars-druid">⭐ Stars Druid</a>
                 </div>
             </div>
 
@@ -613,9 +621,9 @@
             <div class="dropdown">
                 <button class="dropdown-btn">🛡️ Fighter</button>
                 <div class="dropdown-content">
-                    <button class="dropdown-item" data-tab="arcane-archer">🏹 Arcane Archer</button>
-                    <button class="dropdown-item" data-tab="battle-master">⚔️ Battle Master</button>
-                    <button class="dropdown-item" data-tab="lightning-ek">⚡ Lightning EK</button>
+                    <a href="#arcane-archer" class="dropdown-item" data-tab="arcane-archer">🏹 Arcane Archer</a>
+                    <a href="#battle-master" class="dropdown-item" data-tab="battle-master">⚔️ Battle Master</a>
+                    <a href="#lightning-ek" class="dropdown-item" data-tab="lightning-ek">⚡ Lightning EK</a>
                 </div>
             </div>
 
@@ -623,8 +631,8 @@
             <div class="dropdown">
                 <button class="dropdown-btn">👊 Monk</button>
                 <div class="dropdown-content">
-                    <button class="dropdown-item" data-tab="open-hand-monk">👊 Open Hand</button>
-                    <button class="dropdown-item" data-tab="tavern-brawler">🔥 Tavern Brawler</button>
+                    <a href="#open-hand-monk" class="dropdown-item" data-tab="open-hand-monk">👊 Open Hand</a>
+                    <a href="#tavern-brawler" class="dropdown-item" data-tab="tavern-brawler">🔥 Tavern Brawler</a>
                 </div>
             </div>
 
@@ -632,8 +640,8 @@
             <div class="dropdown">
                 <button class="dropdown-btn">⚔️ Paladin</button>
                 <div class="dropdown-content">
-                    <button class="dropdown-item" data-tab="dark-knight">🌑 Dark Knight</button>
-                    <button class="dropdown-item" data-tab="draconic-crown">⚡ Draconic Crown</button>
+                    <a href="#dark-knight" class="dropdown-item" data-tab="dark-knight">🌑 Dark Knight</a>
+                    <a href="#draconic-crown" class="dropdown-item" data-tab="draconic-crown">⚡ Draconic Crown</a>
                 </div>
             </div>
 
@@ -641,10 +649,10 @@
             <div class="dropdown">
                 <button class="dropdown-btn">🏹 Ranger</button>
                 <div class="dropdown-content">
-                    <button class="dropdown-item" data-tab="beast-master">🐻 Beast Master</button>
-                    <button class="dropdown-item" data-tab="gloomstalker">🌑 Gloomstalker</button>
-                    <button class="dropdown-item" data-tab="stealth-archer">🎯 Stealth Archer</button>
-                    <button class="dropdown-item" data-tab="starswarm">🐝 Starswarm</button>
+                    <a href="#beast-master" class="dropdown-item" data-tab="beast-master">🐻 Beast Master</a>
+                    <a href="#gloomstalker" class="dropdown-item" data-tab="gloomstalker">🌑 Gloomstalker</a>
+                    <a href="#stealth-archer" class="dropdown-item" data-tab="stealth-archer">🎯 Stealth Archer</a>
+                    <a href="#starswarm" class="dropdown-item" data-tab="starswarm">🐝 Starswarm</a>
                 </div>
             </div>
 
@@ -652,8 +660,8 @@
             <div class="dropdown">
                 <button class="dropdown-btn">🗡️ Rogue</button>
                 <div class="dropdown-content">
-                    <button class="dropdown-item" data-tab="hexwing-phantom">🦋 Hexwing Phantom</button>
-                    <button class="dropdown-item" data-tab="swashbuckler">🏴‍☠️ Swashbuckler</button>
+                    <a href="#hexwing-phantom" class="dropdown-item" data-tab="hexwing-phantom">🦋 Hexwing Phantom</a>
+                    <a href="#swashbuckler" class="dropdown-item" data-tab="swashbuckler">🏴‍☠️ Swashbuckler</a>
                 </div>
             </div>
 
@@ -661,8 +669,8 @@
             <div class="dropdown">
                 <button class="dropdown-btn">✨ Sorcerer</button>
                 <div class="dropdown-content">
-                    <button class="dropdown-item" data-tab="ice-sorcerer">❄️ Ice Sorcerer</button>
-                    <button class="dropdown-item" data-tab="sorlock">🔥 Sorlock</button>
+                    <a href="#ice-sorcerer" class="dropdown-item" data-tab="ice-sorcerer">❄️ Ice Sorcerer</a>
+                    <a href="#sorlock" class="dropdown-item" data-tab="sorlock">🔥 Sorlock</a>
                 </div>
             </div>
 
@@ -670,7 +678,7 @@
             <div class="dropdown">
                 <button class="dropdown-btn">👁️ Warlock</button>
                 <div class="dropdown-content">
-                    <button class="dropdown-item" data-tab="gloom-weaver">🌑 Gloom Weaver</button>
+                    <a href="#gloom-weaver" class="dropdown-item" data-tab="gloom-weaver">🌑 Gloom Weaver</a>
                 </div>
             </div>
 
@@ -678,8 +686,8 @@
             <div class="dropdown">
                 <button class="dropdown-btn">📖 Wizard</button>
                 <div class="dropdown-content">
-                    <button class="dropdown-item" data-tab="god-blade">✨ God Blade</button>
-                    <button class="dropdown-item" data-tab="magic-missile">🎯 Magic Missile Master</button>
+                    <a href="#god-blade" class="dropdown-item" data-tab="god-blade">✨ God Blade</a>
+                    <a href="#magic-missile" class="dropdown-item" data-tab="magic-missile">🎯 Magic Missile Master</a>
                 </div>
             </div>
         </nav>
@@ -5407,21 +5415,59 @@ Cantrips: Booming Blade + Eldritch Blast
             document.querySelectorAll('.dropdown-btn').forEach(b => b.classList.remove('has-active'));
             document.querySelectorAll('.build').forEach(b => b.classList.remove('active'));
             document.getElementById('party-manager').classList.add('active');
+            history.pushState(null, '', window.location.pathname);
         });
+
+        // Function to show a specific build
+        function showBuild(buildId) {
+            const buildEl = document.getElementById(buildId);
+            if (!buildEl) return false;
+
+            document.querySelectorAll('.dropdown-item').forEach(i => i.classList.remove('active'));
+            document.querySelectorAll('.dropdown-btn').forEach(b => b.classList.remove('has-active'));
+            document.querySelectorAll('.build').forEach(b => b.classList.remove('active'));
+            document.getElementById('party-manager').classList.remove('active');
+
+            // Find and activate the corresponding nav item
+            const navItem = document.querySelector(`.dropdown-item[data-tab="${buildId}"]`);
+            if (navItem) {
+                navItem.classList.add('active');
+                navItem.closest('.dropdown').querySelector('.dropdown-btn').classList.add('has-active');
+            }
+            buildEl.classList.add('active');
+            return true;
+        }
 
         // Build guide navigation
         document.querySelectorAll('.dropdown-item').forEach(item => {
-            item.addEventListener('click', () => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const buildId = item.dataset.tab;
+                showBuild(buildId);
+                history.pushState(null, '', `#${buildId}`);
+            });
+        });
+
+        // Handle direct URL navigation (e.g., opening in new tab)
+        function handleHashChange() {
+            const hash = window.location.hash.slice(1);
+            if (hash && showBuild(hash)) {
+                return;
+            }
+            // If no valid hash, show party manager
+            if (!hash) {
                 document.querySelectorAll('.dropdown-item').forEach(i => i.classList.remove('active'));
                 document.querySelectorAll('.dropdown-btn').forEach(b => b.classList.remove('has-active'));
                 document.querySelectorAll('.build').forEach(b => b.classList.remove('active'));
-                document.getElementById('party-manager').classList.remove('active');
+                document.getElementById('party-manager').classList.add('active');
+            }
+        }
 
-                item.classList.add('active');
-                item.closest('.dropdown').querySelector('.dropdown-btn').classList.add('has-active');
-                document.getElementById(item.dataset.tab).classList.add('active');
-            });
-        });
+        // Handle browser back/forward
+        window.addEventListener('hashchange', handleHashChange);
+
+        // Check hash on page load
+        handleHashChange();
 
         // Update party slots and check conflicts
         function updateParty() {
