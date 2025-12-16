@@ -344,6 +344,19 @@
         #magic-missile .stats-box { background: linear-gradient(135deg, #ede7f6 0%, #e8eaf6 100%); border: 1px solid #9575cd; }
         #magic-missile .footer { color: #5e35b1; border-top: 1px solid #9575cd; }
 
+        /* GIANT BARBARIAN - Stone Brown/Orange */
+        #giant-barbarian { background: linear-gradient(180deg, #efebe9 0%, #d7ccc8 50%, #ffffff 100%); color: #3e2723; }
+        #giant-barbarian h1 { color: #5d4037; text-shadow: 2px 2px 4px rgba(93,64,55,0.3); }
+        #giant-barbarian .subtitle { color: #6d4c41; }
+        #giant-barbarian h2 { color: #5d4037; border-bottom: 2px solid #a1887f; }
+        #giant-barbarian h3 { color: #6d4c41; }
+        #giant-barbarian th { background: linear-gradient(135deg, #5d4037 0%, #795548 100%); }
+        #giant-barbarian td { border-bottom: 1px solid #d7ccc8; }
+        #giant-barbarian tr:nth-child(even) { background: #efebe9; }
+        #giant-barbarian .callout { background: linear-gradient(135deg, #efebe9 0%, #d7ccc8 100%); border-left: 4px solid #5d4037; }
+        #giant-barbarian .stats-box { background: linear-gradient(135deg, #efebe9 0%, #d7ccc8 100%); border: 1px solid #a1887f; }
+        #giant-barbarian .footer { color: #5d4037; border-top: 1px solid #a1887f; }
+
         /* PARTY MANAGER PAGE */
         .party-manager { display: none; background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%); min-height: calc(100vh - 60px); color: #e0e0e0; }
         .party-manager.active { display: block; }
@@ -401,6 +414,7 @@
             <div class="dropdown">
                 <button class="dropdown-btn">🪓 Barbarian</button>
                 <div class="dropdown-content">
+                    <button class="dropdown-item" data-tab="giant-barbarian">🏔️ Giant Barbarian</button>
                     <button class="dropdown-item" data-tab="savage-striker">🩸 Savage Striker</button>
                 </div>
             </div>
@@ -494,6 +508,7 @@
                 <select class="slot-select" data-slot="1" onchange="updateParty()">
                     <option value="">-- Select Build --</option>
                     <optgroup label="Barbarian">
+                        <option value="giant-barbarian">🏔️ Giant Barbarian</option>
                         <option value="savage-striker">🩸 Savage Striker</option>
                     </optgroup>
                     <optgroup label="Cleric">
@@ -536,6 +551,7 @@
                 <select class="slot-select" data-slot="2" onchange="updateParty()">
                     <option value="">-- Select Build --</option>
                     <optgroup label="Barbarian">
+                        <option value="giant-barbarian">🏔️ Giant Barbarian</option>
                         <option value="savage-striker">🩸 Savage Striker</option>
                     </optgroup>
                     <optgroup label="Cleric">
@@ -578,6 +594,7 @@
                 <select class="slot-select" data-slot="3" onchange="updateParty()">
                     <option value="">-- Select Build --</option>
                     <optgroup label="Barbarian">
+                        <option value="giant-barbarian">🏔️ Giant Barbarian</option>
                         <option value="savage-striker">🩸 Savage Striker</option>
                     </optgroup>
                     <optgroup label="Cleric">
@@ -620,6 +637,7 @@
                 <select class="slot-select" data-slot="4" onchange="updateParty()">
                     <option value="">-- Select Build --</option>
                     <optgroup label="Barbarian">
+                        <option value="giant-barbarian">🏔️ Giant Barbarian</option>
                         <option value="savage-striker">🩸 Savage Striker</option>
                     </optgroup>
                     <optgroup label="Cleric">
@@ -1071,6 +1089,258 @@
         </table>
 
         <div class="footer"><em>👊 "You really have to roll with the punches." 🔥</em></div>
+    </div>
+</div>
+
+<!-- GIANT BARBARIAN -->
+<div class="build" id="giant-barbarian">
+    <div class="build-content">
+        <h1>🏔️ THE GIANT BARBARIAN 🏔️</h1>
+        <div class="subtitle">🪓 Giant Instinct Barbarian Build Guide - Baldur's Gate 3 (Patch 8) 🧊</div>
+
+        <h2>🏔️ Build Overview</h2>
+        <p>This build turns you into a colossal weapon-hurling powerhouse! The Giant Instinct Barbarian gets Elemental Cleaver at Level 3, which lets you throw ANY weapon in the game with full Strength scaling. Combined with Tavern Brawler (doubles STR modifier on throws), the Boots of the Giants' devastating kick, and Mighty Impel to throw enemies off cliffs, you become a battlefield controller with massive single-target damage.</p>
+
+        <p><strong>Class:</strong> 12 Giant Instinct Barbarian (Pure)</p>
+
+        <div class="callout">
+            <span class="emoji">🎯</span> <strong>ELEMENTAL CLEAVER:</strong> Throw ANY weapon with full Strength scaling! This turns Nyrulna (the best thrown weapon) into a wrecking ball. With Tavern Brawler, your STR modifier is DOUBLED on all throws, dealing obscene damage at range!
+        </div>
+
+        <h2>📊 Race & Starting Stats</h2>
+        <div class="stats-box">
+<strong>Recommended Race:</strong> Shield Dwarf (poison resistance, medium armor) or Zariel Tiefling (Smite spells)
+
+<strong>Standard Point Buy:</strong>
+STR: 17 (+1 Hag Hair = 18)  |  DEX: 14  |  CON: 14  |  INT: 8  |  WIS: 10  |  CHA: 8
+
+<strong>With Cloud Giant Elixir:</strong>
+STR becomes 27 → With Tavern Brawler: +16 to hit and damage on throws!
+
+<strong>Key Skills:</strong> Athletics, Intimidation, Perception
+        </div>
+
+        <h2>📈 Level Progression</h2>
+        <div class="stats-box">
+<strong>L1:</strong> 🪓 Barbarian basics. Rage (+2 damage), Unarmored Defense
+- Start throwing weapons immediately! Handaxes work early game
+
+<strong>L2:</strong> Reckless Attack (advantage on attacks), Danger Sense
+- Reckless throwing = almost never miss
+
+<strong>L3 (Giant Instinct!):</strong> ⛰️ ELEMENTAL CLEAVER unlocked!
+- Throw ANY weapon with STR scaling (not just throwables!)
+- Choose Cold damage type for ice terrain synergy
+
+<strong>L4:</strong> 🎓 FEAT: Tavern Brawler
+- DOUBLES your Strength modifier on thrown weapons!
+- +8 to hit/damage at base, +16 with Cloud Giant Elixir!
+
+<strong>L5:</strong> Extra Attack + Fast Movement
+- Two throws per action = massive damage output
+
+<strong>L6:</strong> Giant's Rage — bonus action 1d6 weapon damage + AOE
+- Enemies within 3m take damage when you rage!
+
+<strong>L7:</strong> Feral Instinct (advantage on initiative)
+- Act first, throw first, win first
+
+<strong>L8:</strong> 🎓 FEAT: Alert (+5 Initiative) OR Ability Score Improvement
+- Going first is critical for environmental kills
+
+<strong>L9:</strong> Brutal Critical (1 extra damage die on crits)
+- Reckless + advantage = frequent crits
+
+<strong>L10:</strong> Giant's Strike — 2d12 damage + Topple
+- Now each throw can knock enemies PRONE!
+
+<strong>L11:</strong> Relentless Rage (don't go to 0 HP on successful CON save)
+
+<strong>L12:</strong> 🎓 FEAT: Great Weapon Master OR Sentinel
+- GWM for -5/+10 on throws, Sentinel for battlefield control
+        </div>
+
+        <h2>🦶 Boots of the Giants (CORE ITEM)</h2>
+        <div class="callout">
+            <span class="emoji">🦶</span> <strong>COLOSSUS KICK:</strong> These boots give you the ability to KICK enemies as a bonus action! The kick deals massive damage and sends enemies FLYING. Use this to kick enemies off cliffs, into chasms, or into environmental hazards for instant kills! This is one of the most fun and powerful abilities in the game.
+        </div>
+
+        <h2>🤾 Mighty Impel (Throw Enemies!)</h2>
+        <div class="stats-box">
+<strong>Mighty Impel at Level 6:</strong>
+- Pick up and THROW an enemy as an action!
+- Deals damage based on distance thrown
+- Can throw enemies off cliffs for INSTANT KILLS
+- Works on most medium or smaller enemies
+- Combined with kick = throw multiple enemies per turn!
+
+<strong>Environmental Kill Strategy:</strong>
+1. Position near ledges, chasms, or hazards
+2. Kick one enemy off with bonus action
+3. Mighty Impel throw another enemy off
+4. Two instant kills per turn, no damage needed!
+        </div>
+
+        <h2>🧊 Cold Damage & Ice Synergy</h2>
+        <div class="callout">
+            <span class="emoji">🧊</span> <strong>ICE TERRAIN COMBO:</strong> Select Cold for your Elemental Cleaver damage type. When you hit enemies, you create ice surfaces that make them slip and fall prone! The Snow Burst Ring creates ice around you when you take Cold damage — synergizes perfectly with your cold-infused throws.
+        </div>
+
+        <h2>🎒 Essential Gear</h2>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
+            <tr>
+                <td>🪓 Main Hand</td>
+                <td>Nyrulna</td>
+                <td>Circus of Last Days — Akabi's jackpot (Jungle). +3 legendary trident, 3d4 Thunder on hit, returns when thrown, creates Thunder explosion. THE best thrown weapon!</td>
+            </tr>
+            <tr>
+                <td>🛡️ Off-Hand</td>
+                <td>Viconia's Walking Fortress</td>
+                <td>House of Grief — defeat Viconia. +3 shield, Reflective Shell (return projectiles), Warding Bond spell.</td>
+            </tr>
+            <tr>
+                <td>👢 Boots</td>
+                <td>Boots of the Giants</td>
+                <td>Waukeen's Rest — Zhentarim Hideout OR Grymforge. Colossus Kick ability sends enemies FLYING!</td>
+            </tr>
+            <tr>
+                <td>🧤 Gloves</td>
+                <td>Helldusk Gloves</td>
+                <td>Wyrm's Rock Fortress — Gortash's audience hall. +1d6 Fire on weapon attacks, Strength saves!</td>
+            </tr>
+            <tr>
+                <td>💍 Ring 1</td>
+                <td>Ring of Flinging</td>
+                <td>Grymforge — corpse near Adamantine Forge. +1d4 damage on thrown weapon attacks!</td>
+            </tr>
+            <tr>
+                <td>💍 Ring 2</td>
+                <td>Snow Burst Ring</td>
+                <td>Crèche Y'llek — sold by A'jak'nir Jeera. Creates ice when you take Cold damage, synergizes with cold throws!</td>
+            </tr>
+            <tr>
+                <td>👘 Armor</td>
+                <td>Vest of Soul Rejuvenation</td>
+                <td>Mind Flayer Colony — Zevlor's pod (if saved). Heal when succeeding saving throws while at max HP!</td>
+            </tr>
+            <tr>
+                <td>👑 Helmet</td>
+                <td>Bonespike Helmet</td>
+                <td>Philgrave's Mansion basement (Act 3). +2 Psychic damage on melee, advantage vs being moved.</td>
+            </tr>
+            <tr>
+                <td>🧥 Cloak</td>
+                <td>Cloak of Displacement</td>
+                <td>Stonemason Kith (Steel Watch Foundry). Attackers have disadvantage until you're hit.</td>
+            </tr>
+            <tr>
+                <td>📿 Amulet</td>
+                <td>Amulet of Greater Health</td>
+                <td>House of Hope — Archive. Sets CON to 23, massive HP boost!</td>
+            </tr>
+        </table>
+
+        <h2>🧪 Elixir Choice</h2>
+        <div class="callout">
+            <span class="emoji">🧪</span> <strong>CLOUD GIANT ELIXIR:</strong> Sets your Strength to 27! With Tavern Brawler doubling your STR modifier on throws, this gives you +16 to hit AND +16 damage on every thrown weapon attack. Stock up on these from Auntie Ethel or craft them!
+        </div>
+
+        <h2>⚔️ Combat Strategy</h2>
+        <h3>💥 Opening Turn</h3>
+        <div class="stats-box">
+<strong>Setup:</strong>
+1. Drink Cloud Giant Elixir before combat (lasts until long rest)
+2. Position near environmental hazards if possible
+
+<strong>First Turn Combo:</strong>
+1. Rage (bonus action) — Giant's Rage deals AOE damage
+2. Throw Nyrulna (attack 1) — returns to you!
+3. Throw Nyrulna (attack 2 via Extra Attack)
+4. Each hit creates Thunder explosion + Cold damage + potential prone!
+
+<strong>With Action Surge (if Fighter dip):</strong>
+Two more throws = 4 Nyrulna explosions in one turn!
+        </div>
+
+        <h3>🦶 Environmental Kill Turn</h3>
+        <div class="stats-box">
+<strong>Maximum Chaos:</strong>
+1. Rage (bonus action) if not already raging
+2. Mighty Impel — grab and throw enemy off cliff (instant kill)
+3. Move to next enemy
+4. Colossus Kick — send them flying off ledge (second instant kill)
+5. Attack remaining enemies with thrown Nyrulna
+
+<strong>Key Locations:</strong>
+- Grymforge has multiple high ledges
+- Moonrise Towers rooftop battles
+- Wyrm's Rock has death drops
+- House of Hope is full of ledges
+        </div>
+
+        <h3>🧊 Ice Control Strategy</h3>
+        <div class="stats-box">
+<strong>Cold Synergy Loop:</strong>
+1. Cold Elemental Cleaver attacks create ice
+2. Enemies slip on ice = prone
+3. Prone enemies have disadvantage, you have advantage
+4. Snow Burst Ring creates more ice when YOU take cold damage
+5. Create water + cast Ray of Frost = instant ice field
+
+<strong>Crowd Control Chain:</strong>
+Ice Surfaces → Prone → Giant's Strike Topple → Can't Stand Up!
+        </div>
+
+        <h2>📊 Damage Calculation</h2>
+        <table>
+            <tr><th>Component</th><th>Damage</th><th>Notes</th></tr>
+            <tr><td>Nyrulna Base</td><td>1d8+3</td><td>+3 legendary trident</td></tr>
+            <tr><td>Nyrulna Thunder</td><td>3d4</td><td>On every hit</td></tr>
+            <tr><td>Nyrulna Explosion</td><td>3d4 AOE</td><td>6m radius thunder</td></tr>
+            <tr><td>STR Mod (Elixir)</td><td>+8</td><td>27 STR = +8 mod</td></tr>
+            <tr><td>Tavern Brawler</td><td>+8</td><td>Doubles STR on throws</td></tr>
+            <tr><td>Rage</td><td>+3</td><td>At higher levels</td></tr>
+            <tr><td>Ring of Flinging</td><td>+1d4</td><td>On thrown attacks</td></tr>
+            <tr><td>Helldusk Gloves</td><td>+1d6</td><td>Fire damage</td></tr>
+            <tr><td>Cold Elemental</td><td>+1d6</td><td>Elemental Cleaver</td></tr>
+        </table>
+        <p><em>*Single throw: ~40-60 damage average. Two throws per turn = 80-120 damage + Thunder AOE!</em></p>
+
+        <h2>⚖️ Pros & Cons</h2>
+        <table>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
+            <tr><td>Throw ANY weapon with full STR scaling</td><td>Requires Cloud Giant Elixir for peak damage</td></tr>
+            <tr><td>Colossus Kick = instant environmental kills</td><td>Nyrulna is Act 3 only</td></tr>
+            <tr><td>Mighty Impel throws enemies off cliffs</td><td>Less effective in enclosed spaces</td></tr>
+            <tr><td>Ice terrain creates crowd control</td><td>Cold resistance reduces effectiveness</td></tr>
+            <tr><td>Giant's Strike topples enemies</td><td>Pure Barbarian = no spellcasting</td></tr>
+            <tr><td>Incredible fun factor!</td><td>Relies on positioning for best results</td></tr>
+        </table>
+
+        <h2>💡 Tips & Tricks</h2>
+        <div class="callout">
+            <span class="emoji">💡</span> <strong>ADVANCED TACTICS:</strong>
+            <ul>
+                <li><strong>Akabi's Jackpot:</strong> To get Nyrulna, pickpocket Akabi's ring at the Circus, then spin the wheel. You'll be teleported to the Jungle where Nyrulna awaits!</li>
+                <li><strong>Grease + Ice:</strong> Cast Grease then create ice on top = double difficult terrain and prone chances</li>
+                <li><strong>Kick + Throw Combo:</strong> Kick one enemy, then Mighty Impel throw another = two environmental kills per turn!</li>
+                <li><strong>Snow Burst Ring:</strong> Intentionally take cold damage (friendly fire Ray of Frost) to create ice around you</li>
+                <li><strong>Nyrulna Returns:</strong> The trident always returns — never lose it, even if you throw it into a chasm!</li>
+            </ul>
+        </div>
+
+        <h2>📊 Quick Reference</h2>
+        <div class="stats-box">
+<strong>Class:</strong> 12 Giant Instinct Barbarian (Pure)
+<strong>Primary Stats:</strong> STR 27 (Elixir), CON 14+, DEX 14
+<strong>Key Features:</strong> Elemental Cleaver, Giant's Rage, Giant's Strike, Mighty Impel
+<strong>Core Items:</strong> Nyrulna, Boots of the Giants, Ring of Flinging
+<strong>Combat Style:</strong> Thrown weapon DPS + Environmental kills
+<strong>Best For:</strong> Players who want to throw everything (including enemies) off cliffs!
+        </div>
+
+        <div class="footer"><em>🏔️ "Why fight fair when you can throw them off a cliff?" 🎯</em></div>
     </div>
 </div>
 
@@ -2037,6 +2307,10 @@ INT reaches 18 at L4, then 20 at L8 with ASI
     <script>
         // Build gear data - items that could conflict
         const buildGear = {
+            'giant-barbarian': {
+                name: 'Giant Barbarian', icon: '🏔️', role: 'Thrown DPS',
+                items: ['Nyrulna', "Viconia's Walking Fortress", 'Boots of the Giants', 'Helldusk Gloves', 'Ring of Flinging', 'Snow Burst Ring', 'Vest of Soul Rejuvenation', 'Bonespike Helmet', 'Cloak of Displacement', 'Amulet of Greater Health']
+            },
             'ice-sorcerer': {
                 name: 'Ice Sorcerer', icon: '❄️', role: 'AOE Caster',
                 items: ['Mourning Frost', 'Potent Robe', 'Birthright', 'Quickspell Gloves', 'Boots of Stormy Clamour', 'Amulet of Greater Health', 'Cloak of the Weave', 'Callous Glow Ring', "Killer's Sweetheart"]
