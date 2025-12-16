@@ -383,6 +383,19 @@
         #starswarm .stats-box { background: linear-gradient(135deg, rgba(26,46,26,0.8) 0%, rgba(13,51,32,0.8) 100%); border: 1px solid #4caf50; }
         #starswarm .footer { color: #ffd700; border-top: 1px solid #4caf50; }
 
+        /* ARCANE ARCHER - Dark Blue/Arcane Purple */
+        #arcane-archer { background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #1f1f3d 100%); color: #c9d1d9; }
+        #arcane-archer h1 { color: #7b68ee; text-shadow: 2px 2px 4px rgba(123,104,238,0.5), 0 0 15px rgba(123,104,238,0.3); }
+        #arcane-archer .subtitle { color: #9d8df1; }
+        #arcane-archer h2 { color: #7b68ee; border-bottom: 2px solid #5b4fcf; }
+        #arcane-archer h3 { color: #9d8df1; }
+        #arcane-archer th { background: linear-gradient(135deg, #3d3d6b 0%, #5b4fcf 100%); }
+        #arcane-archer td { border-bottom: 1px solid #3d3d5c; }
+        #arcane-archer tr:nth-child(even) { background: rgba(123,104,238,0.1); }
+        #arcane-archer .callout { background: linear-gradient(135deg, rgba(123,104,238,0.15) 0%, rgba(91,79,207,0.2) 100%); border-left: 4px solid #7b68ee; }
+        #arcane-archer .stats-box { background: linear-gradient(135deg, rgba(26,26,46,0.9) 0%, rgba(31,31,61,0.9) 100%); border: 1px solid #5b4fcf; }
+        #arcane-archer .footer { color: #7b68ee; border-top: 1px solid #5b4fcf; }
+
         /* TEMPEST CLERIC - Storm Blue/Purple */
         #tempest-cleric { background: linear-gradient(180deg, #e8eaf6 0%, #c5cae9 50%, #ffffff 100%); color: #1a237e; }
         #tempest-cleric h1 { color: #303f9f; text-shadow: 2px 2px 4px rgba(48,63,159,0.3); }
@@ -509,6 +522,7 @@
             <div class="dropdown">
                 <button class="dropdown-btn">🛡️ Fighter</button>
                 <div class="dropdown-content">
+                    <button class="dropdown-item" data-tab="arcane-archer">🏹 Arcane Archer</button>
                     <button class="dropdown-item" data-tab="battle-master">⚔️ Battle Master</button>
                     <button class="dropdown-item" data-tab="lightning-ek">⚡ Lightning EK</button>
                 </div>
@@ -593,6 +607,7 @@
                         <option value="stars-druid">⭐ Stars Druid</option>
                     </optgroup>
                     <optgroup label="Fighter">
+                        <option value="arcane-archer">🏹 Arcane Archer</option>
                         <option value="battle-master">⚔️ Battle Master</option>
                         <option value="lightning-ek">⚡ Lightning EK</option>
                     </optgroup>
@@ -641,6 +656,7 @@
                         <option value="stars-druid">⭐ Stars Druid</option>
                     </optgroup>
                     <optgroup label="Fighter">
+                        <option value="arcane-archer">🏹 Arcane Archer</option>
                         <option value="battle-master">⚔️ Battle Master</option>
                         <option value="lightning-ek">⚡ Lightning EK</option>
                     </optgroup>
@@ -689,6 +705,7 @@
                         <option value="stars-druid">⭐ Stars Druid</option>
                     </optgroup>
                     <optgroup label="Fighter">
+                        <option value="arcane-archer">🏹 Arcane Archer</option>
                         <option value="battle-master">⚔️ Battle Master</option>
                         <option value="lightning-ek">⚡ Lightning EK</option>
                     </optgroup>
@@ -737,6 +754,7 @@
                         <option value="stars-druid">⭐ Stars Druid</option>
                     </optgroup>
                     <optgroup label="Fighter">
+                        <option value="arcane-archer">🏹 Arcane Archer</option>
                         <option value="battle-master">⚔️ Battle Master</option>
                         <option value="lightning-ek">⚡ Lightning EK</option>
                     </optgroup>
@@ -2277,6 +2295,243 @@ STR: 8 | DEX: 16 | CON: 14 | WIS: 16 | INT: 10 | CHA: 8
     </div>
 </div>
 
+<!-- ARCANE ARCHER -->
+<div class="build" id="arcane-archer">
+    <div class="build-content">
+        <h1>🏹 THE ARCANE ARCHER 🏹</h1>
+        <div class="subtitle">✨ Arcane Archer Fighter / Thief Rogue / Gloomstalker Ranger - Baldur's Gate 3 🎯</div>
+
+        <h2>✨ Build Overview</h2>
+        <p>A devastating ranged multiclass that combines the magical arrows of the Arcane Archer Fighter with the burst damage of Thief Rogue and the ambush capabilities of Gloomstalker Ranger. Banish dangerous enemies for 2 turns, unleash massive critical hits with Arrow of Many Targets, and fire a barrage of crossbow bolts with your extra bonus action!</p>
+        <p><strong>Class Split:</strong> 6 Arcane Archer Fighter / 3 Thief Rogue / 3 Gloomstalker Ranger</p>
+
+        <div class="callout">
+            <span class="emoji">🎯</span> <strong>BANISHING ARROW:</strong> Remove a dangerous enemy from combat for 2 TURNS! No concentration required. When they return, gang up on them with your full party. Combined with Arrow of Many Targets and Bhaalist Armour = devastating piercing damage!
+        </div>
+
+        <h2>📊 Race & Stats</h2>
+        <div class="stats-box">
+<strong>Recommended Race:</strong> Any race works well
+- Half-Orc for Savage Attacks (better crits)
+- Wood Elf for movement + weapon proficiency
+- Human for extra feat potential
+
+<strong>Stat Spread:</strong>
+STR: 14 | DEX: 16 | CON: 16 | INT: 8 | WIS: 10 | CHA: 8
+
+<strong>Why Dump INT?</strong>
+- Warped Headband of Intellect gives 16 INT in Act 1!
+- Use it for Arcane Archer spell saves
+- Frees up points for DEX/CON/STR
+
+<strong>Background:</strong> Soldier or Criminal
+        </div>
+
+        <h2>🎯 Arcane Arrow Options</h2>
+        <table>
+            <tr><th>Arrow Type</th><th>Effect</th><th>Verdict</th></tr>
+            <tr><td>🌀 Banishing Arrow</td><td>Banish target for 2 turns!</td><td>MUST TAKE - Remove threats from combat!</td></tr>
+            <tr><td>🔍 Seeking Arrow</td><td>Homes in on hidden targets</td><td>Great for invisible/obscured enemies</td></tr>
+            <tr><td>💥 Bursting Arrow</td><td>AOE explosion on hit</td><td>Good for grouped enemies</td></tr>
+            <tr><td>🌑 Shadow Arrow</td><td>Blinds the target</td><td>Decent control option</td></tr>
+            <tr><td>➡️ Piercing Arrow</td><td>Hits in a line</td><td>Skippable - Arrow of Many Targets is better</td></tr>
+        </table>
+
+        <div class="callout">
+            <span class="emoji">💡</span> <strong>RECOMMENDED PICKS:</strong> Banishing Arrow (always) + Seeking Arrow (for utility) OR Bursting Arrow (for AOE damage)
+        </div>
+
+        <h2>📈 Level Progression</h2>
+        <div class="stats-box">
+<strong>Fighter 1:</strong> Starting Class 🛡️
+- Fighting Style: Defense (+1 AC) OR Archery (+2 ranged attack)
+- Both work well - Defense for survival, Archery for damage
+
+<strong>Fighter 2:</strong> Action Surge! ⚡
+- Extra action once per short rest
+- Massive burst damage potential
+
+<strong>Fighter 3:</strong> Arcane Archer! 🏹
+- Cantrip: Guidance (best utility)
+- Arcane Arrows: Banishing Arrow + Seeking Arrow
+- 2 uses per short rest (recharges!)
+
+<strong>Fighter 4:</strong> Sharpshooter! 🎯
+- -5 to hit, +10 damage
+- Use Bless to offset penalty
+- Devastating with hand crossbows
+
+<strong>Fighter 5:</strong> Extra Attack 💥
+- Two attacks per action
+- Core power spike
+
+<strong>Fighter 6:</strong> Crossbow Expert! 🔫
+- No disadvantage at close range
+- Piercing Shot = double Gaping Wounds duration
+- Works with Bhaalist Armour!
+
+<strong>Rogue 1:</strong> Sneak Attack 🗡️
+- +1d6 damage with advantage
+- Bonus Action: Dash, Disengage, Hide
+
+<strong>Rogue 2:</strong> Cunning Action
+- Improved stealth mobility
+
+<strong>Rogue 3:</strong> Thief! 🎭
+- EXTRA BONUS ACTION!
+- More crossbow attacks = more damage
+- Best sustained DPS option
+
+<strong>Ranger 1:</strong> Gloomstalker Setup 🌑
+- Favored Enemy: Bounty Hunter (Ensnaring Strike)
+- Natural Explorer: Wasteland Wanderer (Fire resist)
+- Fighting Style: Defense (+1 AC, stacks!)
+- Spells: Hunter's Mark, Ensnaring Strike
+
+<strong>Ranger 2:</strong> Spells
+- Hail of Thorns or Longstrider
+
+<strong>Ranger 3:</strong> Gloomstalker! 🦇
+- Dread Ambusher: +3 Initiative, extra attack first round!
+- Extra attack deals +1d8 damage
+- Umbral Shroud for stealth
+        </div>
+
+        <h2>🎒 Best-in-Slot Gear</h2>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
+            <tr><td>⛑️ Helmet</td><td>Warped Headband of Intellect</td><td>Blighted Village (Act 1). Sets INT to 16 for Arcane Arrow saves!</td></tr>
+            <tr><td>🛡️ Armor</td><td>Bhaalist Armour</td><td>Murder Tribunal (Act 3). Enemies VULNERABLE to piercing! Doubles your damage!</td></tr>
+            <tr><td>🛡️ Early Armor</td><td>Adamantine Scale Mail</td><td>Grymforge (Act 1). Great until Bhaalist Armour</td></tr>
+            <tr><td>🧣 Cloak</td><td>Cloak of Protection</td><td>Last Light Inn (Act 2). +1 AC and saves</td></tr>
+            <tr><td>🧣 Alt Cloak</td><td>Deathstalker Mantle</td><td>Dark Urge reward. Invisibility on kill!</td></tr>
+            <tr><td>🧤 Gloves</td><td>Legacy of the Masters</td><td>Creche Y'llek (Act 1). +2 to attack AND damage rolls!</td></tr>
+            <tr><td>🧤 Late Gloves</td><td>Helldusk Gloves</td><td>House of Hope (Act 3). +1d6 fire damage on hits!</td></tr>
+            <tr><td>👢 Boots</td><td>Evasive Shoes</td><td>Circus of Last Days (Act 3). +AC bonus</td></tr>
+            <tr><td>👢 Alt Boots</td><td>Disintegrating Night Walkers</td><td>Grymforge (Act 1). Misty Step + immune to Enwebbed</td></tr>
+            <tr><td>🗡️ Melee (Both)</td><td>Dolor Amarus</td><td>Murder Tribunal (Act 3). +7 crit damage → +14 with Bhaalist!</td></tr>
+            <tr><td>🗡️ Alt Offhand</td><td>Cold Snap / Orin's Dagger</td><td>Various. +1 AC when in offhand</td></tr>
+            <tr><td>🏹 Early Bow</td><td>Titanstring Bow</td><td>Angleiron's (Act 3). STR mod to damage with potions!</td></tr>
+            <tr><td>🔫 Main Crossbow</td><td>Hellfire Hand Crossbow</td><td>House of Hope (Act 3). Burns hidden/invisible attackers!</td></tr>
+            <tr><td>🔫 Off Crossbow</td><td>Firestoker</td><td>Creche Y'llek (Act 1). +1d4 damage vs burning targets!</td></tr>
+            <tr><td>🔫 Alt Crossbow</td><td>Ne'er Misser</td><td>Grymforge (Act 1). Force damage type (rarely resisted)</td></tr>
+            <tr><td>💍 Ring 1</td><td>Killer's Sweetheart</td><td>Self-Same Trial (Act 2). FREE guaranteed critical hit!</td></tr>
+            <tr><td>💍 Ring 2</td><td>Caustic Band</td><td>Grymforge (Act 1). +2 acid damage per hit</td></tr>
+            <tr><td>💍 Alt Ring</td><td>Ring of Protection</td><td>Rafaam's shop (Act 1). +1 AC and saves</td></tr>
+            <tr><td>📿 Amulet</td><td>Amulet of Greater Health</td><td>House of Hope (Act 3). 23 CON!</td></tr>
+            <tr><td>📿 Alt Amulet</td><td>Periapt of Wound Closure</td><td>Moonrise Towers (Act 2). Stabilize + double healing</td></tr>
+        </table>
+
+        <h2>🔫 Hand Crossbow Strategy</h2>
+        <div class="callout">
+            <span class="emoji">🔫</span> <strong>CROSSBOW EXPERT + SHARPSHOOTER + THIEF:</strong>
+            <ul>
+                <li><strong>Action:</strong> 2 crossbow attacks (Extra Attack)</li>
+                <li><strong>Bonus Action 1:</strong> Offhand crossbow attack</li>
+                <li><strong>Bonus Action 2:</strong> Another offhand attack (Thief!)</li>
+                <li><strong>Action Surge:</strong> +2 more attacks!</li>
+                <li><strong>Total:</strong> Up to 6 attacks per turn, all with Sharpshooter (+10 damage each)!</li>
+            </ul>
+        </div>
+
+        <h2>⚔️ Combat Strategy</h2>
+        <h3>Round 1 (Gloomstalker Burst)</h3>
+        <div class="stats-box">
+1. Dread Ambusher triggers → Extra attack with +1d8 damage!
+2. Use Killer's Sweetheart crit with Arrow of Many Targets
+   - Chains to 6+ enemies
+   - With Bhaalist Armour = DOUBLE piercing damage to ALL!
+3. Use Banishing Arrow on most dangerous enemy
+   - Remove them for 2 turns
+   - Deal with them last
+4. Bonus Actions: Hand crossbow attacks with Sharpshooter
+5. Action Surge if needed for more burst
+        </div>
+
+        <h3>Standard Turns</h3>
+        <div class="stats-box">
+<strong>Damage Priority:</strong>
+1. Arrow of Many Targets whenever available (chains massive damage)
+2. Regular attacks with Sharpshooter toggled ON
+3. Toggle Sharpshooter OFF if hit chance drops below 50%
+4. Sneak Attack when you have advantage (Risky Ring helps)
+
+<strong>Control Options:</strong>
+1. Banishing Arrow: Remove threats
+2. Seeking Arrow: Hit hidden/invisible enemies
+3. Bursting Arrow: AOE damage on groups
+4. Ensnaring Strike: Root priority targets
+
+<strong>Bonus Actions:</strong>
+1. Offhand crossbow attack (Sharpshooter applies!)
+2. Second offhand attack (Thief extra bonus action!)
+3. Hunter's Mark if changing targets
+4. Hide for advantage on next attack
+        </div>
+
+        <h2>💥 Arrow of Many Targets + Bhaalist</h2>
+        <div class="callout">
+            <span class="emoji">💥</span> <strong>THE COMBO:</strong> Arrow of Many Targets hits up to 6 enemies. With Bhaalist Armour, all piercing damage is DOUBLED! Add Killer's Sweetheart guaranteed crit on first use = devastating opening. One arrow can deal 100+ damage spread across the battlefield!
+        </div>
+
+        <h2>🎭 Why Thief Over Assassin?</h2>
+        <div class="stats-box">
+<strong>Assassin:</strong>
+- Better round 1 burst (auto-crit on surprised)
+- Action + Bonus back on surprise
+- Falls off after round 1
+
+<strong>Thief (RECOMMENDED):</strong>
+- Extra bonus action EVERY TURN
+- More consistent damage over entire fight
+- With hand crossbows + Sharpshooter = +20 extra damage per turn
+- Better synergy with Crossbow Expert
+        </div>
+
+        <h2>🌑 Gloomstalker Synergy</h2>
+        <div class="callout">
+            <span class="emoji">🦇</span> <strong>DREAD AMBUSHER:</strong> On turn 1, you get an extra attack that deals +1d8 damage. Combined with +3 initiative bonus, you'll almost always act first. Perfect setup for Banishing Arrow → burst down remaining enemies while threat is removed!
+        </div>
+
+        <h2>⚖️ Pros & Cons</h2>
+        <table>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
+            <tr><td>Banishing Arrow removes threats for 2 turns</td><td>Arcane Arrows only 2 uses per short rest</td></tr>
+            <tr><td>Massive piercing damage with Bhaalist</td><td>Bhaalist Armour is Act 3 only</td></tr>
+            <tr><td>Up to 6 attacks per turn with Action Surge</td><td>Needs Warped Headband for INT</td></tr>
+            <tr><td>Thief extra bonus action = consistent DPS</td><td>Sharpshooter penalty hurts accuracy</td></tr>
+            <tr><td>Gloomstalker first round burst</td><td>Many gear pieces are late game</td></tr>
+            <tr><td>Arrow of Many Targets chains devastation</td><td>—</td></tr>
+        </table>
+
+        <h2>💡 Tips & Tricks</h2>
+        <div class="callout">
+            <span class="emoji">💡</span> <strong>PRO TIPS:</strong>
+            <ul>
+                <li><strong>Toggle Sharpshooter:</strong> Turn it OFF when hit chance drops below 50%!</li>
+                <li><strong>Bless Synergy:</strong> +1d4 to hit offsets Sharpshooter's -5 penalty</li>
+                <li><strong>Stock Arrows:</strong> Buy/craft Arrow of Many Targets — they're your best damage!</li>
+                <li><strong>Dual Wield Melee:</strong> Dolor Amarus in both hands for insane crit damage</li>
+                <li><strong>Killer's Sweetheart:</strong> Save the free crit for Arrow of Many Targets opener!</li>
+                <li><strong>Hide First:</strong> Use cunning action Hide for advantage → Sneak Attack</li>
+                <li><strong>Legion of Bees:</strong> Consider Swarmkeeper instead of Gloomstalker for push synergy</li>
+            </ul>
+        </div>
+
+        <h2>📊 Quick Reference</h2>
+        <div class="stats-box">
+<strong>Class Split:</strong> 6 Arcane Archer Fighter / 3 Thief Rogue / 3 Gloomstalker Ranger
+<strong>Primary Stats:</strong> DEX 16, CON 16, STR 14 (dump INT, use headband)
+<strong>Key Features:</strong> Banishing Arrow, Extra Attack, Thief Bonus Action, Dread Ambusher
+<strong>Fighting Styles:</strong> Defense + Archery (or Defense x2)
+<strong>Core Combo:</strong> Killer's Sweetheart crit → Arrow of Many Targets → Banishing Arrow on threat
+<strong>Attacks Per Turn:</strong> Up to 6 with Action Surge (all with Sharpshooter!)
+        </div>
+
+        <div class="footer"><em>🏹 "My arrows find their mark through magic and skill alike." ✨</em></div>
+    </div>
+</div>
+
 <!-- DEATH REAPER -->
 <div class="build" id="death-reaper">
     <div class="build-content">
@@ -3798,6 +4053,10 @@ INT reaches 18 at L4, then 20 at L8 with ASI
             'starswarm': {
                 name: 'Starswarm', icon: '🐝', role: 'Hybrid Striker',
                 items: ['Helmet of Arcane Acuity', 'Bhaalist Armour', 'Helldusk Armour', 'Armour of Landfall', 'Cloak of Protection', 'Helldusk Gloves', 'Gloves of Belligerent Skies', 'Disintegrating Night Walkers', 'Infernal Rapier', 'Knife of the Undermountain King', "Viconia's Walking Fortress", 'Titanstring Bow', 'Gontr Mael', 'Band of the Mystic Scoundrel', 'Caustic Band']
+            },
+            'arcane-archer': {
+                name: 'Arcane Archer', icon: '🏹', role: 'Ranged DPS',
+                items: ['Warped Headband of Intellect', 'Bhaalist Armour', 'Adamantine Scale Mail', 'Cloak of Protection', 'Legacy of the Masters', 'Helldusk Gloves', 'Evasive Shoes', 'Disintegrating Night Walkers', 'Dolor Amarus', 'Titanstring Bow', 'Hellfire Hand Crossbow', 'Firestoker', "Killer's Sweetheart", 'Caustic Band', 'Amulet of Greater Health']
             },
             'god-blade': {
                 name: 'God Blade', icon: '✨', role: 'Nova Striker',
