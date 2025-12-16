@@ -5507,12 +5507,17 @@ Cantrips: Booming Blade + Eldritch Blast
 
             // Update "Open All Builds" button state
             const openBtn = document.getElementById('open-builds-btn');
-            const buildCount = selectedBuilds.length;
+            const slots2 = document.querySelectorAll('.slot-select');
+            let buildCount = 0;
+            slots2.forEach(select => {
+                if (select.value) buildCount++;
+            });
+
             if (buildCount > 0) {
-                openBtn.disabled = false;
+                openBtn.removeAttribute('disabled');
                 openBtn.textContent = `📖 Open ${buildCount} Build${buildCount > 1 ? 's' : ''} in New Tabs`;
             } else {
-                openBtn.disabled = true;
+                openBtn.setAttribute('disabled', 'disabled');
                 openBtn.textContent = '📖 Open All Builds in New Tabs';
             }
         }
