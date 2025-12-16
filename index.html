@@ -396,6 +396,19 @@
         #arcane-archer .stats-box { background: linear-gradient(135deg, rgba(26,26,46,0.9) 0%, rgba(31,31,61,0.9) 100%); border: 1px solid #5b4fcf; }
         #arcane-archer .footer { color: #7b68ee; border-top: 1px solid #5b4fcf; }
 
+        /* OPEN HAND MONK - Ki Gold/Orange */
+        #open-hand-monk { background: linear-gradient(180deg, #1a1a1a 0%, #2d1f0f 50%, #1a1a1a 100%); color: #e8d5b7; }
+        #open-hand-monk h1 { color: #ffa500; text-shadow: 2px 2px 4px rgba(255,165,0,0.5), 0 0 20px rgba(255,165,0,0.3); }
+        #open-hand-monk .subtitle { color: #ffcc80; }
+        #open-hand-monk h2 { color: #ffa500; border-bottom: 2px solid #ff8c00; }
+        #open-hand-monk h3 { color: #ffb74d; }
+        #open-hand-monk th { background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%); }
+        #open-hand-monk td { border-bottom: 1px solid #4a3520; }
+        #open-hand-monk tr:nth-child(even) { background: rgba(255,165,0,0.1); }
+        #open-hand-monk .callout { background: linear-gradient(135deg, rgba(255,165,0,0.15) 0%, rgba(139,69,19,0.2) 100%); border-left: 4px solid #ffa500; }
+        #open-hand-monk .stats-box { background: linear-gradient(135deg, rgba(26,26,26,0.9) 0%, rgba(45,31,15,0.9) 100%); border: 1px solid #ff8c00; }
+        #open-hand-monk .footer { color: #ffa500; border-top: 1px solid #ff8c00; }
+
         /* TEMPEST CLERIC - Storm Blue/Purple */
         #tempest-cleric { background: linear-gradient(180deg, #e8eaf6 0%, #c5cae9 50%, #ffffff 100%); color: #1a237e; }
         #tempest-cleric h1 { color: #303f9f; text-shadow: 2px 2px 4px rgba(48,63,159,0.3); }
@@ -532,6 +545,7 @@
             <div class="dropdown">
                 <button class="dropdown-btn">👊 Monk</button>
                 <div class="dropdown-content">
+                    <button class="dropdown-item" data-tab="open-hand-monk">👊 Open Hand</button>
                     <button class="dropdown-item" data-tab="tavern-brawler">🔥 Tavern Brawler</button>
                 </div>
             </div>
@@ -612,6 +626,7 @@
                         <option value="lightning-ek">⚡ Lightning EK</option>
                     </optgroup>
                     <optgroup label="Monk">
+                        <option value="open-hand-monk">👊 Open Hand</option>
                         <option value="tavern-brawler">🔥 Tavern Brawler</option>
                     </optgroup>
                     <optgroup label="Ranger">
@@ -661,6 +676,7 @@
                         <option value="lightning-ek">⚡ Lightning EK</option>
                     </optgroup>
                     <optgroup label="Monk">
+                        <option value="open-hand-monk">👊 Open Hand</option>
                         <option value="tavern-brawler">🔥 Tavern Brawler</option>
                     </optgroup>
                     <optgroup label="Ranger">
@@ -710,6 +726,7 @@
                         <option value="lightning-ek">⚡ Lightning EK</option>
                     </optgroup>
                     <optgroup label="Monk">
+                        <option value="open-hand-monk">👊 Open Hand</option>
                         <option value="tavern-brawler">🔥 Tavern Brawler</option>
                     </optgroup>
                     <optgroup label="Ranger">
@@ -759,6 +776,7 @@
                         <option value="lightning-ek">⚡ Lightning EK</option>
                     </optgroup>
                     <optgroup label="Monk">
+                        <option value="open-hand-monk">👊 Open Hand</option>
                         <option value="tavern-brawler">🔥 Tavern Brawler</option>
                     </optgroup>
                     <optgroup label="Ranger">
@@ -2532,6 +2550,250 @@ STR: 14 | DEX: 16 | CON: 16 | INT: 8 | WIS: 10 | CHA: 8
     </div>
 </div>
 
+<!-- OPEN HAND MONK -->
+<div class="build" id="open-hand-monk">
+    <div class="build-content">
+        <h1>👊 THE OPEN HAND MONK 👊</h1>
+        <div class="subtitle">🔥 Way of the Open Hand Monk / Thief Rogue - Baldur's Gate 3 ⚡</div>
+
+        <h2>🔥 Build Overview</h2>
+        <p>The highest damage build in Baldur's Gate 3! This Open Hand Monk combined with Thief Rogue unleashes devastating Flurry of Blows that can deal 44-76 damage PER BONUS ACTION. With Tavern Brawler and a Hill Giant Elixir, you add +16 to both attack AND damage rolls. Three bonus actions means three Flurry of Blows — this build is absolutely broken.</p>
+        <p><strong>Class Split:</strong> 9 Way of the Open Hand Monk / 3 Thief Rogue</p>
+
+        <div class="callout">
+            <span class="emoji">💥</span> <strong>TAVERN BRAWLER + STRENGTH ELIXIR:</strong> Hill Giant Elixir sets STR to 27 (+8 mod). Tavern Brawler adds STR modifier TWICE to unarmed attacks = +16 to hit AND +16 damage per punch! Flurry of Blows deals 44-76 damage as a single bonus action!
+        </div>
+
+        <h2>📊 Race & Stats</h2>
+        <div class="stats-box">
+<strong>Recommended Race:</strong> Any race works
+- Wood Elf for +1.5m movement
+- Githyanki for Misty Step
+- Human for extra feat flexibility
+
+<strong>Stat Spread:</strong>
+STR: 8 | DEX: 16 | CON: 15 | WIS: 16 | INT: 8 | CHA: 10
+
+<strong>With Hag's Hair:</strong> Put +1 into DEX (to 17)
+
+<strong>Why Dump STR?</strong>
+- Hill Giant Elixir gives you 27 STR!
+- Tavern Brawler doubles your STR modifier
+- 27 STR = +8 mod × 2 = +16 to attacks!
+
+<strong>Background:</strong> Outlander (Athletics proficiency)
+        </div>
+
+        <h2>👊 Flurry of Blows Options</h2>
+        <table>
+            <tr><th>Type</th><th>Effect</th><th>Best Use</th></tr>
+            <tr><td>🦶 Topple</td><td>Knock target prone</td><td>BEST - Advantage on follow-up attacks!</td></tr>
+            <tr><td>👋 Push</td><td>Push target 5m away</td><td>Environmental kills, positioning</td></tr>
+            <tr><td>🤚 Stagger</td><td>Target can't take reactions</td><td>Prevent opportunity attacks</td></tr>
+        </table>
+
+        <div class="callout">
+            <span class="emoji">🦶</span> <strong>TOPPLE IS KING:</strong> Knocking enemies prone gives advantage on all melee attacks against them. Topple → Extra Attack with advantage → More Topples = enemies never get up!
+        </div>
+
+        <h2>📈 Level Progression</h2>
+        <div class="stats-box">
+<strong>Monk 1:</strong> Foundation 🥋
+- Unarmored Defense (WIS to AC!)
+- Martial Arts (DEX for unarmed)
+- Flurry of Blows (2 bonus action attacks)
+
+<strong>Monk 2:</strong> Ki Points ⚡
+- +3m movement unarmored
+- Patient Defense (disadvantage on attacks vs you)
+- Step of the Wind (bonus action dash/disengage)
+
+<strong>Monk 3:</strong> Way of the Open Hand! 👊
+- Flurry of Blows: Topple, Push, Stagger
+- Deflect Missiles (block ranged attacks!)
+
+<strong>Monk 4:</strong> TAVERN BRAWLER! 🍺
+- Add STR modifier TWICE to unarmed attacks
+- With 27 STR elixir = +16 attack/damage!
+- +1 CON (to 16)
+
+<strong>Monk 5:</strong> Extra Attack + Stunning Strike 💫
+- 3 attacks per action
+- Stunning Strike uses Ki to stun
+
+<strong>Monk 6:</strong> Ki-Empowered Strikes ✨
+- Unarmed = magical damage
+- Manifestation of Body: +1d4 necrotic/psychic/radiant
+- Wholeness of Body: Regain Ki + EXTRA BONUS ACTION!
+
+<strong>Monk 7:</strong> Evasion 🛡️
+- Dex saves: Success = no damage, Fail = half
+- Stillness of Mind (remove charm/frighten)
+
+<strong>Monk 8:</strong> +2 DEX or +2 WIS 📈
+- Both add to AC
+- DEX also improves initiative
+
+<strong>Monk 9:</strong> Ki Resonation! 💥
+- Ki Resonation Punch (mark target - FREE action!)
+- Ki Resonation Blast (AOE explosion!)
+- Advanced Unarmored Movement (+6m jump)
+
+<strong>Rogue 1:</strong> Multiclass Begin 🗡️
+- Sneak Attack (+1d6 with advantage)
+- Expertise in Athletics
+
+<strong>Rogue 2:</strong> Cunning Action
+- Bonus action Hide/Dash/Disengage (no Ki cost!)
+
+<strong>Rogue 3:</strong> THIEF! 🎭
+- Fast Hands = EXTRA BONUS ACTION!
+- That's potentially 3 bonus actions per turn!
+        </div>
+
+        <h2>🎒 Best-in-Slot Gear</h2>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
+            <tr><td>⛑️ Helmet</td><td>Scabby Pilus Circlet</td><td>Moonrise Towers (Act 2). +2 damage when surrounded by 2+ foes!</td></tr>
+            <tr><td>⛑️ Alt Helmet</td><td>Haste Helm</td><td>Blighted Village (Act 1). Momentum at start of combat!</td></tr>
+            <tr><td>👘 Armor</td><td>Vest of Soul Rejuvenation</td><td>House of Hope (Act 3). Heal on saves + Greater Kiai Counter (reaction attack when missed) + 2 AC!</td></tr>
+            <tr><td>🧤 Gloves</td><td>Gloves of Soul Catching</td><td>House of Hope (Act 3). +1d10 force per unarmed, heal 10 HP OR advantage, +2 CON!</td></tr>
+            <tr><td>🧣 Cloak</td><td>Cloak of Protection</td><td>Last Light Inn (Act 2). +1 AC and saves</td></tr>
+            <tr><td>👢 Boots</td><td>Evasive Shoes</td><td>Circus of Last Days (Act 3). +AC bonus</td></tr>
+            <tr><td>👢 Alt Boots</td><td>Boots of Uninhibited Kushigo</td><td>Gauntlet of Shar (Act 2). +1d4 damage to unarmed when not wearing armor!</td></tr>
+            <tr><td>💍 Ring 1</td><td>Ring of Protection</td><td>Rafaam's shop (Act 1). +1 AC and saves</td></tr>
+            <tr><td>💍 Ring 2</td><td>Killer's Sweetheart</td><td>Self-Same Trial (Act 2). FREE critical hit after killing a target!</td></tr>
+            <tr><td>📿 Amulet</td><td>Amulet of Greater Health</td><td>House of Hope (Act 3). 23 CON = massive HP!</td></tr>
+            <tr><td>📿 Alt Amulet</td><td>Surgeon's Subjugation Amulet</td><td>Moonrise Towers (Act 2). Paralyze on crit (easier to get)</td></tr>
+            <tr><td>🧪 Elixir</td><td>Elixir of Hill Giant Strength</td><td>Various vendors/crafting. Sets STR to 27 — MANDATORY!</td></tr>
+        </table>
+
+        <h2>💪 Why Hill Giant Elixir?</h2>
+        <div class="callout">
+            <span class="emoji">💪</span> <strong>THE MATH:</strong>
+            <ul>
+                <li>Hill Giant Elixir = 27 STR (+8 modifier)</li>
+                <li>Tavern Brawler = add STR mod TWICE</li>
+                <li>+8 × 2 = +16 to attack rolls (you NEVER miss!)</li>
+                <li>+8 × 2 = +16 to damage per punch!</li>
+                <li>Flurry of Blows (2 punches): 44-76 damage!</li>
+                <li>Compare: Without elixir, you'd have -2 to attacks</li>
+            </ul>
+        </div>
+
+        <h2>⚡ Bonus Action Economy</h2>
+        <div class="callout">
+            <span class="emoji">⚡</span> <strong>THREE BONUS ACTIONS:</strong>
+            <ol>
+                <li><strong>Thief:</strong> Fast Hands = 1 extra bonus action every turn</li>
+                <li><strong>Wholeness of Body:</strong> Activate for ANOTHER bonus action (3 turns)</li>
+                <li><strong>Normal:</strong> Your regular bonus action</li>
+            </ol>
+            <strong>Result:</strong> 3 Flurry of Blows = 6 punches = 132-228 bonus action damage!
+        </div>
+
+        <h2>⚔️ Combat Strategy</h2>
+        <h3>Opening Turn</h3>
+        <div class="stats-box">
+1. Ki Resonation Punch (FREE action - marks target)
+2. Extra Attack: 3 unarmed strikes (with Topple!)
+3. Flurry of Blows: Topple (knock prone, 2 punches)
+4. Second Bonus Action: More Flurry of Blows!
+5. If needed: Ki Resonation Blast (AOE around marked target)
+
+<strong>With Wholeness of Body Active:</strong>
+- 3 attacks (action)
+- 3 Flurry of Blows (3 bonus actions)
+- = 9 PUNCHES per turn!
+        </div>
+
+        <h3>Damage Calculation</h3>
+        <div class="stats-box">
+<strong>Per Punch (with Hill Giant Elixir):</strong>
+- Base: 1d8 + 16 (Tavern Brawler + 27 STR)
+- Gloves of Soul Catching: +1d10 force
+- Manifestation: +1d4 necrotic/psychic/radiant
+- Total per punch: ~25-35 damage
+
+<strong>Full Turn (9 punches):</strong>
+- 9 × 25-35 = 225-315 damage!
+- Plus Killer's Sweetheart free crit!
+- Plus Stunning Strikes for control!
+
+<strong>Flurry of Blows Alone:</strong>
+- 2 punches × (1d8+16+1d10+1d4) = 44-76 damage
+- As a SINGLE bonus action!
+        </div>
+
+        <h2>💥 Ki Resonation Combo</h2>
+        <div class="callout">
+            <span class="emoji">💥</span> <strong>AOE BURST:</strong>
+            <ol>
+                <li>Ki Resonation Punch any enemy (free action)</li>
+                <li>Enemy now "resonates" with Ki</li>
+                <li>Use Ki Resonation Blast (bonus or action)</li>
+                <li>Explosion damages target + ALL within 5m!</li>
+                <li>Perfect for grouped enemies!</li>
+            </ol>
+        </div>
+
+        <h2>🛡️ Survivability</h2>
+        <div class="stats-box">
+<strong>Armor Class (Unarmored Defense):</strong>
+- 10 + DEX mod (4-5) + WIS mod (3-4) = 17-19 AC
+- Vest of Soul Rejuvenation: +2 AC
+- Cloak of Protection: +1 AC
+- Ring of Protection: +1 AC
+- Evasive Shoes: +1 AC
+- Total: 22-24 AC!
+
+<strong>Defensive Features:</strong>
+- Evasion: Half damage on failed DEX saves, none on success
+- Deflect Missiles: Block ranged attacks
+- Patient Defense: Disadvantage on attacks vs you
+- Greater Kiai Counter: Reaction attack when missed
+- Stillness of Mind: Remove charm/frighten
+        </div>
+
+        <h2>⚖️ Pros & Cons</h2>
+        <table>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
+            <tr><td>Highest damage in the game</td><td>Requires Hill Giant Elixir every long rest</td></tr>
+            <tr><td>Up to 9 attacks per turn</td><td>Best gear locked to Act 3 (House of Hope)</td></tr>
+            <tr><td>Three bonus actions possible</td><td>MAD (needs DEX, WIS, CON)</td></tr>
+            <tr><td>Excellent mobility (jump distance)</td><td>Squishy without gear setup</td></tr>
+            <tr><td>Stunning Strike for control</td><td>Ki points run out in long fights</td></tr>
+            <tr><td>Topple = permanent prone lock</td><td>—</td></tr>
+        </table>
+
+        <h2>💡 Tips & Tricks</h2>
+        <div class="callout">
+            <span class="emoji">💡</span> <strong>PRO TIPS:</strong>
+            <ul>
+                <li><strong>Elixir Economy:</strong> Stock up on Hill Giant Elixirs — they last until long rest!</li>
+                <li><strong>Topple Chain:</strong> Knock prone → all follow-ups have advantage → more Topples!</li>
+                <li><strong>Wholeness of Body:</strong> Save it for tough fights — 3 bonus actions for 3 turns!</li>
+                <li><strong>Ki Management:</strong> Use Cunning Action dash/disengage instead of Ki versions</li>
+                <li><strong>Killer's Sweetheart:</strong> Save the free crit for a Flurry of Blows!</li>
+                <li><strong>Soul Catching Choice:</strong> Take the healing (10 HP) in sustained fights, advantage for burst!</li>
+                <li><strong>Jump Distance:</strong> Your enhanced jump lets you reach anywhere on the battlefield!</li>
+            </ul>
+        </div>
+
+        <h2>📊 Quick Reference</h2>
+        <div class="stats-box">
+<strong>Class Split:</strong> 9 Way of the Open Hand Monk / 3 Thief Rogue
+<strong>Primary Stats:</strong> DEX 18-20, WIS 16-18, CON 16+ (dump STR, use elixir!)
+<strong>Key Features:</strong> Tavern Brawler, Flurry of Blows: Topple, Ki Resonation, Fast Hands
+<strong>Mandatory Item:</strong> Hill Giant Elixir (27 STR = +16 to attacks!)
+<strong>Core Combo:</strong> Topple → Extra Attack → Flurry of Blows × 3 = 9 punches
+<strong>Damage Per Turn:</strong> 225-315 with full setup
+        </div>
+
+        <div class="footer"><em>👊 "My fists carry the weight of mountains. My spirit, the fury of storms." 🔥</em></div>
+    </div>
+</div>
+
 <!-- DEATH REAPER -->
 <div class="build" id="death-reaper">
     <div class="build-content">
@@ -4073,6 +4335,10 @@ INT reaches 18 at L4, then 20 at L8 with ASI
             'magic-missile': {
                 name: 'Magic Missile Master', icon: '🎯', role: 'Guaranteed DPS',
                 items: ['Psychic Spark', 'The Spellsparkler', 'Markoheshkir', 'Callous Glow Ring', 'Coruscation Ring', 'Birthright', 'Quickspell Gloves', 'Robe of the Weave', 'Boots of Stormy Clamour', 'Cloak of the Weave']
+            },
+            'open-hand-monk': {
+                name: 'Open Hand Monk', icon: '👊', role: 'Unarmed Striker',
+                items: ['Gloves of Soul Catching', 'Vest of Soul Rejuvenation', 'Haste Helm', 'Scabby Pilus Circlet', 'Boots of Uninhibited Kushigo', 'Evasive Shoes', 'Cloak of Protection', "Killer's Sweetheart", 'Ring of Protection', 'Amulet of Greater Health', 'Hill Giant Elixir']
             }
         };
 
