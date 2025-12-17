@@ -159,6 +159,15 @@
             padding: 6px 10px;
             vertical-align: top;
         }
+        .build-content td a {
+            color: #4a9eff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .build-content td a:hover {
+            color: #7cb8ff;
+            text-decoration: underline;
+        }
         .build-content ul { margin: 10px 0 10px 25px; }
         .build-content li { margin-bottom: 5px; }
         .callout {
@@ -542,11 +551,6 @@
         .pm-subtitle { text-align: center; color: #888; margin-bottom: 40px; font-size: 14px; }
 
         .party-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 20px; }
-        .party-actions { text-align: center; margin-bottom: 30px; }
-        .open-builds-btn { background: linear-gradient(135deg, #4a9eff 0%, #2d7dd2 100%); border: none; color: #fff; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 12px rgba(74,158,255,0.3); }
-        .open-builds-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(74,158,255,0.4); }
-        .open-builds-btn:active { transform: translateY(0); }
-        .open-builds-btn:disabled { background: #444; cursor: not-allowed; box-shadow: none; transform: none; }
         .party-slot { background: rgba(255,255,255,0.05); border: 2px solid #333; border-radius: 12px; padding: 20px; text-align: center; transition: all 0.2s; }
         .party-slot:hover { border-color: #555; }
         .party-slot.has-build { border-color: #4a9eff; background: rgba(74,158,255,0.1); }
@@ -556,13 +560,23 @@
         .slot-select option { background: #2a2a3e; }
         .slot-icon { font-size: 48px; margin: 15px 0; }
         .slot-role { font-size: 11px; color: #888; margin-top: 10px; }
+        .slot-link { display: none; margin-top: 12px; padding: 8px 16px; background: linear-gradient(135deg, #4a9eff 0%, #2d7dd2 100%); color: #fff; text-decoration: none; border-radius: 6px; font-size: 12px; font-weight: 600; transition: all 0.2s; }
+        .slot-link:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(74,158,255,0.4); }
+        .party-slot.has-build .slot-link { display: inline-block; }
 
         .conflicts-section { background: rgba(255,255,255,0.03); border-radius: 12px; padding: 25px; margin-bottom: 40px; }
         .conflicts-title { font-size: 16pt; color: #ff6b6b; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
         .conflicts-title.no-conflicts { color: #51cf66; }
         .conflict-list { display: flex; flex-wrap: wrap; gap: 10px; }
-        .conflict-item { background: rgba(255,107,107,0.2); border: 1px solid #ff6b6b; padding: 8px 14px; border-radius: 6px; font-size: 13px; }
+        .conflict-item { background: rgba(255,107,107,0.2); border: 1px solid #ff6b6b; padding: 10px 14px; border-radius: 6px; font-size: 13px; }
         .conflict-item .builds { color: #ff8787; font-size: 11px; margin-top: 4px; }
+        .conflict-item .item-link { color: #fff; text-decoration: none; border-bottom: 1px dashed rgba(255,255,255,0.4); transition: all 0.2s; }
+        .conflict-item .item-link:hover { color: #4a9eff; border-bottom-color: #4a9eff; }
+        .conflict-item .alternatives { margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,107,107,0.3); }
+        .conflict-item .alternatives-label { color: #51cf66; font-size: 11px; font-weight: 600; margin-bottom: 4px; }
+        .conflict-item .alt-items { display: flex; flex-wrap: wrap; gap: 6px; }
+        .conflict-item .alt-item { background: rgba(81,207,102,0.15); border: 1px solid rgba(81,207,102,0.4); padding: 3px 8px; border-radius: 4px; font-size: 11px; color: #7dd98a; text-decoration: none; transition: all 0.2s; }
+        .conflict-item .alt-item:hover { background: rgba(81,207,102,0.3); color: #fff; }
         .no-conflict-msg { color: #51cf66; font-size: 14px; }
 
         .examples-section { margin-top: 50px; }
@@ -761,6 +775,7 @@
                 </select>
                 <div class="slot-icon" id="icon-1">👤</div>
                 <div class="slot-role" id="role-1">Empty Slot</div>
+                <a href="#" class="slot-link" id="link-1" target="_blank">Open Build Guide →</a>
             </div>
 
             <div class="party-slot" id="slot-2">
@@ -819,6 +834,7 @@
                 </select>
                 <div class="slot-icon" id="icon-2">👤</div>
                 <div class="slot-role" id="role-2">Empty Slot</div>
+                <a href="#" class="slot-link" id="link-2" target="_blank">Open Build Guide →</a>
             </div>
 
             <div class="party-slot" id="slot-3">
@@ -877,6 +893,7 @@
                 </select>
                 <div class="slot-icon" id="icon-3">👤</div>
                 <div class="slot-role" id="role-3">Empty Slot</div>
+                <a href="#" class="slot-link" id="link-3" target="_blank">Open Build Guide →</a>
             </div>
 
             <div class="party-slot" id="slot-4">
@@ -935,11 +952,8 @@
                 </select>
                 <div class="slot-icon" id="icon-4">👤</div>
                 <div class="slot-role" id="role-4">Empty Slot</div>
+                <a href="#" class="slot-link" id="link-4" target="_blank">Open Build Guide →</a>
             </div>
-        </div>
-
-        <div class="party-actions">
-            <button class="open-builds-btn" id="open-builds-btn" onclick="openSelectedBuilds()" disabled>📖 Open All Builds in New Tabs</button>
         </div>
 
         <div class="conflicts-section">
@@ -1104,15 +1118,15 @@
         <h2>🎒 Recommended Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
-            <tr><td>🪄 Staff</td><td>Mourning Frost</td><td>Underdark (Act 1) — Combine 3 pieces (Filro, Dhourn, Myconid Colony). +1 cold damage per ray, applies Chilled!</td></tr>
-            <tr><td>👘 Robe</td><td>Potent Robe</td><td>Last Light Inn (Act 2) — Reward for saving Alfira/Tieflings. Add CHA to cantrip damage AGAIN!</td></tr>
-            <tr><td>👑 Helm</td><td>Birthright</td><td>Sorcerous Sundries (Act 3). +2 CHA = more damage, higher DC!</td></tr>
-            <tr><td>🧤 Gloves</td><td>Quickspell Gloves</td><td>Lorroakan's Tower (Act 3). Cantrip as bonus action 1/turn!</td></tr>
-            <tr><td>👢 Boots</td><td>Boots of Stormy Clamour</td><td>Underdark (Act 1) — Omeluum after 'Help Omeluum' quest. Apply Reverberation on condition inflict!</td></tr>
-            <tr><td>📿 Amulet</td><td>Amulet of Greater Health</td><td>House of Hope (Act 3) — Archive room. CON 23, fixes your squishiness!</td></tr>
-            <tr><td>🧥 Cloak</td><td>Cloak of the Weave</td><td>Mystic Carrion (Act 3) — Philgrave's Mansion. +1 Spell DC, +1 spell attack!</td></tr>
-            <tr><td>💍 Ring 1</td><td>Callous Glow Ring</td><td>Gauntlet of Shar (Act 2) — DC 30 lockpick vault. +2 radiant vs illuminated!</td></tr>
-            <tr><td>💍 Ring 2</td><td>Killer's Sweetheart</td><td>Gauntlet of Shar (Act 2) — Self-Same Trial reward. Auto-crit once per long rest!</td></tr>
+            <tr><td>🪄 Staff</td><td><a href="https://bg3.wiki/wiki/Mourning_Frost" target="_blank">Mourning Frost</a></td><td>Underdark (Act 1) — Combine 3 pieces (Filro, Dhourn, Myconid Colony). +1 cold damage per ray, applies Chilled!</td></tr>
+            <tr><td>👘 Robe</td><td><a href="https://bg3.wiki/wiki/Potent_Robe" target="_blank">Potent Robe</a></td><td>Last Light Inn (Act 2) — Reward for saving Alfira/Tieflings. Add CHA to cantrip damage AGAIN!</td></tr>
+            <tr><td>👑 Helm</td><td><a href="https://bg3.wiki/wiki/Birthright" target="_blank">Birthright</a></td><td>Sorcerous Sundries (Act 3). +2 CHA = more damage, higher DC!</td></tr>
+            <tr><td>🧤 Gloves</td><td><a href="https://bg3.wiki/wiki/Quickspell_Gloves" target="_blank">Quickspell Gloves</a></td><td>Lorroakan's Tower (Act 3). Cantrip as bonus action 1/turn!</td></tr>
+            <tr><td>👢 Boots</td><td><a href="https://bg3.wiki/wiki/Boots_of_Stormy_Clamour" target="_blank">Boots of Stormy Clamour</a></td><td>Underdark (Act 1) — Omeluum after 'Help Omeluum' quest. Apply Reverberation on condition inflict!</td></tr>
+            <tr><td>📿 Amulet</td><td><a href="https://bg3.wiki/wiki/Amulet_of_Greater_Health" target="_blank">Amulet of Greater Health</a></td><td>House of Hope (Act 3) — Archive room. CON 23, fixes your squishiness!</td></tr>
+            <tr><td>🧥 Cloak</td><td><a href="https://bg3.wiki/wiki/Cloak_of_the_Weave" target="_blank">Cloak of the Weave</a></td><td>Mystic Carrion (Act 3) — Philgrave's Mansion. +1 Spell DC, +1 spell attack!</td></tr>
+            <tr><td>💍 Ring 1</td><td><a href="https://bg3.wiki/wiki/Callous_Glow_Ring" target="_blank">Callous Glow Ring</a></td><td>Gauntlet of Shar (Act 2) — DC 30 lockpick vault. +2 radiant vs illuminated!</td></tr>
+            <tr><td>💍 Ring 2</td><td><a href="https://bg3.wiki/wiki/Killer%27s_Sweetheart" target="_blank">Killer's Sweetheart</a></td><td>Gauntlet of Shar (Act 2) — Self-Same Trial reward. Auto-crit once per long rest!</td></tr>
         </table>
 
         <h2>⚔️ Combat Rotation</h2>
@@ -1210,22 +1224,22 @@
         <h2>🗡️ Equipment</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Notes</th></tr>
-            <tr><td>Helmet</td><td>Hat of Fire Acuity</td><td>Mason's Guild basement. Fire damage = Arcane Acuity stacks (+1 Spell DC each, max +10!)</td></tr>
-            <tr><td>Helmet (Alt)</td><td>Birthright</td><td>Sorcerous Sundries. +2 CHA = more fire damage!</td></tr>
-            <tr><td>Armor</td><td>Potent Robe</td><td>Last Light Inn. Cantrips deal +CHA damage! (Early game best)</td></tr>
-            <tr><td>Armor (Alt)</td><td>Armor of Agility</td><td>Gloomy Fentonson. 25 AC with Hexblade medium armor proficiency!</td></tr>
-            <tr><td>Cloak</td><td>Deathstalker Mantle</td><td>Jaheira's basement. Invisible after kill = easy repositioning</td></tr>
-            <tr><td>Gloves</td><td>Helldusk Gloves</td><td>House of Hope. +1 Spell DC, +1d6 fire on melee, Rays of Fire!</td></tr>
-            <tr><td>Gloves (Alt)</td><td>Gloves of Dexterity</td><td>Creche Y'llek. Set DEX to 18 = dump DEX, put points in WIS</td></tr>
-            <tr><td>Boots</td><td>Evasive Shoes</td><td>Act 3. +1 AC and Acrobatics advantage</td></tr>
-            <tr><td>Boots (Alt)</td><td>Boots of Stormy Clamour</td><td>Underdark. Apply Reverberation on conditions (synergizes with Illithid)</td></tr>
-            <tr><td>Ring 1</td><td>Killer's Sweetheart</td><td>Gauntlet of Shar. Auto-crit once per long rest!</td></tr>
-            <tr><td>Ring 1 (Alt)</td><td>Coruscation Ring</td><td>Last Light Inn. Light on targets = Radiating Orb stacks</td></tr>
-            <tr><td>Ring 2</td><td>Ring of Arcane Synergy</td><td>Dribbles quest. Cantrip = add CHA to weapon damage!</td></tr>
-            <tr><td>Amulet</td><td>Amulet of Greater Health</td><td>House of Hope. CON 23 = HP and concentration checks</td></tr>
-            <tr><td>Weapon</td><td>Markoheshkir</td><td>Ramazith's Tower. Arcane Battery, Wrath of Flame (+fire damage)!</td></tr>
-            <tr><td>Off-hand</td><td>Dolor Amarus</td><td>Cazador fight. +7 damage on critical hits!</td></tr>
-            <tr><td>Ranged</td><td>Hellrider Longbow</td><td>Flaming Fist HQ. +3 initiative to go first!</td></tr>
+            <tr><td>Helmet</td><td><a href="https://bg3.wiki/wiki/Hat_of_Fire_Acuity" target="_blank">Hat of Fire Acuity</a></td><td>Mason's Guild basement. Fire damage = Arcane Acuity stacks (+1 Spell DC each, max +10!)</td></tr>
+            <tr><td>Helmet (Alt)</td><td><a href="https://bg3.wiki/wiki/Birthright" target="_blank">Birthright</a></td><td>Sorcerous Sundries. +2 CHA = more fire damage!</td></tr>
+            <tr><td>Armor</td><td><a href="https://bg3.wiki/wiki/Potent_Robe" target="_blank">Potent Robe</a></td><td>Last Light Inn. Cantrips deal +CHA damage! (Early game best)</td></tr>
+            <tr><td>Armor (Alt)</td><td><a href="https://bg3.wiki/wiki/Armour_of_Agility" target="_blank">Armor of Agility</a></td><td>Gloomy Fentonson. 25 AC with Hexblade medium armor proficiency!</td></tr>
+            <tr><td>Cloak</td><td><a href="https://bg3.wiki/wiki/Deathstalker_Mantle" target="_blank">Deathstalker Mantle</a></td><td>Jaheira's basement. Invisible after kill = easy repositioning</td></tr>
+            <tr><td>Gloves</td><td><a href="https://bg3.wiki/wiki/Helldusk_Gloves" target="_blank">Helldusk Gloves</a></td><td>House of Hope. +1 Spell DC, +1d6 fire on melee, Rays of Fire!</td></tr>
+            <tr><td>Gloves (Alt)</td><td><a href="https://bg3.wiki/wiki/Gloves_of_Dexterity" target="_blank">Gloves of Dexterity</a></td><td>Creche Y'llek. Set DEX to 18 = dump DEX, put points in WIS</td></tr>
+            <tr><td>Boots</td><td><a href="https://bg3.wiki/wiki/Evasive_Shoes" target="_blank">Evasive Shoes</a></td><td>Act 3. +1 AC and Acrobatics advantage</td></tr>
+            <tr><td>Boots (Alt)</td><td><a href="https://bg3.wiki/wiki/Boots_of_Stormy_Clamour" target="_blank">Boots of Stormy Clamour</a></td><td>Underdark. Apply Reverberation on conditions (synergizes with Illithid)</td></tr>
+            <tr><td>Ring 1</td><td><a href="https://bg3.wiki/wiki/Killer%27s_Sweetheart" target="_blank">Killer's Sweetheart</a></td><td>Gauntlet of Shar. Auto-crit once per long rest!</td></tr>
+            <tr><td>Ring 1 (Alt)</td><td><a href="https://bg3.wiki/wiki/Coruscation_Ring" target="_blank">Coruscation Ring</a></td><td>Last Light Inn. Light on targets = Radiating Orb stacks</td></tr>
+            <tr><td>Ring 2</td><td><a href="https://bg3.wiki/wiki/Ring_of_Arcane_Synergy" target="_blank">Ring of Arcane Synergy</a></td><td>Dribbles quest. Cantrip = add CHA to weapon damage!</td></tr>
+            <tr><td>Amulet</td><td><a href="https://bg3.wiki/wiki/Amulet_of_Greater_Health" target="_blank">Amulet of Greater Health</a></td><td>House of Hope. CON 23 = HP and concentration checks</td></tr>
+            <tr><td>Weapon</td><td><a href="https://bg3.wiki/wiki/Markoheshkir" target="_blank">Markoheshkir</a></td><td>Ramazith's Tower. Arcane Battery, Wrath of Flame (+fire damage)!</td></tr>
+            <tr><td>Off-hand</td><td><a href="https://bg3.wiki/wiki/Dolor_Amarus" target="_blank">Dolor Amarus</a></td><td>Cazador fight. +7 damage on critical hits!</td></tr>
+            <tr><td>Ranged</td><td><a href="https://bg3.wiki/wiki/Hellrider_Longbow" target="_blank">Hellrider Longbow</a></td><td>Flaming Fist HQ. +3 initiative to go first!</td></tr>
         </table>
 
         <h2>⚔️ Combat Strategy</h2>
@@ -1373,13 +1387,13 @@ Scorching Ray (4 beams) + Hex = 4d6 extra damage!
         <h2>🎒 Recommended Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
-            <tr><td>🏹 Bow</td><td>Titanstring Bow</td><td>Creche Y'llek (Act 1) — Gish Weapon Quartermaster. Add STR to bow damage!</td></tr>
-            <tr><td>🏹 Bow (Act 3)</td><td>Gontr Mael</td><td>Steel Watch Foundry (Act 3) — Titan boss drop. Celestial Haste on crit!</td></tr>
-            <tr><td>🛡️ Armor</td><td>Bhaalist Armour</td><td>Murder Tribunal (Act 3) — Become Unholy Assassin. Enemies in 2m vulnerable to piercing!</td></tr>
-            <tr><td>👑 Helmet</td><td>Mask of Soul Perception</td><td>Devil's Fee (Act 3) — Helsik's shop basement. +2 attack, +2 initiative!</td></tr>
-            <tr><td>🧤 Gloves</td><td>Gloves of Dexterity</td><td>Creche Y'llek (Act 1) — A'jak'nir Jeera (Inquisitor's room). DEX 18!</td></tr>
-            <tr><td>💍 Ring 1</td><td>Risky Ring</td><td>Underdark (Act 1) — Sold by Omeluum. Advantage on ALL attacks!</td></tr>
-            <tr><td>💍 Ring 2</td><td>Killer's Sweetheart</td><td>Gauntlet of Shar (Act 2) — Self-Same Trial reward. Auto-crit once per long rest!</td></tr>
+            <tr><td>🏹 Bow</td><td><a href="https://bg3.wiki/wiki/Titanstring_Bow" target="_blank">Titanstring Bow</a></td><td>Creche Y'llek (Act 1) — Gish Weapon Quartermaster. Add STR to bow damage!</td></tr>
+            <tr><td>🏹 Bow (Act 3)</td><td><a href="https://bg3.wiki/wiki/Gontr_Mael" target="_blank">Gontr Mael</a></td><td>Steel Watch Foundry (Act 3) — Titan boss drop. Celestial Haste on crit!</td></tr>
+            <tr><td>🛡️ Armor</td><td><a href="https://bg3.wiki/wiki/Bhaalist_Armour" target="_blank">Bhaalist Armour</a></td><td>Murder Tribunal (Act 3) — Become Unholy Assassin. Enemies in 2m vulnerable to piercing!</td></tr>
+            <tr><td>👑 Helmet</td><td><a href="https://bg3.wiki/wiki/Mask_of_Soul_Perception" target="_blank">Mask of Soul Perception</a></td><td>Devil's Fee (Act 3) — Helsik's shop basement. +2 attack, +2 initiative!</td></tr>
+            <tr><td>🧤 Gloves</td><td><a href="https://bg3.wiki/wiki/Gloves_of_Dexterity" target="_blank">Gloves of Dexterity</a></td><td>Creche Y'llek (Act 1) — A'jak'nir Jeera (Inquisitor's room). DEX 18!</td></tr>
+            <tr><td>💍 Ring 1</td><td><a href="https://bg3.wiki/wiki/Risky_Ring" target="_blank">Risky Ring</a></td><td>Underdark (Act 1) — Sold by Omeluum. Advantage on ALL attacks!</td></tr>
+            <tr><td>💍 Ring 2</td><td><a href="https://bg3.wiki/wiki/Killer%27s_Sweetheart" target="_blank">Killer's Sweetheart</a></td><td>Gauntlet of Shar (Act 2) — Self-Same Trial reward. Auto-crit once per long rest!</td></tr>
             <tr><td>🧪 Consumable</td><td>Elixir of Bloodlust</td><td>Crafted with Worg Fang + Alchemy supplies. Extra action on kill - MANDATORY!</td></tr>
         </table>
 
@@ -1459,11 +1473,11 @@ Scorching Ray (4 beams) + Hex = 4d6 extra damage!
         <h2>🎒 Recommended Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
-            <tr><td>⚔️ Weapon</td><td>Balduran's Giantslayer</td><td>Wyrmway (Act 3) — Dragon's Sanctum, defeat Ansur. Double STR mod, advantage vs Large+!</td></tr>
-            <tr><td>🛡️ Armor</td><td>Helldusk Armor</td><td>House of Hope (Act 3) — Raphael's vault. 21 AC, fire immunity, can't be forced to move!</td></tr>
-            <tr><td>👑 Helmet</td><td>Helm of Balduran</td><td>Wyrmway (Act 3) — Dragon's Sanctum, defeat Ansur. HP regen, can't be crit, stun immunity!</td></tr>
-            <tr><td>🧤 Gloves</td><td>Gauntlets of Hill Giant Strength</td><td>House of Hope (Act 3) — Archive room. STR 23!</td></tr>
-            <tr><td>💍 Ring 1</td><td>Killer's Sweetheart</td><td>Gauntlet of Shar (Act 2) — Self-Same Trial reward. Auto-crit once per long rest!</td></tr>
+            <tr><td>⚔️ Weapon</td><td><a href="https://bg3.wiki/wiki/Balduran%27s_Giantslayer" target="_blank">Balduran's Giantslayer</a></td><td>Wyrmway (Act 3) — Dragon's Sanctum, defeat Ansur. Double STR mod, advantage vs Large+!</td></tr>
+            <tr><td>🛡️ Armor</td><td><a href="https://bg3.wiki/wiki/Helldusk_Armour" target="_blank">Helldusk Armor</a></td><td>House of Hope (Act 3) — Raphael's vault. 21 AC, fire immunity, can't be forced to move!</td></tr>
+            <tr><td>👑 Helmet</td><td><a href="https://bg3.wiki/wiki/Helm_of_Balduran" target="_blank">Helm of Balduran</a></td><td>Wyrmway (Act 3) — Dragon's Sanctum, defeat Ansur. HP regen, can't be crit, stun immunity!</td></tr>
+            <tr><td>🧤 Gloves</td><td><a href="https://bg3.wiki/wiki/Gauntlets_of_Hill_Giant_Strength" target="_blank">Gauntlets of Hill Giant Strength</a></td><td>House of Hope (Act 3) — Archive room. STR 23!</td></tr>
+            <tr><td>💍 Ring 1</td><td><a href="https://bg3.wiki/wiki/Killer%27s_Sweetheart" target="_blank">Killer's Sweetheart</a></td><td>Gauntlet of Shar (Act 2) — Self-Same Trial reward. Auto-crit once per long rest!</td></tr>
         </table>
 
         <h2>💥 Combat Role</h2>
@@ -1560,10 +1574,10 @@ Scorching Ray (4 beams) + Hex = 4d6 extra damage!
         <h2>🎒 Recommended Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
-            <tr><td>🧤 Gloves</td><td>Gloves of Soul Catching</td><td>House of Hope (Act 3) — Defeat Raphael. +1d10 force per hit, heal 10 or +2 AC!</td></tr>
-            <tr><td>👑 Helmet</td><td>Bonespike Helmet</td><td>Grymforge (Act 1) — Looted from True Soul Nere. +2 psychic when Concentrating!</td></tr>
-            <tr><td>👢 Boots</td><td>Boots of Uninhibited Kushigo</td><td>Gauntlet of Shar (Act 2) — Self-Same Trial reward. Add WIS mod to unarmed damage!</td></tr>
-            <tr><td>🔮 Special</td><td>Resonance Stone</td><td>Grymforge (Act 1) — Dhourn near Adamantine Forge. Makes enemies vulnerable to psychic!</td></tr>
+            <tr><td>🧤 Gloves</td><td><a href="https://bg3.wiki/wiki/Gloves_of_Soul_Catching" target="_blank">Gloves of Soul Catching</a></td><td>House of Hope (Act 3) — Defeat Raphael. +1d10 force per hit, heal 10 or +2 AC!</td></tr>
+            <tr><td>👑 Helmet</td><td><a href="https://bg3.wiki/wiki/Bonespike_Helmet" target="_blank">Bonespike Helmet</a></td><td>Grymforge (Act 1) — Looted from True Soul Nere. +2 psychic when Concentrating!</td></tr>
+            <tr><td>👢 Boots</td><td><a href="https://bg3.wiki/wiki/Boots_of_Uninhibited_Kushigo" target="_blank">Boots of Uninhibited Kushigo</a></td><td>Gauntlet of Shar (Act 2) — Self-Same Trial reward. Add WIS mod to unarmed damage!</td></tr>
+            <tr><td>🔮 Special</td><td><a href="https://bg3.wiki/wiki/Resonance_Stone" target="_blank">Resonance Stone</a></td><td>Grymforge (Act 1) — Dhourn near Adamantine Forge. Makes enemies vulnerable to psychic!</td></tr>
             <tr><td>🧪 Consumable</td><td>Hill Giant Elixir</td><td>Crafted with Giant's Finger + Alchemy supplies. STR 21 - MANDATORY!</td></tr>
         </table>
 
@@ -1679,52 +1693,52 @@ Scorching Ray (4 beams) + Hex = 4d6 extra damage!
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
             <tr>
                 <td>🪓 Main Hand</td>
-                <td>Nyrulna</td>
+                <td><a href="https://bg3.wiki/wiki/Nyrulna" target="_blank">Nyrulna</a></td>
                 <td>Circus of Last Days (Act 3) — Akabi's jackpot (Jungle). +3 legendary trident, 3d4 Thunder on hit, returns when thrown, creates Thunder explosion. THE best thrown weapon!</td>
             </tr>
             <tr>
                 <td>🛡️ Off-Hand</td>
-                <td>Viconia's Walking Fortress</td>
+                <td><a href="https://bg3.wiki/wiki/Viconia%27s_Walking_Fortress" target="_blank">Viconia's Walking Fortress</a></td>
                 <td>House of Grief (Act 3) — Defeat Viconia. +3 shield, Reflective Shell (return projectiles), Warding Bond spell.</td>
             </tr>
             <tr>
                 <td>👢 Boots</td>
-                <td>Boots of the Giants</td>
+                <td><a href="https://bg3.wiki/wiki/Boots_of_Stormy_Clamour_(Haste)" target="_blank">Boots of the Giants</a></td>
                 <td>Waukeen's Rest (Act 1) — Zhentarim Hideout OR Grymforge. Colossus Kick ability sends enemies FLYING!</td>
             </tr>
             <tr>
                 <td>🧤 Gloves</td>
-                <td>Helldusk Gloves</td>
+                <td><a href="https://bg3.wiki/wiki/Helldusk_Gloves" target="_blank">Helldusk Gloves</a></td>
                 <td>Wyrm's Rock Fortress (Act 3) — Gortash's audience hall. +1d6 Fire on weapon attacks, Strength saves!</td>
             </tr>
             <tr>
                 <td>💍 Ring 1</td>
-                <td>Ring of Flinging</td>
+                <td><a href="https://bg3.wiki/wiki/Ring_of_Flinging" target="_blank">Ring of Flinging</a></td>
                 <td>Grymforge (Act 1) — Corpse near Adamantine Forge. +1d4 damage on thrown weapon attacks!</td>
             </tr>
             <tr>
                 <td>💍 Ring 2</td>
-                <td>Snow Burst Ring</td>
+                <td><a href="https://bg3.wiki/wiki/Snowburst_Ring" target="_blank">Snow Burst Ring</a></td>
                 <td>Crèche Y'llek (Act 1) — Sold by A'jak'nir Jeera. Creates ice when you take Cold damage, synergizes with cold throws!</td>
             </tr>
             <tr>
                 <td>👘 Armor</td>
-                <td>Vest of Soul Rejuvenation</td>
+                <td><a href="https://bg3.wiki/wiki/Vest_of_Soul_Rejuvenation" target="_blank">Vest of Soul Rejuvenation</a></td>
                 <td>Mind Flayer Colony (Act 2) — Zevlor's pod (if saved). Heal when succeeding saving throws while at max HP!</td>
             </tr>
             <tr>
                 <td>👑 Helmet</td>
-                <td>Bonespike Helmet</td>
+                <td><a href="https://bg3.wiki/wiki/Bonespike_Helmet" target="_blank">Bonespike Helmet</a></td>
                 <td>Philgrave's Mansion basement (Act 3). +2 Psychic damage on melee, advantage vs being moved.</td>
             </tr>
             <tr>
                 <td>🧥 Cloak</td>
-                <td>Cloak of Displacement</td>
+                <td><a href="https://bg3.wiki/wiki/Cloak_of_Displacement" target="_blank">Cloak of Displacement</a></td>
                 <td>Steel Watch Foundry (Act 3) — Stonemason Kith. Attackers have disadvantage until you're hit.</td>
             </tr>
             <tr>
                 <td>📿 Amulet</td>
-                <td>Amulet of Greater Health</td>
+                <td><a href="https://bg3.wiki/wiki/Amulet_of_Greater_Health" target="_blank">Amulet of Greater Health</a></td>
                 <td>House of Hope (Act 3) — Archive. Sets CON to 23, massive HP boost!</td>
             </tr>
         </table>
@@ -1799,8 +1813,8 @@ Ice Surfaces → Prone → Giant's Strike Topple → Can't Stand Up!
             <tr><td>STR Mod (Elixir)</td><td>+8</td><td>27 STR = +8 mod</td></tr>
             <tr><td>Tavern Brawler</td><td>+8</td><td>Doubles STR on throws</td></tr>
             <tr><td>Rage</td><td>+3</td><td>At higher levels</td></tr>
-            <tr><td>Ring of Flinging</td><td>+1d4</td><td>On thrown attacks</td></tr>
-            <tr><td>Helldusk Gloves</td><td>+1d6</td><td>Fire damage</td></tr>
+            <tr><td><a href="https://bg3.wiki/wiki/Ring_of_Flinging" target="_blank">Ring of Flinging</a></td><td>+1d4</td><td>On thrown attacks</td></tr>
+            <tr><td><a href="https://bg3.wiki/wiki/Helldusk_Gloves" target="_blank">Helldusk Gloves</a></td><td>+1d6</td><td>Fire damage</td></tr>
             <tr><td>Cold Elemental</td><td>+1d6</td><td>Elemental Cleaver</td></tr>
         </table>
         <p><em>*Single throw: ~40-60 damage average. Two throws per turn = 80-120 damage + Thunder AOE!</em></p>
@@ -1903,10 +1917,10 @@ Ice Surfaces → Prone → Giant's Strike Topple → Can't Stand Up!
         <h2>🎒 Act 3 Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
-            <tr><td>🗡️ Main Hand</td><td>Bloodthirst</td><td>Murder Tribunal (Act 3) — Become Unholy Assassin. Auto-crit vs surprised, +2 piercing!</td></tr>
-            <tr><td>🗡️ Off Hand</td><td>Rhapsody</td><td>Murder Tribunal (Act 3) — Sarevok reward. Stacks +1 to +3 bonus per kill!</td></tr>
-            <tr><td>🛡️ Armor</td><td>Bhaalist Armor</td><td>Murder Tribunal (Act 3) — Become Unholy Assassin. Enemies in 2m vulnerable to piercing!</td></tr>
-            <tr><td>🧤 Gloves</td><td>Gloves of Soul Catching</td><td>House of Hope (Act 3) — Defeat Raphael. +1d10 force per hit!</td></tr>
+            <tr><td>🗡️ Main Hand</td><td><a href="https://bg3.wiki/wiki/Bloodthirst" target="_blank">Bloodthirst</a></td><td>Murder Tribunal (Act 3) — Become Unholy Assassin. Auto-crit vs surprised, +2 piercing!</td></tr>
+            <tr><td>🗡️ Off Hand</td><td><a href="https://bg3.wiki/wiki/Rhapsody" target="_blank">Rhapsody</a></td><td>Murder Tribunal (Act 3) — Sarevok reward. Stacks +1 to +3 bonus per kill!</td></tr>
+            <tr><td>🛡️ Armor</td><td><a href="https://bg3.wiki/wiki/Bhaalist_Armour" target="_blank">Bhaalist Armor</a></td><td>Murder Tribunal (Act 3) — Become Unholy Assassin. Enemies in 2m vulnerable to piercing!</td></tr>
+            <tr><td>🧤 Gloves</td><td><a href="https://bg3.wiki/wiki/Gloves_of_Soul_Catching" target="_blank">Gloves of Soul Catching</a></td><td>House of Hope (Act 3) — Defeat Raphael. +1d10 force per hit!</td></tr>
             <tr><td>🧪 Consumable</td><td>Cloud Giant Elixir</td><td>Crafted with Cloud Giant's Finger (Stormshore Tabernacle). STR 27 + Tavern Brawler = +16!</td></tr>
         </table>
 
@@ -1973,18 +1987,18 @@ Every hit: +16 (STR) + weapon + Sneak Attack 🩸
         <h2>📈 Class Progression</h2>
         <table>
             <tr><th>Lvl</th><th>Class</th><th>Features & Choices</th></tr>
-            <tr><td>1</td><td>Warlock 1</td><td>Hexblade — CHA to attack/damage, Hexblade's Curse (crit on 19!)</td></tr>
-            <tr><td>2</td><td>Warlock 2</td><td>Invocations: Devil's Sight, Agonizing Blast</td></tr>
-            <tr><td>3</td><td>Warlock 3</td><td>Pact of the Chain (Raven familiar), Darkness spell</td></tr>
-            <tr><td>4</td><td>Warlock 4</td><td>Feat: +2 CHA (to 18)</td></tr>
-            <tr><td>5</td><td>Warlock 5</td><td>Deepened Pact, Level 3 spells</td></tr>
-            <tr><td>6</td><td>Ranger 1</td><td>Favored Enemy, Natural Explorer</td></tr>
-            <tr><td>7</td><td>Ranger 2</td><td>Fighting Style: Dueling or Defense</td></tr>
-            <tr><td>8</td><td>Ranger 3</td><td>Gloom Stalker — Dread Ambusher (+3 init, bonus attack!)</td></tr>
-            <tr><td>9</td><td>Ranger 4</td><td>Feat: +2 CHA (to 20)</td></tr>
-            <tr><td>10</td><td>Ranger 5</td><td>Extra Attack</td></tr>
-            <tr><td>11</td><td>Warlock 6</td><td>Spectre on Kill</td></tr>
-            <tr><td>12</td><td>Warlock 7</td><td>Level 4 spells: Greater Invisibility</td></tr>
+            <tr><td>1</td><td>Warlock 1</td><td>Hexblade — CHA to attack/damage, Hexblade's Curse. Cantrips: Eldritch Blast, Minor Illusion. Spells: Hex, Armor of Agathys</td></tr>
+            <tr><td>2</td><td>Warlock 2</td><td>Invocations: Devil's Sight, Agonizing Blast. Spell: Hellish Rebuke</td></tr>
+            <tr><td>3</td><td>Warlock 3</td><td>Pact of the Blade (CHA to weapons!). Spells: Darkness, Hold Person</td></tr>
+            <tr><td>4</td><td>Warlock 4</td><td>Feat: +2 CHA (to 18). Cantrip: Blade Ward</td></tr>
+            <tr><td>5</td><td>Warlock 5</td><td>Deepened Pact, Invocation: One with Shadows. Spells: Counterspell, Fear</td></tr>
+            <tr><td>6</td><td>Ranger 1</td><td>Favored Enemy: Bounty Hunter (proficiency). Natural Explorer: Urban Tracker. Spells: Hunter's Mark, Cure Wounds</td></tr>
+            <tr><td>7</td><td>Ranger 2</td><td>Fighting Style: Dueling (+2 damage). Spell: Ensnaring Strike</td></tr>
+            <tr><td>8</td><td>Ranger 3</td><td>Gloom Stalker — Dread Ambusher (+3 init, bonus attack!), Umbral Shroud. Free: Disguise Self. Spell: Pass Without Trace</td></tr>
+            <tr><td>9</td><td>Ranger 4</td><td>Feat: +2 CHA (to 20). Spell: Spike Growth</td></tr>
+            <tr><td>10</td><td>Ranger 5</td><td>Extra Attack! Two weapon attacks per action</td></tr>
+            <tr><td>11</td><td>Warlock 6</td><td>Accursed Spectre — raise spectre on kill! Spell: Vampiric Touch</td></tr>
+            <tr><td>12</td><td>Warlock 7</td><td>Invocation: Lifedrinker. Spell: Greater Invisibility (backup to Darkness)</td></tr>
         </table>
 
         <h2>💪 Core Mechanics</h2>
@@ -2003,11 +2017,51 @@ Every hit: +16 (STR) + weapon + Sneak Attack 🩸
         </div>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
-            <tr><td>⚔️ Weapon</td><td>Sorrow (Glaive)</td><td>House of Grief (Act 3) — Shadowheart's parents. Sorrowful Lash bonus action attack!</td></tr>
-            <tr><td>👑 Helm</td><td>Covert Cowl</td><td>Grymforge (Act 1) — Sold by Entharl Danthelon. Crit on 19 while obscured!</td></tr>
-            <tr><td>🧥 Cloak</td><td>Shade-Slayer Cloak</td><td>Counting House (Act 3) — Vault. Crit on 19 while hiding (stacks with Cowl!)</td></tr>
-            <tr><td>📿 Amulet</td><td>Corvid Token</td><td>Moonrise Towers (Act 2) — Sold by Lann Tarv. Polymorph into Dire Raven!</td></tr>
+            <tr><td>⚔️ Weapon</td><td><a href="https://bg3.wiki/wiki/Sorrow" target="_blank">Sorrow (Glaive)</a></td><td>House of Grief (Act 3) — Shadowheart's parents. Sorrowful Lash bonus action attack!</td></tr>
+            <tr><td>👑 Helm</td><td><a href="https://bg3.wiki/wiki/Covert_Cowl" target="_blank">Covert Cowl</a></td><td>Grymforge (Act 1) — Sold by Entharl Danthelon. Crit on 19 while obscured!</td></tr>
+            <tr><td>🧥 Cloak</td><td><a href="https://bg3.wiki/wiki/Shade-Slayer_Cloak" target="_blank">Shade-Slayer Cloak</a></td><td>Counting House (Act 3) — Vault. Crit on 19 while hiding (stacks with Cowl!)</td></tr>
+            <tr><td>📿 Amulet</td><td><a href="https://bg3.wiki/wiki/Corvid_Token" target="_blank">Corvid Token</a></td><td>Moonrise Towers (Act 2) — Sold by Lann Tarv. Polymorph into Dire Raven!</td></tr>
+            <tr><td>👘 Armor</td><td><a href="https://bg3.wiki/wiki/Armor_of_Persistence" target="_blank">Armor of Persistence</a></td><td>Stormshore Tabernacle (Act 3) — Sold by Vicar Humbletoes. Disadvantage on ALL attacks against you!</td></tr>
+            <tr><td>🧤 Gloves</td><td><a href="https://bg3.wiki/wiki/Helldusk_Gloves" target="_blank">Helldusk Gloves</a></td><td>House of Hope (Act 3) — Haarlep's boudoir chest. +1d6 fire on weapon attacks, Infernal Acuity!</td></tr>
+            <tr><td>👢 Boots</td><td><a href="https://bg3.wiki/wiki/Disintegrating_Night_Walkers" target="_blank">Disintegrating Night Walkers</a></td><td>Grymforge (Act 1) — True Soul Nere drop. Free Misty Step + immune to difficult terrain!</td></tr>
+            <tr><td>💍 Ring 1</td><td><a href="https://bg3.wiki/wiki/Killer%27s_Sweetheart" target="_blank">Killer's Sweetheart</a></td><td>Self-Same Trial, Gauntlet of Shar (Act 2) — Guaranteed crit after kills!</td></tr>
+            <tr><td>💍 Ring 2</td><td><a href="https://bg3.wiki/wiki/Caustic_Band" target="_blank">Caustic Band</a></td><td>Grymforge (Act 1) — Sold by Derryth Bonecloak. +2 acid damage on weapon attacks!</td></tr>
         </table>
+
+        <h2>⚔️ Combat Rotation</h2>
+        <div class="stats-box">
+<strong>Pre-Combat Setup:</strong>
+<ul>
+<li>Hexblade's Curse on the toughest enemy 👁️</li>
+<li>Cast Darkness centered on yourself 🌑</li>
+<li>Devil's Sight lets you see — enemies are BLIND!</li>
+</ul>
+
+<strong>Opening Round (Dread Ambusher):</strong>
+<ul>
+<li>Attack 1: Weapon attack with advantage (darkness!) ⚔️</li>
+<li>Attack 2: Extra Attack</li>
+<li>Attack 3: Dread Ambusher bonus attack (+1d8 damage!)</li>
+<li>Bonus Action: Sorrowful Lash (Sorrow glaive) for 4th attack!</li>
+</ul>
+
+<strong>Sustained Damage:</strong>
+<ul>
+<li>Maintain Darkness bubble — ALL attacks have advantage</li>
+<li>Eldritch Blast at range (Agonizing Blast + CHA) when needed</li>
+<li>Recast Hexblade's Curse when target dies</li>
+<li>Misty Step to reposition (Night Walkers = free!)</li>
+</ul>
+
+<strong>Critical Strike Stacking:</strong>
+<ul>
+<li>Hexblade's Curse = crit on 19 💀</li>
+<li>Covert Cowl (obscured) = crit on 19</li>
+<li>Shade-Slayer Cloak (hiding) = crit on 19</li>
+<li>Combined = crit on 17+ (20% base crit!)  🎯</li>
+<li>Killer's Sweetheart = guaranteed crit after any kill!</li>
+</ul>
+        </div>
 
         <h2>⚖️ Pros & Cons</h2>
         <table>
@@ -2080,14 +2134,19 @@ Every hit: +16 (STR) + weapon + Sneak Attack 🩸
             <span class="emoji">✨</span> Produce Flame illuminates you > Callous Glow adds +2 radiant > Coruscation Ring applies Radiating Orbs > Holy Lance Helm punishes misses > enemies get -4 to attacks and eventually blind!
         </div>
 
-        <h2>🎒 Recommended Gear</h2>
+        <h2>🎒 Essential Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
-            <tr><td>🪄 Staff</td><td>Markoheshkir</td><td>Ramazith's Tower (Act 3) — DC 20 Arcana check. Grants Chain Lightning to Druid!</td></tr>
-            <tr><td>🛡️ Shield</td><td>Viconia's Walking Fortress</td><td>House of Grief (Act 3) — Defeat Viconia. Reflects spells, +3 AC shield!</td></tr>
-            <tr><td>👘 Armor</td><td>Armor of Agility</td><td>Stormshore Tabernacle (Act 3) — Sold by Vicar Humbletoes. 17 AC + full DEX = 24 AC!</td></tr>
-            <tr><td>💍 Ring 1</td><td>Coruscation Ring</td><td>Last Light Inn cellar (Act 2) — Hidden chest. Spells apply Radiating Orbs!</td></tr>
-            <tr><td>💍 Ring 2</td><td>Callous Glow Ring</td><td>Gauntlet of Shar (Act 2) — DC 30 lockpick vault. +2 radiant vs illuminated!</td></tr>
+            <tr><td>🪄 Staff</td><td><a href="https://bg3.wiki/wiki/Markoheshkir" target="_blank">Markoheshkir</a></td><td>Ramazith's Tower (Act 3) — DC 20 Arcana check. Grants Chain Lightning to Druid!</td></tr>
+            <tr><td>🛡️ Shield</td><td><a href="https://bg3.wiki/wiki/Viconia%27s_Walking_Fortress" target="_blank">Viconia's Walking Fortress</a></td><td>House of Grief (Act 3) — Defeat Viconia. Reflects spells, +3 AC shield!</td></tr>
+            <tr><td>👘 Armor</td><td><a href="https://bg3.wiki/wiki/Armour_of_Agility" target="_blank">Armor of Agility</a></td><td>Stormshore Tabernacle (Act 3) — Sold by Vicar Humbletoes. 17 AC + full DEX = 24 AC!</td></tr>
+            <tr><td>🪖 Helmet</td><td><a href="https://bg3.wiki/wiki/Holy_Lance_Helm" target="_blank">Holy Lance Helm</a></td><td>Cazador's Palace (Act 3) — Reward from Ulma. When enemies miss you, apply Radiating Orbs!</td></tr>
+            <tr><td>🧤 Gloves</td><td><a href="https://bg3.wiki/wiki/Luminous_Gloves" target="_blank">Luminous Gloves</a></td><td>Potter's Chest, Grymforge (Act 1) — Melee attacks apply Radiating Orbs. Perfect with Shillelagh!</td></tr>
+            <tr><td>👢 Boots</td><td><a href="https://bg3.wiki/wiki/Boots_of_Stormy_Clamour" target="_blank">Boots of Stormy Clamour</a></td><td>Oubliette (Act 2) — Apply conditions = Reverberation stacks. Combos with Radiating Orbs!</td></tr>
+            <tr><td>🧣 Cloak</td><td><a href="https://bg3.wiki/wiki/Cloak_of_the_Weave" target="_blank">Cloak of the Weave</a></td><td>Devil's Fee (Act 3) — Helsik's shop. +1 Spell Save DC and +1 Spell Attack Rolls!</td></tr>
+            <tr><td>📿 Amulet</td><td><a href="https://bg3.wiki/wiki/Amulet_of_Greater_Health" target="_blank">Amulet of Greater Health</a></td><td>House of Hope (Act 3) — Steal from Archive. Sets CON to 23 for concentration checks!</td></tr>
+            <tr><td>💍 Ring 1</td><td><a href="https://bg3.wiki/wiki/Coruscation_Ring" target="_blank">Coruscation Ring</a></td><td>Last Light Inn cellar (Act 2) — Hidden chest. Spells apply Radiating Orbs!</td></tr>
+            <tr><td>💍 Ring 2</td><td><a href="https://bg3.wiki/wiki/Callous_Glow_Ring" target="_blank">Callous Glow Ring</a></td><td>Gauntlet of Shar (Act 2) — DC 30 lockpick vault. +2 radiant vs illuminated!</td></tr>
         </table>
 
         <h2>⚔️ Combat Rotation</h2>
@@ -2175,14 +2234,14 @@ Every hit: +16 (STR) + weapon + Sneak Attack 🩸
         <h2>🎒 Best-in-Slot Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
-            <tr><td>🛡️ Armor</td><td>Armour of the Sporekeeper</td><td>Philgrave's Mansion (Act 3) — Mystic Carrion. +1 Spell DC, +1 necrotic, unlocks Bibberbang/Timmask/Haste Spores!</td></tr>
-            <tr><td>👘 Alt Armor</td><td>Poisoner's Robe</td><td>Whispering Depths (Act 1) — Phase Spider Matriarch drop. +1d4 poison to all poison spells!</td></tr>
-            <tr><td>🧤 Gloves</td><td>Poisoner's Gloves</td><td>House of Healing (Act 2) — Chest inside. All poison attacks inflict Poisoned condition!</td></tr>
-            <tr><td>💍 Ring</td><td>Poisoner's Ring</td><td>Moonrise Towers (Act 2) — Roah Moonglow vendor. Makes targets VULNERABLE to poison!</td></tr>
-            <tr><td>📿 Amulet</td><td>Broodmother's Revenge</td><td>Grymforge (Act 1) — Spider egg quest reward. +1d6 poison to weapon when you heal!</td></tr>
-            <tr><td>🪄 Weapon</td><td>Staff of Crones</td><td>Overgrown Tunnel (Act 1) — Auntie Ethel's lair. Free Ray of Sickness 1/short rest!</td></tr>
-            <tr><td>🪄 Alt Weapon</td><td>Pale Oak</td><td>Cazador's Dungeon (Act 3). Slow + Entangle enemies to keep them in your clouds!</td></tr>
-            <tr><td>👢 Boots</td><td>Boots of Striding</td><td>Druid Grove (Act 1) — Sold by Dammon. Momentum on concentration + immune to shove!</td></tr>
+            <tr><td>🛡️ Armor</td><td><a href="https://bg3.wiki/wiki/Armour_of_the_Sporekeeper" target="_blank">Armour of the Sporekeeper</a></td><td>Philgrave's Mansion (Act 3) — Mystic Carrion. +1 Spell DC, +1 necrotic, unlocks Bibberbang/Timmask/Haste Spores!</td></tr>
+            <tr><td>👘 Alt Armor</td><td><a href="https://bg3.wiki/wiki/Poisoner%27s_Robe" target="_blank">Poisoner's Robe</a></td><td>Whispering Depths (Act 1) — Phase Spider Matriarch drop. +1d4 poison to all poison spells!</td></tr>
+            <tr><td>🧤 Gloves</td><td><a href="https://bg3.wiki/wiki/Poisoner%27s_Gloves" target="_blank">Poisoner's Gloves</a></td><td>House of Healing (Act 2) — Chest inside. All poison attacks inflict Poisoned condition!</td></tr>
+            <tr><td>💍 Ring</td><td><a href="https://bg3.wiki/wiki/Poisoner%27s_Ring" target="_blank">Poisoner's Ring</a></td><td>Moonrise Towers (Act 2) — Roah Moonglow vendor. Makes targets VULNERABLE to poison!</td></tr>
+            <tr><td>📿 Amulet</td><td><a href="https://bg3.wiki/wiki/Broodmother%27s_Revenge" target="_blank">Broodmother's Revenge</a></td><td>Grymforge (Act 1) — Spider egg quest reward. +1d6 poison to weapon when you heal!</td></tr>
+            <tr><td>🪄 Weapon</td><td><a href="https://bg3.wiki/wiki/Staff_of_Crones" target="_blank">Staff of Crones</a></td><td>Overgrown Tunnel (Act 1) — Auntie Ethel's lair. Free Ray of Sickness 1/short rest!</td></tr>
+            <tr><td>🪄 Alt Weapon</td><td><a href="https://bg3.wiki/wiki/Pale_Oak" target="_blank">Pale Oak</a></td><td>Cazador's Dungeon (Act 3). Slow + Entangle enemies to keep them in your clouds!</td></tr>
+            <tr><td>👢 Boots</td><td><a href="https://bg3.wiki/wiki/Boots_of_Striding" target="_blank">Boots of Striding</a></td><td>Druid Grove (Act 1) — Sold by Dammon. Momentum on concentration + immune to shove!</td></tr>
         </table>
 
         <h2>☁️ Poison Spell Priority</h2>
@@ -2298,38 +2357,43 @@ Every hit: +16 (STR) + weapon + Sneak Attack 🩸
         </div>
 
         <h2>📈 Class Progression</h2>
+        <p><em>Druids prepare spells from the full spell list each long rest. Below shows class features you gain and recommended spells to prepare at each level.</em></p>
         <table>
-            <tr><th>Lvl</th><th>Class</th><th>Features & Choices</th></tr>
-            <tr><td>1</td><td>Druid 1</td><td>Cantrips: Shillelagh, Thorn Whip, Guidance. Spells: Create/Destroy Water, Thunder Wave, Healing Word, Ice Knife</td></tr>
-            <tr><td>2</td><td>Druid 2</td><td>Circle of Stars — Starry Forms (Archer, Chalice, Dragon), FREE Guiding Bolt, Star Map Charge. Dragon = min 10 on concentration!</td></tr>
-            <tr><td>3</td><td>Druid 3</td><td>Spells: Hold Person, Spike Growth, Pass Without Trace</td></tr>
-            <tr><td>4</td><td>Druid 4</td><td>Feat: Alert (+5 Initiative) OR +2 WIS</td></tr>
-            <tr><td>5</td><td>Druid 5</td><td>Wild Strikes (extra wild shape attack). Spells: Call Lightning, Plant Growth, Sleet Storm</td></tr>
-            <tr><td>6</td><td>Druid 6</td><td>Cosmic Omens — Consult Stars (Weal/Woe reaction), Owlbear form</td></tr>
-            <tr><td>7</td><td>Druid 7</td><td>MAJOR SPIKE! Woodland Being (holds YOUR concentration!), Ice Storm, Wall of Fire, Minor Elemental</td></tr>
-            <tr><td>8</td><td>Druid 8</td><td>Feat: +2 WIS (to 18/20) OR War Caster</td></tr>
-            <tr><td>9</td><td>Druid 9</td><td>Conjure Elemental: Water Elemental (applies Chilled = double cold!), Insect Plague</td></tr>
-            <tr><td>10</td><td>Druid 10</td><td>Twinkling Constellations — forms improved (+1d8), Dragon gains 6m flight, FREE form swapping!</td></tr>
-            <tr><td>11</td><td>Druid 11</td><td>Spells: Heroes' Feast (use free cast staff!), Wall of Thorns</td></tr>
-            <tr><td>12</td><td>Druid 12</td><td>Feat: +2 WIS (cap at 20) OR Tough (+24 HP)</td></tr>
+            <tr><th>Lvl</th><th>Class Features</th><th>Cantrip/Feat Choice</th><th>Recommended Prepared Spells</th></tr>
+            <tr><td>1</td><td>Wild Shape, Druidic</td><td><strong>Cantrips:</strong> Shillelagh, Thorn Whip, Guidance</td><td><strong>Prepare:</strong> Healing Word, Thunderwave, Ice Knife, Faerie Fire</td></tr>
+            <tr><td>2</td><td><strong>Circle of Stars!</strong> Starry Forms (Dragon/Archer/Chalice), Star Map (FREE Guiding Bolt 1/long rest)</td><td>—</td><td>Keep L1 spells. Use Dragon Form for min 10 concentration saves!</td></tr>
+            <tr><td>3</td><td>2nd-level spell slots unlocked</td><td>—</td><td><strong>Add:</strong> Hold Person, Spike Growth, Moonbeam</td></tr>
+            <tr><td>4</td><td>Wild Shape Improvement, Feat</td><td><strong>Feat:</strong> Alert (+5 Initiative) <em>or</em> +2 WIS</td><td>Keep preparing Spike Growth + Hold Person</td></tr>
+            <tr><td>5</td><td>3rd-level spell slots, Wild Strike</td><td>—</td><td><strong>Add:</strong> Call Lightning, Sleet Storm, Plant Growth</td></tr>
+            <tr><td>6</td><td><strong>Cosmic Omen!</strong> Weal/Woe reaction, Owlbear Wild Shape</td><td>—</td><td>Keep L3 spells. Use Woe to debuff enemy saves!</td></tr>
+            <tr><td>7</td><td>4th-level spell slots</td><td>—</td><td><strong>Add:</strong> Conjure Woodland Being (holds YOUR concentration!), Ice Storm, Wall of Fire</td></tr>
+            <tr><td>8</td><td>Wild Shape Improvement, Feat</td><td><strong>Feat:</strong> +2 WIS (to 18) <em>or</em> War Caster</td><td>Keep Woodland Being + Ice Storm always prepared</td></tr>
+            <tr><td>9</td><td>5th-level spell slots</td><td>—</td><td><strong>Add:</strong> Conjure Elemental (Water = Chilled!), Insect Plague</td></tr>
+            <tr><td>10</td><td><strong>Twinkling Constellations!</strong> Forms +1d8, Dragon gains 6m flight, FREE form swapping</td><td><strong>Cantrip:</strong> Produce Flame <em>or</em> Poison Spray</td><td>Keep L5 summons. Dragon Form now has flight!</td></tr>
+            <tr><td>11</td><td>6th-level spell slots</td><td>—</td><td><strong>Add:</strong> Heroes' Feast, Sunbeam, Wall of Thorns</td></tr>
+            <tr><td>12</td><td>Feat</td><td><strong>Feat:</strong> +2 WIS (cap 20) <em>or</em> Tough (+24 HP)</td><td>Final prep: Sunbeam, Woodland Being, Water Elemental, Heroes' Feast</td></tr>
         </table>
+
+        <div class="callout">
+            <span class="emoji">📖</span> <strong>SPELL PREP TIP:</strong> Druids can swap prepared spells each long rest! Before tough fights, prepare combat spells (Sunbeam, Call Lightning). For exploration, swap to utility (Pass Without Trace, Speak with Animals).
+        </div>
 
         <h2>🎒 Best-in-Slot Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
-            <tr><td>🛡️ Armor</td><td>Luminous Armour</td><td>Last Light Inn (Act 2) — Quartermaster Talli. Radiant damage creates Radiating Orb shockwave!</td></tr>
-            <tr><td>🛡️ Alt Armor</td><td>Viconia's Walking Fortress</td><td>House of Grief (Act 3) — Defeat Viconia. Best late-game shield option!</td></tr>
-            <tr><td>🧤 Gloves</td><td>Luminous Gloves</td><td>Potter's Chest, Ruined Battlefield (Act 2). Radiant damage applies Radiating Orb!</td></tr>
-            <tr><td>💍 Ring 1</td><td>Coruscation Ring</td><td>Last Light Inn (Act 2) — Sold by Quartermaster Talli. Radiating Orb when standing in light!</td></tr>
-            <tr><td>💍 Ring 2</td><td>Callous Glow Ring</td><td>Gauntlet of Shar (Act 2) — Hidden vault. +2 radiant vs illuminated targets (stacks more orbs!)</td></tr>
-            <tr><td>👢 Boots</td><td>Boots of Stormy Clamour</td><td>Myconid Colony (Act 1) — Sold by Omeluum. Inflict condition = Reverberation!</td></tr>
-            <tr><td>⛑️ Helmet</td><td>Holy Lance Helm</td><td>Stormshore Tabernacle (Act 3). Enemy misses you = radiant damage to them!</td></tr>
-            <tr><td>🧣 Cloak</td><td>Cloak of Protection</td><td>Last Light Inn (Act 2) — Sold by Quartermaster Talli. +1 AC and saves!</td></tr>
-            <tr><td>🧣 Alt Cloak</td><td>Cloak of Displacement</td><td>Philgrave's Mansion (Act 3). Disadvantage on attacks against you!</td></tr>
-            <tr><td>📿 Amulet</td><td>Amulet of Greater Health</td><td>House of Hope (Act 3). 23 CON = +100 HP and better concentration!</td></tr>
-            <tr><td>🪄 Staff 1</td><td>Staff of Spell Power</td><td>Sorcerous Sundries (Act 3). Arcane Battery = FREE spell cast!</td></tr>
-            <tr><td>🪄 Staff 2</td><td>Markoheshkir</td><td>Ramazith's Tower (Act 3). Kereska's Favour + free cast + Chain Lightning!</td></tr>
-            <tr><td>🏹 Ranged</td><td>Hellrider Longbow</td><td>Last Light Inn (Act 2). +3 weapon for ranged option.</td></tr>
+            <tr><td>🛡️ Armor</td><td><a href="https://bg3.wiki/wiki/Luminous_Armour" target="_blank">Luminous Armour</a></td><td>Last Light Inn (Act 2) — Quartermaster Talli. Radiant damage creates Radiating Orb shockwave!</td></tr>
+            <tr><td>🛡️ Alt Armor</td><td><a href="https://bg3.wiki/wiki/Viconia%27s_Walking_Fortress" target="_blank">Viconia's Walking Fortress</a></td><td>House of Grief (Act 3) — Defeat Viconia. Best late-game shield option!</td></tr>
+            <tr><td>🧤 Gloves</td><td><a href="https://bg3.wiki/wiki/Luminous_Gloves" target="_blank">Luminous Gloves</a></td><td>Potter's Chest, Ruined Battlefield (Act 2). Radiant damage applies Radiating Orb!</td></tr>
+            <tr><td>💍 Ring 1</td><td><a href="https://bg3.wiki/wiki/Coruscation_Ring" target="_blank">Coruscation Ring</a></td><td>Last Light Inn (Act 2) — Sold by Quartermaster Talli. Radiating Orb when standing in light!</td></tr>
+            <tr><td>💍 Ring 2</td><td><a href="https://bg3.wiki/wiki/Callous_Glow_Ring" target="_blank">Callous Glow Ring</a></td><td>Gauntlet of Shar (Act 2) — Hidden vault. +2 radiant vs illuminated targets (stacks more orbs!)</td></tr>
+            <tr><td>👢 Boots</td><td><a href="https://bg3.wiki/wiki/Boots_of_Stormy_Clamour" target="_blank">Boots of Stormy Clamour</a></td><td>Myconid Colony (Act 1) — Sold by Omeluum. Inflict condition = Reverberation!</td></tr>
+            <tr><td>⛑️ Helmet</td><td><a href="https://bg3.wiki/wiki/Holy_Lance_Helm" target="_blank">Holy Lance Helm</a></td><td>Stormshore Tabernacle (Act 3). Enemy misses you = radiant damage to them!</td></tr>
+            <tr><td>🧣 Cloak</td><td><a href="https://bg3.wiki/wiki/Cloak_of_Protection" target="_blank">Cloak of Protection</a></td><td>Last Light Inn (Act 2) — Sold by Quartermaster Talli. +1 AC and saves!</td></tr>
+            <tr><td>🧣 Alt Cloak</td><td><a href="https://bg3.wiki/wiki/Cloak_of_Displacement" target="_blank">Cloak of Displacement</a></td><td>Philgrave's Mansion (Act 3). Disadvantage on attacks against you!</td></tr>
+            <tr><td>📿 Amulet</td><td><a href="https://bg3.wiki/wiki/Amulet_of_Greater_Health" target="_blank">Amulet of Greater Health</a></td><td>House of Hope (Act 3). 23 CON = +100 HP and better concentration!</td></tr>
+            <tr><td>🪄 Staff 1</td><td><a href="https://bg3.wiki/wiki/Staff_of_Spell_Power" target="_blank">Staff of Spell Power</a></td><td>Sorcerous Sundries (Act 3). Arcane Battery = FREE spell cast!</td></tr>
+            <tr><td>🪄 Staff 2</td><td><a href="https://bg3.wiki/wiki/Markoheshkir" target="_blank">Markoheshkir</a></td><td>Ramazith's Tower (Act 3). Kereska's Favour + free cast + Chain Lightning!</td></tr>
+            <tr><td>🏹 Ranged</td><td><a href="https://bg3.wiki/wiki/Hellrider_Longbow" target="_blank">Hellrider Longbow</a></td><td>Last Light Inn (Act 2). +3 weapon for ranged option.</td></tr>
         </table>
 
         <h2>🌊 Summon Strategy</h2>
@@ -2402,12 +2466,12 @@ Sunbeam blinds enemies on failed save & can recast each turn while concentrating
         <h2>💫 Radiating Orb Stacking</h2>
         <table>
             <tr><th>Source</th><th>Trigger</th><th>Orb Stacks</th></tr>
-            <tr><td>Luminous Armour</td><td>Deal radiant damage</td><td>Shockwave applies to nearby enemies</td></tr>
-            <tr><td>Luminous Gloves</td><td>Deal radiant damage</td><td>+1-2 stacks per instance</td></tr>
-            <tr><td>Callous Glow Ring</td><td>Hit illuminated target</td><td>+2 radiant damage (more orbs!)</td></tr>
-            <tr><td>Coruscation Ring</td><td>Standing in light</td><td>Apply orbs automatically</td></tr>
-            <tr><td>Holy Lance Helm</td><td>Enemy misses you</td><td>Radiant damage = more orbs!</td></tr>
-            <tr><td>Boots of Stormy Clamour</td><td>Inflict any condition</td><td>+Reverberation (5 stacks = prone!)</td></tr>
+            <tr><td><a href="https://bg3.wiki/wiki/Luminous_Armour" target="_blank">Luminous Armour</a></td><td>Deal radiant damage</td><td>Shockwave applies to nearby enemies</td></tr>
+            <tr><td><a href="https://bg3.wiki/wiki/Luminous_Gloves" target="_blank">Luminous Gloves</a></td><td>Deal radiant damage</td><td>+1-2 stacks per instance</td></tr>
+            <tr><td><a href="https://bg3.wiki/wiki/Callous_Glow_Ring" target="_blank">Callous Glow Ring</a></td><td>Hit illuminated target</td><td>+2 radiant damage (more orbs!)</td></tr>
+            <tr><td><a href="https://bg3.wiki/wiki/Coruscation_Ring" target="_blank">Coruscation Ring</a></td><td>Standing in light</td><td>Apply orbs automatically</td></tr>
+            <tr><td><a href="https://bg3.wiki/wiki/Holy_Lance_Helm" target="_blank">Holy Lance Helm</a></td><td>Enemy misses you</td><td>Radiant damage = more orbs!</td></tr>
+            <tr><td><a href="https://bg3.wiki/wiki/Boots_of_Stormy_Clamour" target="_blank">Boots of Stormy Clamour</a></td><td>Inflict any condition</td><td>+Reverberation (5 stacks = prone!)</td></tr>
         </table>
 
         <div class="callout">
@@ -2508,26 +2572,26 @@ Sunbeam blinds enemies on failed save & can recast each turn while concentrating
         <h2>🎒 Best-in-Slot Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
-            <tr><td>⛑️ Helmet</td><td>Helmet of Arcane Acuity</td><td>Mason's Guild (Act 3). +1 Spell DC per weapon hit — Arrow of Many Targets = instant +7!</td></tr>
-            <tr><td>🛡️ Armor</td><td>Bhaalist Armour</td><td>Murder Tribunal (Act 3). Enemies VULNERABLE to piercing — huge with Titanstring Bow!</td></tr>
-            <tr><td>🛡️ Alt Armor</td><td>Armour of Landfall</td><td>Moonrise Towers (Act 2). +1 Spell DC, heal on Plant Growth, advantage on CON saves</td></tr>
-            <tr><td>🛡️ Heavy Option</td><td>Helldusk Armour</td><td>House of Hope (Act 3). Defense stacks TWICE with this armor for some reason!</td></tr>
-            <tr><td>🧣 Cloak</td><td>Cloak of Protection</td><td>Last Light Inn (Act 2). +1 AC and saving throws</td></tr>
-            <tr><td>🧣 Alt Cloak</td><td>Deathstalker Mantle</td><td>Dark Urge reward. Invisibility on kill!</td></tr>
-            <tr><td>🧤 Gloves</td><td>Helldusk Gloves</td><td>House of Hope (Act 3). +1d6 fire damage, Rays of Fire spell</td></tr>
-            <tr><td>🧤 Alt Gloves</td><td>Gloves of Belligerent Skies</td><td>Creche Y'llek (Act 1). Thunder/Lightning = Reverberation stacks</td></tr>
-            <tr><td>👢 Boots</td><td>Evasive Shoes</td><td>Circus of Last Days (Act 3). +AC while not wearing armor</td></tr>
-            <tr><td>👢 Alt Boots</td><td>Disintegrating Night Walkers</td><td>Grymforge (Act 1). Misty Step + can't be Enwebbed!</td></tr>
-            <tr><td>🗡️ Melee</td><td>Infernal Rapier</td><td>House of Hope (Act 3). +1 Spell Save DC, piercing for Bhaalist synergy!</td></tr>
-            <tr><td>🗡️ Alt Melee</td><td>Knife of the Undermountain King</td><td>Grymforge (Act 1). Advantage vs obscured targets!</td></tr>
-            <tr><td>🗡️ Off-Hand</td><td>Dolor Amarus</td><td>Murder Tribunal (Act 3). +1d4 crit damage (doubled by Bhaalist!)</td></tr>
-            <tr><td>🛡️ Shield</td><td>Viconia's Walking Fortress</td><td>House of Grief (Act 3). Best defensive shield in game</td></tr>
-            <tr><td>🏹 Bow</td><td>Titanstring Bow</td><td>Angleiron's (Act 3). STR mod to damage — use with Hill Giant Elixir!</td></tr>
-            <tr><td>🏹 Alt Bow</td><td>Gontr Mael</td><td>Steel Watch Foundry (Act 3). Guiding Bolt on hit!</td></tr>
-            <tr><td>🏹 Utility Bow</td><td>Hellrider Longbow</td><td>Last Light Inn (Act 2). +3 initiative, Faerie Fire arrows!</td></tr>
-            <tr><td>💍 Ring 1</td><td>Band of the Mystic Scoundrel</td><td>Circus jackpot (Act 3). Bonus action Hold Person after weapon attack!</td></tr>
-            <tr><td>💍 Ring 2</td><td>Caustic Band</td><td>Grymforge (Act 1). +2 acid damage on weapon hits</td></tr>
-            <tr><td>💍 Alt Ring</td><td>Ring of Protection</td><td>Rafaam's shop (Act 1). +1 AC and saves</td></tr>
+            <tr><td>⛑️ Helmet</td><td><a href="https://bg3.wiki/wiki/Helmet_of_Arcane_Acuity" target="_blank">Helmet of Arcane Acuity</a></td><td>Mason's Guild (Act 3). +1 Spell DC per weapon hit — Arrow of Many Targets = instant +7!</td></tr>
+            <tr><td>🛡️ Armor</td><td><a href="https://bg3.wiki/wiki/Bhaalist_Armour" target="_blank">Bhaalist Armour</a></td><td>Murder Tribunal (Act 3). Enemies VULNERABLE to piercing — huge with Titanstring Bow!</td></tr>
+            <tr><td>🛡️ Alt Armor</td><td><a href="https://bg3.wiki/wiki/Armour_of_Landfall" target="_blank">Armour of Landfall</a></td><td>Moonrise Towers (Act 2). +1 Spell DC, heal on Plant Growth, advantage on CON saves</td></tr>
+            <tr><td>🛡️ Heavy Option</td><td><a href="https://bg3.wiki/wiki/Helldusk_Armour" target="_blank">Helldusk Armour</a></td><td>House of Hope (Act 3). Defense stacks TWICE with this armor for some reason!</td></tr>
+            <tr><td>🧣 Cloak</td><td><a href="https://bg3.wiki/wiki/Cloak_of_Protection" target="_blank">Cloak of Protection</a></td><td>Last Light Inn (Act 2). +1 AC and saving throws</td></tr>
+            <tr><td>🧣 Alt Cloak</td><td><a href="https://bg3.wiki/wiki/Deathstalker_Mantle" target="_blank">Deathstalker Mantle</a></td><td>Dark Urge reward. Invisibility on kill!</td></tr>
+            <tr><td>🧤 Gloves</td><td><a href="https://bg3.wiki/wiki/Helldusk_Gloves" target="_blank">Helldusk Gloves</a></td><td>House of Hope (Act 3). +1d6 fire damage, Rays of Fire spell</td></tr>
+            <tr><td>🧤 Alt Gloves</td><td><a href="https://bg3.wiki/wiki/Gloves_of_Belligerent_Skies" target="_blank">Gloves of Belligerent Skies</a></td><td>Creche Y'llek (Act 1). Thunder/Lightning = Reverberation stacks</td></tr>
+            <tr><td>👢 Boots</td><td><a href="https://bg3.wiki/wiki/Evasive_Shoes" target="_blank">Evasive Shoes</a></td><td>Circus of Last Days (Act 3). +AC while not wearing armor</td></tr>
+            <tr><td>👢 Alt Boots</td><td><a href="https://bg3.wiki/wiki/Disintegrating_Night_Walkers" target="_blank">Disintegrating Night Walkers</a></td><td>Grymforge (Act 1). Misty Step + can't be Enwebbed!</td></tr>
+            <tr><td>🗡️ Melee</td><td><a href="https://bg3.wiki/wiki/Infernal_Rapier" target="_blank">Infernal Rapier</a></td><td>House of Hope (Act 3). +1 Spell Save DC, piercing for Bhaalist synergy!</td></tr>
+            <tr><td>🗡️ Alt Melee</td><td><a href="https://bg3.wiki/wiki/Knife_of_the_Undermountain_King" target="_blank">Knife of the Undermountain King</a></td><td>Grymforge (Act 1). Advantage vs obscured targets!</td></tr>
+            <tr><td>🗡️ Off-Hand</td><td><a href="https://bg3.wiki/wiki/Dolor_Amarus" target="_blank">Dolor Amarus</a></td><td>Murder Tribunal (Act 3). +1d4 crit damage (doubled by Bhaalist!)</td></tr>
+            <tr><td>🛡️ Shield</td><td><a href="https://bg3.wiki/wiki/Viconia%27s_Walking_Fortress" target="_blank">Viconia's Walking Fortress</a></td><td>House of Grief (Act 3). Best defensive shield in game</td></tr>
+            <tr><td>🏹 Bow</td><td><a href="https://bg3.wiki/wiki/Titanstring_Bow" target="_blank">Titanstring Bow</a></td><td>Angleiron's (Act 3). STR mod to damage — use with Hill Giant Elixir!</td></tr>
+            <tr><td>🏹 Alt Bow</td><td><a href="https://bg3.wiki/wiki/Gontr_Mael" target="_blank">Gontr Mael</a></td><td>Steel Watch Foundry (Act 3). Guiding Bolt on hit!</td></tr>
+            <tr><td>🏹 Utility Bow</td><td><a href="https://bg3.wiki/wiki/Hellrider_Longbow" target="_blank">Hellrider Longbow</a></td><td>Last Light Inn (Act 2). +3 initiative, Faerie Fire arrows!</td></tr>
+            <tr><td>💍 Ring 1</td><td><a href="https://bg3.wiki/wiki/Band_of_the_Mystic_Scoundrel" target="_blank">Band of the Mystic Scoundrel</a></td><td>Circus jackpot (Act 3). Bonus action Hold Person after weapon attack!</td></tr>
+            <tr><td>💍 Ring 2</td><td><a href="https://bg3.wiki/wiki/Caustic_Band" target="_blank">Caustic Band</a></td><td>Grymforge (Act 1). +2 acid damage on weapon hits</td></tr>
+            <tr><td>💍 Alt Ring</td><td><a href="https://bg3.wiki/wiki/Ring_of_Protection" target="_blank">Ring of Protection</a></td><td>Rafaam's shop (Act 1). +1 AC and saves</td></tr>
         </table>
 
         <h2>🎯 Arrow of Many Targets Combo</h2>
@@ -2705,31 +2769,31 @@ Sunbeam blinds enemies on failed save & can recast each turn while concentrating
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Notes</th></tr>
             <tr><td>Main Hand</td><td>Shadow Blade (Ring)</td><td>Ring of Shadow Blade — 2d8 psychic, advantage vs obscured targets! DOUBLES with Resonance Stone!</td></tr>
-            <tr><td>Main Hand (Alt)</td><td>Phalar Aluve</td><td>Underdark — Act 1 finesse longsword. Sing ability buffs allies!</td></tr>
-            <tr><td>Off Hand</td><td>Cold Snap</td><td>Act 1 — Applies Chilled, +1 AC. Great synergy</td></tr>
-            <tr><td>Off Hand (Alt)</td><td>Knife of the Undermountain King</td><td>Grymforge — Advantage vs obscured targets! Stacks with darkness</td></tr>
+            <tr><td>Main Hand (Alt)</td><td><a href="https://bg3.wiki/wiki/Phalar_Aluve" target="_blank">Phalar Aluve</a></td><td>Underdark — Act 1 finesse longsword. Sing ability buffs allies!</td></tr>
+            <tr><td>Off Hand</td><td><a href="https://bg3.wiki/wiki/Cold_Snap" target="_blank">Cold Snap</a></td><td>Act 1 — Applies Chilled, +1 AC. Great synergy</td></tr>
+            <tr><td>Off Hand (Alt)</td><td><a href="https://bg3.wiki/wiki/Knife_of_the_Undermountain_King" target="_blank">Knife of the Undermountain King</a></td><td>Grymforge — Advantage vs obscured targets! Stacks with darkness</td></tr>
             <tr><td>Ranged</td><td>Bow with Faerie Fire/Guiding Bolt</td><td>Act 3 — Sets up Circle of Hunting bonus (+1d4 attacks)</td></tr>
         </table>
 
         <h2>🛡️ Best-in-Slot Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Notes</th></tr>
-            <tr><td>Helmet</td><td>Circle of Hunting</td><td>Act 3 — +1d4 attack vs Hunter's Mark/Faerie Fire/Guiding Bolt targets!</td></tr>
-            <tr><td>Helmet (Alt)</td><td>Steel Watcher Helmet</td><td>Act 3 — Immunity to Blindness. Keep one ring slot free</td></tr>
-            <tr><td>Armor</td><td>Armor of Agility</td><td>Act 3 vendor — +2 saves, no stealth disadvantage, DEX to AC. IDEAL!</td></tr>
-            <tr><td>Armor (Alt)</td><td>Adamantine Scale Mail</td><td>Grymforge (Act 1) — Great early game, immune to crits</td></tr>
-            <tr><td>Gloves</td><td>Craterflesh Gloves</td><td>Act 3 — +1d6 force damage on attacks!</td></tr>
-            <tr><td>Gloves (Alt)</td><td>Helldusk Gloves</td><td>Act 3 — +1d6 fire damage, can't be disarmed</td></tr>
-            <tr><td>Cloak</td><td>Cloak of Protection</td><td>Various — +1 AC, +1 saves. Always solid</td></tr>
-            <tr><td>Cloak (Alt)</td><td>Deathstalker Mantle</td><td>Dark Urge only — Invisibility on kill!</td></tr>
-            <tr><td>Boots</td><td>Evasive Shoes</td><td>Act 3 — +1 AC, Acrobatics bonus</td></tr>
-            <tr><td>Boots (Alt)</td><td>Boots of Stormy Clamour</td><td>Myconid Colony (Act 1) — Apply Reverberation for thunder damage</td></tr>
-            <tr><td>Ring 1</td><td>Shadowcloaked Ring</td><td>Act 2 — +1d4 damage vs obscured targets! Perfect with darkness</td></tr>
-            <tr><td>Ring 2</td><td>Strange Conduit Ring</td><td>Act 2 — +1d4 psychic while concentrating (Spike Growth)</td></tr>
-            <tr><td>Ring (Alt)</td><td>Ring of Shadow Blade</td><td>Circus — FREE Shadow Blade! Swap ring after casting to keep it</td></tr>
-            <tr><td>Ring (Alt)</td><td>Killer's Sweetheart</td><td>Self-Same Trial (Act 2) — Free critical hit once per long rest</td></tr>
-            <tr><td>Amulet</td><td>Amulet of Greater Health</td><td>House of Hope (Act 3) — 23 CON, massive HP boost</td></tr>
-            <tr><td>Special</td><td>Resonance Stone</td><td>Grymforge (Act 1) — DOUBLES psychic damage! Insane with Shadow Blade</td></tr>
+            <tr><td>Helmet</td><td><a href="https://bg3.wiki/wiki/Hunting_Shortbow" target="_blank">Circle of Hunting</a></td><td>Act 3 — +1d4 attack vs Hunter's Mark/Faerie Fire/Guiding Bolt targets!</td></tr>
+            <tr><td>Helmet (Alt)</td><td><a href="https://bg3.wiki/wiki/Steel_Watcher_Helmet" target="_blank">Steel Watcher Helmet</a></td><td>Act 3 — Immunity to Blindness. Keep one ring slot free</td></tr>
+            <tr><td>Armor</td><td><a href="https://bg3.wiki/wiki/Armour_of_Agility" target="_blank">Armor of Agility</a></td><td>Act 3 vendor — +2 saves, no stealth disadvantage, DEX to AC. IDEAL!</td></tr>
+            <tr><td>Armor (Alt)</td><td><a href="https://bg3.wiki/wiki/Adamantine_Scale_Mail" target="_blank">Adamantine Scale Mail</a></td><td>Grymforge (Act 1) — Great early game, immune to crits</td></tr>
+            <tr><td>Gloves</td><td><a href="https://bg3.wiki/wiki/Craterflesh_Gloves" target="_blank">Craterflesh Gloves</a></td><td>Act 3 — +1d6 force damage on attacks!</td></tr>
+            <tr><td>Gloves (Alt)</td><td><a href="https://bg3.wiki/wiki/Helldusk_Gloves" target="_blank">Helldusk Gloves</a></td><td>Act 3 — +1d6 fire damage, can't be disarmed</td></tr>
+            <tr><td>Cloak</td><td><a href="https://bg3.wiki/wiki/Cloak_of_Protection" target="_blank">Cloak of Protection</a></td><td>Various — +1 AC, +1 saves. Always solid</td></tr>
+            <tr><td>Cloak (Alt)</td><td><a href="https://bg3.wiki/wiki/Deathstalker_Mantle" target="_blank">Deathstalker Mantle</a></td><td>Dark Urge only — Invisibility on kill!</td></tr>
+            <tr><td>Boots</td><td><a href="https://bg3.wiki/wiki/Evasive_Shoes" target="_blank">Evasive Shoes</a></td><td>Act 3 — +1 AC, Acrobatics bonus</td></tr>
+            <tr><td>Boots (Alt)</td><td><a href="https://bg3.wiki/wiki/Boots_of_Stormy_Clamour" target="_blank">Boots of Stormy Clamour</a></td><td>Myconid Colony (Act 1) — Apply Reverberation for thunder damage</td></tr>
+            <tr><td>Ring 1</td><td><a href="https://bg3.wiki/wiki/Shadowcloaked_Ring" target="_blank">Shadowcloaked Ring</a></td><td>Act 2 — +1d4 damage vs obscured targets! Perfect with darkness</td></tr>
+            <tr><td>Ring 2</td><td><a href="https://bg3.wiki/wiki/Strange_Conduit_Ring" target="_blank">Strange Conduit Ring</a></td><td>Act 2 — +1d4 psychic while concentrating (Spike Growth)</td></tr>
+            <tr><td>Ring (Alt)</td><td><a href="https://bg3.wiki/wiki/Ring_of_Shadow_Blade" target="_blank">Ring of Shadow Blade</a></td><td>Circus — FREE Shadow Blade! Swap ring after casting to keep it</td></tr>
+            <tr><td>Ring (Alt)</td><td><a href="https://bg3.wiki/wiki/Killer%27s_Sweetheart" target="_blank">Killer's Sweetheart</a></td><td>Self-Same Trial (Act 2) — Free critical hit once per long rest</td></tr>
+            <tr><td>Amulet</td><td><a href="https://bg3.wiki/wiki/Amulet_of_Greater_Health" target="_blank">Amulet of Greater Health</a></td><td>House of Hope (Act 3) — 23 CON, massive HP boost</td></tr>
+            <tr><td>Special</td><td><a href="https://bg3.wiki/wiki/Resonance_Stone" target="_blank">Resonance Stone</a></td><td>Grymforge (Act 1) — DOUBLES psychic damage! Insane with Shadow Blade</td></tr>
         </table>
 
         <h2>⚔️ Combat Strategy</h2>
@@ -2867,32 +2931,32 @@ Level 4: DEX +2 → Level 8: Crossbow Expert → Level 12: Sharpshooter
         <h2>🗡️ Core Weapons</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Notes</th></tr>
-            <tr><td>Ranged (Best)</td><td>Titanstring Bow</td><td>Lorroakan's Projection — Best bow, adds STR to damage. Use Elixirs!</td></tr>
-            <tr><td>Ranged (Alt)</td><td>Gontr Mael</td><td>Steel Watch Foundry — Guiding Bolt on hit, FREE Celestial Haste (no lethargy)!</td></tr>
+            <tr><td>Ranged (Best)</td><td><a href="https://bg3.wiki/wiki/Titanstring_Bow" target="_blank">Titanstring Bow</a></td><td>Lorroakan's Projection — Best bow, adds STR to damage. Use Elixirs!</td></tr>
+            <tr><td>Ranged (Alt)</td><td><a href="https://bg3.wiki/wiki/Gontr_Mael" target="_blank">Gontr Mael</a></td><td>Steel Watch Foundry — Guiding Bolt on hit, FREE Celestial Haste (no lethargy)!</td></tr>
             <tr><td>Ranged (Alt)</td><td>Hand Crossbow</td><td>Various — For Crossbow Expert build with Bhaalist Armour</td></tr>
-            <tr><td>Melee</td><td>Phalar Aluve</td><td>Underdark — Shrieking Song: thunder damage + enemy save debuff</td></tr>
-            <tr><td>Off-Hand</td><td>Viconia's Walking Fortress</td><td>House of Grief — Best shield, reflects on spell save</td></tr>
+            <tr><td>Melee</td><td><a href="https://bg3.wiki/wiki/Phalar_Aluve" target="_blank">Phalar Aluve</a></td><td>Underdark — Shrieking Song: thunder damage + enemy save debuff</td></tr>
+            <tr><td>Off-Hand</td><td><a href="https://bg3.wiki/wiki/Viconia%27s_Walking_Fortress" target="_blank">Viconia's Walking Fortress</a></td><td>House of Grief — Best shield, reflects on spell save</td></tr>
             <tr><td>Off-Hand (Alt)</td><td>Spear of Evening</td><td>Shar's Trials — See in magical darkness, blind immunity</td></tr>
         </table>
 
         <h2>🛡️ Best-in-Slot Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Notes</th></tr>
-            <tr><td>Helmet</td><td>Steel Watcher Helmet</td><td>Steel Watch Foundry (Act 3) — Blind immunity, see in magical darkness!</td></tr>
-            <tr><td>Helmet (Alt)</td><td>Haste Helm</td><td>Grymforge (Act 1) — +1.5m movement at start of combat</td></tr>
-            <tr><td>Helmet (Alt)</td><td>Mask of Soul Perception</td><td>Devil's Fee (Act 3) — +2 attack, offsets Sharpshooter penalty</td></tr>
-            <tr><td>Armor</td><td>Armor of Agility</td><td>Act 3 vendor — Full DEX to AC, +2 saves, no stealth disadvantage. 27 AC!</td></tr>
-            <tr><td>Gloves</td><td>Gloves of Belligerent Skies</td><td>Creche Y'llek (Act 1) — Thunder/Lightning/Radiant applies 2 turns Reverberation</td></tr>
-            <tr><td>Gloves (Alt)</td><td>Helldusk Gloves</td><td>House of Hope (Act 3) — +1d6 fire damage on attacks</td></tr>
-            <tr><td>Cloak</td><td>Cloak of Protection</td><td>Various — +1 AC, +1 saves</td></tr>
-            <tr><td>Boots</td><td>Evasive Shoes</td><td>Act 3 — +1 AC</td></tr>
-            <tr><td>Boots (Alt)</td><td>Disintegrating Night Walkers</td><td>Grymforge (Act 1) — Free Misty Step!</td></tr>
-            <tr><td>Boots (Alt)</td><td>Boots of Stormy Clamour</td><td>Myconid Colony (Act 1) — Reverberation on conditions</td></tr>
-            <tr><td>Ring 1</td><td>Band of the Mystic Scoundrel</td><td>Circus jackpot (Act 3) — Cast Fear as bonus action after weapon attack!</td></tr>
-            <tr><td>Ring 2</td><td>Caustic Band</td><td>Grymforge (Act 1) — +2 acid damage per attack (works with Arrow of Many Targets!)</td></tr>
-            <tr><td>Ring (Alt)</td><td>Eversight Ring</td><td>Act 2 — Blind immunity (if not using Steel Watcher Helmet)</td></tr>
-            <tr><td>Ring (Alt)</td><td>Shadowcloaked Ring</td><td>Act 2 — +1d4 vs obscured targets</td></tr>
-            <tr><td>Amulet</td><td>Amulet of Greater Health</td><td>House of Hope (Act 3) — 23 CON, massive HP boost</td></tr>
+            <tr><td>Helmet</td><td><a href="https://bg3.wiki/wiki/Steel_Watcher_Helmet" target="_blank">Steel Watcher Helmet</a></td><td>Steel Watch Foundry (Act 3) — Blind immunity, see in magical darkness!</td></tr>
+            <tr><td>Helmet (Alt)</td><td><a href="https://bg3.wiki/wiki/Haste_Helm" target="_blank">Haste Helm</a></td><td>Grymforge (Act 1) — +1.5m movement at start of combat</td></tr>
+            <tr><td>Helmet (Alt)</td><td><a href="https://bg3.wiki/wiki/Mask_of_Soul_Perception" target="_blank">Mask of Soul Perception</a></td><td>Devil's Fee (Act 3) — +2 attack, offsets Sharpshooter penalty</td></tr>
+            <tr><td>Armor</td><td><a href="https://bg3.wiki/wiki/Armour_of_Agility" target="_blank">Armor of Agility</a></td><td>Act 3 vendor — Full DEX to AC, +2 saves, no stealth disadvantage. 27 AC!</td></tr>
+            <tr><td>Gloves</td><td><a href="https://bg3.wiki/wiki/Gloves_of_Belligerent_Skies" target="_blank">Gloves of Belligerent Skies</a></td><td>Creche Y'llek (Act 1) — Thunder/Lightning/Radiant applies 2 turns Reverberation</td></tr>
+            <tr><td>Gloves (Alt)</td><td><a href="https://bg3.wiki/wiki/Helldusk_Gloves" target="_blank">Helldusk Gloves</a></td><td>House of Hope (Act 3) — +1d6 fire damage on attacks</td></tr>
+            <tr><td>Cloak</td><td><a href="https://bg3.wiki/wiki/Cloak_of_Protection" target="_blank">Cloak of Protection</a></td><td>Various — +1 AC, +1 saves</td></tr>
+            <tr><td>Boots</td><td><a href="https://bg3.wiki/wiki/Evasive_Shoes" target="_blank">Evasive Shoes</a></td><td>Act 3 — +1 AC</td></tr>
+            <tr><td>Boots (Alt)</td><td><a href="https://bg3.wiki/wiki/Disintegrating_Night_Walkers" target="_blank">Disintegrating Night Walkers</a></td><td>Grymforge (Act 1) — Free Misty Step!</td></tr>
+            <tr><td>Boots (Alt)</td><td><a href="https://bg3.wiki/wiki/Boots_of_Stormy_Clamour" target="_blank">Boots of Stormy Clamour</a></td><td>Myconid Colony (Act 1) — Reverberation on conditions</td></tr>
+            <tr><td>Ring 1</td><td><a href="https://bg3.wiki/wiki/Band_of_the_Mystic_Scoundrel" target="_blank">Band of the Mystic Scoundrel</a></td><td>Circus jackpot (Act 3) — Cast Fear as bonus action after weapon attack!</td></tr>
+            <tr><td>Ring 2</td><td><a href="https://bg3.wiki/wiki/Caustic_Band" target="_blank">Caustic Band</a></td><td>Grymforge (Act 1) — +2 acid damage per attack (works with Arrow of Many Targets!)</td></tr>
+            <tr><td>Ring (Alt)</td><td><a href="https://bg3.wiki/wiki/Eversight_Ring" target="_blank">Eversight Ring</a></td><td>Act 2 — Blind immunity (if not using Steel Watcher Helmet)</td></tr>
+            <tr><td>Ring (Alt)</td><td><a href="https://bg3.wiki/wiki/Shadowcloaked_Ring" target="_blank">Shadowcloaked Ring</a></td><td>Act 2 — +1d4 vs obscured targets</td></tr>
+            <tr><td>Amulet</td><td><a href="https://bg3.wiki/wiki/Amulet_of_Greater_Health" target="_blank">Amulet of Greater Health</a></td><td>House of Hope (Act 3) — 23 CON, massive HP boost</td></tr>
         </table>
 
         <h3>Darkness Synergy Setup</h3>
@@ -3066,27 +3130,27 @@ STR: 8 | DEX: 16 | CON: 14 | INT: 10 | WIS: 10 | CHA: 16
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Notes</th></tr>
             <tr><td>Main Hand</td><td>Shadow Blade (Spell)</td><td>Upcast to level 5 = 4d8 psychic! Use Markoheshkir's Arcane Battery for FREE cast!</td></tr>
-            <tr><td>Staff</td><td>Markoheshkir</td><td>Ramazith's Tower — Arcane Battery = free level 5 spell! Use for Shadow Blade!</td></tr>
-            <tr><td>Ranged</td><td>Hellrider Longbow</td><td>Act 1 — +3 initiative bonus</td></tr>
+            <tr><td>Staff</td><td><a href="https://bg3.wiki/wiki/Markoheshkir" target="_blank">Markoheshkir</a></td><td>Ramazith's Tower — Arcane Battery = free level 5 spell! Use for Shadow Blade!</td></tr>
+            <tr><td>Ranged</td><td><a href="https://bg3.wiki/wiki/Hellrider_Longbow" target="_blank">Hellrider Longbow</a></td><td>Act 1 — +3 initiative bonus</td></tr>
         </table>
 
         <h2>🛡️ Best-in-Slot Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Notes</th></tr>
-            <tr><td>Helmet</td><td>Pyroquickness Hat</td><td>Grymforge (Act 1) — Extra bonus action when dealing fire damage!</td></tr>
-            <tr><td>Helmet (Alt)</td><td>Hat of Fire Acuity</td><td>Act 2 — Arcane Acuity on fire spells</td></tr>
-            <tr><td>Helmet (Alt)</td><td>Diadem of Arcane Synergy</td><td>Act 3 — +CHA to weapon damage when inflicting conditions!</td></tr>
-            <tr><td>Armor</td><td>Armor of Agility</td><td>Act 3 — Full DEX to AC, +2 saves. 23+ AC!</td></tr>
+            <tr><td>Helmet</td><td><a href="https://bg3.wiki/wiki/Pyroquickness_Hat" target="_blank">Pyroquickness Hat</a></td><td>Grymforge (Act 1) — Extra bonus action when dealing fire damage!</td></tr>
+            <tr><td>Helmet (Alt)</td><td><a href="https://bg3.wiki/wiki/Hat_of_Fire_Acuity" target="_blank">Hat of Fire Acuity</a></td><td>Act 2 — Arcane Acuity on fire spells</td></tr>
+            <tr><td>Helmet (Alt)</td><td><a href="https://bg3.wiki/wiki/Diadem_of_Arcane_Synergy" target="_blank">Diadem of Arcane Synergy</a></td><td>Act 3 — +CHA to weapon damage when inflicting conditions!</td></tr>
+            <tr><td>Armor</td><td><a href="https://bg3.wiki/wiki/Armour_of_Agility" target="_blank">Armor of Agility</a></td><td>Act 3 — Full DEX to AC, +2 saves. 23+ AC!</td></tr>
             <tr><td>Gloves</td><td>Gloves of Battlemage's Power</td><td>Creche Y'llek (Act 1) — Arcane Acuity on spell weapon attacks! Works with Divine Smite + Booming Blade!</td></tr>
-            <tr><td>Gloves (Alt)</td><td>Helldusk Gloves</td><td>House of Hope (Act 3) — +1d6 fire damage on attacks</td></tr>
-            <tr><td>Cloak</td><td>Cloak of Protection</td><td>Various — +1 AC, +1 saves</td></tr>
-            <tr><td>Cloak (Alt)</td><td>Deathstalker Mantle</td><td>Dark Urge only — Invisibility on kill!</td></tr>
-            <tr><td>Boots</td><td>Boots of Stormy Clamour</td><td>Myconid Colony (Act 1) — Reverberation on conditions</td></tr>
-            <tr><td>Ring 1</td><td>Shadowcloaked Ring</td><td>Act 2 — +1d4 damage vs obscured targets (darkness!)</td></tr>
-            <tr><td>Ring 2</td><td>Strange Conduit Ring</td><td>Act 2 — +1d4 psychic while concentrating (Shadow Blade!)</td></tr>
-            <tr><td>Ring (Alt)</td><td>Ring of Elemental Infusion</td><td>Creche Y'llek (Act 1) — Thunder from Booming Blade on next attack (non-Honor mode)</td></tr>
-            <tr><td>Amulet</td><td>Amulet of Greater Health</td><td>House of Hope (Act 3) — 23 CON, massive HP boost</td></tr>
-            <tr><td>Special</td><td>Resonance Stone</td><td>Grymforge (Act 1) — DOUBLES psychic damage! Insane with Shadow Blade!</td></tr>
+            <tr><td>Gloves (Alt)</td><td><a href="https://bg3.wiki/wiki/Helldusk_Gloves" target="_blank">Helldusk Gloves</a></td><td>House of Hope (Act 3) — +1d6 fire damage on attacks</td></tr>
+            <tr><td>Cloak</td><td><a href="https://bg3.wiki/wiki/Cloak_of_Protection" target="_blank">Cloak of Protection</a></td><td>Various — +1 AC, +1 saves</td></tr>
+            <tr><td>Cloak (Alt)</td><td><a href="https://bg3.wiki/wiki/Deathstalker_Mantle" target="_blank">Deathstalker Mantle</a></td><td>Dark Urge only — Invisibility on kill!</td></tr>
+            <tr><td>Boots</td><td><a href="https://bg3.wiki/wiki/Boots_of_Stormy_Clamour" target="_blank">Boots of Stormy Clamour</a></td><td>Myconid Colony (Act 1) — Reverberation on conditions</td></tr>
+            <tr><td>Ring 1</td><td><a href="https://bg3.wiki/wiki/Shadowcloaked_Ring" target="_blank">Shadowcloaked Ring</a></td><td>Act 2 — +1d4 damage vs obscured targets (darkness!)</td></tr>
+            <tr><td>Ring 2</td><td><a href="https://bg3.wiki/wiki/Strange_Conduit_Ring" target="_blank">Strange Conduit Ring</a></td><td>Act 2 — +1d4 psychic while concentrating (Shadow Blade!)</td></tr>
+            <tr><td>Ring (Alt)</td><td><a href="https://bg3.wiki/wiki/Ring_of_Elemental_Infusion" target="_blank">Ring of Elemental Infusion</a></td><td>Creche Y'llek (Act 1) — Thunder from Booming Blade on next attack (non-Honor mode)</td></tr>
+            <tr><td>Amulet</td><td><a href="https://bg3.wiki/wiki/Amulet_of_Greater_Health" target="_blank">Amulet of Greater Health</a></td><td>House of Hope (Act 3) — 23 CON, massive HP boost</td></tr>
+            <tr><td>Special</td><td><a href="https://bg3.wiki/wiki/Resonance_Stone" target="_blank">Resonance Stone</a></td><td>Grymforge (Act 1) — DOUBLES psychic damage! Insane with Shadow Blade!</td></tr>
         </table>
 
         <h3>Teammate Darkness Synergy</h3>
@@ -3219,20 +3283,20 @@ Now your whole party can camp in your darkness bubble with advantage on attacks!
         <h2>🗡️ Equipment</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Notes</th></tr>
-            <tr><td>Helmet</td><td>Birthright</td><td>Sorcerous Sundries. +2 Charisma = more lightning damage & better DCs!</td></tr>
-            <tr><td>Helmet (Alt)</td><td>Diadem of Arcane Synergy</td><td>Blighted Village cellar. Add CHA to damage after condition infliction</td></tr>
-            <tr><td>Armor</td><td>Armor of Agility</td><td>Gloomy Fentonson (Act 3). +2 to saves, no stealth disadvantage, best for medium armor users</td></tr>
-            <tr><td>Cloak</td><td>Cloak of Protection</td><td>Multiple locations. +1 AC and +1 to all saves — stacks with everything!</td></tr>
-            <tr><td>Gloves</td><td>Gloves of Belligerent Skies</td><td>Creche Y'llek. Lightning/thunder/radiant = 2 turns Reverberation!</td></tr>
-            <tr><td>Boots</td><td>Boots of Stormy Clamour</td><td>Omeluum (Underdark). Condition infliction = Reverberation stacks</td></tr>
-            <tr><td>Boots (Alt)</td><td>Evasive Shoes</td><td>Act 3. +1 AC and advantage on Acrobatics</td></tr>
-            <tr><td>Ring 1</td><td>Ring of Elemental Infusion</td><td>Creche Y'llek. Lightning/thunder spell = +1d4 to next weapon attack!</td></tr>
-            <tr><td>Ring 2</td><td>Ring of Arcane Synergy</td><td>Dribbles quest reward. Cantrip = add CHA to damage!</td></tr>
-            <tr><td>Ring 2 (Alt)</td><td>Band of the Mystic Scoundrel</td><td>Circus jackpot. Bonus action spells after weapon hits — saves sorcery points!</td></tr>
-            <tr><td>Amulet</td><td>Amulet of Greater Health</td><td>House of Hope. CON set to 23 — massive HP and concentration checks</td></tr>
-            <tr><td>Weapon</td><td>Phalar Aluve</td><td>Underdark (sword in stone). Shrieking Song adds thunder damage!</td></tr>
+            <tr><td>Helmet</td><td><a href="https://bg3.wiki/wiki/Birthright" target="_blank">Birthright</a></td><td>Sorcerous Sundries. +2 Charisma = more lightning damage & better DCs!</td></tr>
+            <tr><td>Helmet (Alt)</td><td><a href="https://bg3.wiki/wiki/Diadem_of_Arcane_Synergy" target="_blank">Diadem of Arcane Synergy</a></td><td>Blighted Village cellar. Add CHA to damage after condition infliction</td></tr>
+            <tr><td>Armor</td><td><a href="https://bg3.wiki/wiki/Armour_of_Agility" target="_blank">Armor of Agility</a></td><td>Gloomy Fentonson (Act 3). +2 to saves, no stealth disadvantage, best for medium armor users</td></tr>
+            <tr><td>Cloak</td><td><a href="https://bg3.wiki/wiki/Cloak_of_Protection" target="_blank">Cloak of Protection</a></td><td>Multiple locations. +1 AC and +1 to all saves — stacks with everything!</td></tr>
+            <tr><td>Gloves</td><td><a href="https://bg3.wiki/wiki/Gloves_of_Belligerent_Skies" target="_blank">Gloves of Belligerent Skies</a></td><td>Creche Y'llek. Lightning/thunder/radiant = 2 turns Reverberation!</td></tr>
+            <tr><td>Boots</td><td><a href="https://bg3.wiki/wiki/Boots_of_Stormy_Clamour" target="_blank">Boots of Stormy Clamour</a></td><td>Omeluum (Underdark). Condition infliction = Reverberation stacks</td></tr>
+            <tr><td>Boots (Alt)</td><td><a href="https://bg3.wiki/wiki/Evasive_Shoes" target="_blank">Evasive Shoes</a></td><td>Act 3. +1 AC and advantage on Acrobatics</td></tr>
+            <tr><td>Ring 1</td><td><a href="https://bg3.wiki/wiki/Ring_of_Elemental_Infusion" target="_blank">Ring of Elemental Infusion</a></td><td>Creche Y'llek. Lightning/thunder spell = +1d4 to next weapon attack!</td></tr>
+            <tr><td>Ring 2</td><td><a href="https://bg3.wiki/wiki/Ring_of_Arcane_Synergy" target="_blank">Ring of Arcane Synergy</a></td><td>Dribbles quest reward. Cantrip = add CHA to damage!</td></tr>
+            <tr><td>Ring 2 (Alt)</td><td><a href="https://bg3.wiki/wiki/Band_of_the_Mystic_Scoundrel" target="_blank">Band of the Mystic Scoundrel</a></td><td>Circus jackpot. Bonus action spells after weapon hits — saves sorcery points!</td></tr>
+            <tr><td>Amulet</td><td><a href="https://bg3.wiki/wiki/Amulet_of_Greater_Health" target="_blank">Amulet of Greater Health</a></td><td>House of Hope. CON set to 23 — massive HP and concentration checks</td></tr>
+            <tr><td>Weapon</td><td><a href="https://bg3.wiki/wiki/Phalar_Aluve" target="_blank">Phalar Aluve</a></td><td>Underdark (sword in stone). Shrieking Song adds thunder damage!</td></tr>
             <tr><td>Weapon (Alt)</td><td>Shadow Blade (spell)</td><td>Level 2+ slot. 2d8-4d8 psychic, advantage in dim light. Doubles with Resonance Stone!</td></tr>
-            <tr><td>Shield</td><td>Viconia's Walking Fortress</td><td>Viconia boss fight. Advantage on spell saves, spell attacks at disadvantage against you</td></tr>
+            <tr><td>Shield</td><td><a href="https://bg3.wiki/wiki/Viconia%27s_Walking_Fortress" target="_blank">Viconia's Walking Fortress</a></td><td>Viconia boss fight. Advantage on spell saves, spell attacks at disadvantage against you</td></tr>
         </table>
 
         <h2>⚔️ Combat Strategy</h2>
@@ -3379,32 +3443,32 @@ Now your whole party can camp in your darkness bubble with advantage on attacks!
         <h2>🗡️ Core Weapons</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Notes</th></tr>
-            <tr><td>Main Hand</td><td>Crimson Mischief</td><td>Orin — +7 piercing damage, +1d4 vs &lt;50% HP. DOUBLED with Bhaalist Armour!</td></tr>
-            <tr><td>Off Hand</td><td>Blade of the First Blood</td><td>Orin — Vulnerability on first attack, True Strike, Riposte, +1 AC!</td></tr>
-            <tr><td>Main (Alt)</td><td>Knife of the Undermountain King</td><td>Grymforge — Advantage vs obscured, piercing damage</td></tr>
-            <tr><td>Off (Alt)</td><td>Cold Snap</td><td>Act 1 — +1 AC, applies Chilled</td></tr>
-            <tr><td>Off (Alt)</td><td>Dolor Amarus</td><td>Act 3 — +7 critical hit damage (doubled!)</td></tr>
-            <tr><td>Ranged</td><td>Hellrider Longbow</td><td>Act 1 — +3 initiative bonus!</td></tr>
+            <tr><td>Main Hand</td><td><a href="https://bg3.wiki/wiki/Crimson_Mischief" target="_blank">Crimson Mischief</a></td><td>Orin — +7 piercing damage, +1d4 vs &lt;50% HP. DOUBLED with Bhaalist Armour!</td></tr>
+            <tr><td>Off Hand</td><td><a href="https://bg3.wiki/wiki/Blade_of_First_Blood" target="_blank">Blade of the First Blood</a></td><td>Orin — Vulnerability on first attack, True Strike, Riposte, +1 AC!</td></tr>
+            <tr><td>Main (Alt)</td><td><a href="https://bg3.wiki/wiki/Knife_of_the_Undermountain_King" target="_blank">Knife of the Undermountain King</a></td><td>Grymforge — Advantage vs obscured, piercing damage</td></tr>
+            <tr><td>Off (Alt)</td><td><a href="https://bg3.wiki/wiki/Cold_Snap" target="_blank">Cold Snap</a></td><td>Act 1 — +1 AC, applies Chilled</td></tr>
+            <tr><td>Off (Alt)</td><td><a href="https://bg3.wiki/wiki/Dolor_Amarus" target="_blank">Dolor Amarus</a></td><td>Act 3 — +7 critical hit damage (doubled!)</td></tr>
+            <tr><td>Ranged</td><td><a href="https://bg3.wiki/wiki/Hellrider_Longbow" target="_blank">Hellrider Longbow</a></td><td>Act 1 — +3 initiative bonus!</td></tr>
         </table>
 
         <h2>🛡️ Best-in-Slot Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Notes</th></tr>
-            <tr><td>Helmet</td><td>Mask of Soul Perception</td><td>Devil's Fee (Act 3) — +2 attack rolls, +2 initiative, Perception bonus</td></tr>
-            <tr><td>Helmet (Alt)</td><td>Haste Helm</td><td>Grymforge (Act 1) — +1.5m movement at combat start</td></tr>
-            <tr><td>Armor</td><td>Bhaalist Armour</td><td>Murder Tribunal (Act 3) — Piercing vulnerability = DOUBLE piercing damage!</td></tr>
-            <tr><td>Gloves</td><td>Gloves of the Balanced Hand</td><td>Act 3 — Add ability modifier to off-hand damage!</td></tr>
-            <tr><td>Gloves (Alt)</td><td>Helldusk Gloves</td><td>House of Hope (Act 3) — +1d6 fire damage</td></tr>
+            <tr><td>Helmet</td><td><a href="https://bg3.wiki/wiki/Mask_of_Soul_Perception" target="_blank">Mask of Soul Perception</a></td><td>Devil's Fee (Act 3) — +2 attack rolls, +2 initiative, Perception bonus</td></tr>
+            <tr><td>Helmet (Alt)</td><td><a href="https://bg3.wiki/wiki/Haste_Helm" target="_blank">Haste Helm</a></td><td>Grymforge (Act 1) — +1.5m movement at combat start</td></tr>
+            <tr><td>Armor</td><td><a href="https://bg3.wiki/wiki/Bhaalist_Armour" target="_blank">Bhaalist Armour</a></td><td>Murder Tribunal (Act 3) — Piercing vulnerability = DOUBLE piercing damage!</td></tr>
+            <tr><td>Gloves</td><td><a href="https://bg3.wiki/wiki/Gloves_of_the_Balanced_Hands" target="_blank">Gloves of the Balanced Hand</a></td><td>Act 3 — Add ability modifier to off-hand damage!</td></tr>
+            <tr><td>Gloves (Alt)</td><td><a href="https://bg3.wiki/wiki/Helldusk_Gloves" target="_blank">Helldusk Gloves</a></td><td>House of Hope (Act 3) — +1d6 fire damage</td></tr>
             <tr><td>Gloves (Alt)</td><td>Dark Justiciar Gauntlets</td><td>Grymforge (Act 1) — Bonus action Beckoning Darkness</td></tr>
-            <tr><td>Cloak</td><td>Deathstalker Mantle</td><td>Dark Urge — Invisibility on kill! Extra damage on advantage attacks</td></tr>
-            <tr><td>Cloak (Alt)</td><td>Cloak of Protection</td><td>Various — +1 AC, +1 saves</td></tr>
-            <tr><td>Boots</td><td>Disintegrating Night Walkers</td><td>Grymforge (Act 1) — Bonus action Misty Step, can't be Ensnared!</td></tr>
-            <tr><td>Boots (Alt)</td><td>Evasive Shoes</td><td>Act 3 — +1 AC</td></tr>
-            <tr><td>Ring 1</td><td>Eversight Ring</td><td>Act 2 — Can't be blinded, see in magical darkness!</td></tr>
-            <tr><td>Ring 2</td><td>Ring of Shadows</td><td>Shadowfell (Act 2) — Pass Without Trace (+10 stealth)</td></tr>
-            <tr><td>Ring (Alt)</td><td>Killer's Sweetheart</td><td>Self-Same Trial (Act 2) — Free critical hit once per long rest</td></tr>
-            <tr><td>Ring (Alt)</td><td>Ring of Protection</td><td>Various — +1 AC, +1 saves</td></tr>
-            <tr><td>Amulet</td><td>Amulet of Greater Health</td><td>House of Hope (Act 3) — 23 CON, massive HP boost</td></tr>
+            <tr><td>Cloak</td><td><a href="https://bg3.wiki/wiki/Deathstalker_Mantle" target="_blank">Deathstalker Mantle</a></td><td>Dark Urge — Invisibility on kill! Extra damage on advantage attacks</td></tr>
+            <tr><td>Cloak (Alt)</td><td><a href="https://bg3.wiki/wiki/Cloak_of_Protection" target="_blank">Cloak of Protection</a></td><td>Various — +1 AC, +1 saves</td></tr>
+            <tr><td>Boots</td><td><a href="https://bg3.wiki/wiki/Disintegrating_Night_Walkers" target="_blank">Disintegrating Night Walkers</a></td><td>Grymforge (Act 1) — Bonus action Misty Step, can't be Ensnared!</td></tr>
+            <tr><td>Boots (Alt)</td><td><a href="https://bg3.wiki/wiki/Evasive_Shoes" target="_blank">Evasive Shoes</a></td><td>Act 3 — +1 AC</td></tr>
+            <tr><td>Ring 1</td><td><a href="https://bg3.wiki/wiki/Eversight_Ring" target="_blank">Eversight Ring</a></td><td>Act 2 — Can't be blinded, see in magical darkness!</td></tr>
+            <tr><td>Ring 2</td><td><a href="https://bg3.wiki/wiki/Ring_of_Shadows" target="_blank">Ring of Shadows</a></td><td>Shadowfell (Act 2) — Pass Without Trace (+10 stealth)</td></tr>
+            <tr><td>Ring (Alt)</td><td><a href="https://bg3.wiki/wiki/Killer%27s_Sweetheart" target="_blank">Killer's Sweetheart</a></td><td>Self-Same Trial (Act 2) — Free critical hit once per long rest</td></tr>
+            <tr><td>Ring (Alt)</td><td><a href="https://bg3.wiki/wiki/Ring_of_Protection" target="_blank">Ring of Protection</a></td><td>Various — +1 AC, +1 saves</td></tr>
+            <tr><td>Amulet</td><td><a href="https://bg3.wiki/wiki/Amulet_of_Greater_Health" target="_blank">Amulet of Greater Health</a></td><td>House of Hope (Act 3) — 23 CON, massive HP boost</td></tr>
         </table>
 
         <h3>The Piercing Damage Combo</h3>
@@ -3553,25 +3617,25 @@ For more attacks, consider <strong>7 Swashbuckler / 5 Gloomstalker Ranger</stron
         <h2>🎒 Best-in-Slot Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
-            <tr><td>⛑️ Helmet</td><td>Warped Headband of Intellect</td><td>Blighted Village (Act 1). Sets INT to 16 for Arcane Arrow saves!</td></tr>
-            <tr><td>🛡️ Armor</td><td>Bhaalist Armour</td><td>Murder Tribunal (Act 3). Enemies VULNERABLE to piercing! Doubles your damage!</td></tr>
-            <tr><td>🛡️ Early Armor</td><td>Adamantine Scale Mail</td><td>Grymforge (Act 1). Great until Bhaalist Armour</td></tr>
-            <tr><td>🧣 Cloak</td><td>Cloak of Protection</td><td>Last Light Inn (Act 2). +1 AC and saves</td></tr>
-            <tr><td>🧣 Alt Cloak</td><td>Deathstalker Mantle</td><td>Dark Urge reward. Invisibility on kill!</td></tr>
-            <tr><td>🧤 Gloves</td><td>Legacy of the Masters</td><td>Creche Y'llek (Act 1). +2 to attack AND damage rolls!</td></tr>
-            <tr><td>🧤 Late Gloves</td><td>Helldusk Gloves</td><td>House of Hope (Act 3). +1d6 fire damage on hits!</td></tr>
-            <tr><td>👢 Boots</td><td>Evasive Shoes</td><td>Circus of Last Days (Act 3). +AC bonus</td></tr>
-            <tr><td>👢 Alt Boots</td><td>Disintegrating Night Walkers</td><td>Grymforge (Act 1). Misty Step + immune to Enwebbed</td></tr>
-            <tr><td>🗡️ Melee (Both)</td><td>Dolor Amarus</td><td>Murder Tribunal (Act 3). +7 crit damage → +14 with Bhaalist!</td></tr>
+            <tr><td>⛑️ Helmet</td><td><a href="https://bg3.wiki/wiki/Warped_Headband_of_Intellect" target="_blank">Warped Headband of Intellect</a></td><td>Blighted Village (Act 1). Sets INT to 16 for Arcane Arrow saves!</td></tr>
+            <tr><td>🛡️ Armor</td><td><a href="https://bg3.wiki/wiki/Bhaalist_Armour" target="_blank">Bhaalist Armour</a></td><td>Murder Tribunal (Act 3). Enemies VULNERABLE to piercing! Doubles your damage!</td></tr>
+            <tr><td>🛡️ Early Armor</td><td><a href="https://bg3.wiki/wiki/Adamantine_Scale_Mail" target="_blank">Adamantine Scale Mail</a></td><td>Grymforge (Act 1). Great until Bhaalist Armour</td></tr>
+            <tr><td>🧣 Cloak</td><td><a href="https://bg3.wiki/wiki/Cloak_of_Protection" target="_blank">Cloak of Protection</a></td><td>Last Light Inn (Act 2). +1 AC and saves</td></tr>
+            <tr><td>🧣 Alt Cloak</td><td><a href="https://bg3.wiki/wiki/Deathstalker_Mantle" target="_blank">Deathstalker Mantle</a></td><td>Dark Urge reward. Invisibility on kill!</td></tr>
+            <tr><td>🧤 Gloves</td><td><a href="https://bg3.wiki/wiki/Legacy_of_the_Masters" target="_blank">Legacy of the Masters</a></td><td>Creche Y'llek (Act 1). +2 to attack AND damage rolls!</td></tr>
+            <tr><td>🧤 Late Gloves</td><td><a href="https://bg3.wiki/wiki/Helldusk_Gloves" target="_blank">Helldusk Gloves</a></td><td>House of Hope (Act 3). +1d6 fire damage on hits!</td></tr>
+            <tr><td>👢 Boots</td><td><a href="https://bg3.wiki/wiki/Evasive_Shoes" target="_blank">Evasive Shoes</a></td><td>Circus of Last Days (Act 3). +AC bonus</td></tr>
+            <tr><td>👢 Alt Boots</td><td><a href="https://bg3.wiki/wiki/Disintegrating_Night_Walkers" target="_blank">Disintegrating Night Walkers</a></td><td>Grymforge (Act 1). Misty Step + immune to Enwebbed</td></tr>
+            <tr><td>🗡️ Melee (Both)</td><td><a href="https://bg3.wiki/wiki/Dolor_Amarus" target="_blank">Dolor Amarus</a></td><td>Murder Tribunal (Act 3). +7 crit damage → +14 with Bhaalist!</td></tr>
             <tr><td>🗡️ Alt Offhand</td><td>Cold Snap / Orin's Dagger</td><td>Various. +1 AC when in offhand</td></tr>
-            <tr><td>🏹 Early Bow</td><td>Titanstring Bow</td><td>Angleiron's (Act 3). STR mod to damage with potions!</td></tr>
-            <tr><td>🔫 Main Crossbow</td><td>Hellfire Hand Crossbow</td><td>House of Hope (Act 3). Burns hidden/invisible attackers!</td></tr>
-            <tr><td>🔫 Off Crossbow</td><td>Firestoker</td><td>Creche Y'llek (Act 1). +1d4 damage vs burning targets!</td></tr>
+            <tr><td>🏹 Early Bow</td><td><a href="https://bg3.wiki/wiki/Titanstring_Bow" target="_blank">Titanstring Bow</a></td><td>Angleiron's (Act 3). STR mod to damage with potions!</td></tr>
+            <tr><td>🔫 Main Crossbow</td><td><a href="https://bg3.wiki/wiki/Hellfire_Hand_Crossbow" target="_blank">Hellfire Hand Crossbow</a></td><td>House of Hope (Act 3). Burns hidden/invisible attackers!</td></tr>
+            <tr><td>🔫 Off Crossbow</td><td><a href="https://bg3.wiki/wiki/Firestoker" target="_blank">Firestoker</a></td><td>Creche Y'llek (Act 1). +1d4 damage vs burning targets!</td></tr>
             <tr><td>🔫 Alt Crossbow</td><td>Ne'er Misser</td><td>Grymforge (Act 1). Force damage type (rarely resisted)</td></tr>
-            <tr><td>💍 Ring 1</td><td>Killer's Sweetheart</td><td>Self-Same Trial (Act 2). FREE guaranteed critical hit!</td></tr>
-            <tr><td>💍 Ring 2</td><td>Caustic Band</td><td>Grymforge (Act 1). +2 acid damage per hit</td></tr>
-            <tr><td>💍 Alt Ring</td><td>Ring of Protection</td><td>Rafaam's shop (Act 1). +1 AC and saves</td></tr>
-            <tr><td>📿 Amulet</td><td>Amulet of Greater Health</td><td>House of Hope (Act 3). 23 CON!</td></tr>
+            <tr><td>💍 Ring 1</td><td><a href="https://bg3.wiki/wiki/Killer%27s_Sweetheart" target="_blank">Killer's Sweetheart</a></td><td>Self-Same Trial (Act 2). FREE guaranteed critical hit!</td></tr>
+            <tr><td>💍 Ring 2</td><td><a href="https://bg3.wiki/wiki/Caustic_Band" target="_blank">Caustic Band</a></td><td>Grymforge (Act 1). +2 acid damage per hit</td></tr>
+            <tr><td>💍 Alt Ring</td><td><a href="https://bg3.wiki/wiki/Ring_of_Protection" target="_blank">Ring of Protection</a></td><td>Rafaam's shop (Act 1). +1 AC and saves</td></tr>
+            <tr><td>📿 Amulet</td><td><a href="https://bg3.wiki/wiki/Amulet_of_Greater_Health" target="_blank">Amulet of Greater Health</a></td><td>House of Hope (Act 3). 23 CON!</td></tr>
             <tr><td>📿 Alt Amulet</td><td>Periapt of Wound Closure</td><td>Moonrise Towers (Act 2). Stabilize + double healing</td></tr>
         </table>
 
@@ -3748,16 +3812,16 @@ For more attacks, consider <strong>7 Swashbuckler / 5 Gloomstalker Ranger</stron
         <h2>🎒 Best-in-Slot Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
-            <tr><td>⛑️ Helmet</td><td>Scabby Pilus Circlet</td><td>Moonrise Towers (Act 2). +2 damage when surrounded by 2+ foes!</td></tr>
-            <tr><td>⛑️ Alt Helmet</td><td>Haste Helm</td><td>Blighted Village (Act 1). Momentum at start of combat!</td></tr>
-            <tr><td>👘 Armor</td><td>Vest of Soul Rejuvenation</td><td>House of Hope (Act 3). Heal on saves + Greater Kiai Counter (reaction attack when missed) + 2 AC!</td></tr>
-            <tr><td>🧤 Gloves</td><td>Gloves of Soul Catching</td><td>House of Hope (Act 3). +1d10 force per unarmed, heal 10 HP OR advantage, +2 CON!</td></tr>
-            <tr><td>🧣 Cloak</td><td>Cloak of Protection</td><td>Last Light Inn (Act 2). +1 AC and saves</td></tr>
-            <tr><td>👢 Boots</td><td>Evasive Shoes</td><td>Circus of Last Days (Act 3). +AC bonus</td></tr>
-            <tr><td>👢 Alt Boots</td><td>Boots of Uninhibited Kushigo</td><td>Gauntlet of Shar (Act 2). +1d4 damage to unarmed when not wearing armor!</td></tr>
-            <tr><td>💍 Ring 1</td><td>Ring of Protection</td><td>Rafaam's shop (Act 1). +1 AC and saves</td></tr>
-            <tr><td>💍 Ring 2</td><td>Killer's Sweetheart</td><td>Self-Same Trial (Act 2). FREE critical hit after killing a target!</td></tr>
-            <tr><td>📿 Amulet</td><td>Amulet of Greater Health</td><td>House of Hope (Act 3). 23 CON = massive HP!</td></tr>
+            <tr><td>⛑️ Helmet</td><td><a href="https://bg3.wiki/wiki/Scabby_Pugilist_Circlet" target="_blank">Scabby Pilus Circlet</a></td><td>Moonrise Towers (Act 2). +2 damage when surrounded by 2+ foes!</td></tr>
+            <tr><td>⛑️ Alt Helmet</td><td><a href="https://bg3.wiki/wiki/Haste_Helm" target="_blank">Haste Helm</a></td><td>Blighted Village (Act 1). Momentum at start of combat!</td></tr>
+            <tr><td>👘 Armor</td><td><a href="https://bg3.wiki/wiki/Vest_of_Soul_Rejuvenation" target="_blank">Vest of Soul Rejuvenation</a></td><td>House of Hope (Act 3). Heal on saves + Greater Kiai Counter (reaction attack when missed) + 2 AC!</td></tr>
+            <tr><td>🧤 Gloves</td><td><a href="https://bg3.wiki/wiki/Gloves_of_Soul_Catching" target="_blank">Gloves of Soul Catching</a></td><td>House of Hope (Act 3). +1d10 force per unarmed, heal 10 HP OR advantage, +2 CON!</td></tr>
+            <tr><td>🧣 Cloak</td><td><a href="https://bg3.wiki/wiki/Cloak_of_Protection" target="_blank">Cloak of Protection</a></td><td>Last Light Inn (Act 2). +1 AC and saves</td></tr>
+            <tr><td>👢 Boots</td><td><a href="https://bg3.wiki/wiki/Evasive_Shoes" target="_blank">Evasive Shoes</a></td><td>Circus of Last Days (Act 3). +AC bonus</td></tr>
+            <tr><td>👢 Alt Boots</td><td><a href="https://bg3.wiki/wiki/Boots_of_Uninhibited_Kushigo" target="_blank">Boots of Uninhibited Kushigo</a></td><td>Gauntlet of Shar (Act 2). +1d4 damage to unarmed when not wearing armor!</td></tr>
+            <tr><td>💍 Ring 1</td><td><a href="https://bg3.wiki/wiki/Ring_of_Protection" target="_blank">Ring of Protection</a></td><td>Rafaam's shop (Act 1). +1 AC and saves</td></tr>
+            <tr><td>💍 Ring 2</td><td><a href="https://bg3.wiki/wiki/Killer%27s_Sweetheart" target="_blank">Killer's Sweetheart</a></td><td>Self-Same Trial (Act 2). FREE critical hit after killing a target!</td></tr>
+            <tr><td>📿 Amulet</td><td><a href="https://bg3.wiki/wiki/Amulet_of_Greater_Health" target="_blank">Amulet of Greater Health</a></td><td>House of Hope (Act 3). 23 CON = massive HP!</td></tr>
             <tr><td>📿 Alt Amulet</td><td>Surgeon's Subjugation Amulet</td><td>Moonrise Towers (Act 2). Paralyze on crit (easier to get)</td></tr>
             <tr><td>🧪 Elixir</td><td>Elixir of Hill Giant Strength</td><td>Various vendors/crafting. Sets STR to 27 — MANDATORY!</td></tr>
         </table>
@@ -3954,10 +4018,10 @@ For more attacks, consider <strong>7 Swashbuckler / 5 Gloomstalker Ranger</stron
         <h2>🎒 Key Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
-            <tr><td>🪄 Main Hand</td><td>Staff of Cherished Necromancy</td><td>Sorcerous Sundries (Act 3) — Tolna Tome-Monger. FREE Level 6 spell on kill! 💀</td></tr>
-            <tr><td>🪄 Off Hand</td><td>Markoheshkir</td><td>Ramazith's Tower (Act 3) — DC 20 Arcana check. Arcane Battery + Kereska's Favour!</td></tr>
-            <tr><td>📿 Amulet</td><td>Amulet of the Devout</td><td>Stormshore Tabernacle (Act 3) — Sold by Vicar Humbletoes. +2 Spell Save DC!</td></tr>
-            <tr><td>👘 Armor</td><td>Luminous Armor</td><td>Last Light Inn (Act 2) — Sold by Quartermaster Talli. Radiant shockwave for Radiating Orb stacking!</td></tr>
+            <tr><td>🪄 Main Hand</td><td><a href="https://bg3.wiki/wiki/Staff_of_Cherished_Necromancy" target="_blank">Staff of Cherished Necromancy</a></td><td>Sorcerous Sundries (Act 3) — Tolna Tome-Monger. FREE Level 6 spell on kill! 💀</td></tr>
+            <tr><td>🪄 Off Hand</td><td><a href="https://bg3.wiki/wiki/Markoheshkir" target="_blank">Markoheshkir</a></td><td>Ramazith's Tower (Act 3) — DC 20 Arcana check. Arcane Battery + Kereska's Favour!</td></tr>
+            <tr><td>📿 Amulet</td><td><a href="https://bg3.wiki/wiki/Amulet_of_the_Devout" target="_blank">Amulet of the Devout</a></td><td>Stormshore Tabernacle (Act 3) — Sold by Vicar Humbletoes. +2 Spell Save DC!</td></tr>
+            <tr><td>👘 Armor</td><td><a href="https://bg3.wiki/wiki/Luminous_Armour" target="_blank">Luminous Armor</a></td><td>Last Light Inn (Act 2) — Sold by Quartermaster Talli. Radiant shockwave for Radiating Orb stacking!</td></tr>
         </table>
 
         <div class="callout">
@@ -4069,47 +4133,47 @@ Spirit Guardians (2) + Melee Attack with Luminous Gloves (2) + Coruscation Ring 
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
             <tr>
                 <td>👑 Helmet</td>
-                <td>Helmet of Arcane Acuity</td>
+                <td><a href="https://bg3.wiki/wiki/Helmet_of_Arcane_Acuity" target="_blank">Helmet of Arcane Acuity</a></td>
                 <td>Mason's Guild basement (Act 3). +1 Spell DC per weapon hit (up to +10)! Land every spell.</td>
             </tr>
             <tr>
                 <td>👘 Armor</td>
-                <td>Bhaalist Armour</td>
+                <td><a href="https://bg3.wiki/wiki/Bhaalist_Armour" target="_blank">Bhaalist Armour</a></td>
                 <td>Murder Tribunal (Act 3). Light armor, Aura of Murder (vulnerable to piercing), allows Bladesong!</td>
             </tr>
             <tr>
                 <td>🧤 Gloves</td>
-                <td>Luminous Gloves</td>
+                <td><a href="https://bg3.wiki/wiki/Luminous_Gloves" target="_blank">Luminous Gloves</a></td>
                 <td>Ruined Battlefield Potter's Chest (Act 2). +2 Radiating Orb stacks on radiant damage!</td>
             </tr>
             <tr>
                 <td>👢 Boots</td>
-                <td>Boots of Stormy Clamour</td>
+                <td><a href="https://bg3.wiki/wiki/Boots_of_Stormy_Clamour" target="_blank">Boots of Stormy Clamour</a></td>
                 <td>Underdark (Act 1) — Omeluum. Apply Reverberation when inflicting conditions.</td>
             </tr>
             <tr>
                 <td>🧥 Cloak</td>
-                <td>Thunderskin Cloak</td>
+                <td><a href="https://bg3.wiki/wiki/Thunderskin_Cloak" target="_blank">Thunderskin Cloak</a></td>
                 <td>Moonrise Towers (Act 2) — Araj Oblodra. Enemies with Reverberation must save or become Dazed!</td>
             </tr>
             <tr>
                 <td>🗡️ Weapon</td>
-                <td>Duelist's Prerogative</td>
+                <td><a href="https://bg3.wiki/wiki/Duelist%27s_Prerogative" target="_blank">Duelist's Prerogative</a></td>
                 <td>Circus of Last Days (Act 3) — Lucretious after "Save Vanra". +1 REACTION, bonus action attack!</td>
             </tr>
             <tr>
                 <td>💍 Ring 1</td>
-                <td>Coruscation Ring</td>
+                <td><a href="https://bg3.wiki/wiki/Coruscation_Ring" target="_blank">Coruscation Ring</a></td>
                 <td>Last Light Inn cellar (Act 2). Each spell hit applies Radiating Orb!</td>
             </tr>
             <tr>
                 <td>💍 Ring 2</td>
-                <td>Whispering Promise</td>
+                <td><a href="https://bg3.wiki/wiki/Whispering_Promise" target="_blank">Whispering Promise</a></td>
                 <td>Volo (Act 1) — Free if you let him operate. Healing grants +1d4 to attack rolls!</td>
             </tr>
             <tr>
                 <td>📿 Amulet</td>
-                <td>Amulet of Greater Health</td>
+                <td><a href="https://bg3.wiki/wiki/Amulet_of_Greater_Health" target="_blank">Amulet of Greater Health</a></td>
                 <td>House of Hope (Act 3) — Archive. CON 23 + advantage on CON saves = never lose concentration!</td>
             </tr>
         </table>
@@ -4124,22 +4188,22 @@ Spirit Guardians (2) + Melee Attack with Luminous Gloves (2) + Coruscation Ring 
             </tr>
             <tr>
                 <td>👘 Robe</td>
-                <td>Robe of the Weave</td>
+                <td><a href="https://bg3.wiki/wiki/Robe_of_the_Weave" target="_blank">Robe of the Weave</a></td>
                 <td>Ramazith's Tower (Act 3). +1 Spell DC, +1 spell attack, +2 AC. Use with Mage Armor!</td>
             </tr>
             <tr>
                 <td>🧤 Gloves</td>
-                <td>Luminous Gloves</td>
+                <td><a href="https://bg3.wiki/wiki/Luminous_Gloves" target="_blank">Luminous Gloves</a></td>
                 <td>Ruined Battlefield (Act 2) — Potter's Chest. +2 Radiating Orb stacks!</td>
             </tr>
             <tr>
                 <td>👢 Boots</td>
-                <td>Boots of Stormy Clamour</td>
+                <td><a href="https://bg3.wiki/wiki/Boots_of_Stormy_Clamour" target="_blank">Boots of Stormy Clamour</a></td>
                 <td>Underdark (Act 1) — Omeluum. Reverberation on conditions.</td>
             </tr>
             <tr>
                 <td>🗡️ Weapon</td>
-                <td>Duelist's Prerogative</td>
+                <td><a href="https://bg3.wiki/wiki/Duelist%27s_Prerogative" target="_blank">Duelist's Prerogative</a></td>
                 <td>TWO REACTIONS! Essential for this build.</td>
             </tr>
         </table>
@@ -4150,12 +4214,12 @@ Spirit Guardians (2) + Melee Attack with Luminous Gloves (2) + Coruscation Ring 
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
             <tr>
                 <td>👑 Helmet</td>
-                <td>Holy Lance Helm</td>
+                <td><a href="https://bg3.wiki/wiki/Holy_Lance_Helm" target="_blank">Holy Lance Helm</a></td>
                 <td>Crèche Y'llek. When enemies miss you, they take 1d4 radiant (procs Luminous Gloves)!</td>
             </tr>
             <tr>
                 <td>👘 Armor</td>
-                <td>Luminous Armour</td>
+                <td><a href="https://bg3.wiki/wiki/Luminous_Armour" target="_blank">Luminous Armour</a></td>
                 <td>Creche Y'llek. +3 CON saves, radiant shockwave when hit! Cannot use Bladesong.</td>
             </tr>
             <tr>
@@ -4259,7 +4323,7 @@ With Disadvantage: 0.25% hit chance!
             <tr><td>Mage Armor</td><td>13 + DEX</td><td>Base with clothing</td></tr>
             <tr><td>Dexterity (18)</td><td>+4</td><td>With Gloves of Dexterity</td></tr>
             <tr><td>Bladesong</td><td>+3 to +5</td><td>Intelligence modifier</td></tr>
-            <tr><td>Robe of the Weave</td><td>+2</td><td>Clothing option</td></tr>
+            <tr><td><a href="https://bg3.wiki/wiki/Robe_of_the_Weave" target="_blank">Robe of the Weave</a></td><td>+2</td><td>Clothing option</td></tr>
             <tr><td>Haste</td><td>+2</td><td>If cast</td></tr>
             <tr><td>Shield (Reaction)</td><td>+5</td><td>When needed</td></tr>
             <tr><td>Mirror Image</td><td>+9 effective</td><td>3 images absorb hits</td></tr>
@@ -4375,57 +4439,57 @@ Enemies don't react to Spirit Guardians like other AOEs — they just stand ther
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
             <tr>
                 <td>💍 Ring 1</td>
-                <td>Whispering Promise</td>
+                <td><a href="https://bg3.wiki/wiki/Whispering_Promise" target="_blank">Whispering Promise</a></td>
                 <td>Volo (Act 1, let him operate). When you heal, target gets BLESS! Insanely good.</td>
             </tr>
             <tr>
                 <td>👑 Helmet</td>
-                <td>Helm of Balduran</td>
+                <td><a href="https://bg3.wiki/wiki/Helm_of_Balduran" target="_blank">Helm of Balduran</a></td>
                 <td>Ansur fight (Act 3). Heals you every turn = permanent Bless on yourself via Whispering Promise!</td>
             </tr>
             <tr>
                 <td>🧤 Gloves</td>
-                <td>Hellrider's Pride</td>
+                <td><a href="https://bg3.wiki/wiki/Hellrider%27s_Pride" target="_blank">Hellrider's Pride</a></td>
                 <td>Zevlor (Act 1). Healed targets get Blade Ward (half physical damage)! Revive grants Death Ward!</td>
             </tr>
             <tr>
                 <td>👘 Armor</td>
-                <td>Luminous Armour</td>
+                <td><a href="https://bg3.wiki/wiki/Luminous_Armour" target="_blank">Luminous Armour</a></td>
                 <td>Last Light Inn (Act 2). Radiant damage causes shockwave, +3 CON saves for concentration!</td>
             </tr>
             <tr>
                 <td>🧤 Gloves (Alt)</td>
-                <td>Luminous Gloves</td>
+                <td><a href="https://bg3.wiki/wiki/Luminous_Gloves" target="_blank">Luminous Gloves</a></td>
                 <td>Ruined Battlefield (Act 2). Radiant damage applies Radiating Orb stacks!</td>
             </tr>
             <tr>
                 <td>💍 Ring 2</td>
-                <td>Callous Glow Ring</td>
+                <td><a href="https://bg3.wiki/wiki/Callous_Glow_Ring" target="_blank">Callous Glow Ring</a></td>
                 <td>Gauntlet of Shar vault (Act 2). +2 radiant damage to illuminated targets!</td>
             </tr>
             <tr>
                 <td>🪄 Staff 1</td>
-                <td>Staff of Arcane Blessing</td>
+                <td><a href="https://bg3.wiki/wiki/Staff_of_Arcane_Blessing" target="_blank">Staff of Arcane Blessing</a></td>
                 <td>Crèche Y'llek (Act 1). Bless grants extra 1d4 to saves/attacks AND 2d4 to spell attacks!</td>
             </tr>
             <tr>
                 <td>🪄 Staff 2</td>
-                <td>Markoheshkir</td>
+                <td><a href="https://bg3.wiki/wiki/Markoheshkir" target="_blank">Markoheshkir</a></td>
                 <td>Ramazith's Tower (Act 3). Arcane Battery = FREE upcast spell! Use for Heroes' Feast.</td>
             </tr>
             <tr>
                 <td>🪄 Staff 3</td>
-                <td>Staff of Spell Power</td>
+                <td><a href="https://bg3.wiki/wiki/Staff_of_Spell_Power" target="_blank">Staff of Spell Power</a></td>
                 <td>Balthazar (Act 2). Another free spell cast! Use for Planar Ally.</td>
             </tr>
             <tr>
                 <td>🧥 Cloak</td>
-                <td>Cloak of Protection</td>
+                <td><a href="https://bg3.wiki/wiki/Cloak_of_Protection" target="_blank">Cloak of Protection</a></td>
                 <td>Various vendors. +1 AC, +1 Saves. Simple but effective for survivability.</td>
             </tr>
             <tr>
                 <td>📿 Amulet</td>
-                <td>Amulet of Greater Health</td>
+                <td><a href="https://bg3.wiki/wiki/Amulet_of_Greater_Health" target="_blank">Amulet of Greater Health</a></td>
                 <td>House of Hope (Act 3). CON 23 = massive HP and concentration saves!</td>
             </tr>
         </table>
@@ -4611,52 +4675,52 @@ Every time you deal lightning or thunder damage, push the target 3 meters!
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
             <tr>
                 <td>👑 Helmet</td>
-                <td>Lifebringer</td>
+                <td><a href="https://bg3.wiki/wiki/Lifebringer" target="_blank">Lifebringer</a></td>
                 <td>Circus of Last Days (Act 3). When you gain Lightning Charges, also gain 3 temp HP!</td>
             </tr>
             <tr>
                 <td>👘 Armor</td>
-                <td>Adamantine Splint Armor</td>
+                <td><a href="https://bg3.wiki/wiki/Adamantine_Splint_Armour" target="_blank">Adamantine Splint Armor</a></td>
                 <td>Grymforge (Act 1) — Craft at Adamantine Forge. Immune to crits, -2 damage from all attacks!</td>
             </tr>
             <tr>
                 <td>🧤 Gloves</td>
-                <td>Gloves of Belligerent Skies</td>
+                <td><a href="https://bg3.wiki/wiki/Gloves_of_Belligerent_Skies" target="_blank">Gloves of Belligerent Skies</a></td>
                 <td>Crèche Y'llek (Act 1) — Inquisitor's Chamber. Thunder/Lightning applies 2 turns Reverberation!</td>
             </tr>
             <tr>
                 <td>👢 Boots</td>
-                <td>Watersparkers</td>
+                <td><a href="https://bg3.wiki/wiki/Watersparkers" target="_blank">Watersparkers</a></td>
                 <td>Grymforge (Act 1) — Hidden chest. Standing in water = electrified! Standing in electric = 3 Lightning Charges!</td>
             </tr>
             <tr>
                 <td>🧥 Cloak</td>
-                <td>Vivacious Cloak</td>
+                <td><a href="https://bg3.wiki/wiki/Vivacious_Cloak" target="_blank">Vivacious Cloak</a></td>
                 <td>Crèche Y'llek (Act 1). Gain 8 temp HP when casting a spell while in melee!</td>
             </tr>
             <tr>
                 <td>📿 Amulet</td>
-                <td>Blast Pendant</td>
+                <td><a href="https://bg3.wiki/wiki/Blast_Pendant" target="_blank">Blast Pendant</a></td>
                 <td>Moonrise Towers (Act 2). Lightning Charges strengthen your next Lightning spell!</td>
             </tr>
             <tr>
                 <td>💍 Ring 1</td>
-                <td>Killer's Sweetheart</td>
+                <td><a href="https://bg3.wiki/wiki/Killer%27s_Sweetheart" target="_blank">Killer's Sweetheart</a></td>
                 <td>Gauntlet of Shar (Act 2) — Self-Same Trial. Auto-crit once per long rest — use with Destructive Wrath!</td>
             </tr>
             <tr>
                 <td>💍 Ring 2</td>
-                <td>Ring of Elemental Infusion</td>
+                <td><a href="https://bg3.wiki/wiki/Ring_of_Elemental_Infusion" target="_blank">Ring of Elemental Infusion</a></td>
                 <td>Crèche Y'llek (Act 1) — Infirmary. Your attacks deal extra elemental damage!</td>
             </tr>
             <tr>
                 <td>🗡️ Weapon</td>
-                <td>Devotee's Mace</td>
+                <td><a href="https://bg3.wiki/wiki/Devotee%27s_Mace" target="_blank">Devotee's Mace</a></td>
                 <td>Stormshore Tabernacle (Act 3). +1d8 radiant + healing on crit! Good for Divine Strike.</td>
             </tr>
             <tr>
                 <td>🛡️ Shield</td>
-                <td>Sentinel Shield</td>
+                <td><a href="https://bg3.wiki/wiki/Sentinel_Shield" target="_blank">Sentinel Shield</a></td>
                 <td>Various vendors. +3 Initiative, advantage on Perception!</td>
             </tr>
         </table>
@@ -4806,15 +4870,15 @@ All your lightning damage triggers:
         <table>
             <tr><th>Lvl</th><th>Class</th><th>Features & Choices</th></tr>
             <tr><td>1</td><td>Wizard 1</td><td>Cantrips: Blade Ward, Fire Bolt, Ray of Frost. Spells: Shield, Mage Armor, Magic Missile</td></tr>
-            <tr><td>2</td><td>Wizard 2</td><td>Bladesinger — Bladesong (+Prof AC, +10ft move, advantage Acrobatics)</td></tr>
-            <tr><td>3</td><td>Wizard 3</td><td>SHADOW BLADE — your main weapon! 2d8 psychic damage</td></tr>
-            <tr><td>4</td><td>Wizard 4</td><td>Feat: +2 DEX (17→19)</td></tr>
+            <tr><td>2</td><td>Wizard 2</td><td>Bladesinger — Bladesong (+Prof AC, +10ft move, advantage Acrobatics). Spells: Misty Step, Mirror Image</td></tr>
+            <tr><td>3</td><td>Wizard 3</td><td>SHADOW BLADE — your main weapon! 2d8 psychic damage. Spell: Hold Person</td></tr>
+            <tr><td>4</td><td>Wizard 4</td><td>Feat: +2 DEX (17→19). Cantrip: Shocking Grasp (melee escape)</td></tr>
             <tr><td>5</td><td>Wizard 5</td><td>Spells: Fireball, Haste, Counterspell</td></tr>
-            <tr><td>6</td><td>Wizard 6</td><td>Extra Attack — both attacks can proc Divine Smite!</td></tr>
-            <tr><td>7</td><td>Wizard 7</td><td>Spell: Greater Invisibility</td></tr>
-            <tr><td>8</td><td>Wizard 8</td><td>Feat: +2 DEX (to 21 with items)</td></tr>
-            <tr><td>9</td><td>Wizard 9</td><td>Spell: Hold Monster</td></tr>
-            <tr><td>10</td><td>Wizard 10</td><td>Song of Defense (expend spell slots to reduce damage)</td></tr>
+            <tr><td>6</td><td>Wizard 6</td><td>Extra Attack — both attacks can proc Divine Smite! Spell: Fly</td></tr>
+            <tr><td>7</td><td>Wizard 7</td><td>Spells: Greater Invisibility, Dimension Door</td></tr>
+            <tr><td>8</td><td>Wizard 8</td><td>Feat: +2 INT (for spell DC). Spell: Polymorph</td></tr>
+            <tr><td>9</td><td>Wizard 9</td><td>Spells: Hold Monster, Wall of Force</td></tr>
+            <tr><td>10</td><td>Wizard 10</td><td>Song of Defense (expend spell slots to reduce damage). Spell: Cone of Cold</td></tr>
             <tr><td>11</td><td>Paladin 1</td><td>Crown Paladin — Lay on Hands, Divine Sense</td></tr>
             <tr><td>12</td><td>Paladin 2</td><td>DIVINE SMITE — massive radiant damage per hit! Champion Challenge</td></tr>
         </table>
@@ -4823,11 +4887,16 @@ All your lightning damage triggers:
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
             <tr><td>🗡️ Main Hand</td><td>Shadow Blade (spell)</td><td>Wizard Level 3 spell. 2d8>4d8 psychic + Resonance = DOUBLE damage!</td></tr>
-            <tr><td>🗡️ Off Hand</td><td>Rhapsody</td><td>Murder Tribunal (Act 3) — Sarevok reward. Stacks +1 to +3 per kill!</td></tr>
-            <tr><td>👑 Head</td><td>Diadem of Arcane Synergy</td><td>Lower City (Act 3) — Mystic Carrion quest. +CHA damage when applying conditions!</td></tr>
-            <tr><td>👘 Chest</td><td>Robe of the Weave</td><td>Ramazith's Tower (Act 3) — Same room as Markoheshkir. +2 AC, +1 Spell DC!</td></tr>
-            <tr><td>👢 Boots</td><td>Disintegrating Night Walkers</td><td>Grymforge (Act 1) — Nere's body. Free Misty Step, can't be Enwebbed!</td></tr>
-            <tr><td>🔮 Accessory</td><td>Resonance Stone</td><td>Grymforge (Act 1) — Dhourn's body. Makes enemies VULNERABLE to psychic!</td></tr>
+            <tr><td>🗡️ Off Hand</td><td><a href="https://bg3.wiki/wiki/Rhapsody" target="_blank">Rhapsody</a></td><td>Murder Tribunal (Act 3) — Sarevok reward. Stacks +1 to +3 per kill!</td></tr>
+            <tr><td>👑 Head</td><td><a href="https://bg3.wiki/wiki/Diadem_of_Arcane_Synergy" target="_blank">Diadem of Arcane Synergy</a></td><td>Lower City (Act 3) — Mystic Carrion quest. +CHA damage when applying conditions!</td></tr>
+            <tr><td>👘 Chest</td><td><a href="https://bg3.wiki/wiki/Robe_of_the_Weave" target="_blank">Robe of the Weave</a></td><td>Ramazith's Tower (Act 3) — Same room as Markoheshkir. +2 AC, +1 Spell DC!</td></tr>
+            <tr><td>👢 Boots</td><td><a href="https://bg3.wiki/wiki/Disintegrating_Night_Walkers" target="_blank">Disintegrating Night Walkers</a></td><td>Grymforge (Act 1) — Nere's body. Free Misty Step, can't be Enwebbed!</td></tr>
+            <tr><td>🔮 Accessory</td><td><a href="https://bg3.wiki/wiki/Resonance_Stone" target="_blank">Resonance Stone</a></td><td>Grymforge (Act 1) — Dhourn's body. Makes enemies VULNERABLE to psychic!</td></tr>
+            <tr><td>🧤 Gloves</td><td><a href="https://bg3.wiki/wiki/Gloves_of_Dexterity" target="_blank">Gloves of Dexterity</a></td><td>Crèche Y'llek (Act 1) — A'jak'nir Jeera vendor. Sets DEX to 18, frees up ASI for other feats!</td></tr>
+            <tr><td>🧣 Cloak</td><td><a href="https://bg3.wiki/wiki/Cloak_of_Displacement" target="_blank">Cloak of Displacement</a></td><td>Jaheira's Hideout (Act 2) — Entrusted to Jaheira. Disadvantage on attacks against you until hit!</td></tr>
+            <tr><td>📿 Amulet</td><td><a href="https://bg3.wiki/wiki/Spellcrux_Amulet" target="_blank">Spellcrux Amulet</a></td><td>Sorcerous Sundries (Act 3) — Tolna Tome-Monger. Restore one spell slot per long rest!</td></tr>
+            <tr><td>💍 Ring 1</td><td><a href="https://bg3.wiki/wiki/Killer%27s_Sweetheart" target="_blank">Killer's Sweetheart</a></td><td>Self-Same Trial, Gauntlet of Shar (Act 2) — Auto crit after kill = massive Smites!</td></tr>
+            <tr><td>💍 Ring 2</td><td><a href="https://bg3.wiki/wiki/Shifting_Corpus_Ring" target="_blank">Shifting Corpus Ring</a></td><td>Moonrise Towers (Act 2) — Flaming Fist Marcus drop. Free Invisibility + Blur!</td></tr>
         </table>
 
         <h2>📜 Must-Scribe Spells</h2>
@@ -4912,14 +4981,22 @@ All your lightning damage triggers:
         </table>
         <p><em>Max CHA for Hexblade attacks and Sneak Attack setup. DEX for AC and initiative. CON for survivability.</em></p>
 
-        <h2>📈 Levels 1-4: Rogue (Swashbuckler)</h2>
-        <div class="stats-box">
-<strong>L1-2:</strong> Rogue basics, Cunning Action 🗡️
-<strong>L3:</strong> Swashbuckler:
-- Fancy Footwork: Free disengage after hitting! 💃
-- Rakish Sneak Attack: Sneak Attack without advantage if 1v1!
-<strong>L4:</strong> Dirty Tricks unlocked, +2 CHA feat
-        </div>
+        <h2>📈 Class Progression</h2>
+        <table>
+            <tr><th>Lvl</th><th>Class</th><th>Features & Choices</th></tr>
+            <tr><td>1</td><td>Rogue 1</td><td>Sneak Attack (1d6), Expertise: Stealth + Sleight of Hand</td></tr>
+            <tr><td>2</td><td>Rogue 2</td><td>Cunning Action — Dash, Disengage, Hide as bonus action</td></tr>
+            <tr><td>3</td><td>Rogue 3</td><td>Swashbuckler — Fancy Footwork (free disengage!), Rakish Sneak Attack (1v1 = Sneak Attack!)</td></tr>
+            <tr><td>4</td><td>Rogue 4</td><td>Dirty Tricks unlocked! Feat: +2 CHA (to 19)</td></tr>
+            <tr><td>5</td><td>Warlock 1</td><td>Hexblade — CHA to attack/damage, Hexblade's Curse. Cantrips: Booming Blade, Eldritch Blast. Spells: Hex, Shield</td></tr>
+            <tr><td>6</td><td>Warlock 2</td><td>Invocations: Agonizing Blast, Repelling Blast. Spell: Armor of Agathys</td></tr>
+            <tr><td>7</td><td>Warlock 3</td><td>Pact of the Blade (CHA weapons!). Spells: Darkness, Misty Step</td></tr>
+            <tr><td>8</td><td>Warlock 4</td><td>Feat: +2 CHA (to 21 with Birthright). Cantrip: Minor Illusion</td></tr>
+            <tr><td>9</td><td>Warlock 5</td><td>Extra Attack! Deepened Pact, Invocation: Devil's Sight. Spell: Counterspell</td></tr>
+            <tr><td>10</td><td>Ranger 1</td><td>Favored Enemy: Mage Breaker (Arcana prof). Natural Explorer: Urban Tracker. Spells: Hunter's Mark, Cure Wounds</td></tr>
+            <tr><td>11</td><td>Ranger 2</td><td>Fighting Style: Defense (+1 AC). Spell: Ensnaring Strike</td></tr>
+            <tr><td>12</td><td>Ranger 3</td><td>Swarmkeeper (Moths) — Gathered Swarm: +1d6 psychic, OR blind enemy, OR teleport 4.5m! 🦋</td></tr>
+        </table>
 
         <h3>🎭 Key Dirty Tricks</h3>
         <ul>
@@ -4928,34 +5005,19 @@ All your lightning damage triggers:
             <li><strong>🎭 Vicious Mockery</strong> - Ranged crowd control</li>
         </ul>
 
-        <h2>📈 Levels 5-9: Warlock (Hexblade)</h2>
-        <div class="stats-box">
-<strong>L5:</strong> Hexblade - CHA to attack/damage, Hexblade's Curse 👁️
-Cantrips: Booming Blade + Eldritch Blast
-<strong>L6:</strong> Invocations: Agonizing Blast + Repelling Blast
-<strong>L7:</strong> Pact of the Blade, Misty Step
-<strong>L8:</strong> Feat: Great Weapon Master
-<strong>L9:</strong> Extra Attack! Devil's Sight 👀
-        </div>
-
-        <h2>📈 Levels 10-12: Ranger (Swarmkeeper - Moths)</h2>
-        <div class="stats-box">
-<strong>L10:</strong> Ranger Knight (Heavy Armor!) 🛡️
-<strong>L11:</strong> Fighting Style: Defense
-<strong>L12:</strong> Swarmkeeper (Moths) - Gathered Swarm! 🦋
-- Extra psychic damage on hits
-- Blind enemies
-- Grant free teleports!
-        </div>
-
         <h2>🎒 Best-in-Slot Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
-            <tr><td>⚔️ Weapon</td><td>The Dancing Breeze</td><td>Rivington (Act 3) — Sold by Exxvikyap. Whirlwind Attack for amazing AoE!</td></tr>
-            <tr><td>👑 Helm</td><td>Birthright</td><td>Sorcerous Sundries (Act 3). +2 CHA for higher DCs and damage!</td></tr>
-            <tr><td>🧥 Cloak</td><td>Cloak of Displacement</td><td>Lower City (Act 3) — Sold by Ferg Drogher. Enemies have disadvantage to hit you!</td></tr>
-            <tr><td>🛡️ Armor</td><td>Armour of Persistence</td><td>Forge of the Nine (Act 3) — Dammon (save Tieflings). Resistance + free Blade Ward!</td></tr>
-            <tr><td>🧤 Gloves</td><td>Helldusk Gloves</td><td>House of Hope (Act 3) — Treasure room. +1d6 fire damage, can't be disarmed!</td></tr>
+            <tr><td>⚔️ Weapon</td><td><a href="https://bg3.wiki/wiki/The_Dancing_Breeze" target="_blank">The Dancing Breeze</a></td><td>Rivington (Act 3) — Sold by Exxvikyap. Whirlwind Attack for amazing AoE!</td></tr>
+            <tr><td>👑 Helm</td><td><a href="https://bg3.wiki/wiki/Birthright" target="_blank">Birthright</a></td><td>Sorcerous Sundries (Act 3). +2 CHA for higher DCs and damage!</td></tr>
+            <tr><td>🧥 Cloak</td><td><a href="https://bg3.wiki/wiki/Cloak_of_Displacement" target="_blank">Cloak of Displacement</a></td><td>Lower City (Act 3) — Sold by Ferg Drogher. Enemies have disadvantage to hit you!</td></tr>
+            <tr><td>🛡️ Armor</td><td><a href="https://bg3.wiki/wiki/Armour_of_Persistence" target="_blank">Armour of Persistence</a></td><td>Forge of the Nine (Act 3) — Dammon (save Tieflings). Resistance + free Blade Ward!</td></tr>
+            <tr><td>🧤 Gloves</td><td><a href="https://bg3.wiki/wiki/Helldusk_Gloves" target="_blank">Helldusk Gloves</a></td><td>House of Hope (Act 3) — Treasure room. +1d6 fire damage, can't be disarmed!</td></tr>
+            <tr><td>👢 Boots</td><td><a href="https://bg3.wiki/wiki/Boots_of_Speed" target="_blank">Boots of Speed</a></td><td>Blighted Village (Act 1) — Thulla in Myconid Colony. Click Heels = double movement!</td></tr>
+            <tr><td>📿 Amulet</td><td><a href="https://bg3.wiki/wiki/Amulet_of_Greater_Health" target="_blank">Amulet of Greater Health</a></td><td>House of Hope (Act 3) — Steal from Archive. Sets CON to 23 = massive HP!</td></tr>
+            <tr><td>💍 Ring 1</td><td><a href="https://bg3.wiki/wiki/Killer%27s_Sweetheart" target="_blank">Killer's Sweetheart</a></td><td>Self-Same Trial, Gauntlet of Shar (Act 2) — Auto crit after kills = huge Sneak Attack!</td></tr>
+            <tr><td>💍 Ring 2</td><td><a href="https://bg3.wiki/wiki/Ring_of_Evasion" target="_blank">Ring of Evasion</a></td><td>Sorcerous Sundries (Act 3) — Tolna Tome-Monger. 3 charges/day: auto-pass DEX saves!</td></tr>
+            <tr><td>🗡️ Off-Hand</td><td><a href="https://bg3.wiki/wiki/Knife_of_the_Undermountain_King" target="_blank">Knife of the Undermountain King</a></td><td>Creche Y'llek (Act 1) — A'jak'nir Jeera. Advantage vs obscured, crit on 19!</td></tr>
         </table>
 
         <h2>⚔️ Combat Strategy</h2>
@@ -5038,20 +5100,20 @@ Cantrips: Booming Blade + Eldritch Blast
         <h2>🗡️ Core Weapons</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
-            <tr><td>⚔️ Main Hand</td><td>Charge-Bound Warhammer</td><td>Last Light Inn (Act 2) — Dammon (save Tieflings). +1d6 Lightning, +1 attack when bound!</td></tr>
-            <tr><td>🪄 Off Hand</td><td>Markoheshkir</td><td>Ramazith's Tower (Act 3) — DC 20 Arcana check. Arcane Battery + Kereska's Favour!</td></tr>
-            <tr><td>🏹 Ranged</td><td>The Joltshooter</td><td>Waukeen's Rest (Act 1) — Rescue Counsellor Florrick. +2 Lightning Charges per hit!</td></tr>
+            <tr><td>⚔️ Main Hand</td><td><a href="https://bg3.wiki/wiki/Charge-Bound_Warhammer" target="_blank">Charge-Bound Warhammer</a></td><td>Last Light Inn (Act 2) — Dammon (save Tieflings). +1d6 Lightning, +1 attack when bound!</td></tr>
+            <tr><td>🪄 Off Hand</td><td><a href="https://bg3.wiki/wiki/Markoheshkir" target="_blank">Markoheshkir</a></td><td>Ramazith's Tower (Act 3) — DC 20 Arcana check. Arcane Battery + Kereska's Favour!</td></tr>
+            <tr><td>🏹 Ranged</td><td><a href="https://bg3.wiki/wiki/The_Joltshooter" target="_blank">The Joltshooter</a></td><td>Waukeen's Rest (Act 1) — Rescue Counsellor Florrick. +2 Lightning Charges per hit!</td></tr>
         </table>
 
         <h2>🎒 Best-in-Slot Gear</h2>
         <table>
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
-            <tr><td>👑 Helmet</td><td>Helmet of Arcane Acuity</td><td>Mason's Guild basement (Act 3) — Locked chest. +1 Spell DC per weapon hit (stacks to +7!)</td></tr>
-            <tr><td>🧥 Cloak</td><td>Thunderskin Cloak</td><td>Moonrise Towers (Act 2) — Araj Oblodra vendor. Enemies with Reverberation must save or Daze!</td></tr>
-            <tr><td>🛡️ Armor</td><td>Armour of Persistence</td><td>Forge of the Nine (Act 3) — Dammon (save Tieflings). Resistance + free Blade Ward!</td></tr>
-            <tr><td>🧤 Gloves</td><td>Gloves of Belligerent Skies</td><td>Creche Y'llek (Act 1) — Inquisitor's Chamber elegant chest. Thunder/Lightning applies Reverberation!</td></tr>
-            <tr><td>👢 Boots</td><td>Boots of Stormy Clamour</td><td>Underdark (Act 1) — Omeluum after 'Help Omeluum' quest. Conditions inflict Reverberation!</td></tr>
-            <tr><td>💍 Ring 1</td><td>Ring of Elemental Infusion</td><td>Creche Y'llek (Act 1) — Worn by Gish Um'ra'ac. Booming Blade adds +1d4 thunder!</td></tr>
+            <tr><td>👑 Helmet</td><td><a href="https://bg3.wiki/wiki/Helmet_of_Arcane_Acuity" target="_blank">Helmet of Arcane Acuity</a></td><td>Mason's Guild basement (Act 3) — Locked chest. +1 Spell DC per weapon hit (stacks to +7!)</td></tr>
+            <tr><td>🧥 Cloak</td><td><a href="https://bg3.wiki/wiki/Thunderskin_Cloak" target="_blank">Thunderskin Cloak</a></td><td>Moonrise Towers (Act 2) — Araj Oblodra vendor. Enemies with Reverberation must save or Daze!</td></tr>
+            <tr><td>🛡️ Armor</td><td><a href="https://bg3.wiki/wiki/Armour_of_Persistence" target="_blank">Armour of Persistence</a></td><td>Forge of the Nine (Act 3) — Dammon (save Tieflings). Resistance + free Blade Ward!</td></tr>
+            <tr><td>🧤 Gloves</td><td><a href="https://bg3.wiki/wiki/Gloves_of_Belligerent_Skies" target="_blank">Gloves of Belligerent Skies</a></td><td>Creche Y'llek (Act 1) — Inquisitor's Chamber elegant chest. Thunder/Lightning applies Reverberation!</td></tr>
+            <tr><td>👢 Boots</td><td><a href="https://bg3.wiki/wiki/Boots_of_Stormy_Clamour" target="_blank">Boots of Stormy Clamour</a></td><td>Underdark (Act 1) — Omeluum after 'Help Omeluum' quest. Conditions inflict Reverberation!</td></tr>
+            <tr><td>💍 Ring 1</td><td><a href="https://bg3.wiki/wiki/Ring_of_Elemental_Infusion" target="_blank">Ring of Elemental Infusion</a></td><td>Creche Y'llek (Act 1) — Worn by Gish Um'ra'ac. Booming Blade adds +1d4 thunder!</td></tr>
         </table>
 
         <h2>⚔️ Combat Strategy</h2>
@@ -5152,52 +5214,52 @@ Cantrips: Booming Blade + Eldritch Blast
             <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
             <tr>
                 <td>📿 Amulet</td>
-                <td>Psychic Spark</td>
+                <td><a href="https://bg3.wiki/wiki/Psychic_Spark" target="_blank">Psychic Spark</a></td>
                 <td>Underdark (Act 1) — Blurg (65 gold). Adds +1 dart to Magic Missile! ESSENTIAL!</td>
             </tr>
             <tr>
                 <td>🪄 Weapon</td>
-                <td>The Spellsparkler</td>
+                <td><a href="https://bg3.wiki/wiki/The_Spellsparkler" target="_blank">The Spellsparkler</a></td>
                 <td>Waukeen's Rest (Act 1) — Rescue Counsellor Florrick. Each missile grants Lightning Charges!</td>
             </tr>
             <tr>
                 <td>🪄 Off-Hand</td>
-                <td>Markoheshkir</td>
+                <td><a href="https://bg3.wiki/wiki/Markoheshkir" target="_blank">Markoheshkir</a></td>
                 <td>Ramazith's Tower (Act 3). Kereska's Favour + Arcane Battery for free spell!</td>
             </tr>
             <tr>
                 <td>💍 Ring 1</td>
-                <td>Callous Glow Ring</td>
+                <td><a href="https://bg3.wiki/wiki/Callous_Glow_Ring" target="_blank">Callous Glow Ring</a></td>
                 <td>Gauntlet of Shar vault (Act 2). +2 Radiant damage vs illuminated targets!</td>
             </tr>
             <tr>
                 <td>💍 Ring 2</td>
-                <td>Coruscation Ring</td>
+                <td><a href="https://bg3.wiki/wiki/Coruscation_Ring" target="_blank">Coruscation Ring</a></td>
                 <td>Last Light Inn cellar (Act 2). Each spell hit applies Radiating Orb (-1 attack per stack)!</td>
             </tr>
             <tr>
                 <td>👑 Helm</td>
-                <td>Birthright</td>
+                <td><a href="https://bg3.wiki/wiki/Birthright" target="_blank">Birthright</a></td>
                 <td>Sorcerous Sundries (Act 3). +2 Charisma (sell to reroll for +2 INT hat)</td>
             </tr>
             <tr>
                 <td>🧤 Gloves</td>
-                <td>Quickspell Gloves</td>
+                <td><a href="https://bg3.wiki/wiki/Quickspell_Gloves" target="_blank">Quickspell Gloves</a></td>
                 <td>Lorroakan's tower (Act 3). Cast cantrip as bonus action 1/turn.</td>
             </tr>
             <tr>
                 <td>👘 Robe</td>
-                <td>Robe of the Weave</td>
+                <td><a href="https://bg3.wiki/wiki/Robe_of_the_Weave" target="_blank">Robe of the Weave</a></td>
                 <td>Ramazith's Tower (Act 3). +1 Spell DC, +1 spell attack rolls, +2 AC.</td>
             </tr>
             <tr>
                 <td>👢 Boots</td>
-                <td>Boots of Stormy Clamour</td>
+                <td><a href="https://bg3.wiki/wiki/Boots_of_Stormy_Clamour" target="_blank">Boots of Stormy Clamour</a></td>
                 <td>Underdark (Act 1) — Omeluum. Apply Reverberation when inflicting conditions!</td>
             </tr>
             <tr>
                 <td>🧥 Cloak</td>
-                <td>Cloak of the Weave</td>
+                <td><a href="https://bg3.wiki/wiki/Cloak_of_the_Weave" target="_blank">Cloak of the Weave</a></td>
                 <td>Mystic Carrion (Act 3). +1 Spell DC, +1 spell attack rolls.</td>
             </tr>
         </table>
@@ -5306,6 +5368,89 @@ Cantrips: Booming Blade + Eldritch Blast
 </div>
 
     <script>
+        // Generate wiki URL for an item
+        function getWikiUrl(itemName) {
+            return `https://bg3.wiki/wiki/${itemName.replace(/ /g, '_').replace(/'/g, '%27')}`;
+        }
+
+        // Alternative items for common conflicts
+        const itemAlternatives = {
+            // Rings
+            "Killer's Sweetheart": ["Risky Ring", "Shadow-Cloaked Ring", "Ring of Protection", "Caustic Band", "Band of the Mystic Scoundrel"],
+            "Callous Glow Ring": ["Coruscation Ring", "Ring of Arcane Synergy", "Ring of Elemental Infusion"],
+            "Coruscation Ring": ["Callous Glow Ring", "Ring of Arcane Synergy", "Ring of Elemental Infusion"],
+            "Ring of Elemental Infusion": ["Coruscation Ring", "Callous Glow Ring", "Ring of Arcane Synergy"],
+            "Risky Ring": ["Killer's Sweetheart", "Ring of Protection", "Shadow-Cloaked Ring"],
+            "Band of the Mystic Scoundrel": ["Shadow-Cloaked Ring", "Risky Ring", "Ring of Protection"],
+
+            // Amulets
+            "Amulet of Greater Health": ["Amulet of the Devout", "Spell Savant Amulet", "Unflinching Protector Amulet", "Surgeon's Subjugation Amulet"],
+            "Amulet of the Devout": ["Amulet of Greater Health", "Spell Savant Amulet"],
+
+            // Gloves
+            "Helldusk Gloves": ["Legacy of the Masters", "Gloves of Dexterity", "Craterflesh Gloves", "Quickspell Gloves"],
+            "Gloves of Soul Catching": ["Gloves of Crushing", "Craterflesh Gloves", "Gloves of Belligerent Skies"],
+            "Gloves of Belligerent Skies": ["Quickspell Gloves", "Gloves of Dexterity", "Luminous Gloves"],
+            "Quickspell Gloves": ["Gloves of Dexterity", "Helldusk Gloves", "Gloves of Belligerent Skies"],
+            "Gloves of Dexterity": ["Helldusk Gloves", "Legacy of the Masters", "Quickspell Gloves"],
+            "Luminous Gloves": ["Gloves of Belligerent Skies", "Quickspell Gloves", "Hellrider's Pride"],
+
+            // Boots
+            "Boots of Stormy Clamour": ["Boots of Striding", "Evasive Shoes", "Disintegrating Night Walkers"],
+            "Disintegrating Night Walkers": ["Evasive Shoes", "Boots of Stormy Clamour", "Boots of Speed"],
+            "Boots of the Giants": ["Boots of Striding", "Disintegrating Night Walkers"],
+            "Boots of Uninhibited Kushigo": ["Evasive Shoes", "Boots of Speed"],
+            "Evasive Shoes": ["Disintegrating Night Walkers", "Boots of Stormy Clamour", "Boots of Speed"],
+
+            // Cloaks
+            "Cloak of Displacement": ["Cloak of Protection", "Vivacious Cloak", "Shade-Slayer Cloak"],
+            "Cloak of Protection": ["Cloak of Displacement", "Vivacious Cloak", "Cloak of the Weave"],
+            "Cloak of the Weave": ["Cloak of Protection", "Vivacious Cloak", "Mantle of the Holy Warrior"],
+            "Deathstalker Mantle": ["Shade-Slayer Cloak", "Cloak of Protection", "Cloak of Displacement"],
+
+            // Headgear
+            "Helmet of Arcane Acuity": ["Diadem of Arcane Synergy", "Hat of Fire Acuity", "Birthright"],
+            "Birthright": ["Diadem of Arcane Synergy", "Helmet of Arcane Acuity", "Warped Headband of Intellect"],
+            "Bonespike Helmet": ["Haste Helm", "Helm of Balduran", "Wapira's Crown"],
+            "Helm of Balduran": ["Bonespike Helmet", "Haste Helm", "Wapira's Crown"],
+            "Diadem of Arcane Synergy": ["Helmet of Arcane Acuity", "Birthright", "Hat of Fire Acuity"],
+            "Mask of Soul Perception": ["Covert Cowl", "Steel Watcher Helmet", "Shadow of Menzoberranzan"],
+
+            // Armor
+            "Bhaalist Armour": ["Armor of Agility", "Adamantine Scale Mail", "Studded Leather Armor +2"],
+            "Armor of Agility": ["Bhaalist Armour", "Armour of Persistence", "Adamantine Scale Mail"],
+            "Helldusk Armor": ["Adamantine Splint Armor", "Armour of Persistence", "Reaper's Embrace"],
+            "Helldusk Armour": ["Adamantine Splint Armor", "Armour of Persistence", "Reaper's Embrace"],
+            "Potent Robe": ["Robe of the Weave", "Armor of Agility", "Vest of Soul Rejuvenation"],
+            "Robe of the Weave": ["Potent Robe", "Vest of Soul Rejuvenation"],
+            "Luminous Armour": ["Adamantine Splint Armor", "Armor of Agility", "Armour of Persistence"],
+            "Vest of Soul Rejuvenation": ["Potent Robe", "Robe of the Weave", "Armor of Agility"],
+            "Armour of Persistence": ["Armor of Agility", "Adamantine Scale Mail", "Helldusk Armor"],
+
+            // Shields
+            "Viconia's Walking Fortress": ["Sentinel Shield", "Shield of Devotion", "Abdel's Trusted Shield"],
+
+            // Weapons - Staves
+            "Markoheshkir": ["Staff of Spell Power", "Staff of Arcane Blessing", "Pale Oak"],
+            "Staff of Spell Power": ["Markoheshkir", "Staff of Arcane Blessing", "Mourning Frost"],
+            "Mourning Frost": ["Staff of Spell Power", "Markoheshkir"],
+
+            // Weapons - Bows
+            "Titanstring Bow": ["Gontr Mael", "Hellrider Longbow", "Darkfire Shortbow"],
+            "Gontr Mael": ["Titanstring Bow", "Hellrider Longbow", "Darkfire Shortbow"],
+
+            // Weapons - Melee
+            "Balduran's Giantslayer": ["Sword of Chaos", "Silver Sword of the Astral Plane"],
+            "Crimson Mischief": ["Bloodthirst", "Ambusher", "Knife of the Undermountain King"],
+            "Bloodthirst": ["Crimson Mischief", "Ambusher"],
+            "Knife of the Undermountain King": ["Crimson Mischief", "Shortsword of First Blood", "Ambusher"],
+            "Rhapsody": ["Bloodthirst", "Dolor Amarus"],
+            "Phalar Aluve": ["Sword of Life Stealing", "Larethian's Wrath"],
+
+            // Misc
+            "Resonance Stone": ["Risky Ring", "Ring of Protection"]
+        };
+
         // Build gear data - items that could conflict
         const buildGear = {
             'giant-barbarian': {
@@ -5334,11 +5479,11 @@ Cantrips: Booming Blade + Eldritch Blast
             },
             'gloom-weaver': {
                 name: 'Gloom Weaver', icon: '🌑', role: 'Hybrid Striker',
-                items: ['Sorrow', 'Covert Cowl', 'Shade-Slayer Cloak', 'Corvid Token']
+                items: ['Sorrow', 'Covert Cowl', 'Shade-Slayer Cloak', 'Corvid Token', 'Armor of Persistence', 'Helldusk Gloves', 'Disintegrating Night Walkers', "Killer's Sweetheart", 'Caustic Band']
             },
             'land-warden': {
                 name: 'Land Warden', icon: '🌍', role: 'Support Caster',
-                items: ['Markoheshkir', "Viconia's Walking Fortress", 'Armor of Agility', 'Coruscation Ring', 'Callous Glow Ring']
+                items: ['Markoheshkir', "Viconia's Walking Fortress", 'Armor of Agility', 'Holy Lance Helm', 'Luminous Gloves', 'Boots of Stormy Clamour', 'Cloak of the Weave', 'Amulet of Greater Health', 'Coruscation Ring', 'Callous Glow Ring']
             },
             'poison-sporekeeper': {
                 name: 'Poison Sporekeeper', icon: '☠️', role: 'DOT Caster',
@@ -5374,11 +5519,11 @@ Cantrips: Booming Blade + Eldritch Blast
             },
             'god-blade': {
                 name: 'God Blade', icon: '✨', role: 'Nova Striker',
-                items: ['Shadow Blade', 'Rhapsody', 'Diadem of Arcane Synergy', 'Robe of the Weave', 'Disintegrating Night Walkers', 'Resonance Stone']
+                items: ['Shadow Blade', 'Rhapsody', 'Diadem of Arcane Synergy', 'Robe of the Weave', 'Disintegrating Night Walkers', 'Resonance Stone', 'Gloves of Dexterity', 'Cloak of Displacement', 'Spellcrux Amulet', "Killer's Sweetheart", 'Shifting Corpus Ring']
             },
             'hexwing-phantom': {
                 name: 'Hexwing Phantom', icon: '🦋', role: 'Duelist',
-                items: ['The Dancing Breeze', 'Birthright', 'Cloak of Displacement', 'Armour of Persistence', 'Helldusk Gloves']
+                items: ['The Dancing Breeze', 'Birthright', 'Cloak of Displacement', 'Armour of Persistence', 'Helldusk Gloves', 'Boots of Speed', 'Amulet of Greater Health', "Killer's Sweetheart", 'Ring of Evasion', 'Knife of the Undermountain King']
             },
             'lightning-ek': {
                 name: 'Lightning EK', icon: '⚡', role: 'Gish Fighter',
@@ -5483,56 +5628,36 @@ Cantrips: Booming Blade + Eldritch Blast
             const slots = document.querySelectorAll('.slot-select');
             const selectedBuilds = [];
 
+            const baseUrl = window.location.origin + window.location.pathname;
+
             slots.forEach((select, index) => {
                 const slotNum = index + 1;
                 const buildId = select.value;
                 const slotEl = document.getElementById(`slot-${slotNum}`);
                 const iconEl = document.getElementById(`icon-${slotNum}`);
                 const roleEl = document.getElementById(`role-${slotNum}`);
+                const linkEl = document.getElementById(`link-${slotNum}`);
 
                 if (buildId && buildGear[buildId]) {
                     const build = buildGear[buildId];
                     slotEl.classList.add('has-build');
                     iconEl.textContent = build.icon;
                     roleEl.textContent = build.role;
+                    linkEl.href = `${baseUrl}#${buildId}`;
                     selectedBuilds.push({ id: buildId, name: build.name, items: build.items });
                 } else {
                     slotEl.classList.remove('has-build');
                     iconEl.textContent = '👤';
                     roleEl.textContent = 'Empty Slot';
+                    linkEl.href = '#';
                 }
             });
 
             checkConflicts(selectedBuilds);
-
-            // Update "Open All Builds" button state
-            const openBtn = document.getElementById('open-builds-btn');
-            const slots2 = document.querySelectorAll('.slot-select');
-            let buildCount = 0;
-            slots2.forEach(select => {
-                if (select.value) buildCount++;
-            });
-
-            if (buildCount > 0) {
-                openBtn.removeAttribute('disabled');
-                openBtn.textContent = `📖 Open ${buildCount} Build${buildCount > 1 ? 's' : ''} in New Tabs`;
-            } else {
-                openBtn.setAttribute('disabled', 'disabled');
-                openBtn.textContent = '📖 Open All Builds in New Tabs';
-            }
         }
 
-        // Open all selected builds in new tabs
-        function openSelectedBuilds() {
-            const slots = document.querySelectorAll('.slot-select');
-            const baseUrl = window.location.origin + window.location.pathname;
-
-            slots.forEach(select => {
-                if (select.value) {
-                    window.open(`${baseUrl}#${select.value}`, '_blank');
-                }
-            });
-        }
+        // Run updateParty on page load to sync state with any browser-restored selections
+        updateParty();
 
         // Check for item conflicts between builds
         function checkConflicts(builds) {
@@ -5540,9 +5665,11 @@ Cantrips: Booming Blade + Eldritch Blast
             const titleEl = document.getElementById('conflicts-title');
             const itemUsage = {};
 
-            // Count item usage across builds
+            // Collect all items used by all builds
+            const allUsedItems = new Set();
             builds.forEach(build => {
                 build.items.forEach(item => {
+                    allUsedItems.add(item);
                     if (!itemUsage[item]) itemUsage[item] = [];
                     itemUsage[item].push(build.name);
                 });
@@ -5568,12 +5695,23 @@ Cantrips: Booming Blade + Eldritch Blast
             } else {
                 titleEl.className = 'conflicts-title';
                 titleEl.textContent = `⚠️ ${conflicts.length} Gear Conflict${conflicts.length > 1 ? 's' : ''} Found`;
-                conflictsEl.innerHTML = conflicts.map(c => `
+                conflictsEl.innerHTML = conflicts.map(c => {
+                    const alts = itemAlternatives[c.item];
+                    // Filter out alternatives that are already used by other builds
+                    const availableAlts = alts ? alts.filter(alt => !allUsedItems.has(alt)) : [];
+                    const altHtml = availableAlts.length > 0
+                        ? `<div class="alternatives">
+                            <div class="alternatives-label">Try instead:</div>
+                            <div class="alt-items">${availableAlts.map(alt => `<a href="${getWikiUrl(alt)}" target="_blank" class="alt-item">${alt}</a>`).join('')}</div>
+                           </div>`
+                        : '';
+                    return `
                     <div class="conflict-item">
-                        <strong>${c.item}</strong>
+                        <strong><a href="${getWikiUrl(c.item)}" target="_blank" class="item-link">${c.item}</a></strong>
                         <div class="builds">Used by: ${c.builds.join(', ')}</div>
-                    </div>
-                `).join('');
+                        ${altHtml}
+                    </div>`;
+                }).join('');
             }
         }
 
