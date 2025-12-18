@@ -29,8 +29,10 @@
             padding: 6px 12px;
             border-radius: 4px;
             transition: background 0.15s;
+            text-decoration: none;
         }
-        .logo:hover { background: rgba(255,255,255,0.1); }
+        .logo:hover { background: rgba(255,255,255,0.1); color: #fff; }
+        .logo:visited { color: #fff; }
         .logo span { color: #888; font-weight: 400; }
         nav {
             display: flex;
@@ -572,11 +574,14 @@
             font-weight: 600;
             transition: all 0.15s;
             margin-left: 10px;
+            text-decoration: none;
         }
         .honor-guide-btn:hover {
             background: linear-gradient(135deg, #a52a2a 0%, #cd5c5c 100%);
             box-shadow: 0 0 10px rgba(255,215,0,0.4);
+            color: #ffd700;
         }
+        .honor-guide-btn:visited { color: #ffd700; }
 
         /* PARTY MANAGER PAGE */
         .party-manager { display: none; background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%); min-height: calc(100vh - 60px); color: #e0e0e0; }
@@ -639,8 +644,8 @@
 </head>
 <body>
     <header>
-        <div class="logo" id="home-btn">⚔️ BG3 <span>Party Manager</span></div>
-        <button class="honor-guide-btn" onclick="showBuild('honor-mode-guide')">☠️ Honor Mode Guide</button>
+        <a href="#party-manager" class="logo" id="home-btn">⚔️ BG3 <span>Party Manager</span></a>
+        <a href="#honor-mode-guide" class="honor-guide-btn">☠️ Honor Mode Guide</a>
         <nav>
             <!-- Barbarian -->
             <div class="dropdown">
@@ -6228,12 +6233,20 @@ All your lightning damage triggers:
         };
 
         // Home button - return to party manager
-        document.getElementById('home-btn').addEventListener('click', () => {
+        document.getElementById('home-btn').addEventListener('click', (e) => {
+            e.preventDefault();
             document.querySelectorAll('.dropdown-item').forEach(i => i.classList.remove('active'));
             document.querySelectorAll('.dropdown-btn').forEach(b => b.classList.remove('has-active'));
             document.querySelectorAll('.build').forEach(b => b.classList.remove('active'));
             document.getElementById('party-manager').classList.add('active');
-            history.pushState(null, '', window.location.pathname);
+            history.pushState(null, '', '#party-manager');
+        });
+
+        // Honor Mode Guide button
+        document.querySelector('.honor-guide-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            showBuild('honor-mode-guide');
+            history.pushState(null, '', '#honor-mode-guide');
         });
 
         // Function to show a specific build
@@ -6269,15 +6282,17 @@ All your lightning damage triggers:
         // Handle direct URL navigation (e.g., opening in new tab)
         function handleHashChange() {
             const hash = window.location.hash.slice(1);
-            if (hash && showBuild(hash)) {
-                return;
-            }
-            // If no valid hash, show party manager
-            if (!hash) {
+            // Show party manager if hash is party-manager or empty
+            if (!hash || hash === 'party-manager') {
                 document.querySelectorAll('.dropdown-item').forEach(i => i.classList.remove('active'));
                 document.querySelectorAll('.dropdown-btn').forEach(b => b.classList.remove('has-active'));
                 document.querySelectorAll('.build').forEach(b => b.classList.remove('active'));
                 document.getElementById('party-manager').classList.add('active');
+                return;
+            }
+            // Try to show the build
+            if (hash && showBuild(hash)) {
+                return;
             }
         }
 
