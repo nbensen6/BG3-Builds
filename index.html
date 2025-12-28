@@ -211,6 +211,19 @@
         #ice-sorcerer .stats-box { background: linear-gradient(135deg, #e0f7fa 0%, #e1f5fe 100%); border: 1px solid #4fc3f7; }
         #ice-sorcerer .footer { color: #0277bd; border-top: 1px solid #4fc3f7; }
 
+        /* FIRE SORCERER - Blazing Red/Orange */
+        #fire-sorcerer { background: linear-gradient(180deg, #fff3e0 0%, #ffe0b2 50%, #ffffff 100%); color: #bf360c; }
+        #fire-sorcerer h1 { color: #d84315; text-shadow: 2px 2px 4px rgba(216,67,21,0.3); }
+        #fire-sorcerer .subtitle { color: #e64a19; }
+        #fire-sorcerer h2 { color: #d84315; border-bottom: 2px solid #ff7043; }
+        #fire-sorcerer h3 { color: #e64a19; }
+        #fire-sorcerer th { background: linear-gradient(135deg, #d84315 0%, #e64a19 100%); }
+        #fire-sorcerer td { border-bottom: 1px solid #ffccbc; }
+        #fire-sorcerer tr:nth-child(even) { background: #fff3e0; }
+        #fire-sorcerer .callout { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-left: 4px solid #d84315; }
+        #fire-sorcerer .stats-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border: 1px solid #ff7043; }
+        #fire-sorcerer .footer { color: #d84315; border-top: 1px solid #ff7043; }
+
         /* STEALTH ARCHER - Dark Grey */
         #stealth-archer { background: linear-gradient(180deg, #eceff1 0%, #ffffff 100%); color: #263238; }
         #stealth-archer h1 { color: #37474f; text-shadow: 2px 2px 4px rgba(55,71,79,0.2); }
@@ -734,6 +747,7 @@
                 <button class="dropdown-btn">✨ Sorcerer</button>
                 <div class="dropdown-content">
                     <a href="#ice-sorcerer" class="dropdown-item" data-tab="ice-sorcerer">❄️ Ice Sorcerer</a>
+                    <a href="#fire-sorcerer" class="dropdown-item" data-tab="fire-sorcerer">🔥 Fire Sorcerer</a>
                     <a href="#sorlock" class="dropdown-item" data-tab="sorlock">🔥 Sorlock</a>
                 </div>
             </div>
@@ -808,6 +822,7 @@
                     </optgroup>
                     <optgroup label="Sorcerer">
                         <option value="ice-sorcerer">❄️ Ice Sorcerer</option>
+                        <option value="fire-sorcerer">🔥 Fire Sorcerer</option>
                         <option value="sorlock">🔥 Sorlock</option>
                     </optgroup>
                     <optgroup label="Warlock">
@@ -867,6 +882,7 @@
                     </optgroup>
                     <optgroup label="Sorcerer">
                         <option value="ice-sorcerer">❄️ Ice Sorcerer</option>
+                        <option value="fire-sorcerer">🔥 Fire Sorcerer</option>
                         <option value="sorlock">🔥 Sorlock</option>
                     </optgroup>
                     <optgroup label="Warlock">
@@ -926,6 +942,7 @@
                     </optgroup>
                     <optgroup label="Sorcerer">
                         <option value="ice-sorcerer">❄️ Ice Sorcerer</option>
+                        <option value="fire-sorcerer">🔥 Fire Sorcerer</option>
                         <option value="sorlock">🔥 Sorlock</option>
                     </optgroup>
                     <optgroup label="Warlock">
@@ -985,6 +1002,7 @@
                     </optgroup>
                     <optgroup label="Sorcerer">
                         <option value="ice-sorcerer">❄️ Ice Sorcerer</option>
+                        <option value="fire-sorcerer">🔥 Fire Sorcerer</option>
                         <option value="sorlock">🔥 Sorlock</option>
                     </optgroup>
                     <optgroup label="Warlock">
@@ -1313,6 +1331,285 @@
         </table>
 
         <div class="footer"><em>❄️ "Watch enemies explode on ice." ❄️</em></div>
+    </div>
+</div>
+
+<!-- FIRE SORCERER -->
+<div class="build" id="fire-sorcerer">
+    <div class="build-content">
+        <h1>🔥 THE FIRE SORCERER 🔥</h1>
+        <div class="subtitle">🐉 Draconic Bloodline Sorcerer (Red Dragon) - Baldur's Gate 3 (Patch 8) 🔥</div>
+
+        <h2>🔥 Build Overview</h2>
+        <p>The highest single-target damage build in the game! By stacking Charisma (up to 24) and applying it to EVERY Scorching Ray beam via Elemental Affinity, this build reaches average damage in the mid-300s while naked, and theoretical maximum damage in the thousands with proper gear and buffs. Each Scorching Ray at level 6 slot fires 7 beams, each adding your full CHA modifier!</p>
+
+        <p><strong>Class:</strong> 12 Draconic Sorcerer (Pure) OR 11 Sorcerer / 1 Fiend Warlock</p>
+
+        <div class="callout">
+            <span class="emoji">🔥</span> <strong>CORE MECHANIC:</strong> Elemental Affinity (Sorcerer 6) adds your CHA modifier to EVERY instance of fire damage. Scorching Ray with a level 6 slot = 7 beams × (2d6 + 7 CHA) = 7 × 14 = 98 average damage per cast. Quicken it for 196 damage. Add Haste for a third cast. That's nearly 300 damage in ONE TURN!
+        </div>
+
+        <h2>📊 Race & Stats</h2>
+        <table>
+            <tr><th>Category</th><th>Choice</th><th>Reason</th></tr>
+            <tr><td>🧝 Race</td><td>Lightfoot Halfling</td><td>Reroll natural 1s — critical for concentration saves! Makes Haste nearly impossible to drop.</td></tr>
+            <tr><td>🧝 Alt Race</td><td>Githyanki</td><td>Medium armor proficiency + Misty Step. Great survivability.</td></tr>
+            <tr><td>🧝 Alt Race</td><td>Asmodeus Tiefling</td><td>Hellish Rebuke as reaction = extra fire damage. Thematic!</td></tr>
+            <tr><td>🐉 Ancestry</td><td>Red Dragon</td><td>Free Burning Hands. Any fire ancestry works (Red/Gold/Brass).</td></tr>
+            <tr><td>📖 Background</td><td>Urchin or Guild Artisan</td><td>Avoid Deception/Performance (Actor feat gives these). Take Sleight of Hand or Insight.</td></tr>
+        </table>
+        <table>
+            <tr><th>STR</th><th>DEX</th><th>CON</th><th>INT</th><th>WIS</th><th>CHA</th></tr>
+            <tr><td>8</td><td>14</td><td>16</td><td>8</td><td>10</td><td>17</td></tr>
+        </table>
+        <p><em>17 CHA for Actor feat at L4. 16 CON for concentration saves. 14 DEX for AC. Get +1 CHA from Hag Hair and +2 from Mirror of Loss to reach 24 CHA!</em></p>
+
+        <h2>📈 Class Progression</h2>
+        <table>
+            <tr><th>Lvl</th><th>Class</th><th>Features & Choices</th></tr>
+            <tr><td>1</td><td>Sorcerer 1</td><td>Draconic Bloodline (Red). Cantrips: Fire Bolt, Friends, Minor Illusion, Mage Hand. Spells: Chromatic Orb, Shield</td></tr>
+            <tr><td>2</td><td>Sorcerer 2</td><td>Metamagic: Twinned Spell, Distant Spell. Spell: Magic Missile</td></tr>
+            <tr><td>3</td><td>Sorcerer 3</td><td>Metamagic: Quicken Spell. Spell: Cloud of Daggers (early damage)</td></tr>
+            <tr><td>4</td><td>Sorcerer 4</td><td>Feat: Actor (+1 CHA to 18, expertise Deception/Performance). Spell: Misty Step</td></tr>
+            <tr><td>5</td><td>Sorcerer 5</td><td>Spells: Counterspell, Haste. Replace Magic Missile.</td></tr>
+            <tr><td>6</td><td>Sorcerer 6</td><td>ELEMENTAL AFFINITY — +CHA to ALL fire damage! Spells: Fireball, Scorching Ray (replace Cloud of Daggers)</td></tr>
+            <tr><td>7</td><td>Sorcerer 7</td><td>Spell: Wall of Fire. Replace Chromatic Orb → Hypnotic Pattern</td></tr>
+            <tr><td>8</td><td>Sorcerer 8</td><td>Feat: +2 CHA (20). Spell: Hold Person</td></tr>
+            <tr><td>9</td><td>Sorcerer 9</td><td>Spell: Hold Monster (or 1 Warlock for Hex)</td></tr>
+            <tr><td>10</td><td>Sorcerer 10</td><td>Metamagic: Heightened Spell. Spell: Sleet Storm. Cantrip: Ray of Frost</td></tr>
+            <tr><td>11</td><td>Sorcerer 11</td><td>DRACONIC FLIGHT — fly at will! Spell: Globe of Invulnerability</td></tr>
+            <tr><td>12</td><td>Sorcerer 12</td><td>Feat: Alert or Spell Sniper. Spell: Fear/Greater Invisibility</td></tr>
+        </table>
+
+        <h2>✨ Key Class Features</h2>
+        <table>
+            <tr><th>Feature</th><th>Source</th><th>Effect</th></tr>
+            <tr><td>🐉 Draconic Resilience</td><td>Sorcerer 1</td><td>13 AC without armor + 1 extra HP per level. Tankier than other sorcerers!</td></tr>
+            <tr><td>🔥 Elemental Affinity</td><td>Sorcerer 6</td><td>Add CHA (+7 at max) to EVERY fire damage instance! Each Scorching Ray beam!</td></tr>
+            <tr><td>🔥 Fire Resistance</td><td>Sorcerer 6</td><td>Spend 1 sorcery point when casting fire spell = fire resistance. Great vs fire enemies!</td></tr>
+            <tr><td>🕊️ Draconic Flight</td><td>Sorcerer 11</td><td>Fly at will using movement speed. Perfect positioning every turn!</td></tr>
+            <tr><td>⚡ Quicken Spell</td><td>Sorcerer 3</td><td>Cast spell as bonus action. Double your Scorching Ray output!</td></tr>
+            <tr><td>🎯 Heightened Spell</td><td>Sorcerer 10</td><td>Target has disadvantage on saves. Guarantees Hold Person/Monster lands!</td></tr>
+        </table>
+
+        <h2>🎒 Recommended Gear by Act</h2>
+
+        <h3>📦 Act 1 Items</h3>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
+            <tr>
+                <td>🪄 Staff</td>
+                <td><a href="https://bg3.wiki/wiki/Nature%27s_Snare" target="_blank">Nature's Snare</a></td>
+                <td>Underground Passage — Trapped heavy chest. Chance to Ensnare enemies on hit! Great early control.</td>
+            </tr>
+            <tr>
+                <td>🪄 Alt Staff</td>
+                <td><a href="https://bg3.wiki/wiki/The_Spellsparkler" target="_blank">The Spellsparkler</a></td>
+                <td>Waukeen's Rest — Rescue Counsellor Florrick. Lightning Charges on spell damage!</td>
+            </tr>
+            <tr>
+                <td>👢 Boots</td>
+                <td><a href="https://bg3.wiki/wiki/Cinder_Shoes" target="_blank">Cinder Shoes</a></td>
+                <td>Ebonlake Grotto — Blurg (70g). Gain Heat when you Burn enemies! Thematic synergy.</td>
+            </tr>
+            <tr>
+                <td>👢 Alt Boots</td>
+                <td><a href="https://bg3.wiki/wiki/Boots_of_Stormy_Clamour" target="_blank">Boots of Stormy Clamour</a></td>
+                <td>Ebonlake Grotto — Omeluum (after parasite quest). Apply Reverberation on conditions!</td>
+            </tr>
+            <tr>
+                <td>👘 Robe</td>
+                <td><a href="https://bg3.wiki/wiki/The_Protecty_Sparkswall" target="_blank">The Protecty Sparkswall</a></td>
+                <td>Grymforge — Gilded chest at trapped bridge. +1 Spell DC, synergizes with Lightning Charges!</td>
+            </tr>
+        </table>
+
+        <h3>📦 Act 2 Items</h3>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
+            <tr>
+                <td>👑 Helmet</td>
+                <td><a href="https://bg3.wiki/wiki/Hat_of_Fire_Acuity" target="_blank">Hat of Fire Acuity</a></td>
+                <td>Last Light Inn — Strange Ox (DON'T KILL IT!). Fire damage = Arcane Acuity (+1 Spell DC each, max +10!) ESSENTIAL!</td>
+            </tr>
+            <tr>
+                <td>🪄 Staff</td>
+                <td><a href="https://bg3.wiki/wiki/Incandescent_Staff" target="_blank">Incandescent Staff</a></td>
+                <td>Last Light Inn — Quartermaster Talli (770g). +1 ranged spell attack, Fire Resistance, free Fireball 1/day!</td>
+            </tr>
+            <tr>
+                <td>👘 Robe</td>
+                <td><a href="https://bg3.wiki/wiki/Potent_Robe" target="_blank">Potent Robe</a></td>
+                <td>Last Light Inn — Alfira (Rescue Tieflings quest). Add CHA to cantrip damage! Fire Bolt becomes deadly!</td>
+            </tr>
+            <tr>
+                <td>💍 Ring 1</td>
+                <td><a href="https://bg3.wiki/wiki/Callous_Glow_Ring" target="_blank">Callous Glow Ring</a></td>
+                <td>Gauntlet of Shar vault — Opulent chest. +2 Radiant per hit vs illuminated! Triggers Radiating Orb with gloves!</td>
+            </tr>
+            <tr>
+                <td>🧤 Gloves</td>
+                <td><a href="https://bg3.wiki/wiki/Luminous_Gloves" target="_blank">Luminous Gloves</a></td>
+                <td>Ruined Battlefield — Potter's chest. Radiant damage applies Radiating Orb! Combo with Callous Glow Ring!</td>
+            </tr>
+            <tr>
+                <td>💍 Ring 2</td>
+                <td><a href="https://bg3.wiki/wiki/Ring_of_Free_Action" target="_blank">Ring of Free Action</a></td>
+                <td>Moonrise Towers — Araj Oblodra. Immune to Paralyzed/Restrained. Ignore difficult terrain!</td>
+            </tr>
+            <tr>
+                <td>💍 Alt Ring</td>
+                <td><a href="https://bg3.wiki/wiki/Killer%27s_Sweetheart" target="_blank">Killer's Sweetheart</a></td>
+                <td>Gauntlet of Shar — Self-Same Trial. Auto-crit once per long rest!</td>
+            </tr>
+        </table>
+
+        <h3>📦 Act 3 Items (Endgame)</h3>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
+            <tr>
+                <td>🪄 Staff</td>
+                <td><a href="https://bg3.wiki/wiki/Markoheshkir" target="_blank">Markoheshkir</a></td>
+                <td>Ramazith's Tower — Globe of Invulnerability. Choose "Kereska's Favour" (fire)! +Proficiency (+4) to fire damage per hit! BEST IN SLOT!</td>
+            </tr>
+            <tr>
+                <td>👑 Helmet</td>
+                <td><a href="https://bg3.wiki/wiki/Birthright" target="_blank">Birthright</a></td>
+                <td>Sorcerous Sundries. +2 CHA = more fire damage and higher DC!</td>
+            </tr>
+            <tr>
+                <td>👑 Alt Helm</td>
+                <td><a href="https://bg3.wiki/wiki/Pyroquickness_Hat" target="_blank">Pyroquickness Hat</a></td>
+                <td>Sorcerous Vault — Invisible chest (need See Invisibility). Fire spell = bonus action! DANGEROUS: Burns you!</td>
+            </tr>
+            <tr>
+                <td>🧤 Gloves</td>
+                <td><a href="https://bg3.wiki/wiki/Quickspell_Gloves" target="_blank">Quickspell Gloves</a></td>
+                <td>Sorcerous Sundries — Lorroakan/Rolan. Cantrip as bonus action 1/short rest!</td>
+            </tr>
+            <tr>
+                <td>🧥 Cloak</td>
+                <td><a href="https://bg3.wiki/wiki/Cloak_of_the_Weave" target="_blank">Cloak of the Weave</a></td>
+                <td>Mystic Carrion — Philgrave's Mansion. +1 Spell DC, +1 spell attack rolls!</td>
+            </tr>
+            <tr>
+                <td>📿 Amulet</td>
+                <td><a href="https://bg3.wiki/wiki/Amulet_of_Greater_Health" target="_blank">Amulet of Greater Health</a></td>
+                <td>House of Hope — Archive room. CON 23 + advantage on CON saves! Never drop concentration!</td>
+            </tr>
+            <tr>
+                <td>🧤 Alt Gloves</td>
+                <td><a href="https://bg3.wiki/wiki/Gloves_of_Dexterity" target="_blank">Gloves of Dexterity</a></td>
+                <td>Crèche Y'llek — A'jak'nir Jeera. Set DEX to 18, dump DEX in character creation!</td>
+            </tr>
+        </table>
+
+        <h3>🧪 Key Consumable: Arsonist's Oil</h3>
+        <div class="callout">
+            <span class="emoji">🧪</span> <strong>ARSONIST'S OIL COMBO:</strong> This weapon coating removes fire resistance from enemies! Even better: throw water to make enemies Wet (gives fire resistance), then apply Arsonist's Oil — it CONVERTS resistance to VULNERABILITY! Double damage on ALL your fire spells!
+            <ul>
+                <li><strong>Crafting:</strong> Sublimate of Frosted Ears + Any Ashes</li>
+                <li><strong>Application:</strong> Ally coats weapon → hits enemy → vulnerability applied</li>
+                <li><strong>Alternative:</strong> Use Mage Hand to throw the oil bottle at enemies</li>
+            </ul>
+        </div>
+
+        <h2>⚔️ Combat Strategy</h2>
+        <h3>💥 Nova Round (Level 12)</h3>
+        <div class="stats-box">
+<strong>Setup:</strong>
+<ul>
+<li>Pre-cast Haste on yourself</li>
+<li>Have Hat of Fire Acuity equipped</li>
+<li>Ally applies Arsonist's Oil to target (optional but massive)</li>
+</ul>
+
+<strong>Execution:</strong>
+<ul>
+<li><strong>Action:</strong> Scorching Ray (Level 6 slot) = 7 beams × (2d6+7) = ~98 damage</li>
+<li><strong>Quicken:</strong> Scorching Ray (Level 5 slot) = 6 beams × (2d6+7) = ~84 damage</li>
+<li><strong>Haste Action:</strong> Scorching Ray (Level 4 slot) = 5 beams × (2d6+7) = ~70 damage</li>
+</ul>
+
+<strong>TOTAL NOVA: ~252 damage guaranteed, 500+ with crits and vulnerability!</strong>
+        </div>
+
+        <h3>🎯 Hold Person/Monster Combo</h3>
+        <div class="stats-box">
+<strong>Step 1 - Stack Arcane Acuity:</strong>
+Fire a Scorching Ray → Each hit = +1 Spell DC (stacks!)
+Result: +5 to +7 Spell DC instantly!
+
+<strong>Step 2 - Heightened Hold Person/Monster:</strong>
+With +10 Spell DC from Acuity + gear, enemy has disadvantage from Heightened = 95%+ success!
+
+<strong>Step 3 - Guaranteed Crits:</strong>
+Paralyzed = auto-crit within 10ft!
+Quickened Scorching Ray → ALL beams CRIT = massive damage!
+        </div>
+
+        <h3>🔄 Sustained Damage</h3>
+        <div class="stats-box">
+<strong>Standard Turn:</strong>
+<ul>
+<li>Scorching Ray (any level) + Quickened Fire Bolt</li>
+<li>Or: Twin Fire Bolt for 2 targets</li>
+<li>Potent Robe makes Fire Bolt deal 1d10 + CHA + CHA!</li>
+</ul>
+
+<strong>Resource Conservation:</strong>
+<ul>
+<li>Use lower level spell slots for trash mobs</li>
+<li>Save Level 5-6 slots for bosses</li>
+<li>Fire Bolt + Twin = decent damage for 1 sorcery point</li>
+</ul>
+        </div>
+
+        <h2>📊 Damage Calculation</h2>
+        <table>
+            <tr><th>Spell Slot</th><th>Scorching Ray Beams</th><th>Damage per Beam (24 CHA)</th><th>Total Average</th></tr>
+            <tr><td>Level 2</td><td>3</td><td>2d6 + 7 = 14</td><td>42</td></tr>
+            <tr><td>Level 3</td><td>4</td><td>2d6 + 7 = 14</td><td>56</td></tr>
+            <tr><td>Level 4</td><td>5</td><td>2d6 + 7 = 14</td><td>70</td></tr>
+            <tr><td>Level 5</td><td>6</td><td>2d6 + 7 = 14</td><td>84</td></tr>
+            <tr><td>Level 6</td><td>7</td><td>2d6 + 7 = 14</td><td>98</td></tr>
+        </table>
+        <p><em>*With Markoheshkir (+4), add +4 per beam. With vulnerability, DOUBLE all damage. With crits, DOUBLE dice again!</em></p>
+
+        <h2>⚖️ Pros & Cons</h2>
+        <table>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
+            <tr><td>Highest single-target damage in the game</td><td>Fire-resistant enemies require Arsonist's Oil</td></tr>
+            <tr><td>Each beam can crit = massive burst potential</td><td>Resource-intensive for maximum damage</td></tr>
+            <tr><td>Full sorcerer utility (Haste, Counterspell, etc.)</td><td>Relies on landing Scorching Rays (can miss)</td></tr>
+            <tr><td>Draconic Flight = perfect positioning</td><td>Squishy without Shield reaction</td></tr>
+            <tr><td>Halfling rerolls = reliable concentration</td><td>Needs Haste to maximize output</td></tr>
+            <tr><td>Works fully in Honor Mode (no exploits)</td><td>Best gear is Act 3 (Markoheshkir)</td></tr>
+        </table>
+
+        <h2>💡 Tips & Tricks</h2>
+        <div class="callout">
+            <span class="emoji">💡</span> <strong>ADVANCED TACTICS:</strong>
+            <ul>
+                <li><strong>Mage Hand Setup:</strong> Summon Mage Hand before combat. It can throw Grease Bottles or Arsonist's Oil without using your action!</li>
+                <li><strong>Grease + Fire:</strong> Create fire surfaces anywhere! Enemies take damage when set on fire AND on their turns.</li>
+                <li><strong>Globe of Invulnerability:</strong> Cast this and stand inside. Fire Scorching Rays for 3 turns with total immunity to spells!</li>
+                <li><strong>Warlock Dip:</strong> 1 level of Fiend Warlock gets Hex (+1d6 per beam) and Command. Less burst but more sustained.</li>
+                <li><strong>Radiating Orb Stack:</strong> With Callous Glow Ring + Luminous Gloves, survivors have -10 to -15 attack rolls!</li>
+            </ul>
+        </div>
+
+        <h2>📊 Quick Reference</h2>
+        <div class="stats-box">
+<strong>Class:</strong> 12 Draconic Sorcerer (Red Dragon) or 11 Sorc / 1 Warlock
+<strong>Primary Stats:</strong> CHA 24 (with items), CON 16, DEX 14
+<strong>Key Features:</strong> Elemental Affinity, Quicken Spell, Heightened Spell, Draconic Flight
+<strong>Must-Have Items:</strong> Markoheshkir, Hat of Fire Acuity, Potent Robe
+<strong>Nova Damage:</strong> 250-500+ damage in a single turn
+<strong>Core Combo:</strong> Scorching Ray → Quicken Scorching Ray → Haste Scorching Ray
+        </div>
+
+        <div class="footer"><em>🔥 "Watch the world burn." 🔥</em></div>
     </div>
 </div>
 
@@ -7047,6 +7344,10 @@ All your lightning damage triggers:
             'ice-sorcerer': {
                 name: 'Ice Sorcerer', icon: '❄️', role: 'AOE Caster',
                 items: ['Mourning Frost', 'Potent Robe', 'Birthright', 'Quickspell Gloves', 'Boots of Stormy Clamour', 'Amulet of Greater Health', 'Cloak of the Weave', 'Callous Glow Ring', "Killer's Sweetheart"]
+            },
+            'fire-sorcerer': {
+                name: 'Fire Sorcerer', icon: '🔥', role: 'Burst DPS',
+                items: ['Markoheshkir', 'Hat of Fire Acuity', 'Potent Robe', 'Birthright', 'Quickspell Gloves', 'Callous Glow Ring', 'Luminous Gloves', 'Amulet of Greater Health', 'Cloak of the Weave']
             },
             'stealth-archer': {
                 name: 'Stealth Archer', icon: '🎯', role: 'Ranged DPS',
