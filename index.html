@@ -380,6 +380,19 @@
         #magic-missile .stats-box { background: linear-gradient(135deg, #ede7f6 0%, #e8eaf6 100%); border: 1px solid #9575cd; }
         #magic-missile .footer { color: #5e35b1; border-top: 1px solid #9575cd; }
 
+        /* HADAR'S VOID - Dark Void Purple/Black */
+        #hadars-void { background: linear-gradient(180deg, #1a0a2e 0%, #0d0d1a 50%, #1a1a2e 100%); color: #c9b8e8; }
+        #hadars-void h1 { color: #9b59b6; text-shadow: 2px 2px 4px rgba(155,89,182,0.5), 0 0 20px rgba(155,89,182,0.3); }
+        #hadars-void .subtitle { color: #8e44ad; }
+        #hadars-void h2 { color: #9b59b6; border-bottom: 2px solid #6c3483; }
+        #hadars-void h3 { color: #8e44ad; }
+        #hadars-void th { background: linear-gradient(135deg, #4a1a6b 0%, #6c3483 100%); }
+        #hadars-void td { border-bottom: 1px solid #3d2a5c; }
+        #hadars-void tr:nth-child(even) { background: rgba(155,89,182,0.1); }
+        #hadars-void .callout { background: linear-gradient(135deg, rgba(155,89,182,0.15) 0%, rgba(74,26,107,0.2) 100%); border-left: 4px solid #9b59b6; }
+        #hadars-void .stats-box { background: linear-gradient(135deg, rgba(26,10,46,0.9) 0%, rgba(13,13,26,0.9) 100%); border: 1px solid #6c3483; }
+        #hadars-void .footer { color: #9b59b6; border-top: 1px solid #6c3483; }
+
         /* LIFE CLERIC - Healing Green/White */
         #life-cleric { background: linear-gradient(180deg, #e8f5e9 0%, #c8e6c9 50%, #ffffff 100%); color: #1b5e20; }
         #life-cleric h1 { color: #2e7d32; text-shadow: 2px 2px 4px rgba(46,125,50,0.3); }
@@ -757,6 +770,7 @@
                 <button class="dropdown-btn">👁️ Warlock</button>
                 <div class="dropdown-content">
                     <a href="#gloom-weaver" class="dropdown-item" data-tab="gloom-weaver">🌑 Gloom Weaver</a>
+                    <a href="#hadars-void" class="dropdown-item" data-tab="hadars-void">🌀 Hadar's Void</a>
                 </div>
             </div>
 
@@ -827,6 +841,7 @@
                     </optgroup>
                     <optgroup label="Warlock">
                         <option value="gloom-weaver">🌑 Gloom Weaver</option>
+                        <option value="hadars-void">🌀 Hadar's Void</option>
                     </optgroup>
                     <optgroup label="Wizard">
                         <option value="god-blade">✨ God Blade</option>
@@ -887,6 +902,7 @@
                     </optgroup>
                     <optgroup label="Warlock">
                         <option value="gloom-weaver">🌑 Gloom Weaver</option>
+                        <option value="hadars-void">🌀 Hadar's Void</option>
                     </optgroup>
                     <optgroup label="Wizard">
                         <option value="god-blade">✨ God Blade</option>
@@ -947,6 +963,7 @@
                     </optgroup>
                     <optgroup label="Warlock">
                         <option value="gloom-weaver">🌑 Gloom Weaver</option>
+                        <option value="hadars-void">🌀 Hadar's Void</option>
                     </optgroup>
                     <optgroup label="Wizard">
                         <option value="god-blade">✨ God Blade</option>
@@ -1007,6 +1024,7 @@
                     </optgroup>
                     <optgroup label="Warlock">
                         <option value="gloom-weaver">🌑 Gloom Weaver</option>
+                        <option value="hadars-void">🌀 Hadar's Void</option>
                     </optgroup>
                     <optgroup label="Wizard">
                         <option value="god-blade">✨ God Blade</option>
@@ -2846,6 +2864,279 @@ Every hit: +16 (STR) + weapon + Sneak Attack 🩸
         </table>
 
         <div class="footer"><em>🦅 "We are the ravens of omen. The Raven Queen watches through our eyes." 🌑</em></div>
+    </div>
+</div>
+
+<!-- HADAR'S VOID -->
+<div class="build" id="hadars-void">
+    <div class="build-content">
+        <h1>🌀 HADAR'S VOID 🌀</h1>
+        <div class="subtitle">👁️ Great Old One Warlock Build Guide - Baldur's Gate 3 (Patch 8) ✨</div>
+
+        <h2>✨ Build Overview</h2>
+        <p>Channel the unknowable horrors of the Far Realm through Hunger of Hadar, creating zones of absolute darkness that devour your enemies. This build combines devastating area denial with Eldritch Blast control, pushing and slowing enemies to keep them trapped in the void while they take cold and acid damage every round.</p>
+
+        <p><strong>Class Split:</strong> 11 Great Old One Warlock / 1 Fighter</p>
+
+        <div class="callout">
+            <span class="emoji">🌀</span> <strong>CORE MECHANIC:</strong> Hunger of Hadar creates a 6m sphere of darkness dealing 2d6 Cold damage at start of turn AND 2d6 Acid damage at end of turn. Use Repelling Blast + Lance of Lethargy to push enemies back in and keep them trapped!
+        </div>
+
+        <h2>📊 Race & Stats</h2>
+        <table>
+            <tr><th>Category</th><th>Choice</th><th>Reason</th></tr>
+            <tr><td>🧝 Race</td><td>Half-Elf</td><td>+2 CHA, Darkvision, Fey Ancestry (charm/sleep resist)</td></tr>
+            <tr><td>🧝 Alt Race</td><td>Tiefling</td><td>Hellish Resistance (fire), Darkvision, thematic for warlock</td></tr>
+            <tr><td>📖 Skills</td><td>Deception, Intimidation, Arcana</td><td>Social manipulation and occult knowledge</td></tr>
+        </table>
+        <table>
+            <tr><th>STR</th><th>DEX</th><th>CON</th><th>INT</th><th>WIS</th><th>CHA</th></tr>
+            <tr><td>8</td><td>14</td><td>16</td><td>10</td><td>10</td><td>17</td></tr>
+        </table>
+        <p><em>+1 Hag Hair = CHA 18 at L4, then 20 at L8 with ASI. Max CON for concentration on Hunger of Hadar!</em></p>
+
+        <h2>📈 Class Progression</h2>
+        <table>
+            <tr><th>Lvl</th><th>Class</th><th>Features & Choices</th></tr>
+            <tr><td>1</td><td>Warlock 1</td><td>Great Old One — Mortal Reminder (frighten on crit). Cantrips: Eldritch Blast, Minor Illusion. Spells: Hex, Armor of Agathys</td></tr>
+            <tr><td>2</td><td>Warlock 2</td><td>Invocations: Agonizing Blast, Repelling Blast (push 4.5m!). Spell: Hellish Rebuke</td></tr>
+            <tr><td>3</td><td>Warlock 3</td><td>Pact of the Tome (ritual casting). Spells: Darkness, Hold Person</td></tr>
+            <tr><td>4</td><td>Warlock 4</td><td>Feat: +2 CHA (to 18, or 19 with Hag Hair). Cantrip: Blade Ward</td></tr>
+            <tr><td>5</td><td>Warlock 5</td><td>Deepened Pact, Invocation: Lance of Lethargy (slow 3m!). Spells: HUNGER OF HADAR, Counterspell</td></tr>
+            <tr><td>6</td><td>Warlock 6</td><td>Entropic Ward (reaction: impose disadvantage, gain advantage next turn). Spell: Fear</td></tr>
+            <tr><td>7</td><td>Warlock 7</td><td>Invocation: Devil's Sight (see through magical darkness!). Spell: Banishment</td></tr>
+            <tr><td>8</td><td>Warlock 8</td><td>Feat: +2 CHA (to 20). Spell: Dimension Door</td></tr>
+            <tr><td>9</td><td>Warlock 9</td><td>Invocation: Minions of Chaos (free Conjure Elemental!). Spell: Hold Monster</td></tr>
+            <tr><td>10</td><td>Warlock 10</td><td>Thought Shield (immune to Detect Thoughts, psychic resistance). Cantrip: Friends</td></tr>
+            <tr><td>11</td><td>Warlock 11</td><td>MYSTIC ARCANUM: Circle of Death (6th level nuke!). Spell: Eyebite</td></tr>
+            <tr><td>12</td><td>Fighter 1</td><td>Fighting Style: Defense (+1 AC). Second Wind, Heavy Armor proficiency</td></tr>
+        </table>
+
+        <h2>🌀 Hunger of Hadar Mechanics</h2>
+        <div class="callout">
+            <span class="emoji">⚫</span> <strong>THE VOID ZONE:</strong>
+            <ul>
+                <li><strong>Area:</strong> 6m radius sphere of total darkness</li>
+                <li><strong>Cold Damage:</strong> 2d6 at START of creature's turn</li>
+                <li><strong>Acid Damage:</strong> 2d6 at END of creature's turn (DEX save)</li>
+                <li><strong>Difficult Terrain:</strong> Enemies can't move freely</li>
+                <li><strong>Blinded:</strong> All creatures inside are blinded!</li>
+                <li><strong>Concentration:</strong> Lasts 10 turns with concentration</li>
+            </ul>
+        </div>
+
+        <h2>⚡ Eldritch Blast Control</h2>
+        <div class="stats-box">
+<strong>Invocation Combo:</strong>
+<ul>
+<li><strong>Agonizing Blast:</strong> +CHA to each ray = +5 damage per ray</li>
+<li><strong>Repelling Blast:</strong> Push target 4.5m PER RAY (3 rays = 13.5m!)</li>
+<li><strong>Lance of Lethargy:</strong> Reduce speed by 3m PER RAY</li>
+</ul>
+
+<strong>Result:</strong> Enemies pushed back into Hunger of Hadar, then slowed so they can't escape!
+        </div>
+
+        <h2>🎒 Essential Gear by Act</h2>
+
+        <h3>📦 Act 1 Items</h3>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
+            <tr>
+                <td>📿 Amulet</td>
+                <td><a href="https://bg3.wiki/wiki/Amulet_of_Misty_Step" target="_blank">Amulet of Misty Step</a></td>
+                <td>Shattered Sanctum (Goblin Camp). Free Misty Step to reposition around your void zones!</td>
+            </tr>
+            <tr>
+                <td>👘 Armor</td>
+                <td><a href="https://bg3.wiki/wiki/The_Protecty_Sparkswall" target="_blank">The Protecty Sparkswall</a></td>
+                <td>Grymforge — Trapped bridge chest. +1 Spell DC, Lightning Charges bonus!</td>
+            </tr>
+            <tr>
+                <td>💍 Ring</td>
+                <td><a href="https://bg3.wiki/wiki/Caustic_Band" target="_blank">Caustic Band</a></td>
+                <td>Ebonlake Grotto — Derryth Bonecloak. +2 Acid damage on weapon attacks (synergy!)</td>
+            </tr>
+            <tr>
+                <td>👢 Boots</td>
+                <td><a href="https://bg3.wiki/wiki/Disintegrating_Night_Walkers" target="_blank">Disintegrating Night Walkers</a></td>
+                <td>Grymforge — True Soul Nere. Free Misty Step + ignore difficult terrain (walk through YOUR void!)</td>
+            </tr>
+            <tr>
+                <td>🪄 Staff</td>
+                <td><a href="https://bg3.wiki/wiki/Staff_of_Crones" target="_blank">Staff of Crones</a></td>
+                <td>Hag's Lair — Auntie Ethel. Free Ray of Sickness, +1d6 Necrotic on spells!</td>
+            </tr>
+        </table>
+
+        <h3>📦 Act 2 Items</h3>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
+            <tr>
+                <td>👑 Helm</td>
+                <td><a href="https://bg3.wiki/wiki/Hood_of_the_Weave" target="_blank">Hood of the Weave</a></td>
+                <td>Moonrise Towers — Mystic Carrion. +2 Spell DC, +2 spell attack rolls!</td>
+            </tr>
+            <tr>
+                <td>🧤 Gloves</td>
+                <td><a href="https://bg3.wiki/wiki/Gloves_of_Belligerent_Skies" target="_blank">Gloves of Belligerent Skies</a></td>
+                <td>Crèche Y'llek — Inquisitor's Chamber. Apply Reverberation on Thunder/Lightning/Radiant damage!</td>
+            </tr>
+            <tr>
+                <td>💍 Ring 1</td>
+                <td><a href="https://bg3.wiki/wiki/Callous_Glow_Ring" target="_blank">Callous Glow Ring</a></td>
+                <td>Gauntlet of Shar vault. +2 Radiant damage vs illuminated targets!</td>
+            </tr>
+            <tr>
+                <td>💍 Ring 2</td>
+                <td><a href="https://bg3.wiki/wiki/Coruscation_Ring" target="_blank">Coruscation Ring</a></td>
+                <td>Last Light Inn cellar. Spells apply Radiating Orb stacks!</td>
+            </tr>
+            <tr>
+                <td>👘 Robe</td>
+                <td><a href="https://bg3.wiki/wiki/Potent_Robe" target="_blank">Potent Robe</a></td>
+                <td>Last Light Inn — Alfira reward. +CHA to cantrip damage, temp HP on concentration!</td>
+            </tr>
+        </table>
+
+        <h3>📦 Act 3 Items (Endgame)</h3>
+        <table>
+            <tr><th>Slot</th><th>Item</th><th>Location & Effect</th></tr>
+            <tr>
+                <td>🪄 Main Hand</td>
+                <td><a href="https://bg3.wiki/wiki/Markoheshkir" target="_blank">Markoheshkir</a></td>
+                <td>Ramazith's Tower (DC 20 Arcana). Arcane Battery = FREE Hunger of Hadar! +1 Spell DC!</td>
+            </tr>
+            <tr>
+                <td>👘 Robe</td>
+                <td><a href="https://bg3.wiki/wiki/Robe_of_the_Weave" target="_blank">Robe of the Weave</a></td>
+                <td>Ramazith's Tower. +1 Spell DC, +1 spell attack rolls, +2 AC.</td>
+            </tr>
+            <tr>
+                <td>🧤 Gloves</td>
+                <td><a href="https://bg3.wiki/wiki/Helldusk_Gloves" target="_blank">Helldusk Gloves</a></td>
+                <td>House of Hope — Haarlep's boudoir. +1d6 Fire on weapon attacks, spell attack +1!</td>
+            </tr>
+            <tr>
+                <td>🧥 Cloak</td>
+                <td><a href="https://bg3.wiki/wiki/Cloak_of_the_Weave" target="_blank">Cloak of the Weave</a></td>
+                <td>Devil's Fee (Helsik). +1 Spell DC, +1 spell attack rolls.</td>
+            </tr>
+            <tr>
+                <td>👑 Helm</td>
+                <td><a href="https://bg3.wiki/wiki/Birthright" target="_blank">Birthright</a></td>
+                <td>Sorcerous Sundries. +2 CHA — stack even more Eldritch Blast damage!</td>
+            </tr>
+            <tr>
+                <td>📿 Amulet</td>
+                <td><a href="https://bg3.wiki/wiki/Amulet_of_Greater_Health" target="_blank">Amulet of Greater Health</a></td>
+                <td>House of Hope — Archive. CON 23 = easy concentration saves!</td>
+            </tr>
+        </table>
+
+        <h2>⚔️ Combat Strategy</h2>
+        <h3>💥 Void Control Opening</h3>
+        <div class="stats-box">
+<strong>Setup:</strong>
+<ul>
+<li>Identify chokepoints, doorways, or clustered enemies</li>
+<li>Pre-cast Armor of Agathys for temp HP + cold revenge damage</li>
+</ul>
+
+<strong>Nova Round:</strong>
+<ul>
+<li>Cast Hunger of Hadar centered on enemy group
+   → Creates 6m radius of void, enemies blinded!</li>
+<li>Eldritch Blast anyone escaping the edge
+   → Repelling Blast pushes them 4.5m back INTO the void
+   → Lance of Lethargy slows them 3m so they can't escape!</li>
+</ul>
+
+<strong>Damage Per Round (enemies in void):</strong>
+<ul>
+<li>Start of turn: 2d6 Cold (7 average)</li>
+<li>End of turn: 2d6 Acid (7 average, DEX save for half)</li>
+<li>Total: 14 damage/round per enemy, GUARANTEED!</li>
+</ul>
+        </div>
+
+        <h3>🔄 Sustained Control</h3>
+        <div class="stats-box">
+<strong>Standard Turn:</strong>
+<ul>
+<li>Maintain concentration on Hunger of Hadar</li>
+<li>Eldritch Blast escapees → push back into void</li>
+<li>Hex high-priority targets for +1d6 per Eldritch Blast ray</li>
+</ul>
+
+<strong>Eldritch Blast Damage (Level 11):</strong>
+<ul>
+<li>3 rays × (1d10 + 5 CHA + 1d6 Hex) = 3 × 13 = 39 average damage</li>
+<li>Each ray pushes 4.5m and slows 3m!</li>
+</ul>
+
+<strong>Resource Management:</strong>
+<ul>
+<li>Warlock slots recharge on SHORT REST — spam Hunger of Hadar!</li>
+<li>Save Mystic Arcanum (Circle of Death) for boss phase changes</li>
+<li>Armor of Agathys doesn't require concentration — always keep it up</li>
+</ul>
+        </div>
+
+        <h2>🌀 Advanced Tactics</h2>
+        <div class="callout">
+            <span class="emoji">💡</span> <strong>PRO TIPS:</strong>
+            <ul>
+                <li><strong>Doorway Denial:</strong> Cast Hunger of Hadar in doorways to trap reinforcements — they can't see to target you!</li>
+                <li><strong>Devil's Sight:</strong> YOU can see through the darkness perfectly. Eldritch Blast with advantage!</li>
+                <li><strong>Stacking Voids:</strong> Multiple Warlocks can stack Hunger of Hadar zones for overlapping damage!</li>
+                <li><strong>Night Walkers Combo:</strong> Disintegrating Night Walkers ignore difficult terrain — walk through your OWN void freely!</li>
+                <li><strong>Armor of Agathys:</strong> If melee enemies reach you, they take cold damage when they hit you!</li>
+            </ul>
+        </div>
+
+        <h2>📊 Damage Calculation</h2>
+        <table>
+            <tr><th>Source</th><th>Damage Type</th><th>Damage/Round</th></tr>
+            <tr><td>Hunger of Hadar (Cold)</td><td>Cold</td><td>2d6 (7 avg)</td></tr>
+            <tr><td>Hunger of Hadar (Acid)</td><td>Acid</td><td>2d6 (7 avg)</td></tr>
+            <tr><td>Eldritch Blast (3 rays)</td><td>Force</td><td>3d10+15 (31 avg)</td></tr>
+            <tr><td>Hex (per ray)</td><td>Necrotic</td><td>3d6 (10.5 avg)</td></tr>
+            <tr><td><strong>TOTAL SINGLE TARGET</strong></td><td>—</td><td><strong>55+ damage/round</strong></td></tr>
+        </table>
+        <p><em>*Hunger of Hadar hits ALL enemies in the zone. 3 enemies = 42 damage/round from the void alone!</em></p>
+
+        <h2>⚖️ Pros & Cons</h2>
+        <table>
+            <tr><th>✅ Pros</th><th>❌ Cons</th></tr>
+            <tr><td>Amazing area denial and control</td><td>Concentration required</td></tr>
+            <tr><td>Blinds enemies — advantage for you!</td><td>Can affect allies if positioned poorly</td></tr>
+            <tr><td>Guaranteed damage (no attack roll for zone)</td><td>Mobile enemies can escape</td></tr>
+            <tr><td>Warlock slots recharge on short rest</td><td>Limited slots before resting</td></tr>
+            <tr><td>Push + slow keeps enemies trapped</td><td>Single target damage lower than pure blasters</td></tr>
+        </table>
+
+        <h2>💡 Party Synergies</h2>
+        <div class="callout">
+            <span class="emoji">🎭</span> <strong>BEST PARTY COMBOS:</strong>
+            <ul>
+                <li><strong>Spike Growth Druid:</strong> Stack Spike Growth under Hunger of Hadar — enemies take BOTH zone damages!</li>
+                <li><strong>Grease Wizard:</strong> Grease + Hunger of Hadar = enemies prone AND blinded AND taking damage!</li>
+                <li><strong>Shove Fighters:</strong> Allies can shove enemies back into the void!</li>
+                <li><strong>Tempest Cleric:</strong> Maximize Thunder damage on enemies you push into walls!</li>
+            </ul>
+        </div>
+
+        <h2>📊 Quick Reference</h2>
+        <div class="stats-box">
+<strong>Class:</strong> 11 Great Old One Warlock / 1 Fighter
+<strong>Primary Stats:</strong> CHA 20, CON 16, DEX 14
+<strong>Key Features:</strong> Hunger of Hadar, Repelling Blast, Lance of Lethargy, Devil's Sight
+<strong>Void Damage:</strong> 4d6 (14 avg) per enemy per round
+<strong>Core Combo:</strong> Hunger of Hadar → Eldritch Blast (push back) → Watch them melt
+        </div>
+
+        <div class="footer"><em>🌀 "The void hungers, and I am its herald." ⚫</em></div>
     </div>
 </div>
 
@@ -7548,6 +7839,10 @@ All your lightning damage triggers:
             'gloom-weaver': {
                 name: 'Gloom Weaver', icon: '🌑', role: 'Hybrid Striker',
                 items: ['Sorrow', 'Covert Cowl', 'Shade-Slayer Cloak', 'Corvid Token', 'Armor of Persistence', 'Helldusk Gloves', 'Disintegrating Night Walkers', "Killer's Sweetheart", 'Caustic Band']
+            },
+            'hadars-void': {
+                name: "Hadar's Void", icon: '🌀', role: 'Zone Control',
+                items: ['Markoheshkir', 'Robe of the Weave', 'Birthright', 'Potent Robe', 'Helldusk Gloves', 'Cloak of the Weave', 'Disintegrating Night Walkers', 'Amulet of Greater Health', 'Callous Glow Ring', 'Coruscation Ring']
             },
             'land-warden': {
                 name: 'Land Warden', icon: '🌍', role: 'Support Caster',
